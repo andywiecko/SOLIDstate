@@ -26,7 +26,7 @@ class ParityGrandCanonical : public IEnsamble
 		}
 };
 
-class CompleteCanonical : public IEnsamble
+class GrandCanonical : public IEnsamble
 {
 	public:
 		virtual int SetSize()
@@ -40,6 +40,7 @@ class Sector
 	public:
 		int L;
 		int N;
+		int sectorSize;
 		Sector(int _L, int _N)
 		{
 			L = _L;

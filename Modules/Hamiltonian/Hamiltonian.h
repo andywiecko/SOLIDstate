@@ -19,7 +19,7 @@ class Operator
 		virtual ~Operator(){}
 };
 
-class KitaevHamiltonian : public Operator<mat>, public IHamiltonian, public CompleteCanonical
+class KitaevHamiltonian : public Operator<mat>, public IHamiltonian, public GrandCanonical
 {
 	public:
 		
