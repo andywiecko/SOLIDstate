@@ -25,12 +25,13 @@ class KitaevHamiltonian : public Operator<mat>, public IHamiltonian, public Comp
 		
 		virtual void FillElements()
 		{
-	   	L = 4;
-			matrixElements.set_size(10,10);
+	   		L = 4;
+			int size = SetSize();
+			matrixElements.set_size(size,size);
 			matrixElements.fill(1.0);
 			//matrixElements.print();
 		   
-			cout << SetSize() << endl;
+			cout << size << endl;
 			//ParityGrandCanonical::SetSize();
 			// terms
 		}
