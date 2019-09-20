@@ -1,3 +1,4 @@
+#include<vector>
 using namespace arma;
 
 class IHamiltonian
@@ -13,11 +14,12 @@ class Operator
 {
 	public:
 		T matrixElements;
+		std::vector<Sector> sectors;
 	public:
 		virtual ~Operator(){}
 };
 
-class KitaevHamiltonian : public Operator<cx_mat>, public IHamiltonian, public CompleteCanonical
+class KitaevHamiltonian : public Operator<mat>, public IHamiltonian, public CompleteCanonical
 {
 	public:
 		

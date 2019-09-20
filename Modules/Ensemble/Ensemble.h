@@ -35,4 +35,15 @@ class CompleteCanonical : public IEnsamble
 		}
 };
 
+class Sector
+{
+	public:
+		int L;
+		int N;
+		Sector(int _L, int _N)
+		{
+			L = _L;
+			N = _N;
+		}
 
+};
