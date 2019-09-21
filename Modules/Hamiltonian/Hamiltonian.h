@@ -1,10 +1,9 @@
-#include<vector>
 using namespace arma;
 
 class IHamiltonian
 {
 	public:
-		virtual void FillElements() = 0;		  
+		virtual void FillElements() = 0;
 		virtual ~IHamiltonian(){}
 };
 
@@ -14,22 +13,19 @@ class Operator
 {
 	public:
 		T matrixElements;
-		std::vector<Sector> sectors;
 	public:
 		virtual ~Operator(){}
 };
 
-class KitaevHamiltonian : public Operator<mat>, public IHamiltonian, public GrandCanonical
+class KitaevHamiltonian : public Operator<mat>, public IHamiltonian
 {
 	public:
-		
+
 		virtual void FillElements()
 		{
-	   		L = 4;
-			int size = SetSize();
+			int size = 8;
 			matrixElements.set_size(size,size);
 			matrixElements.fill(1.0);
-			//matrixElements.print();
 		   
 			cout << size << endl;
 			//ParityGrandCanonical::SetSize();
