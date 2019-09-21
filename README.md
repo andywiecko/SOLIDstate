@@ -1,2 +1,4 @@
 # SOLIDstate
-SOLID implementation of standard solid states physics
+SOLID implementation of standard solid state physics
+
+![logo](Manual/logo.pdf)
