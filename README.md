@@ -1,4 +1,4 @@
 # SOLIDstate
 SOLID implementation of standard solid state physics
 
-![logo](Manual/logo.pdf)
+[![logo](Manual/logo.png)](Manual/logo.pdf)
