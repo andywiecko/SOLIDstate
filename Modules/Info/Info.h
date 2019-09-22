@@ -10,7 +10,7 @@ class StandardMessages
 	public:
 		void Line()
 		{
-			std::cout << "#############################################" << std::endl;
+			std::cout << "###########################################" << std::endl;
 		}
 
 		void ShowSectors(std::vector<Sector> sectors)	

@@ -1,40 +1,43 @@
 
 CC=g++
 CFLAGS= -O3 -std=c++11
-LIBS = -larmadillo
+LIBS= -larmadillo
 
-all: Ensemble.o Canonical.o GrandCanonical.o ParityGrandCanonical.o Hamiltonian.o Info.o Factory.o SOLIDstate.o
-	$(CC) main.cpp SOLIDstate.o -o test.exe $(LIBS) $(CFLAGS)
+OBJ=Ensemble.o Canonical.o GrandCanonical.o\
+    ParityGrandCanonical.o Hamiltonian.o Info.o\
+	Factory.o SOLIDstate.o main.o
 
-# ENSEMBLE
-Ensemble.o:
-	$(CC) -c Modules/Ensemble/Ensemble.cpp $(LIBS) $(CFLAGS)
+test.exe: $(OBJ)
+	$(CC) $(OBJ) -o test.exe $(LIBS) $(CFLAGS)
 
-Canonical.o:
-	$(CC) -c Modules/Ensemble/Canonical.cpp $(LIBS) $(CFLAGS)
+main.o: main.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
 
-GrandCanonical.o:
-	$(CC) -c Modules/Ensemble/GrandCanonical.cpp $(LIBS) $(CFLAGS)
+Ensemble.o: Modules/Ensemble/Ensemble.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
 
-ParityGrandCanonical.o:
-	$(CC) -c Modules/Ensemble/ParityGrandCanonical.cpp $(LIBS) $(CFLAGS)
+Canonical.o: Modules/Ensemble/Canonical.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
 
-# HAMILTONIAN
-Hamiltonian.o:
-	$(CC) -c Modules/Hamiltonian/Hamiltonian.cpp $(LIBS) $(CFLAGS)
+GrandCanonical.o: Modules/Ensemble/GrandCanonical.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
 
-# INFO
-Info.o:
-	$(CC) -c Modules/Info/Info.cpp $(LIBS) $(CFLAGS)
+ParityGrandCanonical.o: Modules/Ensemble/ParityGrandCanonical.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
 
-# FACTORY
-Factory.o:
-	$(CC) -c Modules/Factory/Factory.cpp $(LIBS) $(CFLAGS)
+Hamiltonian.o: Modules/Hamiltonian/Hamiltonian.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
 
-# LIB
-SOLIDstate.o: 
-	$(CC) -c Modules/SOLIDstate.cpp $(LIBS) $(CFLAGS)
+Info.o: Modules/Info/Info.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
 
+Factory.o: Modules/Factory/Factory.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
+
+SOLIDstate.o: Modules/SOLIDstate.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
+
+.PHONY : clean
 clean:
 	rm *.o
 	rm test.exe

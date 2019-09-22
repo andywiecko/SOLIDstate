@@ -18,6 +18,6 @@ int main()
 	
 	ham.matrixElements;
 	ham.matrixElements.print();
-	
+	//int l;
 	return 0;
 }
