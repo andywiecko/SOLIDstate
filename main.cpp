@@ -1,15 +1,23 @@
+
 #include "Modules/SOLIDstate.h"
+
 
 int main()
 {
 
+	Ensemble ensemble = Factory::GenerateGrandCanonicalEnsemble(8);
+
+	std::cout << ensemble.size << std::endl;
+	std::cout << ensemble.sectors[0].L << std::endl;
+	std::cout << ensemble.sectors[0].N << std::endl;
+
+	Info info;
+	info.ShowSectors(ensemble.sectors);
+
 	Operator<mat> ham = Factory::CreateHamiltonian();
+	
 	ham.matrixElements;
 	ham.matrixElements.print();
-	Sector sector(8,2);
-	ham.sectors.push_back(sector);
-	Sector sector2 = sector;
-	std::cout << sector.N << std::endl;
-	std::cout << ham.sectors[0].N << std::endl;
+	
 	return 0;
 }

@@ -1,3 +1,6 @@
+#ifndef ENSEMBLE_H
+#define ENSEMBLE_H
+
 #include<vector>
 
 class Sector
@@ -32,4 +35,4 @@ class Ensemble
 		virtual ~Ensemble(){}
 };
 
-
+#endif

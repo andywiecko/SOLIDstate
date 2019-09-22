@@ -1,3 +1,8 @@
+#ifndef INFO_H
+#define INFO_H
+
+
+#include<iostream>
 #include<vector>
 
 class StandardMessages
@@ -5,7 +10,7 @@ class StandardMessages
 	public:
 		void Line()
 		{
-			std::cout << "##############################################" << std::endl;
+			std::cout << "#############################################" << std::endl;
 		}
 
 		void ShowSectors(std::vector<Sector> sectors)	
@@ -26,3 +31,5 @@ class Info : public StandardMessages
 {
 
 };
+
+#endif

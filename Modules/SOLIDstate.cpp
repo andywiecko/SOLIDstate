@@ -1,5 +1,4 @@
-#ifndef SOLIDSTATE_H
-#define SOLIDSTATE_H
+#include <armadillo>
 
 #include "Ensemble/Ensemble.h"
 #include "Ensemble/Canonical.h"
@@ -11,6 +10,4 @@
 
 #include "Info/Info.h"
 
-
-
-#endif
+#include "SOLIDstate.h"

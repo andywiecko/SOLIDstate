@@ -1,3 +1,7 @@
+#ifndef GRANDCANONICAL_H
+#define GRANDCANONICAL_H
+
+#include <cmath>
 
 class GrandCanonical : public Ensemble, public IEnsemble
 {
@@ -16,3 +20,4 @@ class GrandCanonical : public Ensemble, public IEnsemble
 		}
 };
 
+#endif

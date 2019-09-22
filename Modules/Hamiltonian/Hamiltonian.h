@@ -1,3 +1,8 @@
+#ifndef HAMILTONIAN_H
+#define HAMILTONIAN_H
+
+#include <cmath>
+#include <armadillo>
 using namespace arma;
 
 class IHamiltonian
@@ -34,3 +39,5 @@ class KitaevHamiltonian : public Operator<mat>, public IHamiltonian
 
 
 };
+
+#endif

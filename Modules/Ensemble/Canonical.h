@@ -1,3 +1,5 @@
+#ifndef CANONICAL_H
+#define CANONICAL_H
 
 class Canonical : public Ensemble, public IEnsemble
 {
@@ -14,3 +16,4 @@ class Canonical : public Ensemble, public IEnsemble
 		}
 };
 
+#endif

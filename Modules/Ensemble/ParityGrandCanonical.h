@@ -1,3 +1,7 @@
+#ifndef PARITYGRANDCANONICAL_H
+#define PARITYGRANDCANONICAL_H
+
+#include <cmath>
 
 class ParityGrandCanonical : public Ensemble, public IEnsemble
 {
@@ -10,3 +14,4 @@ class ParityGrandCanonical : public Ensemble, public IEnsemble
 		virtual void FillSectors(){}
 };
 
+#endif

@@ -1,3 +1,5 @@
+#ifndef FACTORY_H
+#define FACTORY_H
 
 class Factory
 {
@@ -11,7 +13,7 @@ class Factory
 			ensemble.FillSectors();
 			return ensemble; 
 		}
-
+		
 		static Ensemble GenerateGrandCanonicalEnsemble(int _L)
 		{
 			GrandCanonical ensemble;
@@ -20,8 +22,8 @@ class Factory
 			ensemble.FillSectors();
 			return ensemble; 
 		}
-
-
+		
+		
 		static KitaevHamiltonian CreateHamiltonian()
 		{
 			KitaevHamiltonian ham;
@@ -29,5 +31,7 @@ class Factory
 			return  ham;
 		}
 
-
+		
 };
+
+#endif
