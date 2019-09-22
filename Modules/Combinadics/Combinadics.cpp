@@ -4,7 +4,7 @@
 
 #include <vector>
 
-typedef long int binint;
+typedef unsigned int binint;
 typedef std::vector<binint> vecint;
 
 void Binomials::FillBinomials(int L)

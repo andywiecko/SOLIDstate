@@ -13,7 +13,7 @@ int main()
 	info.ShowSectors(ensemble.sectors);
 
 	Binomials binomials;
-	std::cout << binomials.binom(6,2) << std::endl;
+	std::cout << binomials.binom(6,0) << std::endl;
 
 	Operator<mat> ham = Factory::CreateHamiltonian();
 	
