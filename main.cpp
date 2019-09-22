@@ -12,6 +12,9 @@ int main()
 	Info info;
 	info.ShowSectors(ensemble.sectors);
 
+	Binomials binomials;
+	std::cout << binomials.binom(6,2) << std::endl;
+
 	Operator<mat> ham = Factory::CreateHamiltonian();
 	
 	ham.matrixElements;
