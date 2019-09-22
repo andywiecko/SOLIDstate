@@ -1,6 +1,4 @@
-
 #include "Modules/SOLIDstate.h"
-
 
 int main()
 {

@@ -4,8 +4,8 @@ CFLAGS= -O3 -std=c++11
 LIBS= -larmadillo
 
 OBJ=Ensemble.o Canonical.o GrandCanonical.o\
-    ParityGrandCanonical.o Hamiltonian.o Info.o\
-	Factory.o SOLIDstate.o main.o
+    ParityGrandCanonical.o Hamiltonian.o KitaevHamiltonian.o\
+	Info.o Factory.o SOLIDstate.o main.o
 
 test.exe: $(OBJ)
 	$(CC) $(OBJ) -o test.exe $(LIBS) $(CFLAGS)
@@ -26,6 +26,9 @@ ParityGrandCanonical.o: Modules/Ensemble/ParityGrandCanonical.cpp
 	$(CC) -c $< $(LIBS) $(CFLAGS)
 
 Hamiltonian.o: Modules/Hamiltonian/Hamiltonian.cpp
+	$(CC) -c $< $(LIBS) $(CFLAGS)
+
+KitaevHamiltonian.o: Modules/Hamiltonian/KitaevHamiltonian.cpp
 	$(CC) -c $< $(LIBS) $(CFLAGS)
 
 Info.o: Modules/Info/Info.cpp
