@@ -1,6 +1,11 @@
 #ifndef FACTORY_H
 #define FACTORY_H
 
+#include "../Ensemble/Ensemble.h"
+#include "../Ensemble/Canonical.h"
+#include "../Ensemble/GrandCanonical.h"
+#include "../Hamiltonian/KitaevHamiltonian.h"
+
 class Factory
 {
 	
