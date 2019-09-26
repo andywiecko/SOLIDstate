@@ -38,3 +38,54 @@ binint Binomials::binom(int N, int K)
     if (N<K) return 0;
 	return binomials[N][K];
 }
+
+Binomials binomials;
+
+
+statenumber BaseStateNumberConverter::ToNumber(BaseState state) 
+{
+	statenumber ret = 0;
+	int k = 0;
+	for (int i=0;i<state.size();i++)
+		if (state(i) == 1) k++;
+
+	return ret;
+}	
+	/*
+	//std::string temp = reverse(state);
+	
+	for (int i=0;i<temp.size();i++)
+	{
+		if (temp[i] == '1')
+		{
+			ret += binomial(temp.size()-1-i,k);
+			k--;
+		}
+	}
+	*/
+//	return ret;
+/*
+}
+*/
+
+BaseState BaseStateNumberConverter::ToBaseState(Sector sector, statenumber number)
+{
+	BaseState ret;
+	ret.set_size(sector.L);
+	ret.fill(0);
+	statenumber Ntemp = sector.N;
+
+	for (statenumber i=0;i<number;i++)
+	{
+		statenumber n = number-i-1;
+		
+		while(binomials.binom(n,number-i)<=Ntemp) n++;
+		
+		if (binomials.binom(n,number-i)>Ntemp) n=n-1;
+		
+		ret(n) = 1;
+		Ntemp -= binomials.binom(n,number-i);
+		
+	}
+	return ret;
+}

@@ -9,6 +9,7 @@
 #include "Hamiltonian/Hamiltonian.h"
 #include "Hamiltonian/KitaevHamiltonian.h"
 #include "Factory/Factory.h"
+#include "HilbertSpace/HilbertSpace.h"
 #include "Info/Info.h"
 
 #endif

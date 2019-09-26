@@ -6,7 +6,6 @@
 using namespace arma;
 #include "../Ensemble/Ensemble.h"
 
-
 // Binomials setting
 const int binomialsNo = 30;
 typedef unsigned int binint;
@@ -27,6 +26,7 @@ class Binomials
 
 };
 
+
 typedef long int statenumber;
 
 class BaseState : public uvec
@@ -43,32 +43,10 @@ class BaseStateNumberConverter
 {
     public:
         statenumber ToNumber(BaseState state);
-        BaseState ToBaseState(Sector sector, statenumber number);
+        static BaseState ToBaseState(Sector sector, statenumber number);
         
 };
 
-statenumber BaseStateNumberConverter::ToNumber(BaseState state) 
-{
-	statenumber ret = 0;
-	int k = 0;
-	for (int i=0;i<state.size();i++)
-		if (state(i) == 1) k++;
-	
-	/*
-	//std::string temp = reverse(state);
-	
-	for (int i=0;i<temp.size();i++)
-	{
-		if (temp[i] == '1')
-		{
-			ret += binomial(temp.size()-1-i,k);
-			k--;
-		}
-	}
-	*/
-	return ret;
-
-}
 
 
 #endif

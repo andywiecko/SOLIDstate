@@ -9,13 +9,7 @@ class Sector
 		int L;
 		int N;
 		int size;
-		Sector(int _L, int _N)
-		{
-			L = _L;
-			N = _N;
-			size = 0; // TODO binomial
-		}
-
+		Sector(int _L, int _N);
 };
 
 class IEnsemble

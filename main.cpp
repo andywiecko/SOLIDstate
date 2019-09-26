@@ -20,5 +20,15 @@ int main()
 	ham.matrixElements;
 	ham.matrixElements.print();
 	//int l;
+
+	HilbertSpace space;
+	space.ensemble = ensemble;
+	space.InitialBaseState();
+	std::cout << space.stateIndex << "\t" << space.stateIndex << std::endl;
+	space.baseState.print("state 0");
+	space.NextBaseState();
+	std::cout << space.stateIndex << "\t" << space.stateIndex << std::endl;
+	space.baseState.print("state 1");
+
 	return 0;
 }

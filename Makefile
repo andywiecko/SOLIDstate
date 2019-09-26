@@ -6,6 +6,7 @@ LIBS= -larmadillo
 OBJ=Ensemble.o Canonical.o GrandCanonical.o\
     ParityGrandCanonical.o Hamiltonian.o KitaevHamiltonian.o\
 	Info.o Factory.o SOLIDstate.o Combinadics.o\
+	HilbertSpace.o\
 	main.o
 
 test.exe: $(OBJ)
@@ -39,6 +40,9 @@ Factory.o: Modules/Factory/Factory.cpp Modules/Factory/Factory.h
 	$(CC) -c $< $(LIBS) $(CFLAGS)
 
 Combinadics.o: Modules/Combinadics/Combinadics.cpp Modules/Combinadics/Combinadics.h
+	$(CC) -c $< $(LIBS) $(CFLAGS)
+
+HilbertSpace.o: Modules/HilbertSpace/HilbertSpace.cpp Modules/HilbertSpace/HilbertSpace.h
 	$(CC) -c $< $(LIBS) $(CFLAGS)
 
 SOLIDstate.o: Modules/SOLIDstate.cpp Modules/SOLIDstate.h
