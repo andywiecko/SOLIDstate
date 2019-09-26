@@ -30,5 +30,8 @@ int main()
 	std::cout << space.stateIndex << "\t" << space.stateIndex << std::endl;
 	space.baseState.print("state 1");
 
+	Sector sector = ensemble.sectors[2];
+	BaseStateNumberConverter::ToBaseState(sector,2).print("lel");
+
 	return 0;
 }
