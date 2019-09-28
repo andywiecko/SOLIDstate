@@ -3,25 +3,14 @@
 int main()
 {
 
-	Ensemble ensemble = Factory::GenerateGrandCanonicalEnsemble(4);
-
-	std::cout << ensemble.size << std::endl;
-	std::cout << ensemble.sectors[0].L << std::endl;
-	std::cout << ensemble.sectors[0].N << std::endl;
-
 	Info info;
-	info.ShowSectors(ensemble.sectors);
-
-	Binomials binomials;
-	std::cout << binomials.binom(6,0) << std::endl;
-
-	Operator<mat> ham = Factory::CreateHamiltonian();
-	
-	ham.matrixElements;
-	ham.matrixElements.print();
-	//int l;
+	//info.Tic();
 
 	HilbertSpace space;
+	Ensemble ensemble = Factory::GenerateGrandCanonicalEnsemble(4);
+	//Ensemble ensemble = Factory::GenerateCanonicalEnsemble(4,2);
+	
+	info.ShowSectors(ensemble);
 	space.ensemble = ensemble;
 	
 	space.InitialBaseState();
@@ -32,8 +21,12 @@ int main()
 	{
 		std::cout << space.sectorIndex << "\t" << space.stateIndex << " |";// << std::endl;
 		space.baseState.t().print();
+		// sector terms
+
+		// inter-sector terms
+
 	}
 
-	
+	info.Time();
 	return 0;
 }

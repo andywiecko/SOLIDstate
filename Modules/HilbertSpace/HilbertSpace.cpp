@@ -10,30 +10,28 @@ void HilbertSpace::InitialBaseState()
 }
 
 // selecting next baseState in HilbertSpace
-// return false if this is the last state
+// returns false if this is the last state
 bool HilbertSpace::NextBaseState()
 {
     Sector sector = ensemble.sectors[sectorIndex];
-    if (stateIndex == sector.size-1) 
-    {
-        return NextSector();
-    }
+    // check if this is the last sector
+    if (stateIndex == sector.size-1) return NextSector();
     stateIndex++;
     baseState = BaseStateNumberConverter::ToBaseState(sector,stateIndex);
     return true;
 }
 
 // push the next sector to the HilbertSpace
-// return false if this is the last Sector
+// returns false if this is the last Sector
 bool HilbertSpace::NextSector()
 {
     // this is the last sector
-    if (sectorIndex == ensemble.sectors.size()-1)
-        return false;
+    if (sectorIndex == ensemble.sectors.size()-1) return false;
     // next sector, reset stateIndex
     else
     {
-        sectorIndex++; stateIndex = 0;
+        sectorIndex++; 
+        stateIndex = 0;
         Sector sector = ensemble.sectors[sectorIndex];
         baseState = BaseStateNumberConverter::ToBaseState(sector,0);
         return true;

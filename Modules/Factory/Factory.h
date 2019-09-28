@@ -10,10 +10,11 @@ class Factory
 {
 	
 	public:
-		static Ensemble GenerateCanonicalEnsamble(int _L)
+		static Ensemble GenerateCanonicalEnsemble(int _L, int _N)
 		{
 			Canonical ensemble;
 			ensemble.L = _L;
+			ensemble.N = _N;
 			ensemble.SetSize();
 			ensemble.FillSectors();
 			return ensemble; 

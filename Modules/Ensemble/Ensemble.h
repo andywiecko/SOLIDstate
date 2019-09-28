@@ -3,15 +3,20 @@
 
 #include<vector>
 
+// contains information about number of sites and particles in the sector
 class Sector
 {
 	public:
+		// number of sites
 		int L;
+		// number of particles
 		int N;
+		// number of states in the sector (dimension of the subspace)
 		int size;
 		Sector(int _L, int _N);
 };
 
+// interface for Ensamble class
 class IEnsemble
 {
 	public:
@@ -20,10 +25,12 @@ class IEnsemble
 		virtual ~IEnsemble(){}
 };
 
+// contains information about sectors of the Hilbert space
 class Ensemble
 {
 	public:
 		int L;
+		// total size of the sectors
 		int size;
 		std::vector<Sector> sectors;
 		virtual ~Ensemble(){}

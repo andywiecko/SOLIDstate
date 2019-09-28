@@ -33,10 +33,11 @@ void Binomials::FillBinomials(int L)
 
 }
 
-binint Binomials::binom(int N, int K)
+// returns binomial L over N
+binint Binomials::binom(int L, int N)
 {
-    if (N<K) return 0;
-	return binomials[N][K];
+    if (L < N) return 0;
+	return binomials[L][N];
 }
 
 Binomials binomials;

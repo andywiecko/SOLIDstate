@@ -18,8 +18,8 @@ class HilbertSpace
         int sectorIndex = 0;
 
     private:
-        // saves size of the previous sectors
         bool NextSector();
+        // ancillary variable for inserting inter-sector interaction elements
         statenumber sectorOffset = 0;
 
 };

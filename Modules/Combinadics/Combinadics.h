@@ -18,7 +18,7 @@ class Binomials
         {
             FillBinomials(binomialsNo);
         }
-        binint binom(int N, int K);
+        binint binom(int L, int N);
 
     private:
         binomialArray binomials;
