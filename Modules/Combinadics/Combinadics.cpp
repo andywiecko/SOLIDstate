@@ -68,23 +68,28 @@ statenumber BaseStateNumberConverter::ToNumber(BaseState state)
 }
 */
 
+// converts number in sector to BaseState
 BaseState BaseStateNumberConverter::ToBaseState(Sector sector, statenumber number)
 {
 	BaseState ret;
 	ret.set_size(sector.L);
 	ret.fill(0);
-	statenumber Ntemp = sector.N;
-
-	for (statenumber i=0;i<number;i++)
+	statenumber Ntemp = number;
+	int N = sector.N;
+ 
+	for (int i=0;i<N;i++)
 	{
-		statenumber n = number-i-1;
+		int n = N-i-1;
 		
-		while(binomials.binom(n,number-i)<=Ntemp) n++;
-		
-		if (binomials.binom(n,number-i)>Ntemp) n=n-1;
-		
+		while(binomials.binom(n,N-i)<=Ntemp)
+		{
+			n++;
+		}
+
+		if (binomials.binom(n,N-i)>Ntemp) n=n-1;
+
 		ret(n) = 1;
-		Ntemp -= binomials.binom(n,number-i);
+		Ntemp -= binomials.binom(n,N-i);
 		
 	}
 	return ret;

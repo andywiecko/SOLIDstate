@@ -3,7 +3,7 @@
 int main()
 {
 
-	Ensemble ensemble = Factory::GenerateGrandCanonicalEnsemble(8);
+	Ensemble ensemble = Factory::GenerateGrandCanonicalEnsemble(4);
 
 	std::cout << ensemble.size << std::endl;
 	std::cout << ensemble.sectors[0].L << std::endl;
@@ -23,15 +23,17 @@ int main()
 
 	HilbertSpace space;
 	space.ensemble = ensemble;
+	
 	space.InitialBaseState();
-	std::cout << space.stateIndex << "\t" << space.stateIndex << std::endl;
-	space.baseState.print("state 0");
-	space.NextBaseState();
-	std::cout << space.stateIndex << "\t" << space.stateIndex << std::endl;
-	space.baseState.print("state 1");
+	std::cout << space.sectorIndex << "\t" << space.stateIndex << " |" ;
+	space.baseState.t().print();
+	
+	while(space.NextBaseState())
+	{
+		std::cout << space.sectorIndex << "\t" << space.stateIndex << " |";// << std::endl;
+		space.baseState.t().print();
+	}
 
-	Sector sector = ensemble.sectors[2];
-	BaseStateNumberConverter::ToBaseState(sector,2).print("lel");
-
+	
 	return 0;
 }

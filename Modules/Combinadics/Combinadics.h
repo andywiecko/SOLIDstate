@@ -26,7 +26,8 @@ class Binomials
 
 };
 
-
+// typedef for state enumeration
+// Hilbert space can be huge...
 typedef long int statenumber;
 
 class BaseState : public uvec

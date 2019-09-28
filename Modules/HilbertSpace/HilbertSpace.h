@@ -19,6 +19,7 @@ class HilbertSpace
 
     private:
         // saves size of the previous sectors
+        bool NextSector();
         statenumber sectorOffset = 0;
 
 };
