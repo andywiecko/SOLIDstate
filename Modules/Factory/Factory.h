@@ -6,38 +6,18 @@
 #include "../Ensemble/GrandCanonical.h"
 #include "../Hamiltonian/KitaevHamiltonian.h"
 
+// produces Ensembles, Hamiltonians, ...
 class Factory
 {
-	
 	public:
-		static Ensemble GenerateCanonicalEnsemble(int _L, int _N)
-		{
-			Canonical ensemble;
-			ensemble.L = _L;
-			ensemble.N = _N;
-			ensemble.SetSize();
-			ensemble.FillSectors();
-			return ensemble; 
-		}
-		
-		static Ensemble GenerateGrandCanonicalEnsemble(int _L)
-		{
-			GrandCanonical ensemble;
-			ensemble.L = _L;
-			ensemble.SetSize();
-			ensemble.FillSectors();
-			return ensemble; 
-		}
-		
-		
-		static KitaevHamiltonian CreateHamiltonian()
-		{
-			KitaevHamiltonian ham;
-			ham.FillElements();
-			return  ham;
-		}
+		// returns Canonial ensemble
+		static Ensemble GenerateCanonicalEnsemble(int _L, int _N);
 
-		
+		// returns GrandCanonial ensemble
+		static Ensemble GenerateGrandCanonicalEnsemble(int _L);
+				
+		// returns Kitaev Hamiltonian
+		static KitaevHamiltonian CreateHamiltonian();
 };
 
 #endif

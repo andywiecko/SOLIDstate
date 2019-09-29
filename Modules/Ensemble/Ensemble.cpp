@@ -1,7 +1,6 @@
 #include "Ensemble.h"
 
-#include "../Combinadics/Combinadics.h"
-
+#include "../Combinadics/Binomials.h"
 extern Binomials binomials;
 
 

@@ -1,6 +1,8 @@
 #ifndef SOLIDSTATE_H
 #define SOLIDSTATE_H
 
+#include "Combinadics/BaseState.h"
+#include "Combinadics/Binomials.h"
 #include "Combinadics/Combinadics.h"
 #include "Ensemble/Ensemble.h"
 #include "Ensemble/Canonical.h"

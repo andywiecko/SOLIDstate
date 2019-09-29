@@ -1,7 +1,7 @@
 #ifndef CANONICAL_H
 #define CANONICAL_H
 
-#include "../Combinadics/Combinadics.h"
+#include "../Combinadics/Binomials.h"
 extern Binomials binomials;
 
 class Canonical : public Ensemble, public IEnsemble
