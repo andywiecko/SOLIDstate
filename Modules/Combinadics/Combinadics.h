@@ -40,9 +40,12 @@ class BaseState : public baseStateContainer
         BaseState Reverse();
         bool Hop(int start, int stop);
         bool CountParticles();
-        bool CreateParticle(int a1);
-        bool CreatePair(int a1, int a2);
-        bool CreateTriple(int a1, int a2, int a3);
+        bool OneBodyInteraction(int site);
+        bool TwoBodyInteraction(int site1, int site2);
+        bool ThreeBodyInteraction(int site1, int site2, int site3);
+        bool CreateParticle(int site1);
+        bool CreatePair(int site1, int site2);
+        bool CreateTriple(int site1, int site2, int site3);
 };
 
 class BaseStateNumberConverter

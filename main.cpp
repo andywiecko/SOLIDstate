@@ -1,43 +1,74 @@
 #include "Modules/SOLIDstate.h"
 
+#include <armadillo>
+using namespace arma;
+
 int main()
 {
-
-	Info info;
-	//info.Tic();
-
-	HilbertSpace space;
-	Ensemble ensemble = Factory::GenerateGrandCanonicalEnsemble(4);
-	//Ensemble ensemble = Factory::GenerateCanonicalEnsemble(4,2);
+	Info info; int L=4;
 	
+	QuantumSystem<mat> qSystem;
+	
+	HilbertSpace space;
+	
+	Ensemble ensemble = Factory::GenerateGrandCanonicalEnsemble(L);
+	//Ensemble ensemble = Factory::GenerateCanonicalEnsemble(L,2);
 	info.ShowSectors(ensemble);
 	space.ensemble = ensemble;
 	
-	space.InitialBaseState();
-	std::cout << space.sectorIndex << "\t" << space.stateIndex << " |" ;
-	space.baseState.t().print();
-	
-	while(space.NextBaseState())
-	{
-		std::cout << space.sectorIndex << "\t" << space.stateIndex << " |";// << std::endl;
-		space.baseState.t().print();
-		// sector terms
 
+	qSystem.hilbertSpace = space;
+	
+	vec mu; mu.set_size(L); mu.fill(0);
+	mu(0) = 1.0;
+	mu(1) = 1.0;
+	mu(2) = 1.0;
+	mu(3) = 1.0;
+	qSystem.parameters = mu;
+	qSystem.parameters.t().print();
+
+
+	qSystem.hilbertSpace.InitialBaseState();
+	std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |" ;
+	qSystem.hilbertSpace.baseState.t().print();
+	
+	//qSystem.hilbertSpace.baseState.t().print();
+
+	qSystem.hamiltonian = Factory::CreateHamiltonian();
+	int size = qSystem.hilbertSpace.ensemble.size;
+	qSystem.hamiltonian.matrixElements.set_size(size,size);
+	qSystem.hamiltonian.matrixElements.fill(0);
+	//qSystem.hamiltonian.matrixElements.print();
+
+		int k = qSystem.hilbertSpace.stateIndex;
+		for(int i=0;i<qSystem.hilbertSpace.baseState.size();i++)
+		{
+			if (qSystem.hilbertSpace.baseState.OneBodyInteraction(i))
+			qSystem.hamiltonian.matrixElements(k,k) += qSystem.parameters(i);
+		}
+	while(qSystem.hilbertSpace.NextBaseState())
+	{
+		std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |";// << std::endl;
+		qSystem.hilbertSpace.baseState.t().print();
+		// sector terms
+		int k = qSystem.hilbertSpace.stateIndex+qSystem.hilbertSpace.sectorOffset;
+		for(int i=0;i<qSystem.hilbertSpace.baseState.size();i++)
+		{
+			if (qSystem.hilbertSpace.baseState.OneBodyInteraction(i))
+			qSystem.hamiltonian.matrixElements(k,k) += qSystem.parameters(i);
+		}
 		// inter-sector terms
 
 	}
 
-	BaseState state;
-	state.set_size(6);
-	state.fill(0);
-	state(0) = 1;
-	state(3) = 1;
+	qSystem.hamiltonian.matrixElements.print();
 
-	state.t().print();
-	BaseStateNumberConverter converter;
-	std::cout << converter.ToNumber(state);
-	Sector sector(6,2);
-	converter.ToBaseState(sector,3).t().print();
+	//ham.matrixElements.set_size(qSystem.hilbertSpace.ensemble.size,qSystem.hilbertSpace.ensemble.size);
+	//ham.matrixElements.fill(0);
+	//ham.matrixElements.print();
+
+ 
+
 	info.Time();
 	return 0;
 }

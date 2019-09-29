@@ -10,12 +10,7 @@ class KitaevHamiltonian : public Operator<mat>, public IHamiltonian
 
 		virtual void FillElements()
 		{
-			int size = 8;
-			matrixElements.set_size(size,size);
-			matrixElements.fill(1.0);
-		   
-			std::cout << size << std::endl;
-			//ParityGrandCanonical::SetSize();
+			
 			// terms
 		}
 

@@ -16,11 +16,11 @@ class HilbertSpace
         bool NextBaseState();
         statenumber stateIndex = 0;
         int sectorIndex = 0;
+        // ancillary variable for inserting inter-sector interaction elements
+        statenumber sectorOffset = 0;
 
     private:
         bool NextSector();
-        // ancillary variable for inserting inter-sector interaction elements
-        statenumber sectorOffset = 0;
 
 };
 

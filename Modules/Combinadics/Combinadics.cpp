@@ -58,6 +58,11 @@ BaseState BaseState::Reverse()
 	return ret;
 }
 
+bool BaseState::OneBodyInteraction(int site1)
+{
+	return (this->at(site1)==1 ? true : false);
+}
+
 statenumber BaseStateNumberConverter::ToNumber(BaseState state) 
 {
 	statenumber ret = 0;

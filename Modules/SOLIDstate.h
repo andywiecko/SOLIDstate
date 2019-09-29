@@ -11,5 +11,7 @@
 #include "Factory/Factory.h"
 #include "HilbertSpace/HilbertSpace.h"
 #include "Info/Info.h"
+#include "QuantumSystem/QuantumSystem.h"
+#include "Terms/Term.h"
 
 #endif

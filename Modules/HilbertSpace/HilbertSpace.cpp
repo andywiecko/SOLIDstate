@@ -30,6 +30,7 @@ bool HilbertSpace::NextSector()
     // next sector, reset stateIndex
     else
     {
+        sectorOffset += ensemble.sectors[sectorIndex].size;
         sectorIndex++; 
         stateIndex = 0;
         Sector sector = ensemble.sectors[sectorIndex];
