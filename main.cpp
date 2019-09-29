@@ -40,26 +40,7 @@ int main()
 	qSystem.hamiltonian.matrixElements.fill(0);
 	//qSystem.hamiltonian.matrixElements.print();
 
-		int k = qSystem.hilbertSpace.stateIndex;
-		for(int i=0;i<qSystem.hilbertSpace.baseState.size();i++)
-		{
-			if (qSystem.hilbertSpace.baseState.OneBodyInteraction(i))
-			qSystem.hamiltonian.matrixElements(k,k) += qSystem.parameters(i);
-		}
-	while(qSystem.hilbertSpace.NextBaseState())
-	{
-		std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |";// << std::endl;
-		qSystem.hilbertSpace.baseState.t().print();
-		// sector terms
-		int k = qSystem.hilbertSpace.stateIndex+qSystem.hilbertSpace.sectorOffset;
-		for(int i=0;i<qSystem.hilbertSpace.baseState.size();i++)
-		{
-			if (qSystem.hilbertSpace.baseState.OneBodyInteraction(i))
-			qSystem.hamiltonian.matrixElements(k,k) += qSystem.parameters(i);
-		}
-		// inter-sector terms
-
-	}
+	MatrixElementFiller::Fill(qSystem);
 
 	qSystem.hamiltonian.matrixElements.print();
 
