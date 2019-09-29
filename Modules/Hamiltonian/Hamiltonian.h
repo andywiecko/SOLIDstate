@@ -5,20 +5,35 @@
 #include <armadillo>
 using namespace arma;
 
+// Hamiltonian interface
 class IHamiltonian
 {
 	public:
-		virtual void FillElements() = 0;
+		virtual void SelectTerms() = 0;
 		virtual ~IHamiltonian(){}
 };
 
-// should be temaplate sparse, dense, complex double,...
+// Terms enabled in Operator
+class TermsEnabled
+{
+	public:
+		bool OneBodyTerm = false;
+		bool Hop = false;
+        bool OneBodyInteraction = false;
+        bool TwoBodyInteraction = false;
+        bool ThreeBodyInteraction = false;
+        bool CreateParticle = false;
+        bool CreatePair = false;
+        bool CreateTriple = false;
+};
+
+// TODO: should be temaplate sparse, dense, complex double,...
 template<class T>
 class Operator
 {
 	public:
 		T matrixElements;
-	public:
+		TermsEnabled termsEnabled;
 		virtual ~Operator(){}
 };
 

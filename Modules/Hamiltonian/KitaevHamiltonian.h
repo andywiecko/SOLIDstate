@@ -8,9 +8,9 @@ class KitaevHamiltonian : public Operator<mat>, public IHamiltonian
 {
 	public:
 
-		virtual void FillElements()
+		virtual void SelectTerms()
 		{
-			
+			termsEnabled.OneBodyInteraction = true;
 			// terms
 		}
 

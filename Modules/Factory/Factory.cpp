@@ -25,6 +25,6 @@ Ensemble Factory::GenerateGrandCanonicalEnsemble(int _L)
 KitaevHamiltonian Factory::CreateHamiltonian()
 {
 	KitaevHamiltonian ham;
-	ham.FillElements();
+	ham.SelectTerms();
 	return  ham;
 }
