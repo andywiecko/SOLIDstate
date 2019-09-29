@@ -7,12 +7,10 @@ src=$(wildcard Modules/*/*.cpp\
 	  main.cpp)
 obj=$(src:.cpp=.o)
 
-%.o: %.cpp %.h
-	$(CC) -o $@ -c $< -std=c++11
+myprog.exe: $(obj)
+	$(CC) -o $@ $^ $(LIBS) $(CFLAGS)
 
-main.o: main.cpp $(obj)
-	$(CC) -o main.exe $^ $(LIBS) $(CFLAGS)
 
 .PHONY : clean
 clean:
-	rm -f $(obj) main.exe
+	rm -f $(obj) 
