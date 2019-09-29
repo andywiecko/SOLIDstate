@@ -27,6 +27,17 @@ int main()
 
 	}
 
+	BaseState state;
+	state.set_size(6);
+	state.fill(0);
+	state(0) = 1;
+	state(3) = 1;
+
+	state.t().print();
+	BaseStateNumberConverter converter;
+	std::cout << converter.ToNumber(state);
+	Sector sector(6,2);
+	converter.ToBaseState(sector,3).t().print();
 	info.Time();
 	return 0;
 }

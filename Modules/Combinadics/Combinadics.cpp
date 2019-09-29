@@ -3,6 +3,8 @@
 // Combinadics -- combinatorial number system for states enumaration
 
 #include <vector>
+#include <armadillo>
+using namespace arma;
 
 typedef unsigned int binint;
 typedef std::vector<binint> vecint;
@@ -33,15 +35,28 @@ void Binomials::FillBinomials(int L)
 
 }
 
-// returns binomial L over N
 binint Binomials::binom(int L, int N)
 {
     if (L < N) return 0;
 	return binomials[L][N];
 }
 
+// global binomials 
+// TODO move this to some class as static field
 Binomials binomials;
 
+BaseState BaseState::Reverse()
+{
+	BaseState ret;
+	uword size = this->size();
+	ret.set_size(size);
+	for (uword i=0;i<size;i++)
+	{
+		ret(size-1-i) = this->at(i);
+	}
+	
+	return ret;
+}
 
 statenumber BaseStateNumberConverter::ToNumber(BaseState state) 
 {
@@ -50,26 +65,22 @@ statenumber BaseStateNumberConverter::ToNumber(BaseState state)
 	for (int i=0;i<state.size();i++)
 		if (state(i) == 1) k++;
 
-	return ret;
-}	
-	/*
-	//std::string temp = reverse(state);
+	
+	BaseState temp = state.Reverse();
 	
 	for (int i=0;i<temp.size();i++)
 	{
-		if (temp[i] == '1')
+		if (temp(i) == 1)
 		{
-			ret += binomial(temp.size()-1-i,k);
+			ret += binomials.binom(temp.size()-1-i,k);
 			k--;
 		}
 	}
-	*/
-//	return ret;
-/*
-}
-*/
+	
+	return ret;
 
-// converts number in sector to BaseState
+}
+
 BaseState BaseStateNumberConverter::ToBaseState(Sector sector, statenumber number)
 {
 	BaseState ret;

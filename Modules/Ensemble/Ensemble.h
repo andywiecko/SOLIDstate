@@ -13,6 +13,7 @@ class Sector
 		int N;
 		// number of states in the sector (dimension of the subspace)
 		int size;
+		// Sector with L sites and N particles
 		Sector(int _L, int _N);
 };
 

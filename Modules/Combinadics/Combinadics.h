@@ -14,6 +14,7 @@ typedef std::vector< std::vector<binint> > binomialArray;
 class Binomials
 {
     public:
+        // returns binomial L over N
         Binomials()
         {
             FillBinomials(binomialsNo);
@@ -29,10 +30,14 @@ class Binomials
 // typedef for state enumeration
 // Hilbert space can be huge...
 typedef long int statenumber;
+// typedef for BaseState data container
+typedef uvec baseStateContainer;
 
-class BaseState : public uvec
+class BaseState : public baseStateContainer
 {
     public:
+        // returns reversed BaseState
+        BaseState Reverse();
         bool Hop(int start, int stop);
         bool CountParticles();
         bool CreateParticle(int a1);
@@ -43,7 +48,9 @@ class BaseState : public uvec
 class BaseStateNumberConverter
 {
     public:
-        statenumber ToNumber(BaseState state);
+        // converts state to number
+        static statenumber ToNumber(BaseState state);
+        // converts number in sector to BaseState
         static BaseState ToBaseState(Sector sector, statenumber number);
         
 };
