@@ -16,7 +16,7 @@ bool HilbertSpace::NextBaseState()
     Sector sector = ensemble.sectors[sectorIndex];
     // check if this is the last sector
     if (stateIndex == sector.size-1) return NextSector();
-    stateIndex++;
+    stateIndex++; stateTotalIndex++;
     baseState = BaseStateNumberConverter::ToBaseState(sector,stateIndex);
     return true;
 }
@@ -31,8 +31,8 @@ bool HilbertSpace::NextSector()
     else
     {
         sectorOffset += ensemble.sectors[sectorIndex].size;
-        sectorIndex++; 
-        stateIndex = 0;
+        sectorIndex++;
+        stateIndex = 0; stateTotalIndex++;
         Sector sector = ensemble.sectors[sectorIndex];
         baseState = BaseStateNumberConverter::ToBaseState(sector,0);
         return true;

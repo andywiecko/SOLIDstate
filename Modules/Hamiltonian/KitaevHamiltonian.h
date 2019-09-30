@@ -7,14 +7,12 @@
 class KitaevHamiltonian : public Operator<mat>, public IHamiltonian
 {
 	public:
-
 		virtual void SelectTerms()
 		{
+			// Fermions are default, but it is good to stress out
+			termsEnabled.particles = Particles::Fermions;
 			termsEnabled.OneBodyInteraction = true;
-			// terms
 		}
-
-
 };
 
 #endif

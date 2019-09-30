@@ -14,7 +14,7 @@
 #include "HilbertSpace/HilbertSpace.h"
 #include "Info/Info.h"
 #include "QuantumSystem/QuantumSystem.h"
-#include "Terms/Term.h"
+#include "Terms/Terms.h"
 #include "MatrixElementFiller/MatrixElementFiller.h"
 
 #endif

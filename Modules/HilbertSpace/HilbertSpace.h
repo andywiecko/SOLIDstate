@@ -15,6 +15,7 @@ class HilbertSpace
         void InitialBaseState();
         bool NextBaseState();
         statenumber stateIndex = 0;
+        statenumber stateTotalIndex = 0;
         int sectorIndex = 0;
         // ancillary variable for inserting inter-sector interaction elements
         statenumber sectorOffset = 0;

@@ -9,15 +9,25 @@ using namespace arma;
 class IHamiltonian
 {
 	public:
+		// See TermsEnabled for defaults
+		// Hop (not implemented yet)
+        // OneBodyInteraction
+        // TwoBodyInteraction (not implemented yet)
+        // ThreeBodyInteraction (not implemented yet)
+        // CreateParticle (not implemented yet)
+        // CreatePair (not implemented yet)
+        // CreateTriple (not implemented yet)
 		virtual void SelectTerms() = 0;
 		virtual ~IHamiltonian(){}
 };
+
+enum class Particles {Fermions, Spins};
 
 // Terms enabled in Operator
 class TermsEnabled
 {
 	public:
-		bool OneBodyTerm = false;
+		Particles particles = Particles::Fermions;
 		bool Hop = false;
         bool OneBodyInteraction = false;
         bool TwoBodyInteraction = false;
