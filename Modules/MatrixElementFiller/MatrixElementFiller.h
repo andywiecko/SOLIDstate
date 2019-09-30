@@ -9,7 +9,8 @@
 class MatrixElementFiller
 {
     public:
-        static void Fill(QuantumSystem<mat> & qSystem)
+        template <typename T>
+        static void Fill(QuantumSystem<T> & qSystem)
         {
             Particles selectedParticles = qSystem.hamiltonian.termsEnabled.particles;
             switch (selectedParticles)
@@ -25,7 +26,8 @@ class MatrixElementFiller
         }
 
     private:
-        static void FermionFiller(QuantumSystem<mat> & qSystem)
+        template <typename T>
+        static void FermionFiller(QuantumSystem<T> & qSystem)
         {
             // initialisation of the base state
             qSystem.hilbertSpace.InitialBaseState();
@@ -40,7 +42,8 @@ class MatrixElementFiller
             while(qSystem.hilbertSpace.NextBaseState());
         }
 
-        static void SpinFiller(QuantumSystem<mat> & qSystem)
+        template <typename T>
+        static void SpinFiller(QuantumSystem<T> & qSystem)
         {
             // initialisation of the base state
             qSystem.hilbertSpace.InitialBaseState();
