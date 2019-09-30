@@ -35,6 +35,7 @@ class TermsEnabled
         bool CreateParticle = false;
         bool CreatePair = false;
         bool CreateTriple = false;
+		bool N05option = false;
 };
 
 // TODO: should be temaplate sparse, dense, complex double,...

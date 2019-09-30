@@ -32,7 +32,8 @@ class MatrixElementFiller
             {
                 // TODO selecting particles then selecting Terms implementation
                 // sector terms
-                OneBodyInteractionTerm::FillElements(qSystem);
+                if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
+                    OneBodyInteractionTermFermions::FillElements(qSystem);
             }
             // do until last base state in the ensemble
             while(qSystem.hilbertSpace.NextBaseState());
@@ -45,7 +46,8 @@ class MatrixElementFiller
             do
             {
                 //TODO
-
+                if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
+                    OneBodyInteractionTermSpins::FillElements(qSystem);
             }
             while(qSystem.hilbertSpace.NextBaseState());
         }

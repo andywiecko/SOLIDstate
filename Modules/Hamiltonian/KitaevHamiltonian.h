@@ -12,6 +12,7 @@ class KitaevHamiltonian : public Operator<mat>, public IHamiltonian
 			// Fermions are default, but it is good to stress out
 			termsEnabled.particles = Particles::Fermions;
 			termsEnabled.OneBodyInteraction = true;
+			//termsEnabled.N05option = true;
 		}
 };
 
