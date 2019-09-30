@@ -3,6 +3,7 @@
 
 #include "../QuantumSystem/QuantumSystem.h"
 #include "../Terms/Terms.h"
+#include "../Terms/OneBodyInteraction.h"
 
 // fills the Quantum System matrix elements
 class MatrixElementFiller
