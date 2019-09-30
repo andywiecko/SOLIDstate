@@ -4,14 +4,15 @@
 #include <iostream>
 #include "Hamiltonian.h"
 
-class KitaevHamiltonian : public Operator<mat>, public IHamiltonian
+template <typename T>
+class KitaevHamiltonian : public Operator<T>, public IHamiltonian
 {
 	public:
 		virtual void SelectTerms()
 		{
 			// Fermions are default, but it is good to stress out
-			termsEnabled.particles = Particles::Fermions;
-			termsEnabled.OneBodyInteraction = true;
+			this->termsEnabled.particles = Particles::Fermions;
+			this->termsEnabled.OneBodyInteraction = true;
 			//termsEnabled.N05option = true;
 		}
 };

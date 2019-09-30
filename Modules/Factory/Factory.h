@@ -17,7 +17,8 @@ class Factory
 		static Ensemble GenerateGrandCanonicalEnsemble(int _L);
 				
 		// returns Kitaev Hamiltonian
-		static KitaevHamiltonian CreateHamiltonian();
+		template <class T>
+		static KitaevHamiltonian<T> CreateHamiltonian();
 };
 
 #endif

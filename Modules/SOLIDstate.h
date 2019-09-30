@@ -14,6 +14,7 @@
 #include "Hamiltonian/KitaevHamiltonian.h"
 
 #include "Factory/Factory.h"
+
 #include "HilbertSpace/HilbertSpace.h"
 #include "Info/Info.h"
 #include "QuantumSystem/QuantumSystem.h"

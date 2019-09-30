@@ -22,9 +22,16 @@ Ensemble Factory::GenerateGrandCanonicalEnsemble(int _L)
 	return ensemble; 
 }
 
-KitaevHamiltonian Factory::CreateHamiltonian()
+template <class T>
+KitaevHamiltonian<T> Factory::CreateHamiltonian()
 {
-	KitaevHamiltonian ham;
+	KitaevHamiltonian<T> ham;
 	ham.SelectTerms();
-	return  ham;
+	return ham;
 }
+
+// TODO
+// ugly! 
+// template initilizers
+template KitaevHamiltonian<mat> Factory::CreateHamiltonian<mat>();
+template KitaevHamiltonian<cx_mat> Factory::CreateHamiltonian<cx_mat>();
