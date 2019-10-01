@@ -35,3 +35,5 @@ KitaevHamiltonian<T> Factory::CreateHamiltonian()
 // template initilizers
 template KitaevHamiltonian<mat> Factory::CreateHamiltonian<mat>();
 template KitaevHamiltonian<cx_mat> Factory::CreateHamiltonian<cx_mat>();
+template KitaevHamiltonian<sp_mat> Factory::CreateHamiltonian<sp_mat>();
+template KitaevHamiltonian<sp_cx_mat> Factory::CreateHamiltonian<sp_cx_mat>();

@@ -30,7 +30,7 @@ int main()
 	qSystem.hamiltonian = Factory::CreateHamiltonian<mat>();
 	int size = qSystem.hilbertSpace.ensemble.size;
 	qSystem.hamiltonian.matrixElements.set_size(size,size);
-	qSystem.hamiltonian.matrixElements.fill(0);
+	if (typeid(mat) == typeid(mat) )qSystem.hamiltonian.matrixElements.fill(0);
 
 	MatrixElementFiller::Fill(qSystem);
 
