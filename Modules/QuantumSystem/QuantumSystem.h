@@ -3,14 +3,15 @@
 
 #include "../HilbertSpace/HilbertSpace.h"
 #include "../Hamiltonian/Hamiltonian.h"
+#include "../Parameters/Parameters.h"
 
-template<class T>
+template<class T1, typename T2>
 class QuantumSystem
 {
     public:
         HilbertSpace hilbertSpace;
-        Operator<T> hamiltonian;
-        vec parameters;
+        Operator<T1> hamiltonian;
+        Parameters<T2> parameters;
 
 };
 

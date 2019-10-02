@@ -7,7 +7,7 @@ int main()
 {
 	Info info; int L=4;
 	
-	QuantumSystem<mat> qSystem;
+	QuantumSystem<mat,sp_mat> qSystem;
 	
 	HilbertSpace space;
 	
@@ -21,11 +21,13 @@ int main()
 
 
 	vec mu; mu.set_size(L); mu.fill(1);
-	qSystem.parameters = mu;
-	qSystem.parameters.t().print();
+	//qSystem.parameters = mu;
 	
 	Parameters<sp_mat> param;
 	param.parameters['M'] = mu;
+
+	qSystem.parameters = param;
+	qSystem.parameters.parameters['M'];
 
 	qSystem.hilbertSpace.InitialBaseState();
 	std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |" ;
