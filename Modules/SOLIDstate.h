@@ -24,4 +24,6 @@
 
 #include "MatrixElementFiller/MatrixElementFiller.h"
 
+#include "Parameters/Parameters.h"
+
 #endif

@@ -18,10 +18,14 @@ int main()
 	
 
 	qSystem.hilbertSpace = space;
-	
+
+
 	vec mu; mu.set_size(L); mu.fill(1);
 	qSystem.parameters = mu;
 	qSystem.parameters.t().print();
+	
+	Parameters<sp_mat> param;
+	param.parameters['M'] = mu;
 
 	qSystem.hilbertSpace.InitialBaseState();
 	std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |" ;
