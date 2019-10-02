@@ -4,11 +4,10 @@
 #include <map>
 
 template <typename T>
-class Parameters
+class Parameters : public std::map<char, T>
 {
-    public:
-        std::map<char, T> parameters;
-
+    //public:
+    //std::map<char, T> parameters;
 };
 
 #endif

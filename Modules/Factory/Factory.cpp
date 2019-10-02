@@ -10,7 +10,7 @@ Ensemble Factory::GenerateCanonicalEnsemble(int _L, int _N)
 	ensemble.N = _N;
 	ensemble.SetSize();
 	ensemble.FillSectors();
-	return ensemble; 
+	return ensemble;
 }
 
 Ensemble Factory::GenerateGrandCanonicalEnsemble(int _L)
@@ -19,7 +19,7 @@ Ensemble Factory::GenerateGrandCanonicalEnsemble(int _L)
 	ensemble.L = _L;
 	ensemble.SetSize();
 	ensemble.FillSectors();
-	return ensemble; 
+	return ensemble;
 }
 
 template <class T>
@@ -31,7 +31,7 @@ KitaevHamiltonian<T> Factory::CreateHamiltonian()
 }
 
 // TODO
-// ugly! 
+// ugly!
 // template initilizers
 template KitaevHamiltonian<mat> Factory::CreateHamiltonian<mat>();
 template KitaevHamiltonian<cx_mat> Factory::CreateHamiltonian<cx_mat>();

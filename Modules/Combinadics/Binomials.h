@@ -7,22 +7,21 @@
 // Binomials setting
 const int binomialsNo = 30;
 typedef unsigned int binint;
-typedef std::vector< std::vector<binint> > binomialArray;
+typedef std::vector<std::vector<binint>> binomialArray;
 
 class Binomials
 {
-    public:
-        // returns binomial L over N
-        Binomials()
-        {
-            FillBinomials(binomialsNo);
-        }
-        binint binom(int L, int N);
+public:
+    // returns binomial L over N
+    Binomials()
+    {
+        FillBinomials(binomialsNo);
+    }
+    binint binom(int L, int N);
 
-    private:
-        binomialArray binomials;
-        void FillBinomials(int L);
-
+private:
+    binomialArray binomials;
+    void FillBinomials(int L);
 };
 
 #endif

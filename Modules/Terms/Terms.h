@@ -3,13 +3,11 @@
 
 #include "../QuantumSystem/QuantumSystem.h"
 
-
 class ITerm
 {
-	public:
-		virtual void FillElements() = 0;
-		virtual ~ITerm(){}
+public:
+	virtual void FillElements() = 0;
+	virtual ~ITerm() {}
 };
-
 
 #endif

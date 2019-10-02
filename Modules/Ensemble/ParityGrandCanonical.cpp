@@ -3,4 +3,3 @@
 #include <cmath>
 
 #include "ParityGrandCanonical.h"
-
