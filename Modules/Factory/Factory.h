@@ -17,8 +17,8 @@ public:
 	static Ensemble GenerateGrandCanonicalEnsemble(int _L);
 
 	// returns Kitaev Hamiltonian
-	template <class T>
-	static KitaevHamiltonian<T> CreateHamiltonian();
+	template <template<typename> class T1, typename T2>
+	static KitaevHamiltonian<T1,T2> CreateHamiltonian();
 };
 
 #endif

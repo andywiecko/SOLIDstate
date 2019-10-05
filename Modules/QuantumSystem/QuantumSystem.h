@@ -5,12 +5,12 @@
 #include "../Hamiltonian/Hamiltonian.h"
 #include "../Parameters/Parameters.h"
 
-template <class T1, typename T2>
+template <template<typename> class T1, typename T2>
 class QuantumSystem
 {
 public:
     HilbertSpace hilbertSpace;
-    Operator<T1> hamiltonian;
+    Operator<T1,T2> hamiltonian;
     Parameters<T2> parameters;
 };
 

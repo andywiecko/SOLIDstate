@@ -7,18 +7,18 @@
 class OneBodyInteractionTermFermions : public ITerm
 {
 public:
-	template <typename T1, typename T2>
+	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };
 
 class OneBodyInteractionTermSpins : public ITerm
 {
 public:
-	template <typename T1, typename T2>
+	template <template<typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };
 
-template <typename T1, typename T2>
+template <template<typename> class T1, typename T2>
 void OneBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem)
 {
 	int k = qSystem.hilbertSpace.stateTotalIndex;
@@ -32,7 +32,7 @@ void OneBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem
 	}
 }
 
-template <typename T1, typename T2>
+template <template<typename> class T1, typename T2>
 void OneBodyInteractionTermSpins::FillElements(QuantumSystem<T1, T2> &qSystem)
 {
 	int k = qSystem.hilbertSpace.stateTotalIndex;

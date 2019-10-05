@@ -4,8 +4,8 @@
 #include <iostream>
 #include "Hamiltonian.h"
 
-template <typename T>
-class KitaevHamiltonian : public Operator<T>, public IHamiltonian
+template <template<typename> class T1,typename T2>
+class KitaevHamiltonian : public Operator<T1,T2>, public IHamiltonian
 {
 public:
 	virtual void SelectTerms()

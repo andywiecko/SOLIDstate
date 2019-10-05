@@ -43,11 +43,11 @@ public:
 };
 
 // TODO: should be temaplate sparse, dense, complex double,...
-template <class T>
+template <template <typename> class T1,typename T2>
 class Operator
 {
 public:
-	T matrixElements;
+	T1<T2> matrixElements;
 	TermsEnabled termsEnabled;
 	virtual ~Operator() {}
 };

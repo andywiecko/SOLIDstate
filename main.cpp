@@ -8,7 +8,7 @@ int main()
 	Info info;
 	int L = 4;
 
-	QuantumSystem<mat, sp_mat> qSystem;
+	QuantumSystem<Mat,double> qSystem;
 
 	HilbertSpace space;
 
@@ -24,7 +24,7 @@ int main()
 	mu.fill(1);
 	//qSystem.parameters = mu;
 
-	Parameters<sp_mat> param;
+	Parameters<double> param;
 
 	param['M'] = mu;
 
@@ -35,7 +35,7 @@ int main()
 	std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |";
 	qSystem.hilbertSpace.baseState.t().print();
 
-	qSystem.hamiltonian = Factory::CreateHamiltonian<mat>();
+	qSystem.hamiltonian = Factory::CreateHamiltonian<Mat,double>();
 	int size = qSystem.hilbertSpace.ensemble.size;
 	qSystem.hamiltonian.matrixElements.set_size(size, size);
 	if (typeid(mat) == typeid(mat))

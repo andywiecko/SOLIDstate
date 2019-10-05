@@ -22,10 +22,10 @@ Ensemble Factory::GenerateGrandCanonicalEnsemble(int _L)
 	return ensemble;
 }
 
-template <class T>
-KitaevHamiltonian<T> Factory::CreateHamiltonian()
+template <template<typename> class T1, typename T2>
+KitaevHamiltonian<T1,T2> Factory::CreateHamiltonian()
 {
-	KitaevHamiltonian<T> ham;
+	KitaevHamiltonian<T1,T2> ham;
 	ham.SelectTerms();
 	return ham;
 }
@@ -33,7 +33,7 @@ KitaevHamiltonian<T> Factory::CreateHamiltonian()
 // TODO
 // ugly!
 // template initilizers
-template KitaevHamiltonian<mat> Factory::CreateHamiltonian<mat>();
-template KitaevHamiltonian<cx_mat> Factory::CreateHamiltonian<cx_mat>();
-template KitaevHamiltonian<sp_mat> Factory::CreateHamiltonian<sp_mat>();
-template KitaevHamiltonian<sp_cx_mat> Factory::CreateHamiltonian<sp_cx_mat>();
+template KitaevHamiltonian<Mat,double> Factory::CreateHamiltonian<Mat,double>();
+template KitaevHamiltonian<Mat,cx_double> Factory::CreateHamiltonian<Mat,cx_double>();
+template KitaevHamiltonian<SpMat,double> Factory::CreateHamiltonian<SpMat,double>();
+template KitaevHamiltonian<SpMat,cx_double> Factory::CreateHamiltonian<SpMat,cx_double>();
