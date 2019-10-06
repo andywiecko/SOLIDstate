@@ -35,7 +35,7 @@ int main()
 	std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |";
 	qSystem.hilbertSpace.baseState.t().print();
 
-	qSystem.hamiltonian = Factory::CreateHamiltonian<Mat,double>();
+	qSystem.hamiltonian = Factory::CreateHamiltonian<KitaevHamiltonian<Mat,double>>();
 	int size = qSystem.hilbertSpace.ensemble.size;
 	qSystem.hamiltonian.matrixElements.set_size(size, size);
 	if (typeid(mat) == typeid(mat))
