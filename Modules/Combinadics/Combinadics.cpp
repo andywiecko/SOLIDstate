@@ -1,4 +1,4 @@
-#include "Combinadics.h"
+#include "Combinadics.hpp"
 
 // Combinadics -- combinatorial number system for states enumaration
 
@@ -6,7 +6,7 @@
 #include <armadillo>
 using namespace arma;
 
-#include "../Combinadics/Binomials.h"
+#include "../Combinadics/Binomials.hpp"
 extern Binomials binomials;
 
 statenumber BaseStateNumberConverter::ToNumber(BaseState state)

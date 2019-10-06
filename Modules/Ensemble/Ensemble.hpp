@@ -1,5 +1,5 @@
-#ifndef ENSEMBLE_H
-#define ENSEMBLE_H
+#ifndef ENSEMBLE_HPP
+#define ENSEMBLE_HPP
 
 #include <vector>
 

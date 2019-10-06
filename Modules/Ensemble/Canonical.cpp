@@ -1,4 +1,4 @@
 
-#include "Ensemble.h"
+#include "Ensemble.hpp"
 
-#include "Canonical.h"
+#include "Canonical.hpp"

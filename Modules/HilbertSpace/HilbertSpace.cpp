@@ -1,4 +1,4 @@
-#include "HilbertSpace.h"
+#include "HilbertSpace.hpp"
 
 // selecting first sector and initilizing the baseState
 void HilbertSpace::InitialBaseState()

@@ -1,5 +1,5 @@
-#ifndef HAMILTONIAN_H
-#define HAMILTONIAN_H
+#ifndef HAMILTONIAN_HPP
+#define HAMILTONIAN_HPP
 
 #include <cmath>
 #include <armadillo>

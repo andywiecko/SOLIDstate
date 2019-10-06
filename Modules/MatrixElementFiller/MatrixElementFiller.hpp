@@ -1,9 +1,9 @@
-#ifndef MATRIXELEMENTFILLER_H
-#define MATRIXELEMENTFILLER_H
+#ifndef MATRIXELEMENTFILLER_HPP
+#define MATRIXELEMENTFILLER_HPP
 
-#include "../QuantumSystem/QuantumSystem.h"
-#include "../Terms/Terms.h"
-#include "../Terms/OneBodyInteraction.h"
+#include "../QuantumSystem/QuantumSystem.hpp"
+#include "../Terms/Terms.hpp"
+#include "../Terms/OneBodyInteraction.hpp"
 
 // fills the Quantum System matrix elements
 class MatrixElementFiller

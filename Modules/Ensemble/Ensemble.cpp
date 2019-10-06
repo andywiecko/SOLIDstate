@@ -1,6 +1,6 @@
-#include "Ensemble.h"
+#include "Ensemble.hpp"
 
-#include "../Combinadics/Binomials.h"
+#include "../Combinadics/Binomials.hpp"
 extern Binomials binomials;
 
 Sector::Sector(int _L, int _N)

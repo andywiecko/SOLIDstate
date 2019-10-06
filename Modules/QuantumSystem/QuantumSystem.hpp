@@ -1,9 +1,9 @@
-#ifndef QUANTUMSYSTEM_H
-#define QUANTUMSYSTEM_H
+#ifndef QUANTUMSYSTEM_HPP
+#define QUANTUMSYSTEM_HPP
 
-#include "../HilbertSpace/HilbertSpace.h"
-#include "../Hamiltonian/Hamiltonian.h"
-#include "../Parameters/Parameters.h"
+#include "../HilbertSpace/HilbertSpace.hpp"
+#include "../Hamiltonian/Hamiltonian.hpp"
+#include "../Parameters/Parameters.hpp"
 
 template <template<typename> class T1, typename T2>
 class QuantumSystem

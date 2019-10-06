@@ -1,5 +1,5 @@
-#ifndef INFO_H
-#define INFO_H
+#ifndef INFO_HPP
+#define INFO_HPP
 
 #include <iostream>
 #include <vector>

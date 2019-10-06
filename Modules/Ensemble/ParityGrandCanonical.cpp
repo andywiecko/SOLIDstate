@@ -1,5 +1,5 @@
 
-#include "Ensemble.h"
+#include "Ensemble.hpp"
 #include <cmath>
 
-#include "ParityGrandCanonical.h"
+#include "ParityGrandCanonical.hpp"

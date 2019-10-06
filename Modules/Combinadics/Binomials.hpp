@@ -1,5 +1,5 @@
-#ifndef BINOMIALS_H
-#define BINOMIALS_H
+#ifndef BINOMIALS_HPP
+#define BINOMIALS_HPP
 
 #include <armadillo>
 #include <vector>

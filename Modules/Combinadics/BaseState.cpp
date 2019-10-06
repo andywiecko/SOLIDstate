@@ -1,4 +1,4 @@
-#include "BaseState.h"
+#include "BaseState.hpp"
 #include <armadillo>
 using namespace arma;
 

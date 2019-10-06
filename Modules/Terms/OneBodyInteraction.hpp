@@ -1,8 +1,8 @@
-#ifndef ONEBODYINTERACTION_H
-#define ONEBODYINTERACTION_H
+#ifndef ONEBODYINTERACTION_HPP
+#define ONEBODYINTERACTION_HPP
 
-#include "../QuantumSystem/QuantumSystem.h"
-#include "Terms.h"
+#include "../QuantumSystem/QuantumSystem.hpp"
+#include "Terms.hpp"
 
 class OneBodyInteractionTermFermions : public ITerm
 {

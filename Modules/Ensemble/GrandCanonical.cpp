@@ -1,5 +1,5 @@
 
-#include "Ensemble.h"
+#include "Ensemble.hpp"
 #include <cmath>
 
-#include "GrandCanonical.h"
+#include "GrandCanonical.hpp"

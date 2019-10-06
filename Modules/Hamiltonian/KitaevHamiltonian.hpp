@@ -1,8 +1,8 @@
-#ifndef KITAEVHAMILTONIAN_H
-#define KITAEVHAMILTONIAN_H
+#ifndef KITAEVHAMILTONIAN_HPP
+#define KITAEVHAMILTONIAN_HPP
 
 #include <iostream>
-#include "Hamiltonian.h"
+#include "Hamiltonian.hpp"
 
 template <template<typename> class T1,typename T2>
 class KitaevHamiltonian : public Operator<T1,T2>, public IHamiltonian

@@ -1,8 +1,8 @@
-#ifndef HILBERTSPACE_H
-#define HILBERTSPACE_H
+#ifndef HILBERTSPACE_HPP
+#define HILBERTSPACE_HPP
 
-#include "../Ensemble/Ensemble.h"
-#include "../Combinadics/Combinadics.h"
+#include "../Ensemble/Ensemble.hpp"
+#include "../Combinadics/Combinadics.hpp"
 
 // main purpose: state enumeration within the sectors
 // class contains

@@ -1,4 +1,4 @@
-#include "Binomials.h"
+#include "Binomials.hpp"
 
 #include <vector>
 #include <armadillo>

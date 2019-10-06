@@ -1,10 +1,10 @@
-#ifndef FACTORY_H
-#define FACTORY_H
+#ifndef FACTORY_HPP
+#define FACTORY_HPP
 
-#include "../Ensemble/Ensemble.h"
-#include "../Ensemble/Canonical.h"
-#include "../Ensemble/GrandCanonical.h"
-#include "../Hamiltonian/KitaevHamiltonian.h"
+#include "../Ensemble/Ensemble.hpp"
+#include "../Ensemble/Canonical.hpp"
+#include "../Ensemble/GrandCanonical.hpp"
+#include "../Hamiltonian/KitaevHamiltonian.hpp"
 
 // produces Ensembles, Hamiltonians, ...
 class Factory

@@ -1,5 +1,5 @@
-#ifndef GRANDCANONICAL_H
-#define GRANDCANONICAL_H
+#ifndef GRANDCANONICAL_HPP
+#define GRANDCANONICAL_HPP
 
 #include <cmath>
 

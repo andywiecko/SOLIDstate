@@ -1,5 +1,5 @@
-#ifndef BASESTATE_H
-#define BASESTATE_H
+#ifndef BASESTATE_HPP
+#define BASESTATE_HPP
 
 #include <armadillo>
 using namespace arma;

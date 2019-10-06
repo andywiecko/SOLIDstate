@@ -1,4 +1,4 @@
 
 #include <armadillo>
 
-#include "Hamiltonian.h"
+#include "Hamiltonian.hpp"

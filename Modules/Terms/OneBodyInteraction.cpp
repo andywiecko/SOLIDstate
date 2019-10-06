@@ -1,1 +1,1 @@
-#include "OneBodyInteraction.h"
+#include "OneBodyInteraction.hpp"

@@ -1,5 +1,5 @@
-#include "../Ensemble/Ensemble.h"
-#include "Info.h"
+#include "../Ensemble/Ensemble.hpp"
+#include "Info.hpp"
 
 void StandardMessages::Line()
 {

@@ -7,7 +7,7 @@ src=$(wildcard Modules/*/*.cpp\
 	  main.cpp)
 obj=$(src:.cpp=.o)
 
-%.o: %.cpp %.h
+%.o: %.cpp %.hpp
 	$(CC) -o $@ -c $< -std=c++11
 
 main.o: main.cpp $(obj)

@@ -1,4 +1,4 @@
-#include "Modules/SOLIDstate.h"
+#include "Modules/SOLIDstate.hpp"
 
 #include <armadillo>
 using namespace arma;
@@ -6,7 +6,7 @@ using namespace arma;
 int main()
 {
 	Info info;
-	int L = 4;
+	int L = 3;
 
 	QuantumSystem<Mat,double> qSystem;
 

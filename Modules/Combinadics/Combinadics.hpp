@@ -1,11 +1,11 @@
-#ifndef COMBINADICS_H
-#define COMBINADICS_H
+#ifndef COMBINADICS_HPP
+#define COMBINADICS_HPP
 
 #include <vector>
 #include <armadillo>
 using namespace arma;
-#include "../Ensemble/Ensemble.h"
-#include "BaseState.h"
+#include "../Ensemble/Ensemble.hpp"
+#include "BaseState.hpp"
 
 class BaseStateNumberConverter
 {

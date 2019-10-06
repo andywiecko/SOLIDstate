@@ -1,7 +1,7 @@
-#ifndef TERM_H
-#define TERM_H
+#ifndef TERM_HPP
+#define TERM_HPP
 
-#include "../QuantumSystem/QuantumSystem.h"
+#include "../QuantumSystem/QuantumSystem.hpp"
 
 class ITerm
 {

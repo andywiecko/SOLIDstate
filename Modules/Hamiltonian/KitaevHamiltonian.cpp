@@ -1,2 +1,2 @@
-#include "Hamiltonian.h"
-#include "KitaevHamiltonian.h"
+#include "Hamiltonian.hpp"
+#include "KitaevHamiltonian.hpp"

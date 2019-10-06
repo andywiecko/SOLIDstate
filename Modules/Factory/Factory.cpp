@@ -1,7 +1,7 @@
 #include <cmath>
 #include <armadillo>
 
-#include "Factory.h"
+#include "Factory.hpp"
 
 Ensemble Factory::GenerateCanonicalEnsemble(int _L, int _N)
 {

@@ -1,3 +1,3 @@
 #include <armadillo>
 
-#include "SOLIDstate.h"
+#include "SOLIDstate.hpp"
