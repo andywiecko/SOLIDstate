@@ -5,7 +5,7 @@ void HilbertSpace::InitialBaseState()
 {
     baseState.set_size(ensemble.L);
     Sector sector = ensemble.sectors[0];
-    std::cout << sector.size << std::endl;
+    //std::cout << sector.size << std::endl;
     baseState = BaseStateNumberConverter::ToBaseState(sector, 0);
 }
 

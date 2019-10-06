@@ -4,6 +4,7 @@
 #include "../QuantumSystem/QuantumSystem.hpp"
 #include "../Terms/Terms.hpp"
 #include "../Terms/OneBodyInteraction.hpp"
+#include <armadillo>
 
 // fills the Quantum System matrix elements
 class MatrixElementFiller
@@ -12,6 +13,7 @@ public:
     template <template<typename> class T1, typename T2>
     static void Fill(QuantumSystem<T1, T2> &qSystem)
     {
+        WarmUp(qSystem);
         Particles selectedParticles = qSystem.hamiltonian.termsEnabled.particles;
         switch (selectedParticles)
         {
@@ -25,6 +27,15 @@ public:
     }
 
 private:
+    template <template<typename>class T1, typename T2>
+    static void WarmUp(QuantumSystem<T1, T2> &qSystem)
+    {
+        int size = qSystem.hilbertSpace.ensemble.size;
+	    qSystem.hamiltonian.matrixElements.set_size(size, size);
+	    if (typeid(T1<T2>) == typeid(arma::Mat<T2>))
+		    qSystem.hamiltonian.matrixElements.fill(0);
+    }
+
     template <template<typename>class T1, typename T2>
     static void FermionFiller(QuantumSystem<T1, T2> &qSystem)
     {

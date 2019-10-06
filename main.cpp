@@ -12,10 +12,11 @@ int main()
 
 	HilbertSpace space;
 
-	Ensemble ensemble = Factory::GenerateGrandCanonicalEnsemble(L);
+	space.ensemble = Factory::GenerateGrandCanonicalEnsemble(L);
+
 	//Ensemble ensemble = Factory::GenerateCanonicalEnsemble(L,2);
-	info.ShowSectors(ensemble);
-	space.ensemble = ensemble;
+	//info.ShowSectors(ensemble);
+	//space.ensemble = ensemble;
 
 	qSystem.hilbertSpace = space;
 
@@ -31,15 +32,13 @@ int main()
 	qSystem.parameters = param;
 	qSystem.parameters['M'];
 
-	qSystem.hilbertSpace.InitialBaseState();
-	std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |";
-	qSystem.hilbertSpace.baseState.t().print();
+	//qSystem.hilbertSpace.InitialBaseState();
+	//std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |";
+	//qSystem.hilbertSpace.baseState.t().print();
 
 	qSystem.hamiltonian = Factory::CreateHamiltonian<KitaevHamiltonian<Mat,double>>();
-	int size = qSystem.hilbertSpace.ensemble.size;
-	qSystem.hamiltonian.matrixElements.set_size(size, size);
-	if (typeid(mat) == typeid(mat))
-		qSystem.hamiltonian.matrixElements.fill(0);
+	
+
 
 	MatrixElementFiller::Fill(qSystem);
 
