@@ -3,12 +3,15 @@
 #include <armadillo>
 using namespace arma;
 
-int main()
+int main(int argc, char *argv[])
 {
+
+	ArgvParser::Parse(argc,argv);	
+
 	Info info;
 	int L = 3;
 
-	QuantumSystem<Mat,double> qSystem;
+	QuantumSystem<Mat, double> qSystem;
 
 	HilbertSpace space;
 
@@ -36,9 +39,7 @@ int main()
 	//std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |";
 	//qSystem.hilbertSpace.baseState.t().print();
 
-	qSystem.hamiltonian = Factory::CreateHamiltonian<KitaevHamiltonian<Mat,double>>();
-	
-
+	qSystem.hamiltonian = Factory::CreateHamiltonian<KitaevHamiltonian<Mat, double>>();
 
 	MatrixElementFiller::Fill(qSystem);
 

@@ -16,7 +16,10 @@
 #include "Factory/Factory.hpp"
 
 #include "HilbertSpace/HilbertSpace.hpp"
+
 #include "Info/Info.hpp"
+#include "Info/argv.hpp"
+
 #include "QuantumSystem/QuantumSystem.hpp"
 
 #include "Terms/Terms.hpp"
