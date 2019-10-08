@@ -25,22 +25,25 @@ int main(int argc, char *argv[])
 
 	vec mu;
 	mu.set_size(L);
-	mu.fill(1);
+	mu.fill(0.);
+
+	sp_mat V;V.set_size(L,L);
+	V(0,1) = 1;
 	//qSystem.parameters = mu;
 
 	Parameters<double> param;
 
 	param['M'] = mu;
+	param['V'] = V;
 
 	qSystem.parameters = param;
-	qSystem.parameters['M'];
-
+	
 	//qSystem.hilbertSpace.InitialBaseState();
 	//std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |";
 	//qSystem.hilbertSpace.baseState.t().print();
 
+	
 	qSystem.hamiltonian = Factory::CreateHamiltonian<KitaevHamiltonian<Mat, double>>();
-
 	MatrixElementFiller::Fill(qSystem);
 
 	qSystem.hamiltonian.matrixElements.print();

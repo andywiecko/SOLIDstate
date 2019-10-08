@@ -48,6 +48,7 @@ private:
             // sector terms
             if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
                 OneBodyInteractionTermFermions::FillElements(qSystem);
+
             if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
                 TwoBodyInteractionTermFermions::FillElements(qSystem);
 
@@ -63,11 +64,10 @@ private:
         qSystem.hilbertSpace.InitialBaseState();
         do
         {
-            //TODO
             if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
                 OneBodyInteractionTermSpins::FillElements(qSystem);
             if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
-                TwoBodyInteractionTermFermions::FillElements(qSystem);
+                TwoBodyInteractionTermSpins::FillElements(qSystem);
         } while (qSystem.hilbertSpace.NextBaseState());
     }
 };

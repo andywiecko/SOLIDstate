@@ -7,13 +7,14 @@
 template <template<typename> class T1,typename T2>
 class KitaevHamiltonian : public Operator<T1,T2>, public IHamiltonian
 {
+	using Operator<T1,T2>::termsEnabled;
 public:
-	virtual void SelectTerms()
+	void SelectTerms()
 	{
 		// Fermions are default, but it is good to stress out
-		this->termsEnabled.particles = Particles::Fermions;
-		this->termsEnabled.OneBodyInteraction = true;
-		this->termsEnabled.TwoBodyInteraction = true;
+		termsEnabled.particles = Particles::Fermions;
+		termsEnabled.OneBodyInteraction = true;
+		termsEnabled.TwoBodyInteraction = true;
 		//termsEnabled.N05option = true;
 	}
 };

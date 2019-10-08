@@ -26,6 +26,7 @@ template <class T>
 T Factory::CreateHamiltonian()
 {
 	T ham;
+	std::cout << "selecting terms..." << std::endl;
 	ham.SelectTerms();
 	return ham;
 }
