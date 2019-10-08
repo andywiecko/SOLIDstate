@@ -13,6 +13,7 @@ public:
 		// Fermions are default, but it is good to stress out
 		this->termsEnabled.particles = Particles::Fermions;
 		this->termsEnabled.OneBodyInteraction = true;
+		this->termsEnabled.TwoBodyInteraction = true;
 		//termsEnabled.N05option = true;
 	}
 };

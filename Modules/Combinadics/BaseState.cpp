@@ -19,3 +19,8 @@ bool BaseState::OneBodyInteraction(int site1)
 {
 	return (this->at(site1) == 1 ? true : false);
 }
+
+bool BaseState::TwoBodyInteraction(int site1, int site2)
+{
+	return (this->at(site1) == 1 && this->at(site2) == 1 ? true : false);
+}
