@@ -44,7 +44,7 @@ void TwoBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem
 			Hij += 0.25 * V(i,j);
 		}
 	}
-    qSystem.hamiltonian.matrixElements(k, k) = Hij;
+    qSystem.hamiltonian.matrixElements(k, k) += Hij;
 }
 
 template <template<typename> class T1, typename T2>

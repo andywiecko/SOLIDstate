@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 	vec mu;
 	mu.set_size(L);
-	mu.fill(0.);
+	mu.fill(1);
 
 	sp_mat V;V.set_size(L,L);
 	V(0,1) = 1;
