@@ -7,6 +7,9 @@ using namespace arma;
 #include "../Ensemble/Ensemble.hpp"
 #include "BaseState.hpp"
 
+namespace solid
+{
+
 class BaseStateNumberConverter
 {
 public:
@@ -15,5 +18,7 @@ public:
     // converts number in sector to BaseState
     static BaseState ToBaseState(Sector sector, statenumber number);
 };
+
+} // namespace solid
 
 #endif

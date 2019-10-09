@@ -3,7 +3,9 @@
 
 #include <unistd.h>
 #include <iostream>
-
+namespace solid
+{
+    
 class ArgvParser
 {
 
@@ -17,14 +19,14 @@ public:
             switch (option)
             {
             case 'c':
-                std::cout << "option -"<<char(option)<<" selected\n";
+                std::cout << "option -" << char(option) << " selected\n";
                 break;
             case 'v':
-                std::cout << "option -"<<char(option)<<" selected\n";
+                std::cout << "option -" << char(option) << " selected\n";
                 std::cout << "Version v0.1\n";
                 break;
             case 'f':
-                std::cout << "option -"<<char(option)<<" selected\n";
+                std::cout << "option -" << char(option) << " selected\n";
                 break;
             case ':':
                 std::cout << "option -" << char(optopt) << " requires argument\n";
@@ -42,5 +44,7 @@ public:
             std::cout << "argv[" << optind << "] = '" << argv[optind] << "'\n";
     }
 };
+
+} // namespace solid
 
 #endif

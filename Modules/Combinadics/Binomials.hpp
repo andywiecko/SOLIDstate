@@ -4,6 +4,9 @@
 #include <armadillo>
 #include <vector>
 
+namespace solid
+{
+    
 // Binomials setting
 const int binomialsNo = 30;
 typedef unsigned int binint;
@@ -23,5 +26,7 @@ private:
     binomialArray binomials;
     void FillBinomials(int L);
 };
+
+} // namespace solid
 
 #endif

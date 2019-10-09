@@ -4,10 +4,14 @@
 #include <iostream>
 #include "Hamiltonian.hpp"
 
-template <template<typename> class T1,typename T2>
-class KitaevHamiltonian : public Operator<T1,T2>, public IHamiltonian
+namespace solid
 {
-	using Operator<T1,T2>::termsEnabled;
+
+template <template <typename> class T1, typename T2>
+class KitaevHamiltonian : public Operator<T1, T2>, public IHamiltonian
+{
+	using Operator<T1, T2>::termsEnabled;
+
 public:
 	void SelectTerms()
 	{
@@ -18,5 +22,7 @@ public:
 		//termsEnabled.N05option = true;
 	}
 };
+
+} // namespace solid
 
 #endif

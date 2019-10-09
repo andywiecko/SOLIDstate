@@ -3,6 +3,9 @@
 
 #include <vector>
 
+namespace solid
+{
+	
 // contains information about number of sites and particles in the sector
 class Sector
 {
@@ -36,5 +39,7 @@ public:
 	std::vector<Sector> sectors;
 	virtual ~Ensemble() {}
 };
+
+} // namespace solid
 
 #endif

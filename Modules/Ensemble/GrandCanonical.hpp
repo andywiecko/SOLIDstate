@@ -2,7 +2,9 @@
 #define GRANDCANONICAL_HPP
 
 #include <cmath>
-
+namespace solid
+{
+	
 class GrandCanonical : public Ensemble, public IEnsemble
 {
 public:
@@ -19,5 +21,7 @@ public:
 		}
 	}
 };
+
+} // namespace solid
 
 #endif

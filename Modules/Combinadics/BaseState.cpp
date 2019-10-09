@@ -2,6 +2,9 @@
 #include <armadillo>
 using namespace arma;
 
+namespace solid
+{
+
 BaseState BaseState::Reverse()
 {
 	BaseState ret;
@@ -23,4 +26,6 @@ bool BaseState::OneBodyInteraction(int site1)
 bool BaseState::TwoBodyInteraction(int site1, int site2)
 {
 	return (this->at(site1) == 1 && this->at(site2) == 1 ? true : false);
+}
+
 }

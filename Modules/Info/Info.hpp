@@ -6,6 +6,9 @@
 #include <armadillo>
 using namespace arma;
 
+namespace solid
+{
+
 class StandardMessages
 {
 public:
@@ -38,5 +41,7 @@ class Info : public StandardMessages, public Timer
 public:
 	Info();
 };
+
+} // namespace solid
 
 #endif

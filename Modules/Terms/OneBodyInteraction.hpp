@@ -3,7 +3,9 @@
 
 #include "../QuantumSystem/QuantumSystem.hpp"
 #include "Terms.hpp"
-
+namespace solid
+{
+	
 class OneBodyInteractionTermFermions : public ITerm
 {
 public:
@@ -14,8 +16,10 @@ public:
 class OneBodyInteractionTermSpins : public ITerm
 {
 public:
-	template <template<typename> class T1, typename T2>
+	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };
+
+} // namespace solid
 
 #endif

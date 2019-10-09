@@ -4,6 +4,8 @@
 #include <cmath>
 #include <armadillo>
 using namespace arma;
+namespace solid
+{
 
 // Hamiltonian interface
 class IHamiltonian
@@ -43,7 +45,7 @@ public:
 };
 
 // TODO: should be temaplate sparse, dense, complex double,...
-template <template <typename> class T1,typename T2>
+template <template <typename> class T1, typename T2>
 class Operator
 {
 public:
@@ -51,5 +53,7 @@ public:
 	TermsEnabled termsEnabled;
 	virtual ~Operator() {}
 };
+
+} // namespace solid
 
 #endif

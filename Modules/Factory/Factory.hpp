@@ -6,6 +6,9 @@
 #include "../Ensemble/GrandCanonical.hpp"
 #include "../Hamiltonian/KitaevHamiltonian.hpp"
 
+namespace solid
+{
+	
 // produces Ensembles, Hamiltonians, ...
 class Factory
 {
@@ -20,5 +23,7 @@ public:
 	template <class T>
 	static T CreateHamiltonian();
 };
+
+} // namespace solid
 
 #endif

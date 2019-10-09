@@ -6,6 +6,8 @@
 #include "../Terms/OneBodyInteraction.hpp"
 #include "../Terms/TwoBodyInteraction.hpp"
 #include <armadillo>
+namespace solid
+{
 
 // fills the Quantum System matrix elements
 class MatrixElementFiller
@@ -71,5 +73,7 @@ private:
         } while (qSystem.hilbertSpace.NextBaseState());
     }
 };
+
+} // namespace solid
 
 #endif

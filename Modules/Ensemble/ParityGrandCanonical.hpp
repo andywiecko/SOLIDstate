@@ -2,7 +2,9 @@
 #define PARITYGRANDCANONICAL_HPP
 
 #include <cmath>
-
+namespace solid
+{
+	
 class ParityGrandCanonical : public Ensemble, public IEnsemble
 {
 public:
@@ -13,5 +15,7 @@ public:
 	}
 	virtual void FillSectors() {}
 };
+
+} // namespace solid
 
 #endif

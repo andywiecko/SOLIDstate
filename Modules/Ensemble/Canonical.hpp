@@ -2,6 +2,10 @@
 #define CANONICAL_HPP
 
 #include "../Combinadics/Binomials.hpp"
+
+namespace solid
+{
+
 extern Binomials binomials;
 
 class Canonical : public Ensemble, public IEnsemble
@@ -18,5 +22,7 @@ public:
 		sectors.push_back(sector);
 	}
 };
+
+} // namespace solid
 
 #endif

@@ -2,7 +2,8 @@
 #include <armadillo>
 
 #include "Factory.hpp"
-
+namespace solid
+{
 Ensemble Factory::GenerateCanonicalEnsemble(int _L, int _N)
 {
 	Canonical ensemble;
@@ -38,3 +39,5 @@ template KitaevHamiltonian<Mat,double> Factory::CreateHamiltonian<KitaevHamilton
 //template KitaevHamiltonian<Mat,cx_double> Factory::CreateHamiltonian<Mat,cx_double>();
 //template KitaevHamiltonian<SpMat,double> Factory::CreateHamiltonian<SpMat,double>();
 //template KitaevHamiltonian<SpMat,cx_double> Factory::CreateHamiltonian<SpMat,cx_double>();
+
+}

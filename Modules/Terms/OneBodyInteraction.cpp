@@ -1,5 +1,6 @@
 #include "OneBodyInteraction.hpp"
-
+namespace solid
+{
 template <template<typename> class T1, typename T2>
 void OneBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem)
 {
@@ -33,3 +34,4 @@ void OneBodyInteractionTermSpins::FillElements(QuantumSystem<T1, T2> &qSystem)
 
 template void OneBodyInteractionTermFermions::FillElements<Mat,double>(QuantumSystem<Mat,double> &qSystem);
 template void OneBodyInteractionTermSpins::FillElements<Mat,double>(QuantumSystem<Mat,double> &qSystem);
+}

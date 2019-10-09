@@ -7,6 +7,9 @@
 using namespace arma;
 
 #include "../Combinadics/Binomials.hpp"
+
+namespace solid
+{
 extern Binomials binomials;
 
 statenumber BaseStateNumberConverter::ToNumber(BaseState state)
@@ -55,4 +58,6 @@ BaseState BaseStateNumberConverter::ToBaseState(Sector sector, statenumber numbe
 		Ntemp -= binomials.binom(n, N - i);
 	}
 	return ret;
+}
+
 }

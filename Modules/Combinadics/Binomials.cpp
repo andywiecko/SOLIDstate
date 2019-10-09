@@ -4,6 +4,8 @@
 #include <armadillo>
 using namespace arma;
 
+namespace solid
+{
 // typedef for binomials container
 typedef unsigned int binint;
 // typedef for binomials container
@@ -46,3 +48,4 @@ binint Binomials::binom(int L, int N)
 // global binomials
 // TODO move this to some class as static field
 Binomials binomials;
+}

@@ -3,7 +3,9 @@
 
 #include "../Ensemble/Ensemble.hpp"
 #include "../Combinadics/Combinadics.hpp"
-
+namespace solid
+{
+    
 // main purpose: state enumeration within the sectors
 // class contains
 // - Base State
@@ -26,5 +28,7 @@ public:
 private:
     bool NextSector();
 };
+
+} // namespace solid
 
 #endif

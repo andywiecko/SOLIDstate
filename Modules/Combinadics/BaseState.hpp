@@ -4,6 +4,9 @@
 #include <armadillo>
 using namespace arma;
 
+namespace solid
+{
+    
 // typedef for state enumeration
 // Hilbert space can be huge...
 typedef long int statenumber;
@@ -24,5 +27,7 @@ public:
     bool CreatePair(int site1, int site2);
     bool CreateTriple(int site1, int site2, int site3);
 };
+
+} // namespace solid
 
 #endif

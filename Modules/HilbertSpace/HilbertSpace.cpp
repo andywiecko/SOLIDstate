@@ -1,5 +1,6 @@
 #include "HilbertSpace.hpp"
-
+namespace solid
+{
 // selecting first sector and initilizing the baseState
 void HilbertSpace::InitialBaseState()
 {
@@ -41,4 +42,5 @@ bool HilbertSpace::NextSector()
         baseState = BaseStateNumberConverter::ToBaseState(sector, 0);
         return true;
     }
+}
 }
