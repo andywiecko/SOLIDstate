@@ -5,7 +5,7 @@
 #include "../Combinadics/Combinadics.hpp"
 namespace solid
 {
-    
+
 // main purpose: state enumeration within the sectors
 // class contains
 // - Base State
@@ -17,6 +17,9 @@ public:
     Ensemble ensemble;
     void InitialBaseState();
     bool NextBaseState();
+    void Reset();
+
+private:
     // enumerates the states inside the sector
     statenumber stateIndex = 0;
     // enumerates the states inside the ensemble (all sectors)
@@ -24,8 +27,6 @@ public:
     int sectorIndex = 0;
     // ancillary variable for inserting inter-sector interaction elements
     statenumber sectorOffset = 0;
-
-private:
     bool NextSector();
 };
 

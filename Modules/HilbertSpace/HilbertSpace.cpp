@@ -1,14 +1,25 @@
 #include "HilbertSpace.hpp"
 namespace solid
 {
+
+void HilbertSpace::Reset()
+{
+    stateIndex = 0;
+    stateTotalIndex = 0;
+    sectorIndex = 0;
+    sectorOffset = 0;
+}
+
 // selecting first sector and initilizing the baseState
 void HilbertSpace::InitialBaseState()
 {
+    Reset();
     baseState.set_size(ensemble.L);
     Sector sector = ensemble.sectors[0];
     //std::cout << sector.size << std::endl;
     baseState = BaseStateNumberConverter::ToBaseState(sector, 0);
 }
+
 
 // selecting next baseState in HilbertSpace
 // returns false if this is the last state

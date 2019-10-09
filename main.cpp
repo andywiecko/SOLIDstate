@@ -39,16 +39,18 @@ int main(int argc, char *argv[])
 
 	qSystem.parameters = param;
 	
-	//qSystem.hilbertSpace.InitialBaseState();
-	//std::cout << qSystem.hilbertSpace.sectorIndex << "\t" << qSystem.hilbertSpace.stateIndex << " |";
-	//qSystem.hilbertSpace.baseState.t().print();
-
-	
 	qSystem.hamiltonian = Factory::CreateHamiltonian<KitaevHamiltonian<Mat, double>>();
 	MatrixElementFiller::Fill(qSystem);
-
 	qSystem.hamiltonian.matrixElements.print();
 
+	ParticleNumberOperator<Mat,double> Nop(L);
+	Observable<Mat,double> nop = Nop;
+	qSystem.hamiltonian = nop._operator;
+	qSystem.parameters = nop.parameters;
+
+	MatrixElementFiller::Fill(qSystem);
+	qSystem.hamiltonian.matrixElements.print();
+	
 	info.Time();
 	return 0;
 }

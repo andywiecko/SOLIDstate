@@ -28,6 +28,8 @@
 
 #include "MatrixElementFiller/MatrixElementFiller.hpp"
 
+#include "Observable/Observable.hpp"
+
 #include "Parameters/Parameters.hpp"
 
 #endif
