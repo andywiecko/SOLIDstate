@@ -49,8 +49,15 @@ int main(int argc, char *argv[])
 	qSystem.parameters = nop.parameters;
 
 	MatrixElementFiller::Fill(qSystem);
+
+	qSystem.hamiltonian.matrixElements.diag() = \
+	vec(qSystem.hamiltonian.matrixElements.diag()).transform([](double val){ return std::pow(-1,val);});
+
 	qSystem.hamiltonian.matrixElements.print();
 	
+	arma_version version;
+	std::cout << "armadillo  version: " << version.as_string() << "\n";
+	std::cout << "solidstate version: " << SolidState::version << "\n";
 	info.Time();
 	return 0;
 }

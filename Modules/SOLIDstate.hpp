@@ -32,4 +32,6 @@
 
 #include "Parameters/Parameters.hpp"
 
+#include "Version.hpp"
+
 #endif
