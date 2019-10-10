@@ -2,6 +2,7 @@
 #include <armadillo>
 
 #include "Factory.hpp"
+
 namespace solid
 {
 Ensemble Factory::GenerateCanonicalEnsemble(int _L, int _N)
@@ -32,10 +33,18 @@ T Factory::CreateHamiltonian()
 	return ham;
 }
 
+template <class T>
+T Factory::CreateObservable(int L)
+{
+	T observable(L);
+	return observable;
+}
+
 // TODO
 // ugly!
 // template initilizers
 template KitaevHamiltonian<Mat,double> Factory::CreateHamiltonian<KitaevHamiltonian<Mat,double>>();
+template ParticleNumberOperator<Mat,double> Factory::CreateObservable<ParticleNumberOperator<Mat,double>>(int);
 //template KitaevHamiltonian<Mat,cx_double> Factory::CreateHamiltonian<Mat,cx_double>();
 //template KitaevHamiltonian<SpMat,double> Factory::CreateHamiltonian<SpMat,double>();
 //template KitaevHamiltonian<SpMat,cx_double> Factory::CreateHamiltonian<SpMat,cx_double>();

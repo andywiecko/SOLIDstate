@@ -2,6 +2,7 @@
 #define OBSERVABLE_HPP
 
 #include "../Hamiltonian/Hamiltonian.hpp"
+#include "../Parameters/Parameters.hpp"
 
 namespace solid
 {

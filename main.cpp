@@ -43,15 +43,16 @@ int main(int argc, char *argv[])
 	MatrixElementFiller::Fill(qSystem);
 	qSystem.hamiltonian.matrixElements.print();
 
-	ParticleNumberOperator<Mat,double> Nop(L);
-	Observable<Mat,double> nop = Nop;
+	//ParticleNumberOperator<Mat,double> Nop(L);
+	Observable<Mat,double> nop = Factory::CreateObservable<ParticleNumberOperator<Mat,double> >(L);
 	qSystem.hamiltonian = nop._operator;
 	qSystem.parameters = nop.parameters;
 
 	MatrixElementFiller::Fill(qSystem);
 
 	qSystem.hamiltonian.matrixElements.diag() = \
-	vec(qSystem.hamiltonian.matrixElements.diag()).transform([](double val){ return std::pow(-1,val);});
+	vec(qSystem.hamiltonian.matrixElements.diag()).transform\
+	([](double val){ return std::pow(-1,val);});
 
 	qSystem.hamiltonian.matrixElements.print();
 	
