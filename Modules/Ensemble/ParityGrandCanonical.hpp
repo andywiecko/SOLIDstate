@@ -9,9 +9,9 @@ class ParityGrandCanonical : public Ensemble, public IEnsemble
 {
 public:
 	int parity = 0;
-	ParityGrandCanonical(int _L,int _parity)
+	ParityGrandCanonical(int _L, int _parity)
 	{
-		L=_L;
+		L = _L;
 		parity = _parity; // TODO modulo
 	}
 	void SetSize()

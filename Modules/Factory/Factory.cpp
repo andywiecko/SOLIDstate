@@ -5,9 +5,12 @@
 
 namespace solid
 {
+
 Ensemble Factory::GenerateCanonicalEnsemble(int _L, int _N)
 {
 	Canonical ensemble(_L,_N);
+	ensemble.L=_L;
+	ensemble.N=_N;
 	ensemble.SetSize();
 	ensemble.FillSectors();
 	return ensemble;

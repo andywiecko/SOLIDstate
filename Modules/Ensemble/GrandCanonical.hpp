@@ -4,13 +4,13 @@
 #include <cmath>
 namespace solid
 {
-	
+
 class GrandCanonical : public Ensemble, public IEnsemble
 {
 public:
 	GrandCanonical(int _L)
 	{
-		L=_L;
+		L = _L;
 	}
 	void SetSize()
 	{

@@ -14,8 +14,8 @@ public:
 	int N = 0;
 	Canonical(int _L, int _N)
 	{
-		int L = _L;
-		int N = _N;
+		L = _L;
+		N = _N;
 	}
 	void SetSize()
 	{
