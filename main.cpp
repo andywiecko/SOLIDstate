@@ -18,6 +18,8 @@ int main(int argc, char *argv[])
 
 	space.ensemble = Factory::GenerateGrandCanonicalEnsemble(L);
 
+	//Ensemble canonicalExample = Factory::GenerateEnsemble<GrandCanonical>(4);
+
 	//Ensemble ensemble = Factory::GenerateCanonicalEnsemble(L,2);
 	//info.ShowSectors(ensemble);
 	//space.ensemble = ensemble;

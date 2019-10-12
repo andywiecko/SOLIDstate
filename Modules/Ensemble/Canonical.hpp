@@ -12,11 +12,16 @@ class Canonical : public Ensemble, public IEnsemble
 {
 public:
 	int N = 0;
-	virtual void SetSize()
+	Canonical(int _L, int _N)
+	{
+		int L = _L;
+		int N = _N;
+	}
+	void SetSize()
 	{
 		size = binomials.binom(L, N); // TODO binomial
 	}
-	virtual void FillSectors()
+	void FillSectors()
 	{
 		Sector sector(L, N);
 		sectors.push_back(sector);

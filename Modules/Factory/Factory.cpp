@@ -7,9 +7,7 @@ namespace solid
 {
 Ensemble Factory::GenerateCanonicalEnsemble(int _L, int _N)
 {
-	Canonical ensemble;
-	ensemble.L = _L;
-	ensemble.N = _N;
+	Canonical ensemble(_L,_N);
 	ensemble.SetSize();
 	ensemble.FillSectors();
 	return ensemble;
@@ -17,11 +15,26 @@ Ensemble Factory::GenerateCanonicalEnsemble(int _L, int _N)
 
 Ensemble Factory::GenerateGrandCanonicalEnsemble(int _L)
 {
-	GrandCanonical ensemble;
-	ensemble.L = _L;
+	GrandCanonical ensemble(_L);
 	ensemble.SetSize();
 	ensemble.FillSectors();
 	return ensemble;
+}
+
+Ensemble Factory::GenerateParityGrandCanonicalEnsemble(int _L,int _parity)
+{
+	ParityGrandCanonical ensemble(_L,_parity);
+	ensemble.SetSize();
+	ensemble.FillSectors();
+	return ensemble;
+}
+
+template <class T,typename ... Targs> 
+T Factory::GenerateEnsemble(Targs... Frags)
+{
+	T ensemble(Frags...);
+	ensemble.SetSize();
+	ensemble.FillSectors();
 }
 
 template <class T>
@@ -43,6 +56,8 @@ T Factory::CreateObservable(int L)
 // TODO
 // ugly!
 // template initilizers
+template Canonical Factory::GenerateEnsemble<Canonical>(int,int);
+template GrandCanonical Factory::GenerateEnsemble<GrandCanonical>(int);
 template KitaevHamiltonian<Mat,double> Factory::CreateHamiltonian<KitaevHamiltonian<Mat,double>>();
 template ParticleNumberOperator<Mat,double> Factory::CreateObservable<ParticleNumberOperator<Mat,double>>(int);
 //template KitaevHamiltonian<Mat,cx_double> Factory::CreateHamiltonian<Mat,cx_double>();
