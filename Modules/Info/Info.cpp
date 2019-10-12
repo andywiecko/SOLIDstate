@@ -5,7 +5,7 @@ namespace solid
 	
 void StandardMessages::Line()
 {
-	std::cout << "#####################################" << std::endl;
+	std::cout << std::string(50,'#') << std::endl;
 }
 
 void StandardMessages::ShowSectors(Ensemble ensemble)

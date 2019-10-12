@@ -15,25 +15,18 @@ namespace solid
 class Factory
 {
 public:
-	// returns Canonial ensemble
-	static Ensemble GenerateCanonicalEnsemble(int _L, int _N);
 
-	// returns GrandCanonial ensemble
-	static Ensemble GenerateGrandCanonicalEnsemble(int _L);
-
-	// returns ParityGrandCanonial ensemble
-	static Ensemble GenerateParityGrandCanonicalEnsemble(int _L,int _parity);
-
+	// returns selected ensemble
 	template <class T,typename ... Targs> 
-    static T GenerateEnsemble(Targs...);
+    static T CreateEnsemble(Targs...);
 
-	// returns desired Hamiltonian
+	// returns selected Hamiltonian
 	template <class T>
 	static T CreateHamiltonian();
 
-	// returns desired Observable
-	template <class T>
-	static T CreateObservable(int L);
+	// returns selected Observable
+	template <class T,typename ... Targs>
+	static T CreateObservable(Targs ...);
 };
 
 } // namespace solid

@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <armadillo>
-using namespace arma;
 
 namespace solid
 {
@@ -19,7 +18,7 @@ public:
 class Timer
 {
 public:
-	wall_clock timer;
+	arma::wall_clock timer;
 	double timeInSec;
 	void Tic()
 	{
@@ -36,7 +35,15 @@ public:
 	}
 };
 
-class Info : public StandardMessages, public Timer
+class staticTimer
+{
+public:
+	static arma::wall_clock timer;
+
+};
+
+class Info : public StandardMessages,
+			 public Timer
 {
 public:
 	Info();

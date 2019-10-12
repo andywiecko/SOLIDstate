@@ -4,29 +4,32 @@
 using namespace arma;
 using namespace solid;
 
+wall_clock clockss;
+wall_clock staticTimer::timer = clockss;
+
 int main(int argc, char *argv[])
 {
 
-	ArgvParser::Parse(argc,argv);	
+	ArgvParser::Parse(argc, argv);
 
 	Info info;
+
+	staticTimer::timer.tic();
+	std::cout << staticTimer::timer.toc() << std::endl;
+	;
+
 	int L = 3;
 
 	QuantumSystem<Mat, double> qSystem;
 
 	HilbertSpace space;
 
-	//space.ensemble = Factory::GenerateEnsemble<GrandCanonical>(L);
-	space.ensemble = Factory::GenerateEnsemble<Canonical>(L,L/2);
-	//space.ensemble = Factory::GenerateEnsemble<ParityGrandCanonical>(L,0);
-	
-	//Ensemble canonicalExample = Factory::GenerateEnsemble<GrandCanonical>(4); 
-	//std::cout << canonicalExample.L << std::endl;
-	//info.ShowSectors(canonicalExample);
+	space.ensemble = Factory::CreateEnsemble<GrandCanonical>(L);
+	//space.ensemble = Factory::CreateEnsemble<Canonical>(L,L/2);
+	//space.ensemble = Factory::CreateEnsemble<ParityGrandCanonical>(L,0);
 
-	//Ensemble ensemble = Factory::GenerateCanonicalEnsemble(L,2);
+	Ensemble ensemble = Factory::CreateEnsemble<GrandCanonical>(L);
 	//info.ShowSectors(ensemble);
-	//space.ensemble = ensemble;
 
 	qSystem.hilbertSpace = space;
 
@@ -34,9 +37,9 @@ int main(int argc, char *argv[])
 	mu.set_size(L);
 	mu.fill(1);
 
-	sp_mat V;V.set_size(L,L);
-	V(0,1) = 1;
-	//qSystem.parameters = mu;
+	sp_mat V;
+	V.set_size(L, L);
+	V(0, 1) = 1;
 
 	Parameters<double> param;
 
@@ -51,21 +54,24 @@ int main(int argc, char *argv[])
 	qSystem.hamiltonian.matrixElements.print();
 
 	//ParticleNumberOperator<Mat,double> Nop(L);
-	Observable<Mat,double> nop = Factory::CreateObservable<ParticleNumberOperator<Mat,double> >(L);
+	Observable<Mat, double> nop = Factory::CreateObservable<ParticleNumberOperator<Mat, double>>(L);
 	qSystem.hamiltonian = nop._operator;
 	qSystem.parameters = nop.parameters;
 
 	MatrixElementFiller::Fill(qSystem);
 
-	qSystem.hamiltonian.matrixElements.diag() = \
-	vec(qSystem.hamiltonian.matrixElements.diag()).transform\
-	([](double val){ return std::pow(-1,val);});
+	qSystem.hamiltonian.matrixElements.diag() =
+		vec(qSystem.hamiltonian.matrixElements.diag()).transform([](double val) { return std::pow(-1, val); });
 
 	qSystem.hamiltonian.matrixElements.print();
-	
+
 	arma_version version;
 	std::cout << "armadillo  version: " << version.as_string() << "\n";
 	std::cout << "solidstate version: " << SolidState::version << "\n";
 	info.Time();
+
+	std::cout << staticTimer::timer.toc() << std::endl;
+	;
+
 	return 0;
 }
