@@ -16,9 +16,10 @@ int main(int argc, char *argv[])
 
 	HilbertSpace space;
 
-	space.ensemble = Factory::GenerateEnsemble<GrandCanonical>(L);
-	//space.ensemble = Factory::GenerateEnsemble<GrandCanonical>(L); 
-
+	//space.ensemble = Factory::GenerateEnsemble<GrandCanonical>(L);
+	space.ensemble = Factory::GenerateEnsemble<Canonical>(L,L/2);
+	//space.ensemble = Factory::GenerateEnsemble<ParityGrandCanonical>(L,0);
+	
 	//Ensemble canonicalExample = Factory::GenerateEnsemble<GrandCanonical>(4); 
 	//std::cout << canonicalExample.L << std::endl;
 	//info.ShowSectors(canonicalExample);

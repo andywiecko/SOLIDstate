@@ -5,6 +5,8 @@
 namespace solid
 {
 
+// Ensemble: GrandCanonical (int L) with:
+// L -- sites
 class GrandCanonical : public Ensemble, public IEnsemble
 {
 public:

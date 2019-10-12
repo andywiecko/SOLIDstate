@@ -5,6 +5,9 @@
 namespace solid
 {
 
+// Ensemble: Parity Grand Canonical (int L, int parity) with:
+// L -- sites
+// parity -- parity sector (even or odd number of particles)
 class ParityGrandCanonical : public Ensemble, public IEnsemble
 {
 public:

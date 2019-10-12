@@ -62,6 +62,7 @@ T Factory::CreateObservable(int L)
 // template initilizers
 template Canonical Factory::GenerateEnsemble<Canonical>(int,int);
 template GrandCanonical Factory::GenerateEnsemble<GrandCanonical>(int);
+template ParityGrandCanonical Factory::GenerateEnsemble<ParityGrandCanonical>(int,int);
 template KitaevHamiltonian<Mat,double> Factory::CreateHamiltonian<KitaevHamiltonian<Mat,double>>();
 template ParticleNumberOperator<Mat,double> Factory::CreateObservable<ParticleNumberOperator<Mat,double>>(int);
 //template KitaevHamiltonian<Mat,cx_double> Factory::CreateHamiltonian<Mat,cx_double>();
