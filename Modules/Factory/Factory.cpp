@@ -35,6 +35,7 @@ T Factory::GenerateEnsemble(Targs... Frags)
 	T ensemble(Frags...);
 	ensemble.SetSize();
 	ensemble.FillSectors();
+	return ensemble;
 }
 
 template <class T>

@@ -16,9 +16,11 @@ int main(int argc, char *argv[])
 
 	HilbertSpace space;
 
-	space.ensemble = Factory::GenerateGrandCanonicalEnsemble(L);
+	space.ensemble = Factory::GenerateParityGrandCanonicalEnsemble(L,0);
 
-	//Ensemble canonicalExample = Factory::GenerateEnsemble<GrandCanonical>(4);
+	Ensemble canonicalExample = Factory::GenerateEnsemble<GrandCanonical>(4); 
+	std::cout << canonicalExample.L << std::endl;
+	info.ShowSectors(canonicalExample);
 
 	//Ensemble ensemble = Factory::GenerateCanonicalEnsemble(L,2);
 	//info.ShowSectors(ensemble);
@@ -40,9 +42,10 @@ int main(int argc, char *argv[])
 	param['V'] = V;
 
 	qSystem.parameters = param;
-	
 	qSystem.hamiltonian = Factory::CreateHamiltonian<KitaevHamiltonian<Mat, double>>();
+	std::cout << "test" << std::endl;
 	MatrixElementFiller::Fill(qSystem);
+	std::cout << "test2" << std::endl;
 	qSystem.hamiltonian.matrixElements.print();
 
 	//ParticleNumberOperator<Mat,double> Nop(L);
