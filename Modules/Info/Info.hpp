@@ -11,42 +11,29 @@ namespace solid
 class StandardMessages
 {
 public:
-	void Line();
-	void ShowSectors(Ensemble ensemble);
+	static void Line();
+	static void ShowSectors(Ensemble ensemble);
 };
 
 class Timer
 {
 public:
-	arma::wall_clock timer;
-	double timeInSec;
-	void Tic()
+	static arma::wall_clock timer;
+	static double timeInSec;
+	static void Tic()
 	{
 		timer.tic();
 	}
-	void Toc()
+	static void Time()
 	{
-		timeInSec = timer.toc();
+		std::cout << "# [ " << timer.toc() << " ] ";
 	}
-	void Time()
-	{
-		Toc();
-		std::cout << "[ " << timeInSec << " ]";
-	}
-};
-
-class staticTimer
-{
-public:
-	static arma::wall_clock timer;
-
 };
 
 class Info : public StandardMessages,
 			 public Timer
 {
-public:
-	Info();
+
 };
 
 } // namespace solid

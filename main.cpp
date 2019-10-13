@@ -4,20 +4,20 @@
 using namespace arma;
 using namespace solid;
 
-wall_clock clockss;
-wall_clock staticTimer::timer = clockss;
+
 
 int main(int argc, char *argv[])
 {
 
 	ArgvParser::Parse(argc, argv);
 
-	Info info;
-
-	staticTimer::timer.tic();
-	std::cout << staticTimer::timer.toc() << std::endl;
-	;
-
+	arma_version version;
+	std::cout << "# armadillo  version: " << version.as_string() << "\n";
+	std::cout << "# solidstate version: " << SolidState::version << "\n";
+	
+	Info::Tic();
+	Info::Time();
+	
 	int L = 3;
 
 	QuantumSystem<Mat, double> qSystem;
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	//space.ensemble = Factory::CreateEnsemble<ParityGrandCanonical>(L,0);
 
 	Ensemble ensemble = Factory::CreateEnsemble<GrandCanonical>(L);
-	//info.ShowSectors(ensemble);
+	Info::ShowSectors(ensemble);
 
 	qSystem.hilbertSpace = space;
 
@@ -65,13 +65,7 @@ int main(int argc, char *argv[])
 
 	qSystem.hamiltonian.matrixElements.print();
 
-	arma_version version;
-	std::cout << "armadillo  version: " << version.as_string() << "\n";
-	std::cout << "solidstate version: " << SolidState::version << "\n";
-	info.Time();
-
-	std::cout << staticTimer::timer.toc() << std::endl;
-	;
-
+	Info::Time();
+	
 	return 0;
 }

@@ -21,9 +21,10 @@ void StandardMessages::ShowSectors(Ensemble ensemble)
 	Line();
 }
 
-Info::Info()
-{
-	Tic();
-}
+
+// TODO remove this global temp clockss
+// do no use this
+arma::wall_clock clockss;
+arma::wall_clock Timer::timer = clockss;
 
 }
