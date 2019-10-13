@@ -2,10 +2,10 @@
 #include "Info.hpp"
 namespace solid
 {
-	
+
 void StandardMessages::Line()
 {
-	std::cout << std::string(50,'#') << std::endl;
+	std::cout << std::string(50, '#') << std::endl;
 }
 
 void StandardMessages::ShowSectors(Ensemble ensemble)
@@ -21,10 +21,14 @@ void StandardMessages::ShowSectors(Ensemble ensemble)
 	Line();
 }
 
+void StandardMessages::Message(std::string text)
+{
+	std::cout << text << "\n";
+}
 
 // TODO remove this global temp clockss
 // do no use this
 arma::wall_clock clockss;
 arma::wall_clock Timer::timer = clockss;
-
-}
+bool Info::isVerbose=false;
+} // namespace solid

@@ -19,6 +19,7 @@
 
 #include "Info/Info.hpp"
 #include "Info/Argv.hpp"
+#include "Info/Version.hpp"
 
 #include "QuantumSystem/QuantumSystem.hpp"
 
@@ -32,6 +33,5 @@
 
 #include "Parameters/Parameters.hpp"
 
-#include "Version.hpp"
 
 #endif

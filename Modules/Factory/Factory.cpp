@@ -2,6 +2,7 @@
 #include <armadillo>
 
 #include "Factory.hpp"
+#include "../Info/Info.hpp"
 
 namespace solid
 {
@@ -9,25 +10,30 @@ namespace solid
 template <class T,typename ... Targs> 
 T Factory::CreateEnsemble(Targs... Frags)
 {
+	Info::Time("creating ensemble...");
 	T ensemble(Frags...);
 	ensemble.SetSize();
 	ensemble.FillSectors();
+	Info::Message("done!");
 	return ensemble;
 }
 
 template <class T>
 T Factory::CreateHamiltonian()
 {
+	Info::Time("creating hamiltonian...");
 	T ham;
-	std::cout << "selecting terms..." << std::endl;
 	ham.SelectTerms();
+	Info::Message("done!");
 	return ham;
 }
 
 template <class T,typename ... Targs>
 T Factory::CreateObservable(Targs... Frags)
 {
+	Info::Time("creating observable...");
 	T observable(Frags...);
+	Info::Message("done!");
 	return observable;
 }
 

@@ -10,14 +10,9 @@ int main(int argc, char *argv[])
 {
 
 	ArgvParser::Parse(argc, argv);
-
-	arma_version version;
-	std::cout << "# armadillo  version: " << version.as_string() << "\n";
-	std::cout << "# solidstate version: " << SolidState::version << "\n";
 	
-	Info::Tic();
-	Info::Time();
-	
+	Info::Start();
+		
 	int L = 3;
 
 	QuantumSystem<Mat, double> qSystem;
