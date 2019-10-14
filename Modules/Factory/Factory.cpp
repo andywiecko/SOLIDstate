@@ -10,30 +10,30 @@ namespace solid
 template <class T,typename ... Targs> 
 T Factory::CreateEnsemble(Targs... Frags)
 {
-	Info::Time("creating ensemble...");
+	Info::vTime("creating ensemble...");
 	T ensemble(Frags...);
 	ensemble.SetSize();
 	ensemble.FillSectors();
-	Info::Message("done!");
+	Info::vMessage("done!");
 	return ensemble;
 }
 
 template <class T>
 T Factory::CreateHamiltonian()
 {
-	Info::Time("creating hamiltonian...");
+	Info::vTime("creating hamiltonian...");
 	T ham;
 	ham.SelectTerms();
-	Info::Message("done!");
+	Info::vMessage("done!");
 	return ham;
 }
 
 template <class T,typename ... Targs>
 T Factory::CreateObservable(Targs... Frags)
 {
-	Info::Time("creating observable...");
+	Info::vTime("creating observable...");
 	T observable(Frags...);
-	Info::Message("done!");
+	Info::vMessage("done!");
 	return observable;
 }
 

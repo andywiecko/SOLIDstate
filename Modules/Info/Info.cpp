@@ -26,9 +26,26 @@ void StandardMessages::Message(std::string text)
 	std::cout << text << "\n";
 }
 
+void StandardMessages::vMessage(std::string text)
+{
+	if (Info::isVerbose)
+		Message(text);
+}
+
+void Timer::Time(std::string message /*default =""*/)
+{
+	std::cout << "# [ " << timer.toc() << " ] " << message;
+}
+
+void Timer::vTime(std::string message /*default =""*/)
+{
+	if (Info::isVerbose)
+		Time(message);
+}
+
 // TODO remove this global temp clockss
 // do no use this
 arma::wall_clock clockss;
 arma::wall_clock Timer::timer = clockss;
-bool Info::isVerbose=false;
+bool Info::isVerbose = false;
 } // namespace solid

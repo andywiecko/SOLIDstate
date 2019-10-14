@@ -16,6 +16,7 @@ public:
 	static void Line();
 	static void ShowSectors(Ensemble ensemble);
 	static void Message(std::string);
+	static void vMessage(std::string);
 };
 
 class Timer
@@ -27,10 +28,9 @@ public:
 	{
 		timer.tic();
 	}
-	static void Time(std::string message = "")
-	{
-		std::cout << "# [ " << timer.toc() << " ] " << message;
-	}
+	static void Time(std::string message = "");
+	static void vTime(std::string message = "");
+
 };
 
 class Info : public StandardMessages,
@@ -41,14 +41,14 @@ public:
 	static bool isVerbose;
 	static void Start()
 	{
+		Tic();
 		if (isVerbose)
 		{
 			Line();
-			Tic();
 			PrintSoftwareVersion();
 		}
 	}
-	
+
 	static void PrintSoftwareVersion()
 	{
 		arma::arma_version aVersion;
@@ -58,9 +58,6 @@ public:
 		Line();
 	}
 };
-
-
-
 
 } // namespace solid
 
