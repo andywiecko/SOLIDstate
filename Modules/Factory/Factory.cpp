@@ -7,7 +7,7 @@
 namespace solid
 {
 
-template <class T,typename ... Targs> 
+template <class T, typename... Targs>
 T Factory::CreateEnsemble(Targs... Frags)
 {
 	Info::vTime("creating ensemble...");
@@ -28,7 +28,7 @@ T Factory::CreateHamiltonian()
 	return ham;
 }
 
-template <class T,typename ... Targs>
+template <class T, typename... Targs>
 T Factory::CreateObservable(Targs... Frags)
 {
 	Info::vTime("creating observable...");
@@ -39,10 +39,10 @@ T Factory::CreateObservable(Targs... Frags)
 
 // TODO
 // template initilizers
-template Canonical Factory::CreateEnsemble<Canonical>(int,int);
+template Canonical Factory::CreateEnsemble<Canonical>(int, int);
 template GrandCanonical Factory::CreateEnsemble<GrandCanonical>(int);
-template ParityGrandCanonical Factory::CreateEnsemble<ParityGrandCanonical>(int,int);
-template KitaevHamiltonian<Mat,double> Factory::CreateHamiltonian<KitaevHamiltonian<Mat,double>>();
-template ParticleNumberOperator<Mat,double> Factory::CreateObservable<ParticleNumberOperator<Mat,double>>(int);
+template ParityGrandCanonical Factory::CreateEnsemble<ParityGrandCanonical>(int, int);
+template KitaevHamiltonian<Mat, double> Factory::CreateHamiltonian<KitaevHamiltonian<Mat, double>>();
+template ParticleNumberOperator<Mat, double> Factory::CreateObservable<ParticleNumberOperator<Mat, double>>(int);
 
-}
+} // namespace solid

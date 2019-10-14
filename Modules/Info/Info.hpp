@@ -30,7 +30,6 @@ public:
 	}
 	static void Time(std::string message = "");
 	static void vTime(std::string message = "");
-
 };
 
 class Info : public StandardMessages,
