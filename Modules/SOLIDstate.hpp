@@ -31,6 +31,7 @@
 
 #include "Observable/Observable.hpp"
 #include "Observable/ParticleNumberOperator.hpp"
+#include "Observable/ParityOperator.hpp"
 
 #include "Parameters/Parameters.hpp"
 

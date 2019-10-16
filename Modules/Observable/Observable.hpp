@@ -7,12 +7,13 @@
 namespace solid
 {
 
+template <template <typename> class T1, typename T2>
 class IOperatorParameters
 {
 public:
     virtual void FillParameters() = 0;
-    static void Preprocessing(){};
-    virtual void PreprocessingVirtual() { Preprocessing(); }
+    static void Preprocessing(T1<T2> & matrixElements){};
+    virtual void PreprocessingVirtual(T1<T2> & matrixElements) { Preprocessing(matrixElements); }
     virtual ~IOperatorParameters() {}
 };
 

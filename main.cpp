@@ -49,10 +49,9 @@ int main(int argc, char *argv[])
 
 	qSystem.hamiltonian.matrixElements.print();
 
-	ParticleNumberOperator<Mat,double>::Preprocessing();
-
-	qSystem.hamiltonian.matrixElements.diag() =
-		vec(qSystem.hamiltonian.matrixElements.diag()).transform([](double val) { return std::pow(-1, val); });
+	qSystem.SelectObservable<ParityOperator>(L);
+	MatrixElementFiller::Fill(qSystem);
+	ParityOperator<Mat,double>::Preprocessing(qSystem.hamiltonian.matrixElements);
 
 	qSystem.hamiltonian.matrixElements.print();
 

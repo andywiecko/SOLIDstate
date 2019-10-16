@@ -4,6 +4,7 @@
 #include "Factory.hpp"
 #include "../Info/Info.hpp"
 #include "../Observable/ParticleNumberOperator.hpp"
+#include "../Observable/ParityOperator.hpp"
 
 namespace solid
 {
@@ -45,5 +46,6 @@ template GrandCanonical Factory::CreateEnsemble<GrandCanonical>(int);
 template ParityGrandCanonical Factory::CreateEnsemble<ParityGrandCanonical>(int, int);
 template KitaevHamiltonian<Mat, double> Factory::CreateHamiltonian<KitaevHamiltonian<Mat, double>>();
 template ParticleNumberOperator<Mat, double> Factory::CreateObservable<ParticleNumberOperator<Mat, double>>(int);
+template ParityOperator<Mat, double> Factory::CreateObservable<ParityOperator<Mat, double>>(int);
 
 } // namespace solid
