@@ -4,6 +4,7 @@
 #include "../HilbertSpace/HilbertSpace.hpp"
 #include "../Hamiltonian/Hamiltonian.hpp"
 #include "../Parameters/Parameters.hpp"
+#include "../Observable/Observable.hpp"
 #include "../Factory/Factory.hpp"
 
 namespace solid
@@ -39,6 +40,15 @@ public:
     {
         hamiltonian = Factory::CreateHamiltonian<Ham<T1, T2>>();
     }
+
+    template <template <template <typename> class, typename> class Obs,typename...Targs>
+    void SelectObservable(Targs... Fargs)
+    {
+        Observable<T1, T2> obs = Factory::CreateObservable<Obs<T1, T2>>(Fargs...);
+	    hamiltonian = obs._operator;
+    	parameters = obs.parameters;
+    }
+
 };
 
 } // namespace solid

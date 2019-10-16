@@ -39,18 +39,17 @@ int main(int argc, char *argv[])
 	qSystem.parameters = param;
 
 	qSystem.SelectHamiltonian<KitaevHamiltonian>();
-
 	MatrixElementFiller::Fill(qSystem);
 
 	qSystem.hamiltonian.matrixElements.print();
 
-	//ParticleNumberOperator<Mat,double> Nop(L);
 
-	Observable<Mat, double> nop = Factory::CreateObservable<ParticleNumberOperator<Mat, double>>(L);
-	qSystem.hamiltonian = nop._operator;
-	qSystem.parameters = nop.parameters;
-
+	qSystem.SelectObservable<ParticleNumberOperator>(L);
 	MatrixElementFiller::Fill(qSystem);
+
+	qSystem.hamiltonian.matrixElements.print();
+
+	ParticleNumberOperator<Mat,double>::Preprocessing();
 
 	qSystem.hamiltonian.matrixElements.diag() =
 		vec(qSystem.hamiltonian.matrixElements.diag()).transform([](double val) { return std::pow(-1, val); });

@@ -3,6 +3,7 @@
 
 #include "Factory.hpp"
 #include "../Info/Info.hpp"
+#include "../Observable/ParticleNumberOperator.hpp"
 
 namespace solid
 {

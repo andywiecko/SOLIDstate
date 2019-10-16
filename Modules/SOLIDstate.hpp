@@ -30,6 +30,7 @@
 #include "MatrixElementFiller/MatrixElementFiller.hpp"
 
 #include "Observable/Observable.hpp"
+#include "Observable/ParticleNumberOperator.hpp"
 
 #include "Parameters/Parameters.hpp"
 
