@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 	//qSystem.SelectEnsemble<Canonical>(L,L/2);
 
 	Info::ShowSectors(qSystem.hilbertSpace.ensemble);
+	//Info::ShowSectors(qSystem); // other implementation 
 	
 	vec mu;
 	mu.set_size(L);

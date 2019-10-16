@@ -9,7 +9,7 @@ namespace solid
 	std::cout << std::string(50, '#') << std::endl;
 }
 
-void StandardMessages::ShowSectors(Ensemble ensemble)
+void StandardMessages::ShowSectors(Ensemble & ensemble)
 {
 	std::vector<Sector> sectors = ensemble.sectors;
 	Line();
@@ -22,6 +22,12 @@ void StandardMessages::ShowSectors(Ensemble ensemble)
 	Line();
 }
 
+template <template <typename> class T1, typename T2>
+void StandardMessages::ShowSectors(QuantumSystem<T1,T2> & qSystem)
+{
+	ShowSectors(qSystem.hilbertSpace.ensemble);
+}
+
 void StandardMessages::Message(std::string text)
 {
 	std::cout << text << "\n";
@@ -32,5 +38,7 @@ void StandardMessages::vMessage(std::string text)
 	if (Info::isVerbose)
 		Message(text);
 }
+
+template void StandardMessages::ShowSectors(QuantumSystem<Mat,double>&);
 
 }
