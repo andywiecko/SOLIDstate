@@ -3,44 +3,23 @@
 namespace solid
 {
 
-void StandardMessages::Line()
+void Info::Start()
 {
-	std::cout << std::string(50, '#') << std::endl;
-}
-
-void StandardMessages::ShowSectors(Ensemble ensemble)
-{
-	std::vector<Sector> sectors = ensemble.sectors;
-	Line();
-	std::cout << "# Ensamble has " << sectors.size() << " sectors: (total size of " << ensemble.size << ")" << std::endl;
-	for (int i = 0; i < sectors.size(); i++)
+	Tic();
+	if (isVerbose)
 	{
-		Sector sec = sectors[i];
-		std::cout << "# sector with: L=" << sec.L << " N=" << sec.N << " (size of " << sec.size << ")" << std::endl;
+		Line();
+		PrintSoftwareVersion();
 	}
+}
+
+void Info::PrintSoftwareVersion()
+{
+	arma::arma_version aVersion;
+	std::string armaVersion = aVersion.as_string();
+	std::cout << "# armadillo  version: " << armaVersion << "\n";
+	std::cout << "# solidstate version: " << solidVersion << "\n";
 	Line();
-}
-
-void StandardMessages::Message(std::string text)
-{
-	std::cout << text << "\n";
-}
-
-void StandardMessages::vMessage(std::string text)
-{
-	if (Info::isVerbose)
-		Message(text);
-}
-
-void Timer::Time(std::string message /*default =""*/)
-{
-	std::cout << "# [ " << timer.toc() << " ] " << message;
-}
-
-void Timer::vTime(std::string message /*default =""*/)
-{
-	if (Info::isVerbose)
-		Time(message);
 }
 
 // TODO remove this global temp clockss
