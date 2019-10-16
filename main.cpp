@@ -17,17 +17,12 @@ int main(int argc, char *argv[])
 
 	QuantumSystem<Mat, double> qSystem;
 
-	HilbertSpace space;
+	qSystem.SelectEnsemble<GrandCanonical>(L);
+	//qSystem.SelectEnsemble<ParityGrandCanonical>(L,0);
+	//qSystem.SelectEnsemble<Canonical>(L,L/2);
 
-	space.ensemble = Factory::CreateEnsemble<GrandCanonical>(L);
-	//space.ensemble = Factory::CreateEnsemble<Canonical>(L,L/2);
-	//space.ensemble = Factory::CreateEnsemble<ParityGrandCanonical>(L,0);
-
-	Ensemble ensemble = Factory::CreateEnsemble<GrandCanonical>(L);
-	Info::ShowSectors(ensemble);
-
-	qSystem.hilbertSpace = space;
-
+	Info::ShowSectors(qSystem.hilbertSpace.ensemble);
+	
 	vec mu;
 	mu.set_size(L);
 	mu.fill(1);
@@ -40,15 +35,16 @@ int main(int argc, char *argv[])
 
 	param['M'] = mu;
 	param['V'] = V;
-
 	qSystem.parameters = param;
-	qSystem.hamiltonian = Factory::CreateHamiltonian<KitaevHamiltonian<Mat, double>>();
+
+	qSystem.SelectHamiltonian<KitaevHamiltonian>();
 
 	MatrixElementFiller::Fill(qSystem);
 
 	qSystem.hamiltonian.matrixElements.print();
 
 	//ParticleNumberOperator<Mat,double> Nop(L);
+
 	Observable<Mat, double> nop = Factory::CreateObservable<ParticleNumberOperator<Mat, double>>(L);
 	qSystem.hamiltonian = nop._operator;
 	qSystem.parameters = nop.parameters;
@@ -61,6 +57,6 @@ int main(int argc, char *argv[])
 	qSystem.hamiltonian.matrixElements.print();
 
 	Info::Time();
-	
+
 	return 0;
 }
