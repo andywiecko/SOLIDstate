@@ -27,6 +27,8 @@ public:
     Operator<T1, T2> hamiltonian;
     Parameters<T2> parameters;
 
+    void Fill();
+
     template <class Ens, typename... Targs>
     void SelectEnsemble(Targs... Fargs)
     {

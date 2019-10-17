@@ -39,7 +39,8 @@ int main(int argc, char *argv[])
 	qSystem.parameters = param;
 
 	qSystem.SelectHamiltonian<KitaevHamiltonian>();
-	MatrixElementFiller::Fill(qSystem);
+	qSystem.Fill();
+	//MatrixElementFiller::Fill(qSystem);
 
 	qSystem.hamiltonian.matrixElements.print();
 
