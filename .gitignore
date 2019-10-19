@@ -33,3 +33,25 @@
 
 # vscode
 .vscode
+
+# docusaurus
+.DS_Store
+.vscode
+.idea
+*.code-workspace
+
+node_modules
+
+.eslintcache
+
+yarn-error.log
+build
+.docusaurus
+.cache-loader
+types
+packages/docusaurus-utils/lib/
+packages/docusaurus/lib/
+packages/docusaurus-init/lib/
+packages/docusaurus-plugin-content-blog/lib/
+packages/docusaurus-plugin-content-docs/lib/
+packages/docusaurus-plugin-content-pages/lib/
