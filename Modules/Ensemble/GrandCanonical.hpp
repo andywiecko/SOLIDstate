@@ -4,15 +4,21 @@
 #include <cmath>
 namespace solid
 {
-	
+
+// Ensemble: GrandCanonical (int L) with:
+// L -- sites
 class GrandCanonical : public Ensemble, public IEnsemble
 {
 public:
-	virtual void SetSize()
+	GrandCanonical(int _L)
+	{
+		L = _L;
+	}
+	void SetSize()
 	{
 		size = std::pow(2, L);
 	}
-	virtual void FillSectors()
+	void FillSectors()
 	{
 		for (int N = 0; N < L + 1; N++)
 		{

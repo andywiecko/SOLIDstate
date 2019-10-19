@@ -34,6 +34,7 @@
 # vscode
 .vscode
 
+
 # docusaurus
 .DS_Store
 .vscode
@@ -55,3 +56,5 @@ packages/docusaurus-init/lib/
 packages/docusaurus-plugin-content-blog/lib/
 packages/docusaurus-plugin-content-docs/lib/
 packages/docusaurus-plugin-content-pages/lib/
+
+error

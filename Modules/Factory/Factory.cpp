@@ -2,51 +2,50 @@
 #include <armadillo>
 
 #include "Factory.hpp"
+#include "../Info/Info.hpp"
+#include "../Observable/ParticleNumberOperator.hpp"
+#include "../Observable/ParityOperator.hpp"
 
 namespace solid
 {
-Ensemble Factory::GenerateCanonicalEnsemble(int _L, int _N)
-{
-	Canonical ensemble;
-	ensemble.L = _L;
-	ensemble.N = _N;
-	ensemble.SetSize();
-	ensemble.FillSectors();
-	return ensemble;
-}
 
-Ensemble Factory::GenerateGrandCanonicalEnsemble(int _L)
+template <class T, typename... Targs>
+T Factory::CreateEnsemble(Targs... Frags)
 {
-	GrandCanonical ensemble;
-	ensemble.L = _L;
+	Info::vTime("creating ensemble...");
+	T ensemble(Frags...);
 	ensemble.SetSize();
 	ensemble.FillSectors();
+	Info::vMessage("done!");
 	return ensemble;
 }
 
 template <class T>
 T Factory::CreateHamiltonian()
 {
+	Info::vTime("creating hamiltonian...");
 	T ham;
-	std::cout << "selecting terms..." << std::endl;
 	ham.SelectTerms();
+	Info::vMessage("done!");
 	return ham;
 }
 
-template <class T>
-T Factory::CreateObservable(int L)
+template <class T, typename... Targs>
+T Factory::CreateObservable(Targs... Frags)
 {
-	T observable(L);
+	Info::vTime("creating observable...");
+	T observable(Frags...);
+	Info::vMessage("done!");
 	return observable;
 }
 
 // TODO
-// ugly!
 // template initilizers
-template KitaevHamiltonian<Mat,double> Factory::CreateHamiltonian<KitaevHamiltonian<Mat,double>>();
-template ParticleNumberOperator<Mat,double> Factory::CreateObservable<ParticleNumberOperator<Mat,double>>(int);
-//template KitaevHamiltonian<Mat,cx_double> Factory::CreateHamiltonian<Mat,cx_double>();
-//template KitaevHamiltonian<SpMat,double> Factory::CreateHamiltonian<SpMat,double>();
-//template KitaevHamiltonian<SpMat,cx_double> Factory::CreateHamiltonian<SpMat,cx_double>();
+template Canonical Factory::CreateEnsemble<Canonical>(int, int);
+template GrandCanonical Factory::CreateEnsemble<GrandCanonical>(int);
+template ParityGrandCanonical Factory::CreateEnsemble<ParityGrandCanonical>(int, int);
+template KitaevHamiltonian<Mat, double> Factory::CreateHamiltonian<KitaevHamiltonian<Mat, double>>();
+template ParticleNumberOperator<Mat, double> Factory::CreateObservable<ParticleNumberOperator<Mat, double>>(int);
+template ParityOperator<Mat, double> Factory::CreateObservable<ParityOperator<Mat, double>>(int);
 
-}
+} // namespace solid

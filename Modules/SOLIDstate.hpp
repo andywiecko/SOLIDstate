@@ -19,6 +19,7 @@
 
 #include "Info/Info.hpp"
 #include "Info/Argv.hpp"
+#include "Info/Version.hpp"
 
 #include "QuantumSystem/QuantumSystem.hpp"
 
@@ -29,9 +30,10 @@
 #include "MatrixElementFiller/MatrixElementFiller.hpp"
 
 #include "Observable/Observable.hpp"
+#include "Observable/ParticleNumberOperator.hpp"
+#include "Observable/ParityOperator.hpp"
 
 #include "Parameters/Parameters.hpp"
 
-#include "Version.hpp"
 
 #endif

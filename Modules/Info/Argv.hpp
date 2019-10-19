@@ -3,6 +3,8 @@
 
 #include <unistd.h>
 #include <iostream>
+#include "Info.hpp"
+
 namespace solid
 {
     
@@ -22,8 +24,7 @@ public:
                 std::cout << "option -" << char(option) << " selected\n";
                 break;
             case 'v':
-                std::cout << "option -" << char(option) << " selected\n";
-                std::cout << "Version v0.1\n";
+                Info::isVerbose = true;
                 break;
             case 'f':
                 std::cout << "option -" << char(option) << " selected\n";

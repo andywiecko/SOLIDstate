@@ -4,42 +4,26 @@
 #include <iostream>
 #include <vector>
 #include <armadillo>
-using namespace arma;
+#include <string>
+
+#include "../Ensemble/Ensemble.hpp"
+#include "Version.hpp"
+#include "Timer.hpp"
+#include "StandardMessages.hpp"
 
 namespace solid
 {
 
-class StandardMessages
+class Info : public StandardMessages,
+			 public Timer,
+			 public Version
 {
 public:
-	void Line();
-	void ShowSectors(Ensemble ensemble);
-};
+	static bool isVerbose;
+	
+	static void Start();
+	static void PrintSoftwareVersion();
 
-class Timer
-{
-public:
-	wall_clock timer;
-	double timeInSec;
-	void Tic()
-	{
-		timer.tic();
-	}
-	void Toc()
-	{
-		timeInSec = timer.toc();
-	}
-	void Time()
-	{
-		Toc();
-		std::cout << "[ " << timeInSec << " ]";
-	}
-};
-
-class Info : public StandardMessages, public Timer
-{
-public:
-	Info();
 };
 
 } // namespace solid

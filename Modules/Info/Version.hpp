@@ -2,14 +2,16 @@
 #define VERSION_HPP
 
 #include <string>
+#include <armadillo>
 
 namespace solid
 {
 
-class SolidState
+class Version
 {
 public:
-    static constexpr const char* version = "0.100.0 (Alpha WIP)";
+    static constexpr const char* solidVersion = "0.100.0 (Alpha WIP)";
+
 };
 
 
