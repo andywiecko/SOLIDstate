@@ -15,13 +15,17 @@ const GridBlock = CompLibrary.GridBlock;
 
 class HomeSplash extends React.Component {
   render() {
-    const {siteConfig, language = ''} = this.props;
-    const {baseUrl, docsUrl} = siteConfig;
+    const { siteConfig, language = '' } = this.props;
+    const { baseUrl, docsUrl } = siteConfig;
     const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
     const langPart = `${language ? `${language}/` : ''}`;
     const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
 
     const SplashContainer = props => (
+      
+
+
+
       <div className="homeContainer">
         <div className="homeSplashFade">
           <div className="wrapper homeWrapper">{props.children}</div>
@@ -34,14 +38,20 @@ class HomeSplash extends React.Component {
         <img src={props.img_src} alt="Project Logo" />
       </div>
     );
-
+    
+    const TitleLogo = props => (
+      <div className="projectTitleLogo">
+        <img src={props.img_src} alt="Project Title Logo" width="600"/>
+      </div>
+    );
+    
     const ProjectTitle = () => (
       <h2 className="projectTitle">
-        {siteConfig.title}
+        {/*</h2>siteConfig.title*/}
         <small>{siteConfig.tagline}</small>
       </h2>
     );
-
+    
     const PromoSection = props => (
       <div className="section promoSection">
         <div className="promoRow">
@@ -49,7 +59,7 @@ class HomeSplash extends React.Component {
         </div>
       </div>
     );
-
+    
     const Button = props => (
       <div className="pluginWrapper buttonWrapper">
         <a className="button" href={props.href} target={props.target}>
@@ -59,9 +69,14 @@ class HomeSplash extends React.Component {
     );
 
     return (
+
+      
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        <div >
+        <TitleLogo img_src={`${baseUrl}img/logo-wide.png`}/>
+        </div>
         <div className="inner">
+          
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             <Button href="#try">Try It Out</Button>
@@ -69,6 +84,7 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('doc2.html')}>Example Link 2</Button>
           </PromoSection>
         </div>
+        
       </SplashContainer>
     );
   }
@@ -76,8 +92,8 @@ class HomeSplash extends React.Component {
 
 class Index extends React.Component {
   render() {
-    const {config: siteConfig, language = ''} = this.props;
-    const {baseUrl} = siteConfig;
+    const { config: siteConfig, language = '' } = this.props;
+    const { baseUrl } = siteConfig;
 
     const Block = props => (
       <Container
@@ -95,7 +111,7 @@ class Index extends React.Component {
     const FeatureCallout = () => (
       <div
         className="productShowcaseSection paddingBottom"
-        style={{textAlign: 'center'}}>
+        style={{ textAlign: 'center' }}>
         <h2>Feature Callout</h2>
         <MarkdownBlock>These are features of this project</MarkdownBlock>
       </div>
