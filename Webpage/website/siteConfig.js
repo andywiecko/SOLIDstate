@@ -81,8 +81,8 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
-
+  scripts: ['https://buttons.github.io/buttons.js','https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML'],
+  
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
   // No .html extensions for paths.
