@@ -80,8 +80,9 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             <Button href="#try">Try It Out</Button>
+            <Button href="https://github.com/andywiecko/SOLIDstate">GitHub</Button>
             <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href={docUrl('doc2.html')}>Download .zip v1.0.0</Button>
           </PromoSection>
         </div>
         
@@ -165,16 +166,22 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'This is the content of my feature',
+            content: 'Easly switch between sparse and dense matrix types for storing Hamiltonian: `arma::Mat`, `arma::SpMat`',
             image: `${baseUrl}img/undraw_react.svg`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: 'Switch between matrix types',
           },
           {
-            content: 'The content of my second feature',
+            content: 'Easly switch between different statistical ensembles: `Canonical`, `Grand canonical`, `Parity Conserved Grand Canonical`',
             image: `${baseUrl}img/undraw_operating_system.svg`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Switch between ensembles',
+          },
+          {
+            content: 'Easly switch between different data types: `float`, `double`, `complex<double>`, `complex<float>`',
+            image: `${baseUrl}img/undraw_operating_system.svg`,
+            imageAlign: 'top',
+            title: 'Switch between data types',
           },
         ]}
       </Block>

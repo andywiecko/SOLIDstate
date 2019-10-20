@@ -11,6 +11,7 @@ const CompLibrary = require('../../core/CompLibrary.js');
 
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
+const MarkdownBlock = CompLibrary.MarkdownBlock;
 
 function Help(props) {
   const {config: siteConfig, language = ''} = props;
@@ -40,10 +41,27 @@ function Help(props) {
     <div className="docMainWrapper wrapper">
       <Container className="mainContainer documentContainer postContainer">
         <div className="post">
-          <header className="postHeader">
-            <h1>Need help?</h1>
+        <header className="postHeader">
+          <h1>About</h1>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
+          <MarkdownBlock>
+        SOLIDstate is a C++ library, which main purpose is to study 
+        (relatively small systems up to L~30) strongly correlated systems.
+        SOLIDstate depends on powerful C++ template library [Armadillo](http://arma.sourceforge.net/).
+        Main feature is that user can easly specify 
+        type of the solving predefined Hamiltonians (sparse/dense),
+        type of the data (double/complex),
+        type of the considering statistical ensemble,
+        $ L=23\$
+        $$ L=24 \$$
+        </MarkdownBlock>
+        
+        <h2>Help</h2> 
+        <MarkdownBlock>
+        Need help? This project is maintained by Andrzej Więckowski.
+        </MarkdownBlock>
+
+          
           <GridBlock contents={supportLinks} layout="threeColumn" />
         </div>
       </Container>

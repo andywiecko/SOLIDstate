@@ -24,7 +24,7 @@ const siteConfig = {
   title: 'SOLIDstate', // Title for your website.
   tagline: 'A C++ library for solid state physics',
   url: 'https://your-docusaurus-test-site.com', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  baseUrl: '/solid/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
@@ -38,9 +38,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
+    {doc: 'doc1', label: 'Documentation'},
+    {doc: 'doc4', label: 'Example codes'},
+    {page: 'help', label: 'About'},
     {blog: true, label: 'Blog'},
   ],
 
