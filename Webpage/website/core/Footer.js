@@ -6,6 +6,7 @@
  */
 
 const React = require('react');
+const repoUrl = `https://github.com/andywiecko/SOLIDstate`;
 
 class Footer extends React.Component {
   docUrl(doc, language) {
@@ -47,16 +48,16 @@ class Footer extends React.Component {
               API Reference (or other categories)
             </a>
           </div>
-          
+         
           <div>
             <h5>More</h5>
             <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/andywiecko/SOLIDstate">GitHub</a>
+            <a href={repoUrl}>GitHub</a>
             <a
               className="github-button"
-              href={this.props.config.repoUrl}
+              href={repoUrl}
               data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
+              data-count-href={`${repoUrl}/stargazers`}
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">

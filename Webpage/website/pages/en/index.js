@@ -166,6 +166,12 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
+            content: 'SOLIDstate depends on powerfull C++ library: [Armadillo](http://arma.sourceforge.net/)',
+            image: `${baseUrl}img/armadillo_logo.png`,
+            imageAlign: 'top',
+            title: '[Armadillo](http://arma.sourceforge.net/)',
+          },
+          {
             content: 'Easly switch between sparse and dense matrix types for storing Hamiltonian: `arma::Mat`, `arma::SpMat`',
             image: `${baseUrl}img/undraw_react.svg`,
             imageAlign: 'top',
