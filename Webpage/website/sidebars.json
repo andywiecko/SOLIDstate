@@ -1,10 +1,14 @@
 {
   "docs": {
-    "Getting started": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Getting started": ["getting-started","example-program"],
+    "Tutorial": ["matrix-and-data-types","ensembles","hamiltonians"],
+    "Bleble ble": ["doc2"],
+    "Hamiltonians": ["doc3"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
+  },
+  "api": {
+    "Kat 1.": ["api"]
   }
 }

@@ -1,5 +1,5 @@
 ---
-id: doc1
+id: getting-started
 title: Getting started
 sidebar_label: Install
 ---
@@ -33,3 +33,8 @@ Go into folder, where `SOLIDstate` has been extracted and type:
 make
 ```
 Remember to always add a proper optimalisation option during runing the make file: option `-O3` is recommended. 
+
+**Caveat:** if many cores are avaliable use `-j` option for quickier building. E.g. if user has 8 cores avaliable:
+```bash
+make -j8
+```

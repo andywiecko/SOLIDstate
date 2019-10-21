@@ -13,7 +13,7 @@ const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 const MarkdownBlock = CompLibrary.MarkdownBlock;
 
-function Help(props) {
+function About(props) {
   const {config: siteConfig, language = ''} = props;
   const {baseUrl, docsUrl} = siteConfig;
   const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
@@ -22,17 +22,19 @@ function Help(props) {
 
   const supportLinks = [
     {
-      content: `Learn more using the [documentation on this site.](${docUrl(
-        'doc1.html',
-      )})`,
+      content: `Learn more using the [documentation on this site](${docUrl(
+        'getting-started.html',
+      )}) or browse the [API](${docUrl(
+        'api.html',
+      )}).`,
       title: 'Browse Docs',
     },
     {
-      content: 'Ask questions about the documentation and project',
-      title: 'Join the community',
+      content: 'Ask questions about the documentation, project or join the project and make pull requests.',
+      title: 'Join the project',
     },
     {
-      content: "Find out what's new with this project",
+      content: "Find out what's new with this project via [Blog](blog) or [GitHub](https://github.com/andywiecko/SOLIDstate).",
       title: 'Stay up to date',
     },
   ];
@@ -46,19 +48,17 @@ function Help(props) {
           </header>
           <MarkdownBlock>
         SOLIDstate is a C++ library, which main purpose is to study 
-        (relatively small systems up to L~30) strongly correlated systems.
+        (relatively small systems up to $L\sim30\$) strongly correlated systems.
         SOLIDstate depends on powerful C++ template library [Armadillo](http://arma.sourceforge.net/).
         Main feature is that user can easly specify 
         type of the solving predefined Hamiltonians (sparse/dense),
         type of the data (double/complex),
         type of the considering statistical ensemble,
-        $ L=23\$
-        $$ L=24 \$$
         </MarkdownBlock>
         
         <h2>Help</h2> 
         <MarkdownBlock>
-        Need help? This project is maintained by Andrzej Więckowski.
+        Need help? This project is maintained by Andrzej Więckowski [andrzej.wieckowski (at) pwr.edu.pl].
         </MarkdownBlock>
 
           
@@ -69,4 +69,4 @@ function Help(props) {
   );
 }
 
-module.exports = Help;
+module.exports = About;
