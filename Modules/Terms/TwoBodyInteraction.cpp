@@ -36,6 +36,4 @@ void TwoBodyInteractionTermSpins::FillElements(QuantumSystem<T1, T2> &qSystem)
 	//TODO
 }
 
-template void TwoBodyInteractionTermFermions::FillElements<Mat, double>(QuantumSystem<Mat, double> &qSystem);
-template void TwoBodyInteractionTermSpins::FillElements<Mat, double>(QuantumSystem<Mat, double> &qSystem);
 } // namespace solid

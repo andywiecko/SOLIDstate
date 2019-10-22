@@ -32,6 +32,4 @@ void OneBodyInteractionTermSpins::FillElements(QuantumSystem<T1, T2> &qSystem)
 	}
 }
 
-template void OneBodyInteractionTermFermions::FillElements<Mat,double>(QuantumSystem<Mat,double> &qSystem);
-template void OneBodyInteractionTermSpins::FillElements<Mat,double>(QuantumSystem<Mat,double> &qSystem);
 }
