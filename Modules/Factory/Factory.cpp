@@ -39,12 +39,18 @@ T Factory::CreateObservable(Targs... Frags)
 	return observable;
 }
 
-// TODO
-// template initilizers
+
+// initializers
+
+// ensembles initializers
 template Canonical Factory::CreateEnsemble<Canonical>(int, int);
 template GrandCanonical Factory::CreateEnsemble<GrandCanonical>(int);
 template ParityGrandCanonical Factory::CreateEnsemble<ParityGrandCanonical>(int, int);
+
+// hamiltonians initializers
 template KitaevHamiltonian<Mat, double> Factory::CreateHamiltonian<KitaevHamiltonian<Mat, double>>();
+
+// observable initializers
 template ParticleNumberOperator<Mat, double> Factory::CreateObservable<ParticleNumberOperator<Mat, double>>(int);
 template ParityOperator<Mat, double> Factory::CreateObservable<ParityOperator<Mat, double>>(int);
 

@@ -30,13 +30,8 @@ public:
     void Fill();
 
     template <class Ens, typename... Targs>
-    void SelectEnsemble(Targs... Fargs)
-    {
-        HilbertSpace space;
-        space.ensemble = Factory::CreateEnsemble<Ens>(Fargs...);
-        hilbertSpace = space;
-    }
-
+    void SelectEnsemble(Targs... Fargs);
+ 
     template <template <template <typename> class, typename> class Ham>
     void SelectHamiltonian()
     {

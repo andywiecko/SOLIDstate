@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
 
 	QuantumSystem<Mat, double> qSystem;
 
-	qSystem.SelectEnsemble<GrandCanonical>(L);
-	//qSystem.SelectEnsemble<ParityGrandCanonical>(L,0);
 	//qSystem.SelectEnsemble<Canonical>(L,L/2);
+	//qSystem.SelectEnsemble<ParityGrandCanonical>(L,0);
+	qSystem.SelectEnsemble<GrandCanonical>(L);
 
 	Info::ShowSectors(qSystem.hilbertSpace.ensemble);
 	//Info::ShowSectors(qSystem); // other implementation 
@@ -47,6 +47,8 @@ int main(int argc, char *argv[])
 
 	qSystem.SelectObservable<ParticleNumberOperator>(L);
 	MatrixElementFiller::Fill(qSystem);
+	ParticleNumberOperator<Mat,double>::Preprocessing(qSystem.hamiltonian.matrixElements);
+
 
 	qSystem.hamiltonian.matrixElements.print();
 
