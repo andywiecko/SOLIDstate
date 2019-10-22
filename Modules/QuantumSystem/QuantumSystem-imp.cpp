@@ -7,7 +7,7 @@ namespace solid
 // ***************************
 template void QuantumSystem<arma::Mat, double>::Fill();
 //template void QuantumSystem<arma::Mat,cx_double>::Fill();
-//template void QuantumSystem<arma::SpMat,double>::Fill();
+template void QuantumSystem<arma::SpMat,double>::Fill();
 //template void QuantumSystem<arma::SpMat,cx_double>::Fill();
 
 // ***************************

@@ -29,9 +29,8 @@ template ParticleNumberOperator<SpMat,    double> Factory::CreateObservable<Part
 template ParticleNumberOperator<SpMat, cx_double> Factory::CreateObservable<ParticleNumberOperator<SpMat, cx_double>>(int);
 // Parity Operator
 template ParityOperator<  Mat,    double> Factory::CreateObservable<ParityOperator<  Mat,    double>>(int);
-/*
-template ParityOperator<  Mat, cx_double> Factory::CreateObservable<ParityOperator<  Mat, cx_double>>(int);
+//template ParityOperator<  Mat, cx_double> Factory::CreateObservable<ParityOperator<  Mat, cx_double>>(int);
 template ParityOperator<SpMat,    double> Factory::CreateObservable<ParityOperator<SpMat,    double>>(int);
-template ParityOperator<SpMat, cx_double> Factory::CreateObservable<ParityOperator<SpMat, cx_double>>(int);
-*/
+//template ParityOperator<SpMat, cx_double> Factory::CreateObservable<ParityOperator<SpMat, cx_double>>(int);
+
 }

@@ -8,7 +8,7 @@ void OneBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem
 	bool N05option = qSystem.hamiltonian.termsEnabled.N05option;
 	BaseState baseState = qSystem.hilbertSpace.baseState;
     auto M = qSystem.parameters['M'];
-	double Hij = 0;
+	T2 Hij = 0;
 	for (int i = 0; i < baseState.size(); i++)
 	{
 		if (baseState.OneBodyInteraction(i))

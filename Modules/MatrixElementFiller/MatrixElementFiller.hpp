@@ -6,6 +6,8 @@
 #include "../Terms/OneBodyInteraction.hpp"
 #include "../Terms/TwoBodyInteraction.hpp"
 #include <armadillo>
+#include <type_traits>
+
 namespace solid
 {
 
@@ -35,7 +37,7 @@ private:
     {
         int size = qSystem.hilbertSpace.ensemble.size;
         qSystem.hamiltonian.matrixElements.set_size(size, size);
-        if (typeid(T1<T2>) == typeid(arma::Mat<T2>))
+        if constexpr (std::is_same<T1<T2>, arma::Mat<T2>>::value)
             qSystem.hamiltonian.matrixElements.fill(0);
     }
 
