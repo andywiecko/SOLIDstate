@@ -43,7 +43,7 @@ public:
     static void Preprocessing(T1<T2> &matrixElements)
     {
         std::cout << "parity pre-process..." << std::endl;
-        matrixElements.diag() = vec(matrixElements.diag()).transform([](double val) { return std::pow(-1, val); });
+        matrixElements.diag() = arma::Col<T2>(matrixElements.diag()).transform([](T2 val) { return std::pow(-1, val); });
     }
 };
 

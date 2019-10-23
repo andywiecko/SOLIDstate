@@ -16,15 +16,16 @@ void TwoBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem
 	{
 		int i = it.row();
 		int j = it.col();
+		T2 Vij = V(i,j);
 		if (baseState.TwoBodyInteraction(i, j))
-			Hij += V(i, j);
+			Hij += Vij;
 		if (N05option)
 		{
 			if (baseState.OneBodyInteraction(i))
-				Hij -= 0.5 * V(i, j);
+				Hij -= 0.5 * Vij;
 			if (baseState.OneBodyInteraction(j))
-				Hij -= 0.5 * V(i, j);
-			Hij += 0.25 * V(i, j);
+				Hij -= 0.5 * Vij;
+			Hij += 0.25 * Vij;
 		}
 	}
 	qSystem.hamiltonian.matrixElements(k, k) += Hij;

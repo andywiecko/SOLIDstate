@@ -11,14 +11,16 @@ void OneBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem
 	T2 Hij = 0;
 	for (int i = 0; i < baseState.size(); i++)
 	{
+		T2 Mi = M(i);
 		if (baseState.OneBodyInteraction(i))
-			Hij += M(i);
+			Hij += Mi;
 		if (N05option)
-			Hij -= 0.5 * M(i);
+			Hij -= 0.5 * Mi;
 	}
 	qSystem.hamiltonian.matrixElements(k, k) += Hij;
 }
 
+// TODO fix this mess!
 template <template<typename> class T1, typename T2>
 void OneBodyInteractionTermSpins::FillElements(QuantumSystem<T1, T2> &qSystem)
 {
