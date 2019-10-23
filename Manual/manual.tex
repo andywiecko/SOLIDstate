@@ -1,11 +1,28 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
+\usepackage{graphicx}
 \usepackage{ebgaramond}
+\usepackage{titling}
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \includegraphics[width=6cm]{logo.png}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
 
 \begin{document}
 
-Lalala
+\title{\textbf{Developer guide for:}\\ \textbf{\textsf{SOLIDstate}}\\[1ex] \normalsize A \texttt{C++} library for solid state physics}
+\author{Andrzej Więckowski} % \& SOLIDstate TEAM}
+
+\maketitle
+
+\newpage
+
+\tableofcontents
+ 
+\section{How to add new Hamiltonian to the library?}
+\section{How to add new Ensemble to the library?}
 
 \end{document}

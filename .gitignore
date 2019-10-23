@@ -67,3 +67,7 @@ Doxy/
 Manual/*.log
 Manual/*.aux
 Manual/*.pdf
+Manual/*.toc
+Manual/*.fdb_latexmk
+Manual/*.fls
+Manual/*.synctex.gz
