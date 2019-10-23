@@ -62,3 +62,8 @@ error
 
 # Doxygen output dir
 Doxy/
+
+# manual garbage
+Manual/*.log
+Manual/*.aux
+Manual/*.pdf
