@@ -40,7 +40,7 @@ public:
 
     /**
      * @brief returns binomial coefficients L over N
-     * $\binom {L}{N}=\frac {L!}{N!(L-N)!}$
+     * \f${{L}\choose{N}} =\frac {L!}{N!(L-N)!}\f$
      * calculations are done by usinig Pascal Triangle
      * @param L is less or equal then `binomialsNo`
      * @param N is greater or equal 0 and less or equal then `L`

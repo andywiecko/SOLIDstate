@@ -13,6 +13,12 @@ obj=$(src:.cpp=.o)
 main.o: main.cpp $(obj)
 	$(CC) -o main.exe $^ $(LIBS) $(CFLAGS)
 
+doxy:
+	@echo "remember to modify INPUT in Doxyfile"
+	doxygen Doxyfile
+	
+	firefox Doxy/html/index.html &
+
 .PHONY : clean
 clean:
 	rm -f $(obj) main.exe

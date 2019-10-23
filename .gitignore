@@ -57,4 +57,8 @@ packages/docusaurus-plugin-content-blog/lib/
 packages/docusaurus-plugin-content-docs/lib/
 packages/docusaurus-plugin-content-pages/lib/
 
+# error file
 error
+
+# Doxygen output dir
+Doxy/
