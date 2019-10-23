@@ -1,3 +1,13 @@
+/**
+ * @file SOLIDstate.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief 
+ * @version 0.1
+ * @date 2019-10-23
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef SOLIDSTATE_HPP
 #define SOLIDSTATE_HPP
 

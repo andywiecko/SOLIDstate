@@ -1,6 +1,14 @@
+/**
+ * @file Combinadics.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Combinadics implementation
+ * @version 0.100.0
+ * @date 2019-10-23
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "Combinadics.hpp"
-
-// Combinadics -- combinatorial number system for states enumaration
 
 #include <vector>
 #include <armadillo>
@@ -10,6 +18,7 @@ using namespace arma;
 
 namespace solid
 {
+	
 extern Binomials binomials;
 
 statenumber BaseStateNumberConverter::ToNumber(BaseState state)

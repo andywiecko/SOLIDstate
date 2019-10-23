@@ -1,3 +1,13 @@
+/**
+ * @file Binomials.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Binomials implementation
+ * @version 0.100.0
+ * @date 2019-10-23
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "Binomials.hpp"
 
 #include <vector>
@@ -6,6 +16,7 @@ using namespace arma;
 
 namespace solid
 {
+
 // typedef for binomials container
 typedef unsigned int binint;
 // typedef for binomials container
@@ -45,7 +56,7 @@ binint Binomials::binom(int L, int N)
 	return binomials[L][N];
 }
 
-// global binomials
 // TODO move this to some class as static field
+/// global binomials array 
 Binomials binomials;
 }

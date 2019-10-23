@@ -1,3 +1,13 @@
+/**
+ * @file BaseState.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief BaseState implementation
+ * @version 0.100.0
+ * @date 2019-10-23
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "BaseState.hpp"
 #include <armadillo>
 using namespace arma;
