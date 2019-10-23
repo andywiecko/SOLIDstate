@@ -14,10 +14,13 @@ main.o: main.cpp $(obj)
 	$(CC) -o main.exe $^ $(LIBS) $(CFLAGS)
 
 doxy:
-	@echo "remember to modify INPUT in Doxyfile"
 	doxygen Doxyfile
-	
 	firefox Doxy/html/index.html &
+
+	# TODO make solution to this
+	@echo "########################################"
+	@echo "[!] REMEMBER modify INPUT in Doxyfile"
+	@echo "########################################"
 
 .PHONY : clean
 clean:
