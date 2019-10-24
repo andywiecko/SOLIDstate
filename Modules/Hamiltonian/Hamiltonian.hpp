@@ -1,9 +1,6 @@
 #ifndef HAMILTONIAN_HPP
 #define HAMILTONIAN_HPP
 
-#include <cmath>
-#include <armadillo>
-using namespace arma;
 namespace solid
 {
 

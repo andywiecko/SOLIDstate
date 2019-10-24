@@ -1,6 +1,7 @@
 #ifndef GRANDCANONICAL_HPP
 #define GRANDCANONICAL_HPP
 
+#include "Ensemble.hpp"
 #include <cmath>
 namespace solid
 {

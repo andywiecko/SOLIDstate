@@ -1,6 +1,7 @@
 #ifndef CANONICAL_HPP
 #define CANONICAL_HPP
 
+#include "Ensemble.hpp"
 #include "../Combinadics/Binomials.hpp"
 
 namespace solid

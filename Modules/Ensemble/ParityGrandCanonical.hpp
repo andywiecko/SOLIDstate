@@ -1,6 +1,7 @@
 #ifndef PARITYGRANDCANONICAL_HPP
 #define PARITYGRANDCANONICAL_HPP
 
+#include "Ensemble.hpp"
 #include <cmath>
 namespace solid
 {

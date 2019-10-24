@@ -1,7 +1,6 @@
 #ifndef KITAEVHAMILTONIAN_HPP
 #define KITAEVHAMILTONIAN_HPP
 
-#include <iostream>
 #include "Hamiltonian.hpp"
 
 namespace solid

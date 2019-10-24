@@ -7,6 +7,8 @@
 #include "../Ensemble/ParityGrandCanonical.hpp"
 #include "../Hamiltonian/KitaevHamiltonian.hpp"
 #include "../Observable/Observable.hpp"
+#include "../Observable/ParticleNumberOperator.hpp"
+#include "../Observable/ParityOperator.hpp"
 
 namespace solid
 {
