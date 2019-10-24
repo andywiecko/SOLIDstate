@@ -21,6 +21,12 @@ public:
     // enumerates the states inside the ensemble (all sectors)
     statenumber stateTotalIndex = 0;
 
+    // TODO move to cpp
+    bool operator++(int)
+    {
+        return NextBaseState();
+    }
+
 private:
     // enumerates the states inside the sector
     statenumber stateIndex = 0;

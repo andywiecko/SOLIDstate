@@ -58,7 +58,7 @@ private:
 
         }
         // do until last base state in the ensemble
-        while (qSystem.hilbertSpace.NextBaseState());
+        while (qSystem.hilbertSpace++);//.NextBaseState());
     }
 
     template <template <typename> class T1, typename T2>
@@ -72,7 +72,7 @@ private:
                 OneBodyInteractionTermSpins::FillElements(qSystem);
             if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
                 TwoBodyInteractionTermSpins::FillElements(qSystem);
-        } while (qSystem.hilbertSpace.NextBaseState());
+        } while (qSystem.hilbertSpace++);//.NextBaseState());
     }
 };
 
