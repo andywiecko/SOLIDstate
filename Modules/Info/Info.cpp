@@ -1,3 +1,13 @@
+/**
+ * @file Info.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Info class implementation
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "../Ensemble/Ensemble.hpp"
 #include "Info.hpp"
 namespace solid
@@ -27,4 +37,5 @@ void Info::PrintSoftwareVersion()
 arma::wall_clock clockss;
 arma::wall_clock Timer::timer = clockss;
 bool Info::isVerbose = false;
+
 } // namespace solid

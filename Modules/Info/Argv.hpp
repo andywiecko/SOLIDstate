@@ -1,3 +1,13 @@
+/**
+ * @file Argv.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Argv Parser class header
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef ARGV_HPP
 #define ARGV_HPP
 
@@ -8,6 +18,9 @@
 namespace solid
 {
     
+/**
+ * @brief simple [argv](https://en.wikipedia.org/wiki/Command-line_argument_parsing) class
+ */
 class ArgvParser
 {
 

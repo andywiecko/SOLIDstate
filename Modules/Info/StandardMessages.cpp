@@ -1,15 +1,27 @@
+/**
+ * @file StandardMessages.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Standard Messages implementation
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include <iostream>
 #include "StandardMessages.hpp"
 #include "Info.hpp"
 
 namespace solid
 {
-    void StandardMessages::Line()
+
+void StandardMessages::Line()
 {
-	std::cout << std::string(50, '#') << std::endl;
+	std::cout << std::string(50, '#') // handy string initialization
+			  << std::endl;
 }
 
-void StandardMessages::ShowSectors(Ensemble & ensemble)
+void StandardMessages::ShowSectors(Ensemble &ensemble)
 {
 	std::vector<Sector> sectors = ensemble.sectors;
 	Line();
@@ -23,7 +35,7 @@ void StandardMessages::ShowSectors(Ensemble & ensemble)
 }
 
 template <template <typename> class T1, typename T2>
-void StandardMessages::ShowSectors(QuantumSystem<T1,T2> & qSystem)
+void StandardMessages::ShowSectors(QuantumSystem<T1, T2> &qSystem)
 {
 	ShowSectors(qSystem.hilbertSpace.ensemble);
 }
@@ -39,6 +51,4 @@ void StandardMessages::vMessage(std::string text)
 		Message(text);
 }
 
-template void StandardMessages::ShowSectors(QuantumSystem<Mat,double>&);
-
-}
+} // namespace solid

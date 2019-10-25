@@ -1,3 +1,13 @@
+/**
+ * @file HilbertSpace.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Hilber Space implementation
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "HilbertSpace.hpp"
 
 namespace solid
@@ -11,19 +21,14 @@ void HilbertSpace::Reset()
     sectorOffset = 0;
 }
 
-// selecting first sector and initilizing the baseState
 void HilbertSpace::InitialBaseState()
 {
     Reset();
     baseState.set_size(ensemble.L);
     Sector sector = ensemble.sectors[0];
-    //std::cout << sector.size << std::endl;
     baseState = BaseStateNumberConverter::ToBaseState(sector, 0);
 }
 
-
-// selecting next baseState in HilbertSpace
-// returns false if this is the last state
 bool HilbertSpace::NextBaseState()
 {
     Sector sector = ensemble.sectors[sectorIndex];
@@ -36,8 +41,11 @@ bool HilbertSpace::NextBaseState()
     return true;
 }
 
-// push the next sector to the HilbertSpace
-// returns false if this is the last Sector
+bool HilbertSpace::operator++(int)
+{
+    return NextBaseState();
+}
+
 bool HilbertSpace::NextSector()
 {
     // this is the last sector
@@ -55,4 +63,5 @@ bool HilbertSpace::NextSector()
         return true;
     }
 }
-}
+
+} // namespace solid

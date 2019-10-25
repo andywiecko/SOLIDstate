@@ -1,3 +1,13 @@
+/**
+ * @file Version.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Version class header
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef VERSION_HPP
 #define VERSION_HPP
 
@@ -7,15 +17,18 @@
 namespace solid
 {
 
+/**
+ * @brief constant char* about solid version
+ */
 class Version
 {
 public:
-    static constexpr const char* solidVersion = "0.100.0 (Alpha WIP)";
-
+    /**
+    * @brief current solid version 
+    */
+    static constexpr const char *solidVersion = "0.100.0 (Alpha WIP)";
 };
 
-
 } // namespace solid
-
 
 #endif
