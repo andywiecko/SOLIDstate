@@ -2,6 +2,7 @@
 #define GRANDCANONICAL_HPP
 
 #include "Ensemble.hpp"
+#include "Sector.hpp"
 #include <cmath>
 namespace solid
 {

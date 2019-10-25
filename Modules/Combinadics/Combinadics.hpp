@@ -14,7 +14,7 @@
 #include <vector>
 #include <armadillo>
 using namespace arma;
-#include "../Ensemble/Ensemble.hpp"
+#include "../Ensemble/Sector.hpp"
 #include "BaseState.hpp"
 
 namespace solid

@@ -16,6 +16,7 @@
 #include "Combinadics/Combinadics.hpp"
 
 #include "Ensemble/Ensemble.hpp"
+#include "Ensemble/Sector.hpp"
 #include "Ensemble/Canonical.hpp"
 #include "Ensemble/GrandCanonical.hpp"
 #include "Ensemble/ParityGrandCanonical.hpp"

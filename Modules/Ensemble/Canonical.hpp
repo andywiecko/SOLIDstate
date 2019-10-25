@@ -2,6 +2,7 @@
 #define CANONICAL_HPP
 
 #include "Ensemble.hpp"
+#include "Sector.hpp"
 #include "../Combinadics/Binomials.hpp"
 
 namespace solid
