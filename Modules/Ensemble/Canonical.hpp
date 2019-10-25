@@ -1,3 +1,13 @@
+/**
+ * @file Canonical.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Canonical Ensemble header
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef CANONICAL_HPP
 #define CANONICAL_HPP
 
@@ -8,30 +18,40 @@
 namespace solid
 {
 
-// export global binomials
-extern Binomials binomials;
-
-// Ensemble: Canonical (int L, int N) with:
-// L -- sites
-// N -- particles
+/**
+ * @brief Ensemble: Canonical (int L, int N) with:
+ * L -- sites
+ * N -- particles
+ */
 class Canonical : public Ensemble, public IEnsemble
 {
 public:
+
+	/**
+	 * @brief number of particles 
+	 * 
+	 */
 	int N = 0;
-	Canonical(int _L, int _N)
-	{
-		L = _L;
-		N = _N;
-	}
-	void SetSize()
-	{
-		size = binomials.binom(L, N); // TODO binomial
-	}
-	void FillSectors()
-	{
-		Sector sector(L, N);
-		sectors.push_back(sector);
-	}
+
+	/**
+	 * @brief Construct a new Canonical object
+	 * 
+	 * @param _L number os sites
+	 * @param _N number of particles
+	 */
+	Canonical(int _L, int _N);
+
+	/**
+	 * @brief Set the Size object
+	 * 
+	 */
+	void SetSize() override;
+
+	/**
+	 * @brief Filling Ensemble with selected sector
+	 * 
+	 */
+	void FillSectors() override;
 };
 
 } // namespace solid

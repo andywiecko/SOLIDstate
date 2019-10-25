@@ -1,3 +1,13 @@
+/**
+ * @file ParityGrandCanonical.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Parity Grand Canonical header
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef PARITYGRANDCANONICAL_HPP
 #define PARITYGRANDCANONICAL_HPP
 
@@ -7,31 +17,39 @@
 namespace solid
 {
 
-// Ensemble: Parity Grand Canonical (int L, int parity) with:
-// L -- sites
-// parity -- parity sector (even or odd number of particles)
+/**
+ * @brief Ensemble: Parity Grand Canonical (int L, int parity) with:
+ * L -- sites
+ * parity -- parity sector (even or odd number of particles)
+ */
 class ParityGrandCanonical : public Ensemble, public IEnsemble
 {
 public:
+	/**
+	 * @brief parity of the Ensemble
+	 * 
+	 */
 	int parity = 0;
-	ParityGrandCanonical(int _L, int _parity)
-	{
-		L = _L;
-		parity = _parity; // TODO modulo
-	}
-	void SetSize()
-	{
-		size = std::pow(2, L - 1);
-	}
-	void FillSectors()
-	{
-		SetSize();
-		for (int N = parity; N < L + 1; N += 2)
-		{
-			Sector sector(L, N);
-			sectors.push_back(sector);
-		}
-	}
+
+	/**
+	 * @brief Construct a new Parity Grand Canonical object
+	 * 
+	 * @param _L number of sites
+	 * @param _parity parity of the Ensemble
+	 */
+	ParityGrandCanonical(int _L, int _parity);
+
+	/**
+	 * @brief Set the Size object
+	 * 
+	 */
+	void SetSize() override;
+
+	/**
+	 * @brief Filling Ensemble with selected sectors
+	 * 
+	 */
+	void FillSectors() override;
 };
 
 } // namespace solid

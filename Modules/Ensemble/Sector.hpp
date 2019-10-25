@@ -1,3 +1,13 @@
+/**
+ * @file Sector.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Sector header
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef SECTOR_HPP
 #define SECTOR_HPP
 
@@ -5,22 +15,37 @@
 
 namespace solid
 {
-// contains information about number of sites and particles in the sector
+
+/**
+ * @brief contains information about number of sites and particles in the sector
+ */
 class Sector
 {
 public:
-	// number of sites
+	/**
+	 * @brief number of sites
+	 */
 	int L;
-	// number of particles
+
+	/**
+	 * @brief number of particles
+	 */
 	int N;
-	// number of states in the sector (dimension of the subspace)
+
+	/**
+	 * @brief number of states in the sector (dimension of the subspace)
+	 */
 	int size;
-	// Sector with L sites and N particles
+
+	/**
+	 * @brief Construct a new Sector object
+	 * 
+	 * @param _L sites
+	 * @param _N particles
+	 */
 	Sector(int _L, int _N);
 };
 
-
-
-}
+} // namespace solid
 
 #endif
