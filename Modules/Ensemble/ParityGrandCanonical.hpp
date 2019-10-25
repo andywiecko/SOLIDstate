@@ -27,7 +27,6 @@ class ParityGrandCanonical : public Ensemble, public IEnsemble
 public:
 	/**
 	 * @brief parity of the Ensemble
-	 * 
 	 */
 	int parity = 0;
 
@@ -41,13 +40,11 @@ public:
 
 	/**
 	 * @brief Set the Size object
-	 * 
 	 */
 	void SetSize() override;
 
 	/**
 	 * @brief Filling Ensemble with selected sectors
-	 * 
 	 */
 	void FillSectors() override;
 };

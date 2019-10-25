@@ -29,7 +29,6 @@ public:
 
 	/**
 	 * @brief number of particles 
-	 * 
 	 */
 	int N = 0;
 
@@ -43,13 +42,11 @@ public:
 
 	/**
 	 * @brief Set the Size object
-	 * 
 	 */
 	void SetSize() override;
 
 	/**
 	 * @brief Filling Ensemble with selected sector
-	 * 
 	 */
 	void FillSectors() override;
 };

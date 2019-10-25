@@ -35,13 +35,11 @@ public:
 
 	/**
 	 * @brief Set the Size object
-	 * 
 	 */
 	void SetSize() override;
 
 	/**
 	 * @brief Filling Ensemble with selected sectors
-	 * 
 	 */
 	void FillSectors() override;
 };
