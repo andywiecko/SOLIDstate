@@ -1,9 +1,18 @@
+/**
+ * @file Factory.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Factory implementation
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include <cmath>
 #include <armadillo>
 
 #include "Factory.hpp"
 #include "../Info/Info.hpp"
-
 
 namespace solid
 {

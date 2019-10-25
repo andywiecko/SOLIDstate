@@ -1,3 +1,13 @@
+/**
+ * @file Factory-imp.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Factory templates initialization
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "Factory.cpp"
 
 namespace solid

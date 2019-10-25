@@ -1,3 +1,13 @@
+/**
+ * @file KitaevHamiltonian.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Kitaev Hamiltonian header
+ * @version 0.100.0
+ * @date 2019-10-25
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef KITAEVHAMILTONIAN_HPP
 #define KITAEVHAMILTONIAN_HPP
 
