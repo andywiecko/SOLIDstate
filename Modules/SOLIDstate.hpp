@@ -46,5 +46,10 @@
 
 #include "Parameters/Parameters.hpp"
 
+/**
+ * @brief SOLIDstate namespace
+ */
+namespace solid{}
+
 
 #endif

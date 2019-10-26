@@ -26,8 +26,8 @@ class Timer
 {
 public:
     
-    static arma::wall_clock timer; //< clock class for time measurement
-    static double timeInSec;       //< measured seconds
+    static arma::wall_clock timer; /// clock class for time measurement
+    static double timeInSec;       /// measured seconds
 
     /**
      * @brief starts the time measurement

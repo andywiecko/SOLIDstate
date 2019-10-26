@@ -79,9 +79,9 @@ public:
     bool operator++(int);
 
 private:
-    statenumber stateIndex = 0;   //< current selcted BaseState enumerates the states inside the sector
-    int sectorIndex = 0;          //< current selected sector -- enumerates the sectors
-    statenumber sectorOffset = 0; //< ancillary variable for inserting inter-sector interaction elements
+    statenumber stateIndex = 0;   /// current selcted BaseState enumerates the states inside the sector
+    int sectorIndex = 0;          /// current selected sector -- enumerates the sectors
+    statenumber sectorOffset = 0; /// ancillary variable for inserting inter-sector interaction elements
     bool NextSector();
 };
 
