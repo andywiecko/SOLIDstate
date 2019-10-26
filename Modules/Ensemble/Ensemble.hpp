@@ -20,7 +20,7 @@ namespace solid
 /**
  * @brief interface for Ensemble class
  * 
- * Abstract class Containg two purely virtual functions
+ * Abstract class containg two purely virtual functions
  */
 class IEnsemble
 {

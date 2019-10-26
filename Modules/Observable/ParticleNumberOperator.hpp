@@ -1,3 +1,13 @@
+/**
+ * @file ParticleNumberOperator.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Particle Number Operator header
+ * @version 0.100.0
+ * @date 2019-10-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef PARTICLENUMBEROPERATOR_HPP
 #define PARTICLENUMBEROPERATOR_HPP
 
@@ -6,8 +16,18 @@
 namespace solid
 {
 
-
- 
+/**
+ * @brief implementation of the Particle Number Operator
+ * 
+ * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
+ * @tparam T2 data type: double, std::complex<double> are supported
+ * 
+ * implements Particle Number Operator \f$\hat N \f$ defined in the following way:
+ * \f[
+ * \hat N  = \sum_i \hat n_i,
+ * \f] 
+ * where \f$\hat n_i \f$ is particle number operator at site \f$i\f$.
+ */
 template <template <typename> class T1, typename T2>
 class ParticleNumberOperator : public Observable<T1, T2>, public IOperatorParameters<T1, T2>
 {

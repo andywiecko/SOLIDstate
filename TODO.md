@@ -4,7 +4,8 @@
 * ~class Info should be static~
 * [!] hopping
 * [!] linker
-* [!] comment the code
+* [!] comment the code (WIP)
+* manual (dev guide LaTeX)
 * delta (pair creation)
 * basic operators N, ni, P, current, hamiltonian derived ...
 * parameters filler
@@ -14,5 +15,5 @@
 * two interacting quantum systems (with possibility of different ensembles!) H1 \oplus H2 + V12
 * Quantum dynamic package (propagation RK4, chebyshev)
 * LIOMs
-* Doxygen
-* Docs
+* ~Doxygen~
+* Docs (WIP)
