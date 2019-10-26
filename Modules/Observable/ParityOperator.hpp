@@ -17,12 +17,12 @@ namespace solid
 {
 
 /**
- * @brief implementation of the Parity operator
+ * @brief implementation of the ParityOperator
  * 
  * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
  * @tparam T2 data type: double, std::complex<double> are supported
  * 
- * implements parity operator \f$\mathcal P \f$ defined in the following way:
+ * implements ParityOperator \f$\mathcal P \f$ defined in the following way:
  * \f[
  * \mathcal P  = \prod_i (1-2\hat n_i),
  * \f] 

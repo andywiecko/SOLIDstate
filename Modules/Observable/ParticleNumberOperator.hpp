@@ -17,12 +17,12 @@ namespace solid
 {
 
 /**
- * @brief implementation of the Particle Number Operator
+ * @brief implementation of the Total ParticleNumberOperator
  * 
  * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
  * @tparam T2 data type: double, std::complex<double> are supported
  * 
- * implements Particle Number Operator \f$\hat N \f$ defined in the following way:
+ * implements ParticleNumberOperator \f$\hat N \f$ defined in the following way:
  * \f[
  * \hat N  = \sum_i \hat n_i,
  * \f] 
