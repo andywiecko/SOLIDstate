@@ -15,6 +15,7 @@
 #include "../Terms/Terms.hpp"
 #include "../Terms/OneBodyInteraction.hpp"
 #include "../Terms/TwoBodyInteraction.hpp"
+#include "../Terms/Hop.hpp"
 #include <armadillo>
 #include <type_traits>
 

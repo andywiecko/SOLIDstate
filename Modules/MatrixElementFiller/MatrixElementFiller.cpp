@@ -52,6 +52,9 @@ void MatrixElementFiller::FermionFiller(QuantumSystem<T1, T2> &qSystem)
         if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
             TwoBodyInteractionTermFermions::FillElements(qSystem);
 
+        if (qSystem.hamiltonian.termsEnabled.Hop)
+            HopTermFermions::FillElements(qSystem);
+
     }
     // do until last base state in the ensemble
     while (qSystem.hilbertSpace++); //.NextBaseState());

@@ -42,6 +42,7 @@ public:
 		termsEnabled.particles = Particles::Fermions;
 		termsEnabled.OneBodyInteraction = true;
 		termsEnabled.TwoBodyInteraction = true;
+		termsEnabled.Hop = true;
 		//termsEnabled.N05option = true;
 	}
 };

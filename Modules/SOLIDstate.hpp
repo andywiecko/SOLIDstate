@@ -37,6 +37,7 @@
 #include "Terms/Terms.hpp"
 #include "Terms/OneBodyInteraction.hpp"
 #include "Terms/TwoBodyInteraction.hpp"
+#include "Terms/Hop.hpp"
 
 #include "MatrixElementFiller/MatrixElementFiller.hpp"
 

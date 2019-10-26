@@ -60,5 +60,19 @@ int main(int argc, char *argv[])
 
 	Info::Time();
 
+	BaseState someState;
+	someState.set_size(6);someState.fill(0);
+	someState(0) = 1;
+	someState(1) = 1;
+	someState(2) = 1;
+
+	std::cout << someState.HopSign(3,0) << std::endl;
+
+	BaseState someState2;someState2.set_size(6); someState2.fill(0);
+	someState2(4) = 1;
+	someState2.print("before");
+	someState2.MakeHop(4,0);
+	someState2.print("after");
+
 	return 0;
 }

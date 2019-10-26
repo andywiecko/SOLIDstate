@@ -4,7 +4,7 @@
 * ~class Info should be static~
 * [!] hopping
 * [!] linker
-* [!] comment the code (WIP)
+* ~comment the code~ (WIP)
 * manual (dev guide LaTeX)
 * delta (pair creation)
 * basic operators N, ni, P, current, hamiltonian derived ...

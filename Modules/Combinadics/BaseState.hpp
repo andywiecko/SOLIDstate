@@ -67,6 +67,28 @@ public:
      */
     bool TwoBodyInteraction(int site1, int site2);
 
+    /**
+     * @brief returns sign of the hopping from start to stop
+     * 
+     * @param start initial hopping index 
+     * @param stop final hopping index
+     * @return int sign of the hopping
+     * 
+     * We used the following convention for sites numbering:
+     * * \f$
+     * |11111\cdots\,\rangle = \cdots a_3^\dagger a_2^\dagger a_1^\dagger a_0^\dagger |00000\cdots\,\rangle
+     * \f$
+     */
+    int HopSign(int start, int stop);
+
+    /**
+     * @brief perform hopping
+     * 
+     * @param start initial hopping index
+     * @param stop final hopping index
+     */
+    void MakeHop(int start, int stop);
+
     // NOT YET IMPLEMENTED
     bool CountParticles();
     bool ThreeBodyInteraction(int site1, int site2, int site3);
