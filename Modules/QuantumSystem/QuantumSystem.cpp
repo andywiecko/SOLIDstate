@@ -1,3 +1,13 @@
+/**
+ * @file QuantumSystem.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Quantum System class implementation
+ * @version 0.100.0
+ * @date 2019-10-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "QuantumSystem.hpp"
 #include <armadillo>
 #include "../HilbertSpace/HilbertSpace.hpp"

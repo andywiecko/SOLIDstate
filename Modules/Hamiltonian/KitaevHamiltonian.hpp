@@ -36,7 +36,7 @@ class KitaevHamiltonian : public Operator<T1, T2>, public IHamiltonian
 	using Operator<T1, T2>::termsEnabled;
 
 public:
-	void SelectTerms()
+	void SelectTerms() override
 	{
 		// Fermions are default, but it is good to stress out
 		termsEnabled.particles = Particles::Fermions;

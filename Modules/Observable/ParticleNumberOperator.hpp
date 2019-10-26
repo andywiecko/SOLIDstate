@@ -35,6 +35,11 @@ class ParticleNumberOperator : public Observable<T1, T2>, public IOperatorParame
     using Observable<T1, T2>::parameters;
 
 public:
+    /**
+     * @brief Construct a new Particle Number Operator< T 1,  T 2> object
+     * 
+     * @param _L number of sites
+     */
     ParticleNumberOperator<T1, T2>(int _L)
     {
         L = _L;
@@ -51,7 +56,7 @@ private:
         _operator.termsEnabled.OneBodyInteraction = true;
     }
 
-    void FillParameters()
+    void FillParameters() override
     {
         arma::Col<T2> mu;
         mu.set_size(L);

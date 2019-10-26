@@ -1,6 +1,17 @@
+/**
+ * @file TwoBodyInteraction.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Two Body Interaction class implementation
+ * @version 0.100.0
+ * @date 2019-10-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "TwoBodyInteraction.hpp"
 namespace solid
 {
+
 template <template <typename> class T1, typename T2>
 void TwoBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem)
 {

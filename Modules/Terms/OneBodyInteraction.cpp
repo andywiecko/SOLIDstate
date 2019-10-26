@@ -1,3 +1,13 @@
+/**
+ * @file OneBodyInteraction.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief One Body Interaction implementation
+ * @version 0.100.0
+ * @date 2019-10-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "OneBodyInteraction.hpp"
 namespace solid
 {

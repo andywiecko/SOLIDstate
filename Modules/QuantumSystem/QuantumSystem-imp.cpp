@@ -1,3 +1,13 @@
+/**
+ * @file QuantumSystem-imp.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Quantum System template initialization
+ * @version 0.100.0
+ * @date 2019-10-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "QuantumSystem.cpp"
 
 namespace solid
@@ -5,9 +15,9 @@ namespace solid
 // ***************************
 // Fill 
 // ***************************
-template void QuantumSystem<arma::Mat, double>::Fill();
-template void QuantumSystem<arma::Mat,cx_double>::Fill();
-template void QuantumSystem<arma::SpMat,double>::Fill();
+template void QuantumSystem<arma::  Mat,   double>::Fill();
+template void QuantumSystem<arma::  Mat,cx_double>::Fill();
+template void QuantumSystem<arma::SpMat,   double>::Fill();
 template void QuantumSystem<arma::SpMat,cx_double>::Fill();
 
 // ***************************

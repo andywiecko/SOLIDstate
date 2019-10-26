@@ -35,6 +35,11 @@ class ParityOperator : public Observable<T1, T2>, public IOperatorParameters<T1,
     using Observable<T1, T2>::parameters;
 
 public:
+    /**
+     * @brief Construct a new Parity Operator< T 1,  T 2> object
+     * 
+     * @param _L number of sites
+     */
     ParityOperator<T1, T2>(int _L)
     {
         L = _L;
@@ -51,7 +56,7 @@ private:
         _operator.termsEnabled.OneBodyInteraction = true;
     }
 
-    void FillParameters()
+    void FillParameters() override
     {
         arma::Col<T2> mu;
         mu.set_size(L);
@@ -60,7 +65,7 @@ private:
     }
 
 public:
-    virtual void PreprocessingVirtual(T1<T2> &matrixElements) { Preprocessing(matrixElements); }
+    void PreprocessingVirtual(T1<T2> &matrixElements) override { Preprocessing(matrixElements); }
     static void Preprocessing(T1<T2> &matrixElements)
     {
         std::cout << "parity pre-process..." << std::endl;
