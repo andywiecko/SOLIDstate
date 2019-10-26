@@ -10,6 +10,7 @@
 * parameters filler
 * basic input fill
 * geometry
+* direct sum
 * two interacting quantum systems (with possibility of different ensembles!) H1 \oplus H2 + V12
 * Quantum dynamic package (propagation RK4, chebyshev)
 * LIOMs

@@ -22,7 +22,7 @@ namespace solid
 // - Ensemble
 
 /**
- * @brief Hilbert Space class for state enumeration within the sectors
+ * @brief Hilbert Space class for state enumeration within the Sectors (Sector)
  * 
  * class contains
  * * BaseState
@@ -32,7 +32,7 @@ class HilbertSpace
 {
 public:
     /**
-     * @brief current BaseState inHilbert space
+     * @brief current BaseState in HilbertSpace
      */
     BaseState baseState;
     /**

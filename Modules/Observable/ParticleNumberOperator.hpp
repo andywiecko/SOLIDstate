@@ -7,11 +7,7 @@ namespace solid
 {
 
 
-//    ___  
-//^   ╲   ^
-//N = ╱   n
-//    ‾‾‾  i
-//     i   
+ 
 template <template <typename> class T1, typename T2>
 class ParticleNumberOperator : public Observable<T1, T2>, public IOperatorParameters<T1, T2>
 {

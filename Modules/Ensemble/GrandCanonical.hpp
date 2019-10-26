@@ -19,7 +19,7 @@ namespace solid
 {
 
 /**
- * @brief Ensemble: Grand Canonical (int L) with:
+ * @brief Ensemble: GrandCanonical (int L) with:
  * L -- sites
  */
 class GrandCanonical : public Ensemble, public IEnsemble
@@ -27,7 +27,7 @@ class GrandCanonical : public Ensemble, public IEnsemble
 public:
 
 	/**
-	 * @brief Construct a new Grand Canonical object
+	 * @brief Construct a new GrandCanonical object
 	 * 
 	 * @param _L number of sites
 	 */

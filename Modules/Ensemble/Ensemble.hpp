@@ -1,3 +1,13 @@
+/**
+ * @file Ensemble.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Ensemble interface and parent class header
+ * @version 0.100.0
+ * @date 2019-10-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef ENSEMBLE_HPP
 #define ENSEMBLE_HPP
 
@@ -8,7 +18,7 @@ namespace solid
 {
 
 /**
- * @brief interface for Ensamble class
+ * @brief interface for Ensemble class
  * 
  * Abstract class Containg two purely virtual functions
  */

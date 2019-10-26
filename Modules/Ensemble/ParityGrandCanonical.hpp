@@ -18,9 +18,9 @@ namespace solid
 {
 
 /**
- * @brief Ensemble: Parity Grand Canonical (int L, int parity) with:
+ * @brief Ensemble: ParityGrandCanonical (int L, int parity) with:
  * L -- sites
- * parity -- parity sector (even or odd number of particles)
+ * parity -- parity Sector (even or odd number of particles)
  */
 class ParityGrandCanonical : public Ensemble, public IEnsemble
 {
@@ -31,7 +31,7 @@ public:
 	int parity = 0;
 
 	/**
-	 * @brief Construct a new Parity Grand Canonical object
+	 * @brief Construct a new ParityGrandCanonical object
 	 * 
 	 * @param _L number of sites
 	 * @param _parity parity of the Ensemble

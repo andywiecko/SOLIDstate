@@ -1,3 +1,13 @@
+/**
+ * @file MatrixElementFiller.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Matrix Element Filler header
+ * @version 0.100.0
+ * @date 2019-10-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef MATRIXELEMENTFILLER_HPP
 #define MATRIXELEMENTFILLER_HPP
 
@@ -11,69 +21,55 @@
 namespace solid
 {
 
-// fills the Quantum System matrix elements
+/**
+ * @brief Static class, which fills the QuantumSystem matrix elements
+ * 
+ * Class contains functions for different particles, which fill 
+ * matrix element for given QuantumSystem (with selected Operator, IHamiltonian, HilbertSpace, Ensemble)
+ */
 class MatrixElementFiller
 {
 public:
+    /**
+     * @brief fills matrixElements for QuantumSystem for selected Operator
+     * 
+     * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
+     * @tparam T2 data type: double, std::complex<double> are supported
+     * @param qSystem QuantumSystem to fill
+     */
     template <template <typename> class T1, typename T2>
-    static void Fill(QuantumSystem<T1, T2> &qSystem)
-    {
-        WarmUp(qSystem);
-        Particles selectedParticles = qSystem.hamiltonian.termsEnabled.particles;
-        switch (selectedParticles)
-        {
-        case Particles::Fermions:
-            FermionFiller(qSystem);
-            break;
-        case Particles::Spins:
-            SpinFiller(qSystem);
-            break;
-        }
-    }
+    static void Fill(QuantumSystem<T1, T2> &qSystem);
 
 private:
+    /**
+     * @brief initialization of the matrixElements for QuantumSystem
+     * 
+     * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
+     * @tparam T2 data type: double, std::complex<double> are supported
+     * @param qSystem QuantumSystem to initilize
+     */
     template <template <typename> class T1, typename T2>
-    static void WarmUp(QuantumSystem<T1, T2> &qSystem)
-    {
-        int size = qSystem.hilbertSpace.ensemble.size;
-        qSystem.hamiltonian.matrixElements.set_size(size, size);
-        if constexpr (std::is_same<T1<T2>, arma::Mat<T2>>::value)
-            qSystem.hamiltonian.matrixElements.fill(0);
-    }
+    static void WarmUp(QuantumSystem<T1, T2> &qSystem);
 
+    /**
+     * @brief initialization of the matrixElements for QuantumSystem, particles: Fermions
+     * 
+     * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
+     * @tparam T2 data type: double, std::complex<double> are supported
+     * @param qSystem QuantumSystem to initilize
+     */
     template <template <typename> class T1, typename T2>
-    static void FermionFiller(QuantumSystem<T1, T2> &qSystem)
-    {
-        // initialisation of the base state
-        qSystem.hilbertSpace.InitialBaseState();
-        do
-        {
-            // TODO selecting particles then selecting Terms implementation
-            // sector terms
-            if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
-                OneBodyInteractionTermFermions::FillElements(qSystem);
+    static void FermionFiller(QuantumSystem<T1, T2> &qSystem);
 
-            if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
-                TwoBodyInteractionTermFermions::FillElements(qSystem);
-
-        }
-        // do until last base state in the ensemble
-        while (qSystem.hilbertSpace++);//.NextBaseState());
-    }
-
+    /**
+     * @brief initialization of the matrixElements for QuantumSystem, particles: Spins
+     * 
+     * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
+     * @tparam T2 data type: double, std::complex<double> are supported
+     * @param qSystem QuantumSystem to initilize
+     */
     template <template <typename> class T1, typename T2>
-    static void SpinFiller(QuantumSystem<T1, T2> &qSystem)
-    {
-        // initialisation of the base state
-        qSystem.hilbertSpace.InitialBaseState();
-        do
-        {
-            if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
-                OneBodyInteractionTermSpins::FillElements(qSystem);
-            if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
-                TwoBodyInteractionTermSpins::FillElements(qSystem);
-        } while (qSystem.hilbertSpace++);//.NextBaseState());
-    }
+    static void SpinFiller(QuantumSystem<T1, T2> &qSystem);
 };
 
 } // namespace solid

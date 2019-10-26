@@ -24,7 +24,7 @@ typedef long int statenumber;
 typedef uvec baseStateContainer;
 
 /**
- * @brief Base State for Hilbert Space base
+ * @brief BaseState for HilbertSpace base
  * 
  */
 class BaseState : public baseStateContainer
