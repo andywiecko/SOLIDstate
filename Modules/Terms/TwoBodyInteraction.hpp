@@ -23,7 +23,7 @@ namespace solid
  * 
  * class is responsible for filling the following term:
  * \f[ 
- * \sum_i \V_{ij} \hat n_i \hat n_j
+ * \sum_i V_{ij} \hat n_i \hat n_j
  * \f]
  */
 class TwoBodyInteractionTermFermions : public ITerm
@@ -38,7 +38,7 @@ public:
  * 
  * class is responsible for filling the following term:
  * \f[ 
- * \sum_i \J_{ij} \hat S_i^z \hat S_j^z
+ * \sum_i J_{ij} \hat S_i^z \hat S_j^z
  * \f]
  */
 class TwoBodyInteractionTermSpins : public ITerm

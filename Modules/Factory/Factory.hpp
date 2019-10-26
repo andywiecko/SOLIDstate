@@ -29,9 +29,9 @@ namespace solid
  * @brief produces stuff
  * 
  * Factory of all diffrent template objects:
- * * Ensembles
- * * Hamiltonians
- * * Observables
+ * * Ensemble
+ * * IHamiltonian implementations
+ * * Observable
  */
 class Factory
 {
@@ -49,8 +49,8 @@ public:
 	/**
 	 * @brief Create a Hamiltonian object
 	 * 
-	 * @tparam T Hamiltonian
-	 * @return T Hamiltonian
+	 * @tparam T IHamiltonian implemetation
+	 * @return T IHamiltonian implemetation
 	 */
 	template <class T>
 	static T CreateHamiltonian();
@@ -58,7 +58,7 @@ public:
 	/**
 	 * @brief Create an Observable object
 	 * 
-	 * @tparam T Obserbable
+	 * @tparam T Observable
 	 * @tparam Targs Observable additional arguments (e.g. site number,...)
 	 * @return T Observable
 	 */

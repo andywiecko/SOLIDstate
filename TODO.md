@@ -12,7 +12,7 @@
 * basic input fill
 * geometry
 * direct sum
-* two interacting quantum systems (with possibility of different ensembles!) H1 \oplus H2 + V12
+* two interacting quantum systems (with possibility of different ensembles!) \f$H_1 \oplus H_2 + V_{12}\f$
 * Quantum dynamic package (propagation RK4, chebyshev)
 * LIOMs
 * ~Doxygen~
