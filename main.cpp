@@ -49,6 +49,11 @@ int main(int argc, char *argv[])
 	qSystem.Fill();
 	//MatrixElementFiller::Fill(qSystem);
 
+	mat eigvec;
+	vec eigval;
+	eig_sym(eigval,eigvec,qSystem.hamiltonian.matrixElements);
+	eigval.t().print();
+
 	qSystem.hamiltonian.matrixElements.print();
 
 	return 0;
