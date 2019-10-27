@@ -10,6 +10,10 @@ obj=$(src:.cpp=.o)
 %.o: %.cpp %.hpp
 	$(CC) -o $@ -c $< -std=c++17
 
+# template initialization files pattern
+%-imp.o: %-imp.cpp %.hpp %.cpp
+	$(CC) -o $@ -c $< -std=c++17
+
 main.o: main.cpp $(obj)
 	$(CC) -o main.exe $^ $(LIBS) $(CFLAGS)
 

@@ -24,7 +24,7 @@ namespace solid
  * 
  * Kitaev Hamiltonian extended by the many-body interaction.
  * Model can be described by the following Hamiltonian:
- * \f[ \hat H = \sum_{ij}\left(-t_{ij}a_i^\dagger a_j +\text{H.c.}\right)
+ * \f[ \hat H = \sum_{ij}\left(t_{ij}a_i^\dagger a_j +\text{H.c.}\right)
  *              +\sum_{ij}\left(\Delta_{ij}a_i^\dagger a_j^\dagger +\text{H.c.}\right)
  *              +\sum_{ij}V_{ij}\hat n_i \hat n_j
  * 				+\sum_i \mu_i \hat n_i

@@ -21,7 +21,7 @@ namespace solid
  * 
  * class is responsible for filling the following term:
  * \f[ 
- * \sum_i t_{ij} \left(a^\dagger_i a_j + \mathrm{H.c.}\right)
+ * \sum_{ij}  \left(t_{ij} a^\dagger_i a_j + \mathrm{H.c.}\right)
  * \f]
  */
 class HopTermFermions : public ITerm
