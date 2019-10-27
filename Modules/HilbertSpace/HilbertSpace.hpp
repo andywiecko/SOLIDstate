@@ -78,6 +78,15 @@ public:
      */
     bool operator++(int);
 
+    /**
+     * @brief Get the State Index In Current Sector object
+     * 
+     * @param state BaseState to convert
+     * @return statenumber returns (total) state index
+     */
+    statenumber GetStateIndexInCurrentSector(BaseState state);
+
+
 private:
     statenumber stateIndex = 0;   /// current selcted BaseState enumerates the states inside the sector
     int sectorIndex = 0;          /// current selected sector -- enumerates the sectors

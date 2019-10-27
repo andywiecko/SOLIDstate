@@ -13,13 +13,13 @@ int main(int argc, char *argv[])
 	
 	Info::Start();
 		
-	int L = 3;
+	int L = 4;
 
 	QuantumSystem<Mat, double> qSystem;
 
 	//qSystem.SelectEnsemble<Canonical>(L,L/2);
-	//qSystem.SelectEnsemble<ParityGrandCanonical>(L,0);
-	qSystem.SelectEnsemble<GrandCanonical>(L);
+	qSystem.SelectEnsemble<ParityGrandCanonical>(L,0);
+	//qSystem.SelectEnsemble<GrandCanonical>(L);
 
 	Info::ShowSectors(qSystem.hilbertSpace.ensemble);
 	//Info::ShowSectors(qSystem); // other implementation 
@@ -30,12 +30,19 @@ int main(int argc, char *argv[])
 
 	sp_mat V;
 	V.set_size(L, L);
-	V(0, 1) = 1;
+	//V(0, 1) = 1;
+
+	sp_mat t(L,L);
+	for(int i=0;i<L;i++) t(i,(i+1)%L) = 1.0;
+	for(int i=0;i<L;i++) t((i+1)%L,i) = 1.0;
+	mat(t).print();
 
 	Parameters<double> param;
 
 	param['M'] = mu;
 	param['V'] = V;
+	param['t'] = t;
+
 	qSystem.parameters = param;
 
 	qSystem.SelectHamiltonian<KitaevHamiltonian>();
@@ -44,6 +51,7 @@ int main(int argc, char *argv[])
 
 	qSystem.hamiltonian.matrixElements.print();
 
+	return 0;
 
 	qSystem.SelectObservable<ParticleNumberOperator>(L);
 	MatrixElementFiller::Fill(qSystem);
@@ -59,20 +67,6 @@ int main(int argc, char *argv[])
 	qSystem.hamiltonian.matrixElements.print();
 
 	Info::Time();
-
-	BaseState someState;
-	someState.set_size(6);someState.fill(0);
-	someState(0) = 1;
-	someState(1) = 1;
-	someState(2) = 1;
-
-	std::cout << someState.HopSign(3,0) << std::endl;
-
-	BaseState someState2;someState2.set_size(6); someState2.fill(0);
-	someState2(4) = 1;
-	someState2.print("before");
-	someState2.MakeHop(4,0);
-	someState2.print("after");
 
 	return 0;
 }

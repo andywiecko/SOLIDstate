@@ -46,6 +46,11 @@ bool HilbertSpace::operator++(int)
     return NextBaseState();
 }
 
+statenumber HilbertSpace::GetStateIndexInCurrentSector(BaseState state)
+{
+    return BaseStateNumberConverter::ToNumber(state) + sectorOffset;
+}
+
 bool HilbertSpace::NextSector()
 {
     // this is the last sector

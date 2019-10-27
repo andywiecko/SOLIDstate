@@ -43,7 +43,6 @@ bool BaseState::Hop(int start, int stop)
 	return (this->at(start) == 1 && this->at(stop) == 0 ? true : false);
 }
 
-
 int BaseState::HopSign(int start, int stop)
 {
 	// function calculates number of particles
@@ -53,11 +52,15 @@ int BaseState::HopSign(int start, int stop)
 	//            How many particles here?
 	// and then returns parity of such number
 	int ret;
-	if (start<stop)
-		ret = accu(this->subvec(start+1,stop-1));
+	// Neigbour or same site: positive sign
+	if (std::abs(start - stop) < 2)
+		return 1;
+
+	if (start < stop)
+		ret = accu(this->subvec(start + 1, stop - 1));
 	else
-		ret = accu(this->subvec(stop+1,start-1));
-	return 1-2*(ret % 2);
+		ret = accu(this->subvec(stop + 1, start - 1));
+	return 1 - 2 * (ret % 2);
 }
 
 void BaseState::MakeHop(int start, int stop)
@@ -66,4 +69,4 @@ void BaseState::MakeHop(int start, int stop)
 	this->at(stop) = 1;
 }
 
-}
+} // namespace solid
