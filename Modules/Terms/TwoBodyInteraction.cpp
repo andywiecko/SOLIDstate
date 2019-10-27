@@ -19,7 +19,7 @@ void TwoBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem
 	int k = qSystem.hilbertSpace.stateTotalIndex;
 	bool N05option = qSystem.hamiltonian.termsEnabled.N05option;
 	BaseState baseState = qSystem.hilbertSpace.baseState;
-	arma::SpMat<T2> V = qSystem.parameters['V'];
+	arma::SpMat<T2> V = qSystem.parameters[label];
 	auto start = V.begin();
 	auto end = V.end();
 	T2 Hij = 0;

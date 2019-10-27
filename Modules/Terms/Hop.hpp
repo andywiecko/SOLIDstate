@@ -11,6 +11,7 @@
 #ifndef HOP_HPP
 #define HOP_HPP
 
+#include <string>
 #include "../QuantumSystem/QuantumSystem.hpp"
 #include "Terms.hpp"
 namespace solid
@@ -27,10 +28,14 @@ namespace solid
 class HopTermFermions : public ITerm
 {
 public:
+	/**
+	 * @brief standard label of HopTermFermions is t 
+	 */
+	inline static const std::string label = "t";
 	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };
 
-}
+} // namespace solid
 
 #endif

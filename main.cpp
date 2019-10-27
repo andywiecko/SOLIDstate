@@ -39,9 +39,9 @@ int main(int argc, char *argv[])
 
 	Parameters<double> param;
 
-	param['M'] = mu;
-	param['V'] = V;
-	param['t'] = t;
+	param["M"] = mu;
+	param["V"] = V;
+	param["t"] = t;
 
 	qSystem.parameters = param;
 

@@ -11,6 +11,7 @@
 #ifndef PARAMETERS_HPP
 #define PARAMETERS_HPP
 
+#include <string>
 #include <map>
 #include <armadillo>
 namespace solid
@@ -22,7 +23,7 @@ namespace solid
  * @tparam T data type: double, std::complex<double> are supported
  */
 template <typename T>
-class Parameters : public std::map<char, arma::SpMat<T>>
+class Parameters : public std::map<std::string, arma::SpMat<T>>
 {
 };
 

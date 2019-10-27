@@ -18,7 +18,7 @@ void HopTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem)
 {
 	int k = qSystem.hilbertSpace.stateTotalIndex;
 	BaseState baseState = qSystem.hilbertSpace.baseState;
-	arma::SpMat<T2> t = qSystem.parameters['t'];
+	arma::SpMat<T2> t = qSystem.parameters[label];
 	auto start = t.begin();
 	auto end = t.end();
 

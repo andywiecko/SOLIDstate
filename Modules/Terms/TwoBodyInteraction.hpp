@@ -29,6 +29,10 @@ namespace solid
 class TwoBodyInteractionTermFermions : public ITerm
 {
 public:
+	/**
+	 * @brief standard label of TwoBodyInteractionTermFermions is V
+	 */
+	inline static const std::string label = "V";
 	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };
@@ -44,6 +48,10 @@ public:
 class TwoBodyInteractionTermSpins : public ITerm
 {
 public:
+	/**
+	 * @brief standard label of TwoBodyInteractionTermSpins is M
+	 */
+	inline static const std::string label = "V";
 	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };

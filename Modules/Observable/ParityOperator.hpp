@@ -61,7 +61,7 @@ private:
         arma::Col<T2> mu;
         mu.set_size(L);
         mu.fill(1);
-        parameters['M'] = mu;
+        parameters["M"] = mu; // TODO label
     }
 
 public:

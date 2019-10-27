@@ -17,7 +17,7 @@ void OneBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem
 	int k = qSystem.hilbertSpace.stateTotalIndex;
 	bool N05option = qSystem.hamiltonian.termsEnabled.N05option;
 	BaseState baseState = qSystem.hilbertSpace.baseState;
-    auto M = qSystem.parameters['M'];
+    auto M = qSystem.parameters[label];
 	T2 Hij = 0;
 	for (int i = 0; i < baseState.size(); i++)
 	{
@@ -35,7 +35,7 @@ void OneBodyInteractionTermSpins::FillElements(QuantumSystem<T1, T2> &qSystem)
 {
 	int k = qSystem.hilbertSpace.stateTotalIndex;
 	BaseState baseState = qSystem.hilbertSpace.baseState;
-	auto M = qSystem.parameters['M'];
+	auto M = qSystem.parameters[label];
 	T2 Hij = 0;
 	for (int i = 0; i < baseState.size(); i++)
 	{
