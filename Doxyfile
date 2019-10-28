@@ -751,6 +751,7 @@ INPUT                  = Modules/ \
                          Modules/Hamiltonian \
                          Modules/HilbertSpace \
                          Modules/Info \
+                         Modules/Laboratory \
                          Modules/MatrixElementFiller \
                          Modules/Observable \
                          Modules/Parameters \

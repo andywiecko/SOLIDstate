@@ -22,7 +22,7 @@ namespace solid
  * @tparam T data type: double, std::complex<double> are supported
  */
 template <typename T>
-class QuantumState : public Col<T>
+class QuantumState : public arma::Col<T>
 {
     public:
         /**

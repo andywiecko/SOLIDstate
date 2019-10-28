@@ -34,6 +34,8 @@
 #include "Info/Argv.hpp"
 #include "Info/Version.hpp"
 
+#include "Laboratory/Laboratory.hpp"
+
 #include "QuantumSystem/QuantumSystem.hpp"
 #include "QuantumState/QuantumState.hpp"
 

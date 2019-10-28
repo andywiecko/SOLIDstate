@@ -50,16 +50,18 @@ int main(int argc, char *argv[])
 	//MatrixElementFiller::Fill(qSystem);
 	qSystem.hamiltonian.matrixElements.print();
 
+	///* eigen problem
 	mat eigvec;
 	vec eigval;
 	eig_sym(eigval,eigvec,qSystem.hamiltonian.matrixElements);
 	eigval.t().print();
 
-	QuantumState<double> gs = Eigensolver::FindGroundState(qSystem);
-	std::cout << gs.energy << std::endl;
-	gs.print();
+	qSystem.quantumState = Eigensolver::FindGroundState(qSystem);
+	std::cout << qSystem.quantumState.energy << std::endl;
+	qSystem.quantumState.print();
+	//*/
 
-	return 0;
+	//return 0;
 
 	qSystem.SelectObservable<ParticleNumberOperator>(L);
 	MatrixElementFiller::Fill(qSystem);
@@ -73,6 +75,12 @@ int main(int argc, char *argv[])
 	ParityOperator<Mat,double>::Preprocessing(qSystem.hamiltonian.matrixElements);
 
 	qSystem.hamiltonian.matrixElements.print();
+
+	qSystem.parameters = param;
+	qSystem.SelectHamiltonian<KitaevHamiltonian>();
+	qSystem.Fill();
+	qSystem.hamiltonian.matrixElements.print();
+
 
 	Info::Time();
 

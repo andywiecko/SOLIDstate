@@ -7,6 +7,7 @@
 * [!] Docs (WIP)
 * [!] linker
 * [!] delta (pair creation)
+* [!] more Info::,  very useful for debugging!
 * manual (dev guide LaTeX)
 * basic operators N, ni, P, current, hamiltonian derived ...
 * parameters filler

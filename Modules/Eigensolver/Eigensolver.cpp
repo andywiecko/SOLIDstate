@@ -8,6 +8,9 @@
 namespace solid
 {
 
+// dense
+
+/// Mat<double> overload
 template <>
 QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, double> &qSystem)
 {
@@ -21,6 +24,7 @@ QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, doubl
     return qState;
 }
 
+/// Mat<cx_double> overload
 template <>
 QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, cx_double> &qSystem)
 {
@@ -34,12 +38,16 @@ QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, cx
     return qState;
 }
 
+// sparse
+
+/// SpMat<double> overload
 template <>
 QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, double> &qSystem)
 {
     // TODO
 }
 
+/// SpMat<cx_double> overload
 template <>
 QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, cx_double> &qSystem)
 {

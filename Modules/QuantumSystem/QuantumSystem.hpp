@@ -16,6 +16,7 @@
 #include "../Parameters/Parameters.hpp"
 #include "../Observable/Observable.hpp"
 #include "../Factory/Factory.hpp"
+#include "../QuantumState/QuantumState.hpp"
 
 namespace solid
 {
@@ -37,9 +38,25 @@ template <template <typename> class T1, typename T2>
 class QuantumSystem
 {
 public:
+    /**
+     * @brief selected HilbertSpace for the QuantumSystem
+     */
     HilbertSpace hilbertSpace;
+
+    /**
+     * @brief container for matrixElements
+     */
     Operator<T1, T2> hamiltonian;
+
+    /**
+     * @brief Parameters for hamiltonian
+     */
     Parameters<T2> parameters;
+
+    /**
+     * @brief container for QuantumState \f$|\psi\rangle\f$
+     */
+    QuantumState<T2> quantumState;
 
     /**
      * @brief fills matrixElements for selected Hamiltonian, 
@@ -69,7 +86,7 @@ public:
     }
 
     /**
-     * @brief 
+     * @brief selects Observable for QuantumSystem
      * 
      * @tparam Obs Observable template
      * @tparam Targs Observable specific argument types
