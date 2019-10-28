@@ -21,6 +21,8 @@
 #include "Ensemble/GrandCanonical.hpp"
 #include "Ensemble/ParityGrandCanonical.hpp"
 
+#include "Eigensolver/Eigensolver.hpp"
+
 #include "Hamiltonian/Hamiltonian.hpp"
 #include "Hamiltonian/KitaevHamiltonian.hpp"
 
@@ -33,6 +35,7 @@
 #include "Info/Version.hpp"
 
 #include "QuantumSystem/QuantumSystem.hpp"
+#include "QuantumState/QuantumState.hpp"
 
 #include "Terms/Terms.hpp"
 #include "Terms/OneBodyInteraction.hpp"

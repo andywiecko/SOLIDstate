@@ -48,13 +48,16 @@ int main(int argc, char *argv[])
 	qSystem.SelectHamiltonian<KitaevHamiltonian>();
 	qSystem.Fill();
 	//MatrixElementFiller::Fill(qSystem);
+	qSystem.hamiltonian.matrixElements.print();
 
 	mat eigvec;
 	vec eigval;
 	eig_sym(eigval,eigvec,qSystem.hamiltonian.matrixElements);
 	eigval.t().print();
 
-	qSystem.hamiltonian.matrixElements.print();
+	QuantumState<double> gs = Eigensolver::FindGroundState(qSystem);
+	std::cout << gs.energy << std::endl;
+	gs.print();
 
 	return 0;
 
