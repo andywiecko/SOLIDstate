@@ -45,6 +45,8 @@ template <>
 QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, double> &qSystem)
 {
     // TODO
+    QuantumState<double> ret;ret.set_size(qSystem.hamiltonian.matrixElements.n_rows);
+    return ret;
 }
 
 /// SpMat<cx_double> overload
@@ -52,6 +54,8 @@ template <>
 QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, cx_double> &qSystem)
 {
     // TODO
+    QuantumState<cx_double> ret; ret.set_size(qSystem.hamiltonian.matrixElements.n_rows);
+    return ret;
 }
 
 } // namespace solid
