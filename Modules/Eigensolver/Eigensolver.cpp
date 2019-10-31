@@ -66,14 +66,27 @@ QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, dou
     return qState;
 }
 
+
+//TODO
+
 /// SpMat<cx_double> overload
 template <>
 QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, cx_double> &qSystem)
 {
-    // TODO
-    QuantumState<cx_double> ret;
-    ret.set_size(qSystem.hamiltonian.matrixElements.n_rows);
-    return ret;
+    arma::Mat<cx_double> eigvec;
+    arma::Col<cx_double> eigval;
+    int numEig = SparseSolverOptions::numberOfEigenvalues;
+    int num = qSystem.hamiltonian.matrixElements.n_cols;
+    numEig = numEig > num ? num - 1 : numEig;
+    double tol = SparseSolverOptions::tolerance;
+    std::string target = "sr"; // WARNING!
+    Info::Eigenmessage("eigs_sym()", numEig, target, tol);
+    eigs_gen(eigval, eigvec, qSystem.hamiltonian.matrixElements,
+             numEig, target.c_str(), tol);
+    Info::vMessage("done!");
+    QuantumState<cx_double> qState = eigvec.col(0);
+    qState.energy = real(eigval(0)); // WARNING!
+    return qState;
 }
 
 } // namespace solid
