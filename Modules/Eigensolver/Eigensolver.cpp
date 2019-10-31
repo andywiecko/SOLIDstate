@@ -19,9 +19,7 @@ QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, doubl
     Info::vTime("starting eig_sym() ...");
     eig_sym(eigval, eigvec, qSystem.hamiltonian.matrixElements);
     Info::vMessage("done!");
-    QuantumState<double> qState;
-    qState.set_size(eigvec.n_rows);
-    qState.col(0) = eigvec.col(0);
+    QuantumState<double> qState = eigvec.col(0);
     qState.energy = eigval(0);
     return qState;
 }
@@ -35,9 +33,7 @@ QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, cx
     Info::vTime("starting eig_sym() ...");
     eig_sym(eigval, eigvec, qSystem.hamiltonian.matrixElements);
     Info::vMessage("done!");
-    QuantumState<cx_double> qState;
-    qState.set_size(eigvec.n_rows);
-    qState.col(0) = eigvec.col(0);
+    QuantumState<cx_double> qState = eigvec.col(0);
     qState.energy = eigval(0);
     return qState;
 }
@@ -65,9 +61,7 @@ QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, dou
     eigs_sym(eigval, eigvec, qSystem.hamiltonian.matrixElements,
              numEig, target.c_str(), tol);
     Info::vMessage("done!");
-    QuantumState<double> qState;
-    qState.set_size(eigvec.n_rows);
-    qState.col(0) = eigvec.col(0);
+    QuantumState<double> qState = eigvec.col(0);
     qState.energy = eigval(0);
     return qState;
 }

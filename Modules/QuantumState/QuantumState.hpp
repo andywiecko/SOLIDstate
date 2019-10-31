@@ -24,18 +24,27 @@ namespace solid
 template <typename T>
 class QuantumState : public arma::Col<T>
 {
-    public:
-        /**
-         * @brief energy, it is assigned after eigen problem is solved
-         * 
-         * \f$
-         * \hat H | \psi \rangle = E | \psi \rangle,
-         * \f$
-         * where \f$E\f$ is energy.
-         */
-        double energy;
+    using arma::Col<T>::Col; // passing constructor for arma::Col<T>
+    // passing operator from arma:Col
+    using arma::Col<T>::operator*=;
+    using arma::Col<T>::operator+=;
+    using arma::Col<T>::operator-=;
+    using arma::Col<T>::operator%=;
+    using arma::Col<T>::operator=;
+    using arma::Col<T>::operator();
+
+public:
+    /**
+     * @brief energy, it is assigned after eigen problem is solved
+     * 
+     * \f$
+     * \hat H | \psi \rangle = E | \psi \rangle,
+     * \f$
+     * where \f$E\f$ is energy.
+     */
+    double energy;
 };
 
-}
+} // namespace solid
 
 #endif

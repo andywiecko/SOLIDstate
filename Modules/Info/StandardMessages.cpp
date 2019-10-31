@@ -42,7 +42,7 @@ void StandardMessages::Eigenmessage(std::string name,int number,std::string targ
 	message += " with options:";
 	message += " noe=" + std::to_string(number) + ";"; 
 	message += " tar=" + target + ";"; 
-	message += " tol=" + std::to_string(tol) +"; ..."; 
+	message += " tol=" + std::to_string(tol) +";..."; 
 	Info::vTime(message);
 	
 }
