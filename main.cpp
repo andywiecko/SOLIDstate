@@ -15,11 +15,11 @@ int main(int argc, char *argv[])
 		
 	int L = 6;
 
-	QuantumSystem<Mat, double> qSystem;
+	QuantumSystem<SpMat, double> qSystem;
 
-	//qSystem.SelectEnsemble<Canonical>(L,L/2);
+	qSystem.SelectEnsemble<Canonical>(L,L/2);
 	//qSystem.SelectEnsemble<ParityGrandCanonical>(L,0);
-	qSystem.SelectEnsemble<GrandCanonical>(L);
+	//qSystem.SelectEnsemble<GrandCanonical>(L);
 
 	Info::ShowSectors(qSystem.hilbertSpace.ensemble);
 	//Info::ShowSectors(qSystem); // other implementation 

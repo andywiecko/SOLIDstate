@@ -11,6 +11,9 @@
 #ifndef EIGENSOLVER_HPP
 #define EIGENSOLVER_HPP
 
+#include <string>
+
+#include "../Info/Info.hpp"
 #include "../QuantumSystem/QuantumSystem.hpp"
 #include "../QuantumState/QuantumState.hpp"
 
@@ -24,7 +27,6 @@ namespace solid
 class Eigensolver
 {
 public:
-
     /**
      * @brief Finding ground state (QuantumState) and its corresponding eigen energy
      * 
@@ -40,12 +42,42 @@ public:
      * \f$
      * 
      */
-    template <template <typename> class T1, typename T2> 
-    static QuantumState<T2> FindGroundState(QuantumSystem<T1,T2> & qSystem);
+    template <template <typename> class T1, typename T2>
+    static QuantumState<T2> FindGroundState(QuantumSystem<T1, T2> &qSystem);
 
-    // TODO solver options
-    // support for sparse
+    /**
+     * @brief class for handling options for sparse matrix
+     *        diagonalization procedures
+     */
+    class SparseSolverOptions
+    {
+    public:
+        /**
+         * @brief specifies the number of eigenvalues and eigenvectors 
+         */
+        static int numberOfEigenvalues;
 
+        /**
+         * @brief specifies the tolerance for convergence 
+         */
+        static double tolerance;
+
+        /**
+         * @brief eigenvalue target value
+         * 
+         * Armadillo target options for eigs_sym()
+         * * "lm"	 = 	obtain eigenvalues with largest magnitude 
+         * * "sm"	 = 	obtain eigenvalues with smallest magnitude (default operation)
+         * * "la"	 = 	obtain eigenvalues with largest algebraic value
+         * * "sa"	 = 	obtain eigenvalues with smallest algebraic value
+         * 
+         * @note  the number of obtained eigenvalues/eigenvectors may be lower than requested, depending on the given data 
+         * @note it's more difficult to compute the smallest eigenvalues than the largest eigenvalues;
+         *        if the decomposition fails, try increasing numberOfEigenvalues (number of eigenvalues) and/or the tolerance
+         */
+        static std::string eigenvalueTarget;
+
+    };
 };
 
 } // namespace solid

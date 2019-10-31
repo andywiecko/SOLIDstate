@@ -47,6 +47,11 @@ public:
 	static void ShowSectors(QuantumSystem<T1, T2> &qSystem);
 
 	/**
+	 * @brief info for eigendecomposition
+	 */
+	static void Eigenmessage(std::string name,int number,std::string target,double tol);
+
+	/**
 	 * @brief send Message to the standard output
 	 */
 	static void Message(std::string);

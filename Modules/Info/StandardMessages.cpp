@@ -34,6 +34,19 @@ void StandardMessages::ShowSectors(Ensemble &ensemble)
 	Line();
 }
 
+void StandardMessages::Eigenmessage(std::string name,int number,std::string target,double tol)
+{
+	
+	std::string message = "";
+	message += "starting " + name;
+	message += " with options:";
+	message += " noe=" + std::to_string(number) + ";"; 
+	message += " tar=" + target + ";"; 
+	message += " tol=" + std::to_string(tol) +"; ..."; 
+	Info::vTime(message);
+	
+}
+
 template <template <typename> class T1, typename T2>
 void StandardMessages::ShowSectors(QuantumSystem<T1, T2> &qSystem)
 {
