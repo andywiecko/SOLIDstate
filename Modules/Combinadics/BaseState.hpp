@@ -31,6 +31,8 @@ class BaseState : public baseStateContainer
 {
 public:
 
+    using baseStateContainer::baseStateContainer;
+
     /**
      * @brief returns reversed BaseState
      * 

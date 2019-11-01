@@ -17,15 +17,16 @@ namespace solid
 
 BaseState BaseState::Reverse()
 {
-	BaseState ret;
+	return arma::reverse(this->col(0));
+	/*
 	uword size = this->size();
 	ret.set_size(size);
 	for (uword i = 0; i < size; i++)
 	{
 		ret(size - 1 - i) = this->at(i);
 	}
-
-	return ret;
+	*/
+	//return ret;
 }
 
 bool BaseState::OneBodyInteraction(int site1)
