@@ -13,13 +13,13 @@ int main(int argc, char *argv[])
 	
 	Info::Start();
 		
-	int L = 6;
+	int L = 4;
 
-	QuantumSystem<SpMat, double> qSystem;
+	QuantumSystem<Mat, double> qSystem;
 
-	qSystem.SelectEnsemble<Canonical>(L,L/2);
-	//qSystem.SelectEnsemble<ParityGrandCanonical>(L,0);
-	//qSystem.SelectEnsemble<GrandCanonical>(L);
+	//qSystem.SelectEnsemble<Canonical>(L,L/2);
+	//qSystem.SelectEnsemble<ParityGrandCanonical>(L,1);
+	qSystem.SelectEnsemble<GrandCanonical>(L);
 
 	Info::ShowSectors(qSystem.hilbertSpace.ensemble);
 	//Info::ShowSectors(qSystem); // other implementation 
@@ -33,21 +33,28 @@ int main(int argc, char *argv[])
 	//for(int i=0;i<L;i++) V(i,(i+1)%L) = 1.0;
 
 	sp_mat t(L,L);
-	for(int i=0;i<L;i++) t(i,(i+1)%L) = 1.0;
-	for(int i=0;i<L;i++) t((i+1)%L,i) = 1.0;
+	for(int i=0;i<L-1;i++) t(i,(i+1)%L) = 1.0;
+	for(int i=0;i<L-1;i++) t((i+1)%L,i) = 1.0;
 	//mat(t).print();
+
+	sp_mat delta(L,L);
+	for(int i=0;i<L-1;i++) delta(i,(i+1)%L) = 1.0;
+	//for(int i=0;i<L;i++) delta((i+1)%L,i) = 1.0; //TODO
 
 	Parameters<double> param;
 
 	param["M"] = mu;
-	param["V"] = -V;
+	param["V"] = V;
 	param["t"] = -t;
+	param["delta"] = delta;
 
 	qSystem.parameters = param;
 
 
 	qSystem.SelectHamiltonian<KitaevHamiltonian>();
 	qSystem.Fill();
+
+	qSystem.hamiltonian.matrixElements.print();
 
 	//MatrixElementFiller::Fill(qSystem);
 	//qSystem.hamiltonian.matrixElements.print();

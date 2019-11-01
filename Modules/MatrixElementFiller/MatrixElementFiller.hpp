@@ -16,6 +16,8 @@
 #include "../Terms/OneBodyInteraction.hpp"
 #include "../Terms/TwoBodyInteraction.hpp"
 #include "../Terms/Hop.hpp"
+#include "../Terms/CreatePair.hpp"
+
 #include <armadillo>
 #include <type_traits>
 

@@ -90,11 +90,15 @@ public:
      */
     void MakeHop(int start, int stop);
 
+    bool CreatePairPossible(int site1, int site2);
+
+    void CreatePair(int site1, int site2);
+
+
     // NOT YET IMPLEMENTED
     bool CountParticles();
     bool ThreeBodyInteraction(int site1, int site2, int site3);
     bool CreateParticle(int site1);
-    bool CreatePair(int site1, int site2);
     bool CreateTriple(int site1, int site2, int site3);
 };
 

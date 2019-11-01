@@ -51,10 +51,31 @@ statenumber HilbertSpace::GetStateIndexInCurrentSector(BaseState state)
     return BaseStateNumberConverter::ToNumber(state) + sectorOffset;
 }
 
+statenumber HilbertSpace::GetStateIndexInNextParitySector(BaseState state)
+{
+    statenumber ret = 0;
+    
+    for (int i=sectorIndex;i<ensemble.sectors.size()-1;i++)
+    {
+        if (ensemble.sectors[sectorIndex].N+2 == ensemble.sectors[i].N)
+        {
+            break;
+        }
+        else
+        {
+            ret += ensemble.sectors[i].size;
+        }
+        
+    }
+
+    ret += HilbertSpace::GetStateIndexInCurrentSector(state);
+
+    return ret;
+}
+
 bool HilbertSpace::NextSector()
 {
-    // this is the last sector
-    if (sectorIndex == ensemble.sectors.size() - 1)
+    if (LastSector())
         return false;
     // next sector, reset stateIndex
     else
@@ -67,6 +88,11 @@ bool HilbertSpace::NextSector()
         baseState = BaseStateNumberConverter::ToBaseState(sector, 0);
         return true;
     }
+}
+
+inline bool HilbertSpace::LastSector()
+{
+    return sectorIndex == ensemble.sectors.size() - 1;
 }
 
 } // namespace solid

@@ -60,4 +60,15 @@ void BaseState::MakeHop(int start, int stop)
 	this->at(stop) = 1;
 }
 
+bool BaseState::CreatePairPossible(int site1, int site2)
+{
+	return (this->at(site1) == 0 && this->at(site2) == 0 ? true : false);
+}
+
+void BaseState::CreatePair(int site1, int site2)
+{
+	this->at(site1) = 1;
+	this->at(site2) = 1;
+}
+
 } // namespace solid

@@ -32,7 +32,7 @@
 
 #include "Info/Info.hpp"
 #include "Info/Argv.hpp"
-#include "Info/Version.hpp"
+//#include "Info/Version.hpp"
 
 #include "Laboratory/Laboratory.hpp"
 

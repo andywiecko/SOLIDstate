@@ -43,6 +43,7 @@ public:
 		termsEnabled.OneBodyInteraction = true;
 		termsEnabled.TwoBodyInteraction = true;
 		termsEnabled.Hop = true;
+		termsEnabled.CreatePair = true;
 		//termsEnabled.N05option = true;
 	}
 };

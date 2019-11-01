@@ -86,12 +86,23 @@ public:
      */
     statenumber GetStateIndexInCurrentSector(BaseState state);
 
+    //TODO
+    statenumber GetStateIndexInNextParitySector(BaseState state);
+
 
 private:
     statenumber stateIndex = 0;   /// current selcted BaseState enumerates the states inside the sector
     int sectorIndex = 0;          /// current selected sector -- enumerates the sectors
     statenumber sectorOffset = 0; /// ancillary variable for inserting inter-sector interaction elements
     bool NextSector();
+
+    /**
+     * @brief checks if current selected sector from Ensemble is the last one
+     * 
+     * @return true current sector is the last one
+     * @return false otherwise
+     */
+    bool LastSector();
 };
 
 } // namespace solid
