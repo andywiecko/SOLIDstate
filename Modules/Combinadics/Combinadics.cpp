@@ -8,17 +8,15 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#include "Combinadics.hpp"
 
 #include <vector>
-#include <armadillo>
-using namespace arma;
 
+#include "Combinadics.hpp"
 #include "../Combinadics/Binomials.hpp"
 
 namespace solid
 {
-	
+
 extern Binomials binomials;
 
 statenumber BaseStateNumberConverter::ToNumber(BaseState state)
@@ -69,4 +67,4 @@ BaseState BaseStateNumberConverter::ToBaseState(Sector sector, statenumber numbe
 	return ret;
 }
 
-}
+} // namespace solid

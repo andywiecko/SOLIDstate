@@ -24,16 +24,16 @@ QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, doubl
     return qState;
 }
 
-/// Mat<cx_double> overload
+/// Mat<arma::cx_double> overload
 template <>
-QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, cx_double> &qSystem)
+QuantumState<arma::cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, arma::cx_double> &qSystem)
 {
-    arma::Mat<cx_double> eigvec;
+    arma::Mat<arma::cx_double> eigvec;
     arma::Col<double> eigval;
     Info::vTime("starting eig_sym() ...");
     eig_sym(eigval, eigvec, qSystem.hamiltonian.matrixElements);
     Info::vMessage("done!");
-    QuantumState<cx_double> qState = eigvec.col(0);
+    QuantumState<arma::cx_double> qState = eigvec.col(0);
     qState.energy = eigval(0);
     return qState;
 }
@@ -70,12 +70,12 @@ QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, dou
 
 //TODO
 
-/// SpMat<cx_double> overload
+/// SpMat<arma::cx_double> overload
 template <>
-QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, cx_double> &qSystem)
+QuantumState<arma::cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, arma::cx_double> &qSystem)
 {
-    arma::Mat<cx_double> eigvec;
-    arma::Col<cx_double> eigval;
+    arma::Mat<arma::cx_double> eigvec;
+    arma::Col<arma::cx_double> eigval;
     int numEig = SparseSolverOptions::numberOfEigenvalues;
     int num = qSystem.hamiltonian.matrixElements.n_cols;
     numEig = numEig > num ? num - 1 : numEig;
@@ -85,7 +85,7 @@ QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, 
     eigs_gen(eigval, eigvec, qSystem.hamiltonian.matrixElements,
              numEig, target.c_str(), tol);
     Info::vMessage("done!");
-    QuantumState<cx_double> qState = eigvec.col(0);
+    QuantumState<arma::cx_double> qState = eigvec.col(0);
     qState.energy = real(eigval(0)); // WARNING!
     return qState;
 }

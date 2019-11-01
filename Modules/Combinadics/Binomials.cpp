@@ -8,11 +8,10 @@
  * @copyright Copyright (c) 2019
  * 
  */
+
 #include "Binomials.hpp"
 
 #include <vector>
-#include <armadillo>
-using namespace arma;
 
 namespace solid
 {
@@ -57,6 +56,6 @@ binint Binomials::binom(int L, int N)
 }
 
 // TODO move this to some class as static field
-/// global binomials array 
+/// global binomials array
 Binomials binomials;
-}
+} // namespace solid

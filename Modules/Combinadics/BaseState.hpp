@@ -12,7 +12,6 @@
 #define BASESTATE_HPP
 
 #include <armadillo>
-using namespace arma;
 
 namespace solid
 {
@@ -21,7 +20,7 @@ namespace solid
 /// Hilbert space can be huge...
 typedef long int statenumber;
 /// typedef for BaseState data container
-typedef uvec baseStateContainer;
+typedef arma::uvec baseStateContainer;
 
 /**
  * @brief BaseState for HilbertSpace base

@@ -17,8 +17,8 @@ namespace solid
 // .Fill()
 // ***************************
 template void MatrixElementFiller::Fill(QuantumSystem<arma::Mat, double> &);
-template void MatrixElementFiller::Fill(QuantumSystem<arma::Mat, cx_double> &);
+template void MatrixElementFiller::Fill(QuantumSystem<arma::Mat, arma::cx_double> &);
 template void MatrixElementFiller::Fill(QuantumSystem<arma::SpMat, double> &);
-template void MatrixElementFiller::Fill(QuantumSystem<arma::SpMat, cx_double> &);
+template void MatrixElementFiller::Fill(QuantumSystem<arma::SpMat, arma::cx_double> &);
 
 } // namespace solid

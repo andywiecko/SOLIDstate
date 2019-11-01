@@ -14,8 +14,8 @@ namespace solid
 {
 
 template double Laboratory::Measure(QuantumSystem<arma::Mat, double> &, QuantumState<double> &);
-template cx_double Laboratory::Measure(QuantumSystem<arma::Mat, cx_double> &, QuantumState<cx_double> &);
+template arma::cx_double Laboratory::Measure(QuantumSystem<arma::Mat, arma::cx_double> &, QuantumState<arma::cx_double> &);
 template double Laboratory::Measure(QuantumSystem<arma::SpMat, double> &, QuantumState<double> &);
-template cx_double Laboratory::Measure(QuantumSystem<arma::SpMat, cx_double> &, QuantumState<cx_double> &);
+template arma::cx_double Laboratory::Measure(QuantumSystem<arma::SpMat, arma::cx_double> &, QuantumState<arma::cx_double> &);
 
 }

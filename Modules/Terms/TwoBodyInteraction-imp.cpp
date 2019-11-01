@@ -16,17 +16,17 @@ namespace solid
 // ***************************
 // Fermions
 // ***************************
-template void TwoBodyInteractionTermFermions::FillElements<Mat, double>(QuantumSystem<Mat, double> &qSystem);
-template void TwoBodyInteractionTermFermions::FillElements<Mat, cx_double>(QuantumSystem<Mat, cx_double> &qSystem);
-template void TwoBodyInteractionTermFermions::FillElements<SpMat, double>(QuantumSystem<SpMat, double> &qSystem);
-template void TwoBodyInteractionTermFermions::FillElements<SpMat, cx_double>(QuantumSystem<SpMat, cx_double> &qSystem);
+template void TwoBodyInteractionTermFermions::FillElements<arma::Mat, double>(QuantumSystem<arma::Mat, double> &qSystem);
+template void TwoBodyInteractionTermFermions::FillElements<arma::Mat, arma::cx_double>(QuantumSystem<arma::Mat, arma::cx_double> &qSystem);
+template void TwoBodyInteractionTermFermions::FillElements<arma::SpMat, double>(QuantumSystem<arma::SpMat, double> &qSystem);
+template void TwoBodyInteractionTermFermions::FillElements<arma::SpMat, arma::cx_double>(QuantumSystem<arma::SpMat, arma::cx_double> &qSystem);
 
 // ***************************
 // Spins
 // ***************************
-template void TwoBodyInteractionTermSpins::FillElements<Mat, double>(QuantumSystem<Mat, double> &qSystem);
-template void TwoBodyInteractionTermSpins::FillElements<Mat, cx_double>(QuantumSystem<Mat, cx_double> &qSystem);
-template void TwoBodyInteractionTermSpins::FillElements<SpMat, double>(QuantumSystem<SpMat, double> &qSystem);
-template void TwoBodyInteractionTermSpins::FillElements<SpMat, cx_double>(QuantumSystem<SpMat, cx_double> &qSystem);
+template void TwoBodyInteractionTermSpins::FillElements<arma::Mat, double>(QuantumSystem<arma::Mat, double> &qSystem);
+template void TwoBodyInteractionTermSpins::FillElements<arma::Mat, arma::cx_double>(QuantumSystem<arma::Mat, arma::cx_double> &qSystem);
+template void TwoBodyInteractionTermSpins::FillElements<arma::SpMat, double>(QuantumSystem<arma::SpMat, double> &qSystem);
+template void TwoBodyInteractionTermSpins::FillElements<arma::SpMat, arma::cx_double>(QuantumSystem<arma::SpMat, arma::cx_double> &qSystem);
 
 } // namespace solid

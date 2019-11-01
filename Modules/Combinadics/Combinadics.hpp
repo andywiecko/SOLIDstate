@@ -13,7 +13,7 @@
 
 #include <vector>
 #include <armadillo>
-using namespace arma;
+
 #include "../Ensemble/Sector.hpp"
 #include "BaseState.hpp"
 

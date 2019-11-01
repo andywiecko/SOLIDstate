@@ -10,7 +10,6 @@
  */
 #include "BaseState.hpp"
 #include <armadillo>
-using namespace arma;
 
 namespace solid
 {
@@ -18,15 +17,6 @@ namespace solid
 BaseState BaseState::Reverse()
 {
 	return arma::reverse(this->col(0));
-	/*
-	uword size = this->size();
-	ret.set_size(size);
-	for (uword i = 0; i < size; i++)
-	{
-		ret(size - 1 - i) = this->at(i);
-	}
-	*/
-	//return ret;
 }
 
 bool BaseState::OneBodyInteraction(int site1)
@@ -58,9 +48,9 @@ int BaseState::HopSign(int start, int stop)
 		return 1;
 
 	if (start < stop)
-		ret = accu(this->subvec(start + 1, stop - 1));
+		ret = arma::accu(this->subvec(start + 1, stop - 1));
 	else
-		ret = accu(this->subvec(stop + 1, start - 1));
+		ret = arma::accu(this->subvec(stop + 1, start - 1));
 	return 1 - 2 * (ret % 2);
 }
 
