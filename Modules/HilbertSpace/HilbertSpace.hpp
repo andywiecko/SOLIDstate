@@ -91,9 +91,17 @@ public:
 
 
 private:
-    statenumber stateIndex = 0;   /// current selcted BaseState enumerates the states inside the sector
-    int sectorIndex = 0;          /// current selected sector -- enumerates the sectors
-    statenumber sectorOffset = 0; /// ancillary variable for inserting inter-sector interaction elements
+    statenumber stateIndex = 0;             /// current selcted BaseState enumerates the states inside the sector
+    int sectorIndex = 0;                    /// current selected sector -- enumerates the sectors
+    statenumber sectorOffset = 0;           /// ancillary variable for inserting inter-sector interaction elements
+    statenumber nextParitySectorOffset = 0; /// distance between current sector and the next sector with the same parity
+
+    /**
+     * @brief switch to the next sector 
+     * 
+     * @return true the next sector exists
+     * @return false the next sector does not exist
+     */
     bool NextSector();
 
     /**
@@ -103,6 +111,13 @@ private:
      * @return false otherwise
      */
     bool LastSector();
+
+    /**
+     * @brief Get the Next Parity Sector Offset object
+     * 
+     * calculate nextParitySectorOffset
+     */
+    void GetNextParitySectorOffset();
 };
 
 } // namespace solid

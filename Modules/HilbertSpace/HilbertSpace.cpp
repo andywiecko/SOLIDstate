@@ -19,6 +19,7 @@ void HilbertSpace::Reset()
     stateTotalIndex = 0;
     sectorIndex = 0;
     sectorOffset = 0;
+    GetNextParitySectorOffset();
 }
 
 void HilbertSpace::InitialBaseState()
@@ -51,11 +52,12 @@ statenumber HilbertSpace::GetStateIndexInCurrentSector(BaseState state)
     return BaseStateNumberConverter::ToNumber(state) + sectorOffset;
 }
 
-statenumber HilbertSpace::GetStateIndexInNextParitySector(BaseState state)
+void HilbertSpace::GetNextParitySectorOffset()
 {
-    statenumber ret = 0;
+    statenumber ret = ensemble.sectors[sectorIndex].size;
     
-    for (int i=sectorIndex;i<ensemble.sectors.size()-1;i++)
+    // TODO - quite a mess...
+    for (int i=sectorIndex+1;i<ensemble.sectors.size()-1;i++)
     {
         if (ensemble.sectors[sectorIndex].N+2 == ensemble.sectors[i].N)
         {
@@ -68,9 +70,13 @@ statenumber HilbertSpace::GetStateIndexInNextParitySector(BaseState state)
         
     }
 
-    ret += HilbertSpace::GetStateIndexInCurrentSector(state);
+    nextParitySectorOffset = ret;
 
-    return ret;
+}
+
+statenumber HilbertSpace::GetStateIndexInNextParitySector(BaseState state)
+{
+    return HilbertSpace::GetStateIndexInCurrentSector(state) + nextParitySectorOffset;
 }
 
 bool HilbertSpace::NextSector()
@@ -82,6 +88,7 @@ bool HilbertSpace::NextSector()
     {
         sectorOffset += ensemble.sectors[sectorIndex].size;
         sectorIndex++;
+        GetNextParitySectorOffset();
         stateIndex = 0;
         stateTotalIndex++;
         Sector sector = ensemble.sectors[sectorIndex];
