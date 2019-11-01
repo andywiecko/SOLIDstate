@@ -77,7 +77,22 @@ public:
          */
         static std::string eigenvalueTarget;
 
+        /**
+         * @brief eigenvalue (complex) target value
+         * 
+         * Armadillo target options for eigs_sym()
+         * * "lm"	 = 	obtain eigenvalues with largest magnitude (default operation)
+         * * "sm"	 = 	obtain eigenvalues with smallest magnitude (see caveat below)
+         * * "lr"	 = 	obtain eigenvalues with largest real part
+         * * "sr"	 = 	obtain eigenvalues with smallest real part
+         * * "li"	 = 	obtain eigenvalues with largest imaginary part
+         * * "si"	 = 	obtain eigenvalues with smallest imaginary part
+         */
+        static std::string eigenvalueComplexTarget;
+
     };
+
+
 };
 
 } // namespace solid

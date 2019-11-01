@@ -44,6 +44,7 @@ QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::Mat, cx
 
 int Eigensolver::SparseSolverOptions::numberOfEigenvalues = 10;
 std::string Eigensolver::SparseSolverOptions::eigenvalueTarget = "sa";
+std::string Eigensolver::SparseSolverOptions::eigenvalueComplexTarget = "sr";
 double Eigensolver::SparseSolverOptions::tolerance = 0.;
 
 /// SpMat<double> overload
@@ -79,7 +80,7 @@ QuantumState<cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, 
     int num = qSystem.hamiltonian.matrixElements.n_cols;
     numEig = numEig > num ? num - 1 : numEig;
     double tol = SparseSolverOptions::tolerance;
-    std::string target = "sr"; // WARNING!
+    std::string target = SparseSolverOptions::eigenvalueComplexTarget;
     Info::Eigenmessage("eigs_sym()", numEig, target, tol);
     eigs_gen(eigval, eigvec, qSystem.hamiltonian.matrixElements,
              numEig, target.c_str(), tol);
