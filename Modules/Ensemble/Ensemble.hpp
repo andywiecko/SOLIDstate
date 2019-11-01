@@ -66,6 +66,9 @@ public:
 	int size;
 	/**
 	 * @brief contains vector of Sectors
+	 * 
+	 * @note Sector should be inserted in ascending order
+	 *       within number of particles N
 	 */
 	std::vector<Sector> sectors;
 

@@ -33,7 +33,7 @@ void HilbertSpace::InitialBaseState()
 bool HilbertSpace::NextBaseState()
 {
     Sector sector = ensemble.sectors[sectorIndex];
-    // check if this is the last sector
+    // check if this is the last state in the sector
     if (stateIndex == sector.size - 1)
         return NextSector();
     stateIndex++;

@@ -19,7 +19,7 @@ namespace solid
 {
 
 /**
- * @brief class describes hopping term for Fermions particles
+ * @brief class describes pairing term for Fermions particles
  * 
  * class is responsible for filling the following term:
  * \f[ 

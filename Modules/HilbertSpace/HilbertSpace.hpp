@@ -92,7 +92,7 @@ public:
 
 private:
     statenumber stateIndex = 0;             /// current selcted BaseState enumerates the states inside the sector
-    int sectorIndex = 0;                    /// current selected sector -- enumerates the sectors
+    int sectorIndex = 0;                    /// current selected sector -- enumerates the sectors //TODO make iterator or pointer instead of indexing
     statenumber sectorOffset = 0;           /// ancillary variable for inserting inter-sector interaction elements
     statenumber nextParitySectorOffset = 0; /// distance between current sector and the next sector with the same parity
 
