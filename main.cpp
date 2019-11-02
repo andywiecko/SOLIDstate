@@ -4,7 +4,8 @@
 using namespace arma;
 using namespace solid;
 
-
+#include "Modules/QuantumDynamics/DynamicsSchedule.hpp"
+#include <functional>
 
 int main(int argc, char *argv[])
 {
@@ -12,14 +13,15 @@ int main(int argc, char *argv[])
 	ArgvParser::Parse(argc, argv);
 	
 	Info::Start();
-		
+	
+	// number of sites
 	int L = 4;
 
 	QuantumSystem<Mat, double> qSystem;
 
 	//qSystem.SelectEnsemble<Canonical>(L,L/2);
-	//qSystem.SelectEnsemble<ParityGrandCanonical>(L,1);
-	qSystem.SelectEnsemble<GrandCanonical>(L);
+	qSystem.SelectEnsemble<ParityGrandCanonical>(L,1);
+	//qSystem.SelectEnsemble<GrandCanonical>(L);
 
 	Info::ShowSectors(qSystem.hilbertSpace.ensemble);
 	//Info::ShowSectors(qSystem); // other implementation 
@@ -40,7 +42,6 @@ int main(int argc, char *argv[])
 	sp_mat delta(L,L);
 	for(int i=0;i<L-1;i++) delta(i,i+1) = 1.0; // a+ a+
 	for(int i=0;i<L-1;i++) delta(i+1,i) = 1.0; // a  a
-
 	//mat(delta).print();
 
 	Parameters<double> param;
@@ -72,6 +73,18 @@ int main(int argc, char *argv[])
 	double E = qSystem.quantumState.energy;
 	double H = Laboratory::Measure(qSystem,qSystem.quantumState);
 	std::cout << "Energy=" << E << "\t <H>=" << H << std::endl;
+
+
+	//std::function<void()> fun;
+	//fun = []() -> double{return 3;};
+	
+	std::function<void(sp_mat&,double)> fun = [L](auto & A, auto t){for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t;};
+	mat(t).print("t=0.0");
+	fun(t,0.50);
+	mat(t).print("t=0.5");
+
+	//DynamicsSchedule schedule;
+	//schedule.fun = fun;
 
 	return 0;
 

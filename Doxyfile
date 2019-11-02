@@ -755,6 +755,7 @@ INPUT                  = Modules/ \
                          Modules/MatrixElementFiller \
                          Modules/Observable \
                          Modules/Parameters \
+                         Modules/QuantumDynamics \
                          Modules/QuantumState \
                          Modules/QuantumSystem \
                          Modules/Terms \
