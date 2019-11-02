@@ -40,7 +40,7 @@ void CreatePairTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem)
 			Hij = sign * deltaij; //TODO
 			if (i<j)  // a^+_i a^+_j
 				qSystem.hamiltonian.matrixElements(k, kCreatedPair) += Hij;
-			else
+			else      // a_j a_i <-- note different order of operators! (hermitian construction)
             	qSystem.hamiltonian.matrixElements(kCreatedPair,k) += Hij;
 		}
 	}

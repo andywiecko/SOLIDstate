@@ -15,7 +15,7 @@
 
 namespace solid
 {
-    
+
 // typedefs for state enumeration
 /// Hilbert space can be huge...
 typedef long int statenumber;
@@ -29,7 +29,6 @@ typedef arma::uvec baseStateContainer;
 class BaseState : public baseStateContainer
 {
 public:
-
     using baseStateContainer::baseStateContainer;
 
     /**
@@ -90,11 +89,38 @@ public:
      */
     void MakeHop(int start, int stop);
 
+    /**
+     * @brief Checks if pair of particles can be created in site1 and site2
+     * 
+     * @param site1 site to create particle
+     * @param site2 site to create particle
+     * @return true creation avaliable
+     * @return false creation forbidden (Pauli principle) 
+     */
     bool CreatePairPossible(int site1, int site2);
 
+    /**
+     * @brief Create a Pair of particles in the given sites
+     * 
+     * @param site1 site to create particle
+     * @param site2 site to create particle
+     */
     void CreatePair(int site1, int site2);
 
-    int PairSign(int site1,int site2);
+    /**
+     * @brief returns sign of the pairing term in site1 and site2
+     * 
+     * @param site1 site to create particle
+     * @param site2 site to create particle
+     * @return int sign of the pairing
+     * 
+     * We used the following convention for sites numbering:
+     * * \f$
+     * |11111\cdots\,\rangle = \cdots a_3^\dagger a_2^\dagger a_1^\dagger a_0^\dagger |00000\cdots\,\rangle
+     * \f$
+     * @note be carefull about the order of the operators, e.g. PairSign(1,2) is equivalent to the following: \f$a_1^\dagger a_2^\dagger \f$
+     */
+    int PairSign(int site1, int site2);
 
     // NOT YET IMPLEMENTED
     bool CountParticles();
