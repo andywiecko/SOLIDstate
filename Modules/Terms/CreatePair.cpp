@@ -36,10 +36,12 @@ void CreatePairTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem)
 			BaseState createdPairState = baseState;
 			createdPairState.CreatePair(i, j);
 			int kCreatedPair = qSystem.hilbertSpace.GetStateIndexInNextParitySector(createdPairState);
-			T2 sign = 1;//baseState.HopSign(i, j); //TODO
+			T2 sign = baseState.PairSign(i, j);
 			Hij = sign * deltaij; //TODO
-			qSystem.hamiltonian.matrixElements(k, kCreatedPair) += Hij;
-            qSystem.hamiltonian.matrixElements(kCreatedPair,k) += Hij;
+			if (i<j)  // a^+_i a^+_j
+				qSystem.hamiltonian.matrixElements(k, kCreatedPair) += Hij;
+			else
+            	qSystem.hamiltonian.matrixElements(kCreatedPair,k) += Hij;
 		}
 	}
 }

@@ -94,6 +94,7 @@ public:
 
     void CreatePair(int site1, int site2);
 
+    int PairSign(int site1,int site2);
 
     // NOT YET IMPLEMENTED
     bool CountParticles();

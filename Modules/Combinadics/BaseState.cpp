@@ -54,6 +54,11 @@ int BaseState::HopSign(int start, int stop)
 	return 1 - 2 * (ret % 2);
 }
 
+int BaseState::PairSign(int site1,int site2)
+{
+	return (-1) * BaseState::HopSign(site1,site2);
+}
+
 void BaseState::MakeHop(int start, int stop)
 {
 	this->at(start) = 0;

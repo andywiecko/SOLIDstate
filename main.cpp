@@ -38,14 +38,16 @@ int main(int argc, char *argv[])
 	//mat(t).print();
 
 	sp_mat delta(L,L);
-	for(int i=0;i<L-1;i++) delta(i,(i+1)%L) = 1.0;
-	//for(int i=0;i<L;i++) delta((i+1)%L,i) = 1.0; //TODO
+	for(int i=0;i<L-1;i++) delta(i,i+1) = 1.0; // a+ a+
+	for(int i=0;i<L-1;i++) delta(i+1,i) = 1.0; // a  a
+
+	//mat(delta).print();
 
 	Parameters<double> param;
 
 	param["M"] = mu;
 	param["V"] = V;
-	param["t"] = -t;
+	param["t"] = t;
 	param["delta"] = delta;
 
 	qSystem.parameters = param;
