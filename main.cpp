@@ -77,14 +77,6 @@ int main(int argc, char *argv[])
 	double H = Laboratory::Measure(qSystem, qSystem.quantumState);
 	std::cout << "Energy=" << E << "\t <H>=" << H << std::endl;
 
-	//std::function<void()> fun;
-	//fun = []() -> double{return 3;};
-
-	/*
-	mat(t).print("t=0.0");
-	fun(t,0.50);
-	mat(t).print("t=0.5");
-	*/
 
 	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; };
 	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; };
@@ -106,6 +98,12 @@ int main(int argc, char *argv[])
 		mat(param[label]).print(label+":");
 	}
 
+	MeasurementSchedule measurmentSchedule;
+	measurmentSchedule.timeToMeasure = [](auto time) {return time > 5.0;};
+
+	std::cout << measurmentSchedule.timeToMeasure(40.0) << std::endl;
+
+	std::cout << int (45.043) / 10 << std::endl;
 	return 0;
 
 	/*

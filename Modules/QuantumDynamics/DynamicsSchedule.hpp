@@ -17,10 +17,12 @@ namespace solid
 {
 
 template <class T>
-using Schedule = std::function<void(T&,double)>;
+using Schedule = std::function<void(T &, double)>;
 
 template <class T>
-using ScheduleMap = std::map<std::string, Schedule<T> >;
+using ScheduleMap = std::map<std::string, Schedule<T>>;
+
+typedef std::function<bool(double)> TimeToMeasure;
 
 template <class T>
 class DynamicsSchedule
@@ -31,6 +33,15 @@ public:
     double time_step;
 
     ScheduleMap<T> dict;
+};
+
+class MeasurementSchedule
+{
+public:
+    // what to measure (list of operators to measure)
+
+    // when to measure (function/functor)
+    TimeToMeasure timeToMeasure;
 };
 
 } // namespace solid
