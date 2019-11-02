@@ -46,16 +46,19 @@ void MatrixElementFiller::FermionFiller(QuantumSystem<T1, T2> &qSystem)
     do
     {
         // sector terms
+
+        // diagonal
         if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
             OneBodyInteractionTermFermions::FillElements(qSystem);
 
         if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
             TwoBodyInteractionTermFermions::FillElements(qSystem);
 
+        // non-diagonal
         if (qSystem.hamiltonian.termsEnabled.Hop)
             HopTermFermions::FillElements(qSystem);
 
-        // inter-sector terms
+        // inter-sector terms (non-diagonal)
         if (qSystem.hamiltonian.termsEnabled.CreatePair)
             CreatePairTermFermions::FillElements(qSystem);
 

@@ -10,10 +10,19 @@
  */
 
 #include <functional>
+#include <map>
+#include <string>
 
 namespace solid
 {
 
+template <class T>
+using Schedule = std::function<void(T&,double)>;
+
+template <class T>
+using ScheduleMap = std::map<std::string, Schedule<T> >;
+
+template <class T>
 class DynamicsSchedule
 {
 public:
@@ -21,9 +30,7 @@ public:
     double time_final;
     double time_step;
 
-    std::function<double()> fun;
-
-
+    ScheduleMap<T> dict;
 };
 
 } // namespace solid

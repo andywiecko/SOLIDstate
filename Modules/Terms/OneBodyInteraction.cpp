@@ -21,7 +21,7 @@ void OneBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem
 	T2 Hij = 0;
 	for (int i = 0; i < baseState.size(); i++)
 	{
-		T2 Mi = M(i);
+		T2 Mi = M(i,i);
 		if (baseState.OneBodyInteraction(i))
 			Hij += Mi;
 		if (N05option)
@@ -39,7 +39,7 @@ void OneBodyInteractionTermSpins::FillElements(QuantumSystem<T1, T2> &qSystem)
 	T2 Hij = 0;
 	for (int i = 0; i < baseState.size(); i++)
 	{
-		T2 Mi = M(i);
+		T2 Mi = M(i,i);
 		if (baseState.OneBodyInteraction(i))
 			Hij += Mi;
 		else
