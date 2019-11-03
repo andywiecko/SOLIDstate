@@ -8,6 +8,9 @@
  * @copyright Copyright (c) 2019
  * 
  */
+#ifndef DYNAMICSSCHEDULE_HPP
+#define DYNAMICSSCHEDULE_HPP
+
 
 #include <functional>
 #include <map>
@@ -28,9 +31,9 @@ template <class T>
 class DynamicsSchedule
 {
 public:
-    double time_init;
-    double time_final;
-    double time_step;
+    double time_init = 0;
+    double time_final = 1;
+    double time_step = 0.01;
 
     ScheduleMap<T> dict;
 };
@@ -44,4 +47,8 @@ public:
     TimeToMeasure timeToMeasure;
 };
 
+
+
 } // namespace solid
+
+#endif

@@ -44,6 +44,9 @@
 #include "Terms/TwoBodyInteraction.hpp"
 #include "Terms/Hop.hpp"
 
+#include "QuantumDynamics/DynamicsSchedule.hpp"
+#include "QuantumDynamics/QuantumDynamics.hpp"
+
 #include "MatrixElementFiller/MatrixElementFiller.hpp"
 
 #include "Observable/Observable.hpp"

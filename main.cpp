@@ -4,7 +4,7 @@
 using namespace arma;
 using namespace solid;
 
-#include "Modules/QuantumDynamics/DynamicsSchedule.hpp"
+ 
 #include <functional>
 
 int main(int argc, char *argv[])
@@ -78,32 +78,29 @@ int main(int argc, char *argv[])
 	std::cout << "Energy=" << E << "\t <H>=" << H << std::endl;
 
 
-	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; };
-	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; };
+	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
+	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A);};
 
-	DynamicsSchedule<sp_mat> schedule;
+	DynamicsSchedule<sp_mat> dynSchedule;
+	dynSchedule.time_step = 0.1;
 
 	ScheduleMap<sp_mat> dict;
 	dict["t"] = t_schedule;
 	dict["V"] = V_schedule;
 
-	schedule.dict = dict;
+	dynSchedule.dict = dict;
 
- 	for (const auto& [label,val] : schedule.dict)
-	{
-    	//std::cout << label << std::endl;
-		val(param[label],0.0);
-		mat(param[label]).print(label+":");
-		val(param[label],100.0);
-		mat(param[label]).print(label+":");
-	}
+ 
+	MeasurementSchedule meSchedule;
+	meSchedule.timeToMeasure = [](auto time) {return time > 5.0;};
 
-	MeasurementSchedule measurmentSchedule;
-	measurmentSchedule.timeToMeasure = [](auto time) {return time > 5.0;};
+	std::cout << meSchedule.timeToMeasure(40.0) << std::endl;
 
-	std::cout << measurmentSchedule.timeToMeasure(40.0) << std::endl;
+	QuantumDynamics<Mat,double> qDynamics;
+	qDynamics.Create(qSystem, dynSchedule,meSchedule);
+	qDynamics.Run();
+	
 
-	std::cout << int (45.043) / 10 << std::endl;
 	return 0;
 
 	/*
