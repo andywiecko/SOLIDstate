@@ -4,7 +4,7 @@ LIBS= -larmadillo
 
 src=$(wildcard Modules/*/*.cpp\
       wildcard Modules/*.cpp\
-	  main.cpp)
+	  )
 obj=$(src:.cpp=.o)
 
 %.o: %.cpp %.hpp
