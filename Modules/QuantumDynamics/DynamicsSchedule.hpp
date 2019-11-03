@@ -38,10 +38,12 @@ public:
     ScheduleMap<T> dict;
 };
 
+template <template <typename> class T1, typename T2>
 class MeasurementSchedule
 {
 public:
     // what to measure (list of operators to measure)
+    std::function<void(QuantumSystem<T1,T2>)> Measure;
 
     // when to measure (function/functor)
     TimeToMeasure timeToMeasure;

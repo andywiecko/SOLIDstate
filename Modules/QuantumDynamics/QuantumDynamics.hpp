@@ -12,6 +12,7 @@
 namespace solid
 {
 
+// TODO make it as interface for different dynamics
 template <template <typename> class T1, typename T2>
 class QuantumDynamics
 {
@@ -19,7 +20,7 @@ class QuantumDynamics
 public:
     void Create(QuantumSystem<T1, T2> &qSystem,
                 DynamicsSchedule<arma::SpMat<T2>> &dynSchedule,
-                MeasurementSchedule &mesSchedule)
+                MeasurementSchedule<T1, T2> &mesSchedule)
     {
         terms = qSystem.hamiltonian.termsEnabled;
         quantumSystem = qSystem;
@@ -48,6 +49,7 @@ private:
     {
         double res = Laboratory::Measure<T1, T2>(quantumSystem, quantumSystem.quantumState);
         std::cout << "Measurement result:" << res << std::endl;
+        measurementSchedule.Measure(quantumSystem);
     }
 
 public:
@@ -61,7 +63,8 @@ public:
             std::cout << "time:" << time << std::endl;
             LoadParameters();
             Propagate();
-            Measure();
+            if (measurementSchedule.timeToMeasure(time))
+                Measure();
             time += dt;
         }
     }
@@ -72,7 +75,7 @@ private:
     QuantumState<arma::cx_double> quntumStateDynamics;
     QuantumSystem<T1, T2> quantumSystem;
     DynamicsSchedule<arma::SpMat<T2>> dynamicsSchedule;
-    MeasurementSchedule measurementSchedule;
+    MeasurementSchedule<T1, T2> measurementSchedule;
 };
 
 } // namespace solid

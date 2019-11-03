@@ -91,8 +91,14 @@ int main(int argc, char *argv[])
 	dynSchedule.dict = dict;
 
  
-	MeasurementSchedule meSchedule;
-	meSchedule.timeToMeasure = [](auto time) {return time > 5.0;};
+	MeasurementSchedule<Mat,double> meSchedule;
+	meSchedule.timeToMeasure = [](auto time) {return true;};
+	meSchedule.Measure = [L](QuantumSystem<Mat,double> qS) {
+		 qS.SelectObservable<ParticleNumberOperator>(L);
+		 qS.Fill();
+		 qS.hamiltonian.matrixElements.print("N=");
+		 std::cout << "<N> = " << Laboratory::Measure(qS,qS.quantumState) << std::endl; 
+		 };
 
 	std::cout << meSchedule.timeToMeasure(40.0) << std::endl;
 
@@ -103,13 +109,13 @@ int main(int argc, char *argv[])
 
 	//return 0;
 
-	
+	/*
 	qSystem.SelectObservable<ParticleNumberOperator>(L);
 	qSystem.Fill();
 	//ParticleNumberOperator<Mat,double>::Preprocessing(qSystem.hamiltonian.matrixElements);
 	qSystem.hamiltonian.matrixElements.print();
 
-	/*
+	 
 	qSystem.SelectObservable<ParityOperator>(L);
 	MatrixElementFiller::Fill(qSystem);
 	ParityOperator<Mat,double>::Preprocessing(qSystem.hamiltonian.matrixElements);
