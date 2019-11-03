@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 	param["M"] = mu;		// TODO non-diag ignored!
 	param["V"] = V;			// TODO diag ignored!
 	param["t"] = t;			// TODO diag ignored!
-	param["delta"] = delta; // TODO diag ignored!
+	param["delta"] = delta; // TODO diag ignored! //TODO bonds cheking if this is the last sector
 
 	qSystem.parameters = param;
 
@@ -60,15 +60,6 @@ int main(int argc, char *argv[])
 	qSystem.Fill();
 
 	qSystem.hamiltonian.matrixElements.print();
-
-	//MatrixElementFiller::Fill(qSystem);
-	//qSystem.hamiltonian.matrixElements.print();
-
-	///* eigen problem
-	//mat eigvec;
-	//vec eigval;
-	//eig_sym(eigval,eigvec,qSystem.hamiltonian.matrixElements);
-	//eigval.t().print();
 
 	QuantumState<double> qState = Eigensolver::FindGroundState(qSystem);
 
@@ -92,14 +83,15 @@ int main(int argc, char *argv[])
 	meSchedule.timeToMeasure = [](auto time) { return true; };
 	meSchedule.Measure = [L](QuantumSystem<Mat, double> &qSys, QuantumState<double> &qSta) 
 	{
+		QuantumState<double> ground = Eigensolver::FindGroundState(qSys);
+		std::cout << "<E> = " << Laboratory::Measure(qSys, ground) << "   |   ";
 		qSys.SelectObservable<ParticleNumberOperator>(L);
 		qSys.Fill();
-		qSys.hamiltonian.matrixElements.print("N=");
+		ParticleNumberOperator<Mat,double>::Preprocessing(qSys.hamiltonian.matrixElements);
 		std::cout << "<N> = " << Laboratory::Measure(qSys, qSta) << std::endl;
 	};
 
-	std::cout << meSchedule.timeToMeasure(40.0) << std::endl;
-
+	// Quantum dynamics object
 	QuantumDynamics<Mat, double> qDynamics;
 	qDynamics.Create(qSystem, qState, dynSchedule, meSchedule);
 	qDynamics.Run();

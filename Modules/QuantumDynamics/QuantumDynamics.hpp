@@ -7,7 +7,6 @@
 #include "../QuantumState/QuantumState.hpp"
 #include "../Parameters/Parameters.hpp"
 #include "../Hamiltonian/TermsEnabled.hpp"
-#include "../Laboratory/Laboratory.hpp"
 #include "DynamicsSchedule.hpp"
 
 namespace solid
@@ -41,13 +40,13 @@ private:
         {
             //std::cout << label << std::endl;
             val(quantumSystem.parameters[label], time);
-            arma::mat(quantumSystem.parameters[label]).print(label + ":");
+            //arma::mat(quantumSystem.parameters[label]).print(label + ":");
         }
     }
     void Propagate()
     {
         quantumSystem.Fill();
-        quantumSystem.hamiltonian.matrixElements.print("H=");
+        //quantumSystem.hamiltonian.matrixElements.print("H=");
         // TODO RK4 or chebyshev...
     }
     void Measure()
@@ -63,7 +62,7 @@ public:
 
         while (time <= dynamicsSchedule.time_final)
         {
-            std::cout << "time:" << time << std::endl;
+            std::cout << "time=" << time << "   |   ";// << std::endl;
             LoadParameters();
             Propagate();
             if (measurementSchedule.timeToMeasure(time))
