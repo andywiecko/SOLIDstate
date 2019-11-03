@@ -5,6 +5,7 @@
 
 #include "../QuantumSystem/QuantumSystem.hpp"
 #include "../QuantumState/QuantumState.hpp"
+#include "../Parameters/Parameters.hpp"
 #include "../Hamiltonian/TermsEnabled.hpp"
 #include "../Laboratory/Laboratory.hpp"
 #include "DynamicsSchedule.hpp"
@@ -19,11 +20,14 @@ class QuantumDynamics
 
 public:
     void Create(QuantumSystem<T1, T2> &qSystem,
+                QuantumState<T2> &initQuantumState,
                 DynamicsSchedule<arma::SpMat<T2>> &dynSchedule,
                 MeasurementSchedule<T1, T2> &mesSchedule)
     {
         terms = qSystem.hamiltonian.termsEnabled;
         quantumSystem = qSystem;
+        quantumState = initQuantumState;
+        param = qSystem.parameters;
         dynamicsSchedule = dynSchedule;
         measurementSchedule = mesSchedule;
     }
@@ -32,6 +36,7 @@ private:
     void LoadParameters()
     {
         quantumSystem.hamiltonian.termsEnabled = terms;
+        quantumSystem.parameters = param;
         for (const auto &[label, val] : dynamicsSchedule.dict)
         {
             //std::cout << label << std::endl;
@@ -47,9 +52,7 @@ private:
     }
     void Measure()
     {
-        double res = Laboratory::Measure<T1, T2>(quantumSystem, quantumSystem.quantumState);
-        std::cout << "Measurement result:" << res << std::endl;
-        measurementSchedule.Measure(quantumSystem);
+        measurementSchedule.Measure(quantumSystem, quantumState);
     }
 
 public:
@@ -72,8 +75,9 @@ public:
 private:
     double time;
     TermsEnabled terms;
-    QuantumState<arma::cx_double> quntumStateDynamics;
+    QuantumState<T2> quantumState;
     QuantumSystem<T1, T2> quantumSystem;
+    Parameters<T2> param;
     DynamicsSchedule<arma::SpMat<T2>> dynamicsSchedule;
     MeasurementSchedule<T1, T2> measurementSchedule;
 };

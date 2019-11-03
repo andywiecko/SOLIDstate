@@ -4,7 +4,6 @@
 using namespace arma;
 using namespace solid;
 
- 
 #include <functional>
 
 int main(int argc, char *argv[])
@@ -71,15 +70,14 @@ int main(int argc, char *argv[])
 	//eig_sym(eigval,eigvec,qSystem.hamiltonian.matrixElements);
 	//eigval.t().print();
 
-	qSystem.quantumState = Eigensolver::FindGroundState(qSystem);
+	QuantumState<double> qState = Eigensolver::FindGroundState(qSystem);
 
-	double E = qSystem.quantumState.energy;
-	double H = Laboratory::Measure(qSystem, qSystem.quantumState);
+	double E = qState.energy;
+	double H = Laboratory::Measure(qSystem, qState);
 	std::cout << "Energy=" << E << "\t <H>=" << H << std::endl;
 
-
 	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
-	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A);};
+	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
 
 	DynamicsSchedule<sp_mat> dynSchedule;
 	dynSchedule.time_step = 0.1;
@@ -90,22 +88,21 @@ int main(int argc, char *argv[])
 
 	dynSchedule.dict = dict;
 
- 
-	MeasurementSchedule<Mat,double> meSchedule;
-	meSchedule.timeToMeasure = [](auto time) {return true;};
-	meSchedule.Measure = [L](QuantumSystem<Mat,double> qS) {
-		 qS.SelectObservable<ParticleNumberOperator>(L);
-		 qS.Fill();
-		 qS.hamiltonian.matrixElements.print("N=");
-		 std::cout << "<N> = " << Laboratory::Measure(qS,qS.quantumState) << std::endl; 
-		 };
+	MeasurementSchedule<Mat, double> meSchedule;
+	meSchedule.timeToMeasure = [](auto time) { return true; };
+	meSchedule.Measure = [L](QuantumSystem<Mat, double> &qSys, QuantumState<double> &qSta) 
+	{
+		qSys.SelectObservable<ParticleNumberOperator>(L);
+		qSys.Fill();
+		qSys.hamiltonian.matrixElements.print("N=");
+		std::cout << "<N> = " << Laboratory::Measure(qSys, qSta) << std::endl;
+	};
 
 	std::cout << meSchedule.timeToMeasure(40.0) << std::endl;
 
-	QuantumDynamics<Mat,double> qDynamics;
-	qDynamics.Create(qSystem, dynSchedule,meSchedule);
+	QuantumDynamics<Mat, double> qDynamics;
+	qDynamics.Create(qSystem, qState, dynSchedule, meSchedule);
 	qDynamics.Run();
-	
 
 	//return 0;
 

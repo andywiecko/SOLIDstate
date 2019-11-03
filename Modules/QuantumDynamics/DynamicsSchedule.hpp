@@ -43,7 +43,7 @@ class MeasurementSchedule
 {
 public:
     // what to measure (list of operators to measure)
-    std::function<void(QuantumSystem<T1,T2>)> Measure;
+    std::function<void(QuantumSystem<T1,T2>&,QuantumState<T2>&)> Measure;
 
     // when to measure (function/functor)
     TimeToMeasure timeToMeasure;

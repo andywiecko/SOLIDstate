@@ -54,11 +54,6 @@ public:
     Parameters<T2> parameters;
 
     /**
-     * @brief container for QuantumState \f$|\psi\rangle\f$
-     */
-    QuantumState<T2> quantumState;
-
-    /**
      * @brief fills matrixElements for selected Hamiltonian, 
      * with respect to HilbertSpace (Ensemble) and system Parameters
      */

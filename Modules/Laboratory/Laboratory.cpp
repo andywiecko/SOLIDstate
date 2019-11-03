@@ -22,4 +22,5 @@ T2 Laboratory::Measure(QuantumSystem<T1, T2> &qSystem, QuantumState<T2> &qState)
     Info::vMessage("done!");
     return ret;
 }
+
 } // namespace solid

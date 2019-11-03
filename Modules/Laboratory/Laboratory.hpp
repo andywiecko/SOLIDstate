@@ -38,6 +38,7 @@ public:
      */
     template <template <typename> class T1, typename T2>
     static T2 Measure(QuantumSystem<T1, T2> &, QuantumState<T2> &);
+
 };
 } // namespace solid
 
