@@ -15,6 +15,7 @@ namespace solid
 template <template <typename> class T1, typename T2>
 class QuantumDynamics
 {
+
 public:
     void Create(QuantumSystem<T1, T2> &qSystem,
                 DynamicsSchedule<arma::SpMat<T2>> &dynSchedule,
@@ -46,7 +47,7 @@ private:
     void Measure()
     {
         double res = Laboratory::Measure<T1, T2>(quantumSystem, quantumSystem.quantumState);
-        std::cout << "Measurement result:" <<  res << std::endl;
+        std::cout << "Measurement result:" << res << std::endl;
     }
 
 public:
@@ -68,7 +69,7 @@ public:
 private:
     double time;
     TermsEnabled terms;
-    QuantumState<arma::cx_double> 
+    QuantumState<arma::cx_double> quntumStateDynamics;
     QuantumSystem<T1, T2> quantumSystem;
     DynamicsSchedule<arma::SpMat<T2>> dynamicsSchedule;
     MeasurementSchedule measurementSchedule;

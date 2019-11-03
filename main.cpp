@@ -101,16 +101,15 @@ int main(int argc, char *argv[])
 	qDynamics.Run();
 	
 
-	return 0;
+	//return 0;
 
-	/*
+	
 	qSystem.SelectObservable<ParticleNumberOperator>(L);
-	MatrixElementFiller::Fill(qSystem);
-	ParticleNumberOperator<Mat,double>::Preprocessing(qSystem.hamiltonian.matrixElements);
-
-
+	qSystem.Fill();
+	//ParticleNumberOperator<Mat,double>::Preprocessing(qSystem.hamiltonian.matrixElements);
 	qSystem.hamiltonian.matrixElements.print();
 
+	/*
 	qSystem.SelectObservable<ParityOperator>(L);
 	MatrixElementFiller::Fill(qSystem);
 	ParityOperator<Mat,double>::Preprocessing(qSystem.hamiltonian.matrixElements);
@@ -121,7 +120,7 @@ int main(int argc, char *argv[])
 	qSystem.SelectHamiltonian<KitaevHamiltonian>();
 	qSystem.Fill();
 	qSystem.hamiltonian.matrixElements.print();
-*/
+	*/
 
 	Info::Time();
 

@@ -58,10 +58,8 @@ private:
 
     void FillParameters() override
     {
-        arma::Col<T2> mu;
-        mu.set_size(L);
-        mu.fill(1);
-        parameters["M"] = mu; //TODO label
+        arma::SpMat<T2> mu = arma::eye<arma::SpMat<T2>>(L, L);
+        parameters["M"] = mu;
     }
 };
 
