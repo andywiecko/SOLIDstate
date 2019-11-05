@@ -12,6 +12,7 @@
 #define QUANTUMSTATE_HPP
 
 #include <armadillo>
+#include "../QuantumSystem/QuantumSystem.hpp"
 
 namespace solid
 {
@@ -30,14 +31,19 @@ public:
 
     QuantumState<T>() {}
 
-    QuantumState<T>(arma::Col<T> vec)
+    QuantumState<T>(arma::Col<T> &vec)
     {
         vector = vec;
     }
 
-    QuantumState<T>(arma::subview_col<T> vec)
+    QuantumState<T>(arma::subview_col<T> &vec)
     {
         vector = vec;
+    }
+
+    QuantumState<T> t()
+    {
+        return this->t();
     }
 
     /**
