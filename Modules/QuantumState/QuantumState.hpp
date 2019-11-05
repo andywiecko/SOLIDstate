@@ -22,18 +22,24 @@ namespace solid
  * @tparam T data type: double, std::complex<double> are supported
  */
 template <typename T>
-class QuantumState : public arma::Col<T>
+class QuantumState
 {
-    using arma::Col<T>::Col; // passing constructor for arma::Col<T>
-    // passing operator from arma:Col
-    using arma::Col<T>::operator*=;
-    using arma::Col<T>::operator+=;
-    using arma::Col<T>::operator-=;
-    using arma::Col<T>::operator%=;
-    using arma::Col<T>::operator=;
-    using arma::Col<T>::operator();
 
 public:
+    arma::Col<T> vector;
+
+    QuantumState<T>() {}
+
+    QuantumState<T>(arma::Col<T> vec)
+    {
+        vector = vec;
+    }
+
+    QuantumState<T>(arma::subview_col<T> vec)
+    {
+        vector = vec;
+    }
+
     /**
      * @brief energy, it is assigned after eigen problem is solved
      * 
