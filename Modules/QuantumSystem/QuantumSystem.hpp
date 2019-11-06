@@ -75,10 +75,7 @@ public:
      * @tparam Ham IHamiltonian template (e.g. KitaevHamiltonian)
      */
     template <template <template <typename> class, typename> class Ham>
-    void SelectHamiltonian()
-    { // TODO move to .cpp
-        hamiltonian = Factory::CreateHamiltonian<Ham<T1, T2>>();
-    }
+    void SelectHamiltonian();
 
     /**
      * @brief selects Observable for QuantumSystem
@@ -88,14 +85,8 @@ public:
      * @param Fargs Observable specific arguments (e.g. number of sites \f$L\f$)
      */
     template <template <template <typename> class, typename> class Obs, typename... Targs>
-    void SelectObservable(Targs... Fargs)
-    { // TODO move to .cpp
-        Observable<T1, T2> obs = Factory::CreateObservable<Obs<T1, T2>>(Fargs...);
-        hamiltonian = obs._operator;
-        parameters = obs.parameters;
-        this->Fill();
-        Obs<T1, T2>::Preprocessing(this->hamiltonian.matrixElements);
-    }
+    void SelectObservable(Targs... Fargs);
+
 };
 
 } // namespace solid
