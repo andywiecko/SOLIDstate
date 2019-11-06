@@ -14,15 +14,12 @@
 #include <functional>
 
 #include "Hamiltonian.hpp"
-#include "../QuantumSystem/QuantumSystem.hpp"
-#include "../Terms/OneBodyInteraction.hpp"
+#include "TermsEnum.hpp"
 
 namespace solid
 {
 
-template <template <typename> class T1, typename T2>
-class QuantumSystem;
-class OneBodyInteractionTermFermions;
+
 
 
 /**
@@ -45,12 +42,12 @@ class KitaevHamiltonian : public Operator<T1, T2>, public IHamiltonian
 	using Operator<T1, T2>::termsEnabled;
 
 public:
-	const std::function<void(QuantumSystem<T1, T2> &)> terms = [](QuantumSystem<T1, T2> &qSystem) {
-		OneBodyInteractionTermFermions::FillElements(qSystem);
+	//const std::function<void(QuantumSystem<T1, T2> &)> terms = [](QuantumSystem<T1, T2> &qSystem) {
+		//OneBodyInteractionTermFermions::FillElements(qSystem);
 		//TwoBodyInteractionTermFermions::FillElements(qSystem);
 		//HopTermFermions::FillElements(qSystem);
 		//CreatePairTermFermions::FillElements(qSystem);
-	};
+	//};
 
 	void SelectTerms() override
 	{
@@ -61,6 +58,13 @@ public:
 		termsEnabled.Hop = true;
 		termsEnabled.CreatePair = true;
 		//termsEnabled.N05option = true;
+
+		termsEnabled.terms = {
+			TermsEnum::Hop,
+			TermsEnum::OneBodyInteraction,
+			TermsEnum::TwoBodyInteraction,
+			TermsEnum::CreatePair
+			};
 	}
 };
 

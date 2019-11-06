@@ -12,6 +12,9 @@
 #define TERMSENABLED_HPP
 
 #include "Particles.hpp"
+#include "TermsEnum.hpp"
+
+#include <vector>
 
 namespace solid
 {
@@ -23,7 +26,7 @@ class TermsEnabled
 {
 public:
     Particles particles = Particles::Fermions;
-
+    std::vector<TermsEnum> terms;
     bool Hop = false;                  /// hopping between selected sites
     bool OneBodyInteraction = false;   /// one body interaction (e.g. chemical potential)
     bool TwoBodyInteraction = false;   /// two body interaction (e.g. Coulomb repulsion)
