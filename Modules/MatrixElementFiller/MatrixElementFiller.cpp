@@ -46,7 +46,7 @@ void MatrixElementFiller::FermionFiller(QuantumSystem<T1, T2> &qSystem)
     do
     {
         // sector terms
-
+    /*
         // diagonal
         if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
             OneBodyInteractionTermFermions::FillElements(qSystem);
@@ -61,7 +61,7 @@ void MatrixElementFiller::FermionFiller(QuantumSystem<T1, T2> &qSystem)
         // inter-sector terms (non-diagonal)
         if (qSystem.hamiltonian.termsEnabled.CreatePair)
             CreatePairTermFermions::FillElements(qSystem);
-
+    */
 
     }
     // do until last base state in the ensemble
@@ -75,10 +75,12 @@ void MatrixElementFiller::SpinFiller(QuantumSystem<T1, T2> &qSystem)
     qSystem.hilbertSpace.InitialBaseState();
     do
     {
+        /*
         if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
             OneBodyInteractionTermSpins::FillElements(qSystem);
         if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
             TwoBodyInteractionTermSpins::FillElements(qSystem);
+        */
     } while (qSystem.hilbertSpace++); //.NextBaseState());
 }
 

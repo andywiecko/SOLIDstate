@@ -14,13 +14,16 @@
 #include <functional>
 
 #include "Hamiltonian.hpp"
-
+#include "../QuantumSystem/QuantumSystem.hpp"
+#include "../Terms/OneBodyInteraction.hpp"
 
 namespace solid
 {
 
 template <template <typename> class T1, typename T2>
 class QuantumSystem;
+class OneBodyInteractionTermFermions;
+
 
 /**
  * @brief [Kitaev Hamiltonian](https://arxiv.org/pdf/cond-mat/0010440.pdf) implementation
@@ -43,7 +46,7 @@ class KitaevHamiltonian : public Operator<T1, T2>, public IHamiltonian
 
 public:
 	const std::function<void(QuantumSystem<T1, T2> &)> terms = [](QuantumSystem<T1, T2> &qSystem) {
-		//OneBodyInteractionTermFermions::FillElements(qSystem);
+		OneBodyInteractionTermFermions::FillElements(qSystem);
 		//TwoBodyInteractionTermFermions::FillElements(qSystem);
 		//HopTermFermions::FillElements(qSystem);
 		//CreatePairTermFermions::FillElements(qSystem);
