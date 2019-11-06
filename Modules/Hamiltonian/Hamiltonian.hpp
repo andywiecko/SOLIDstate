@@ -14,6 +14,8 @@
 #include "Particles.hpp"
 #include "TermsEnabled.hpp"
 
+#include <functional>
+
 namespace solid
 {
 
@@ -72,6 +74,8 @@ public:
 	 * e.g. hopping, one-body interaction, two-body interaction ...
 	 */
 	TermsEnabled termsEnabled;
+
+	std::function<void(void)> terms;
 
 	/**
 	 * @brief Destroy the Operator object

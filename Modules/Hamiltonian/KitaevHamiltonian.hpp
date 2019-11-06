@@ -34,8 +34,14 @@ template <template <typename> class T1, typename T2>
 class KitaevHamiltonian : public Operator<T1, T2>, public IHamiltonian
 {
 	using Operator<T1, T2>::termsEnabled;
+	using Operator<T1, T2>::terms;
 
 public:
+
+	void static Terms()
+	{
+	}
+
 	void SelectTerms() override
 	{
 		// Fermions are default, but it is good to stress out
@@ -45,7 +51,13 @@ public:
 		termsEnabled.Hop = true;
 		termsEnabled.CreatePair = true;
 		//termsEnabled.N05option = true;
+
+		//this->terms = Terms;
+		std::function<void(void)> f = Terms;
 	}
+
+
+
 };
 
 } // namespace solid
