@@ -45,6 +45,10 @@ public:
     template <template <typename> class T1, typename T2>
     static QuantumState<T2> FindGroundState(QuantumSystem<T1, T2> &qSystem);
 
+    // TODO
+    // MICROCANONICAL LANCHOS FOR EXCITED STATES
+
+
     /**
      * @brief class for handling options for sparse matrix
      *        diagonalization procedures
