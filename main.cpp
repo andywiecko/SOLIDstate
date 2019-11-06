@@ -6,17 +6,17 @@ using namespace solid;
 
 #include <functional>
 
-template <typename T,template <typename> class T1, typename T2>
-auto operator*(QuantumState<T> qState,QuantumSystem<T1,T2> qSystem)
-{
-	return qState.vector * qSystem.hamiltonian.matrixElements;
-}
+//template <typename T,template <typename> class T1, typename T2>
+//auto operator*(QuantumState<T> qState,QuantumSystem<T1,T2> qSystem)
+//{
+//	return arma::Col<T>(qState.vector * qSystem.hamiltonian.matrixElements);
+//}
 
-template <typename T,template <typename> class T1, typename T2>
-auto operator*(QuantumSystem<T1,T2> qSystem,QuantumState<T> qState)
-{
-	return qSystem.hamiltonian.matrixElements * qState.vector;
-}
+//template <typename T,template <typename> class T1, typename T2>
+//auto operator*(QuantumSystem<T1,T2> qSystem,QuantumState<T> qState)
+//{
+//	return arma::Col<T>(qSystem.hamiltonian.matrixElements * qState.vector);
+//}
 
 int main(int argc, char *argv[])
 {
@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
 	double H = Laboratory::Measure(qSystem, qState);
 	std::cout << "Energy=" << E << "\t <H>=" << H << std::endl;
 
-	
+
 
 	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
 	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
@@ -98,11 +98,11 @@ int main(int argc, char *argv[])
 	meSchedule.Measure = [L](QuantumSystem<Mat, double> &qSys, QuantumState<double> &qSta) 
 	{
 		QuantumState<double> ground = Eigensolver::FindGroundState(qSys);
-		std::cout << "<E> = " << Laboratory::Measure(qSys, ground) << "   |   ";
+		auto E = Laboratory::Measure(qSys, ground);
 		qSys.SelectObservable<ParticleNumberOperator>(L);
-		qSys.Fill();
-		ParticleNumberOperator<Mat,double>::Preprocessing(qSys.hamiltonian.matrixElements);
-		std::cout << "<N> = " << Laboratory::Measure(qSys, qSta) << std::endl;
+		auto N = Laboratory::Measure(qSys, qSta);
+		std::cout << "<E> = " << E << "   |   ";
+		std::cout << "<N> = " << N << std::endl;
 	};
 
 	// Quantum dynamics object

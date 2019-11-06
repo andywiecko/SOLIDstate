@@ -31,12 +31,12 @@ public:
 
     QuantumState<T>() {}
 
-    QuantumState<T>(arma::Col<T> &vec)
+    QuantumState<T>(arma::Col<T> vec)
     {
         vector = vec;
     }
 
-    QuantumState<T>(arma::subview_col<T> &vec)
+    QuantumState<T>(arma::subview_col<T> vec)
     {
         vector = vec;
     }

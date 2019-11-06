@@ -93,6 +93,8 @@ public:
         Observable<T1, T2> obs = Factory::CreateObservable<Obs<T1, T2>>(Fargs...);
         hamiltonian = obs._operator;
         parameters = obs.parameters;
+        this->Fill();
+   		Obs<T1,T2>::Preprocessing(this->hamiltonian.matrixElements);
     }
 };
 
