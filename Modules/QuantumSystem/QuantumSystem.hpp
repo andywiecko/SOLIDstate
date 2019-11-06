@@ -94,7 +94,7 @@ public:
         hamiltonian = obs._operator;
         parameters = obs.parameters;
         this->Fill();
-   		Obs<T1,T2>::Preprocessing(this->hamiltonian.matrixElements);
+        Obs<T1, T2>::Preprocessing(this->hamiltonian.matrixElements);
     }
 };
 

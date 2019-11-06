@@ -11,10 +11,16 @@
 #ifndef KITAEVHAMILTONIAN_HPP
 #define KITAEVHAMILTONIAN_HPP
 
+#include <functional>
+
 #include "Hamiltonian.hpp"
+
 
 namespace solid
 {
+
+template <template <typename> class T1, typename T2>
+class QuantumSystem;
 
 /**
  * @brief [Kitaev Hamiltonian](https://arxiv.org/pdf/cond-mat/0010440.pdf) implementation
@@ -34,13 +40,14 @@ template <template <typename> class T1, typename T2>
 class KitaevHamiltonian : public Operator<T1, T2>, public IHamiltonian
 {
 	using Operator<T1, T2>::termsEnabled;
-	using Operator<T1, T2>::terms;
 
 public:
-
-	void static Terms()
-	{
-	}
+	const std::function<void(QuantumSystem<T1, T2> &)> terms = [](QuantumSystem<T1, T2> &qSystem) {
+		//OneBodyInteractionTermFermions::FillElements(qSystem);
+		//TwoBodyInteractionTermFermions::FillElements(qSystem);
+		//HopTermFermions::FillElements(qSystem);
+		//CreatePairTermFermions::FillElements(qSystem);
+	};
 
 	void SelectTerms() override
 	{
@@ -51,13 +58,7 @@ public:
 		termsEnabled.Hop = true;
 		termsEnabled.CreatePair = true;
 		//termsEnabled.N05option = true;
-
-		//this->terms = Terms;
-		std::function<void(void)> f = Terms;
 	}
-
-
-
 };
 
 } // namespace solid
