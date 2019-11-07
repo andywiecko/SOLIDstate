@@ -14,18 +14,22 @@
 namespace solid
 {
 
+//template <template <typename> class T1, typename T2>
+//typedef std::map<TermsEnum, std::function<void(QuantumSystem<T1, T2>&)>> mapTermsFunction;
+
+template <template <typename> class T1, typename T2>
+using mapTermsFunction = std::map<TermsEnum, std::function<void(QuantumSystem<T1, T2>&)>>;
+
 template <template <typename> class T1, typename T2>
 class TermsEnumConverter
 {
 
 
-    static std::map<TermsEnum, std::function<void(QuantumSystem<T1, T2>&)>> CreateDict();
-   // {
-    //    dict[TermsEnum::Hop] = [](QuantumSystem<T1,T2> qSystem){HopTermFermions::FillElements(qSystem)};
-   // }
+    static mapTermsFunction<T1,T2> CreateDict();
+ 
 
 public:
-    static std::map<TermsEnum, std::function<void(QuantumSystem<T1, T2>&)>> dict;
+    static mapTermsFunction<T1,T2> dict;
     static void FermionsTerms()
     {
         //dict[TermsEnum::Hop] = [](QuantumSystem<T1, T2> qSystem) { HopTermFermions::FillElements(qSystem) };
