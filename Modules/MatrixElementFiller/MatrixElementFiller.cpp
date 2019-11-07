@@ -9,6 +9,8 @@
  * 
  */
 #include "MatrixElementFiller.hpp"
+#include "TermsEnumConverter.hpp"
+#include "../Hamiltonian/TermsEnum.hpp"
 
 namespace solid
 {
@@ -46,7 +48,7 @@ void MatrixElementFiller::FermionFiller(QuantumSystem<T1, T2> &qSystem)
     do
     {
         // sector terms
-    /*
+        /*
         // diagonal
         if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
             OneBodyInteractionTermFermions::FillElements(qSystem);
@@ -62,6 +64,15 @@ void MatrixElementFiller::FermionFiller(QuantumSystem<T1, T2> &qSystem)
         if (qSystem.hamiltonian.termsEnabled.CreatePair)
             CreatePairTermFermions::FillElements(qSystem);
     */
+
+        for(auto const& value: qSystem.hamiltonian.termsEnabled.terms)
+        {
+            //std::cout << value << std::endl;
+            //TermsEnumConverter::dict[enu](qSystem);
+            if (TermsEnumConverter<T1,T2>::dict[value])
+                TermsEnumConverter<T1,T2>::dict[value](qSystem);
+            //if (value == TermsEnum::Hop) std::cout << "ok" << std::endl;
+        }
 
     }
     // do until last base state in the ensemble
