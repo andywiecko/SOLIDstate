@@ -1,3 +1,13 @@
+/**
+ * @file QuantumDynamics.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Quantum Dynamics class header
+ * @version 0.100.0
+ * @date 2019-11-10
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef QUANTUMDYNAMICS_HPP
 #define QUANTUMDYNAMICS_HPP
 

@@ -1,3 +1,13 @@
+/**
+ * @file TermsEnumConverter-imp.cpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Terms Enum Converter class template initialization
+ * @version 0.100.0
+ * @date 2019-11-10
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "TermsEnumConverter.cpp"
 #include<armadillo>
 namespace solid
