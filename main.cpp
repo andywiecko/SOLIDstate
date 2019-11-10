@@ -84,8 +84,6 @@ int main(int argc, char *argv[])
 	QuantumState<cx_double> cx_qState = qState;
 	cx_qState.vector.print();
 
-	
-
 	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
 	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
 

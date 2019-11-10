@@ -13,6 +13,8 @@
 
 #include <armadillo>
 #include <string>
+#include <cassert>
+
 #include "../QuantumSystem/QuantumSystem.hpp"
 
 namespace solid
@@ -29,28 +31,53 @@ class QuantumState
 {
 
 public:
+
+    /**
+     * @brief container of the QuantumState
+     */
     arma::Col<T> vector;
 
     QuantumState<T>() {}
 
+    /**
+     * @brief Construct a new Quantum State< T> object from arma::Col
+     * 
+     * @param vec 
+     */
     QuantumState<T>(arma::Col<T> vec)
     {
         vector = vec;
     }
 
+    /**
+     * @brief Construct a new Quantum State< T> object from arma::subview_col
+     * 
+     * @param vec 
+     */
     QuantumState<T>(arma::subview_col<T> vec)
     {
         vector = vec;
     }
 
+    /**
+     * @brief Construct a new Quantum State< T> object
+     * 
+     * @tparam T2 should be double, converts from double to complex, otherwise assertion
+     * @param qState 
+     */
     template <typename T2>
-    QuantumState<T>(QuantumState<T2> & qState);
+    QuantumState<T>(QuantumState<T2> &qState);
 
     void print(std::string extra_text = "")
     {
         vector.print(extra_text);
     }
 
+    /**
+     * @brief \f$|\psi\rangle \to \langle \psi|\f$
+     * 
+     * @return QuantumState<T> hermitian conjugate of the Quantum State
+     */
     QuantumState<T> t()
     {
         return this->t();
@@ -66,8 +93,6 @@ public:
      */
     double energy;
 };
-
-
 
 } // namespace solid
 
