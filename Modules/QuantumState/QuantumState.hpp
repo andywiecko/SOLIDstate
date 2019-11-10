@@ -12,6 +12,7 @@
 #define QUANTUMSTATE_HPP
 
 #include <armadillo>
+#include <string>
 #include "../QuantumSystem/QuantumSystem.hpp"
 
 namespace solid
@@ -22,6 +23,7 @@ namespace solid
  * 
  * @tparam T data type: double, std::complex<double> are supported
  */
+
 template <typename T>
 class QuantumState
 {
@@ -41,6 +43,14 @@ public:
         vector = vec;
     }
 
+    template <typename T2>
+    QuantumState<T>(QuantumState<T2> & qState);
+
+    void print(std::string extra_text = "")
+    {
+        vector.print(extra_text);
+    }
+
     QuantumState<T> t()
     {
         return this->t();
@@ -56,6 +66,8 @@ public:
      */
     double energy;
 };
+
+
 
 } // namespace solid
 
