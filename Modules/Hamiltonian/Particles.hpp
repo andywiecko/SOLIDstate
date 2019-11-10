@@ -11,18 +11,5 @@
 #ifndef PARTICLES_HPP
 #define PARTICLES_HPP
 
-namespace solid
-{
-
-/** 
- * @brief Particles enum class
- */
-enum class Particles
-{
-	Fermions  /** spinless fermion particles */,
-	Spins	  /** spin 1/2 particles */
-};
-
-} // namespace solid
 
 #endif

@@ -5,13 +5,20 @@ namespace solid
 {
 enum class TermsEnum
 {
-    Hop,
-    OneBodyInteraction,
-    TwoBodyInteraction,
-    ThreeBodyInteraction,
-    CreateParticle,
-    CreatePair,
-    CreateTriple
+    // Fermions
+
+    FermionHop,
+    FermionOneBodyInteraction,
+    FermionTwoBodyInteraction,
+    FermionThreeBodyInteraction,
+    FermionCreateParticle,
+    FermionCreatePair,
+    FermionCreateTriple,
+
+    // Spins
+    SpinHop,
+    SpinOneBodyInteraction,
+    SpinTwoBodyInteraction
 };
 }
 #endif

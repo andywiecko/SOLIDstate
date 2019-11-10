@@ -25,15 +25,8 @@ namespace solid
 class TermsEnabled
 {
 public:
-    Particles particles = Particles::Fermions;
+    
     std::vector<TermsEnum> terms;
-    bool Hop = false;                  /// hopping between selected sites
-    bool OneBodyInteraction = false;   /// one body interaction (e.g. chemical potential)
-    bool TwoBodyInteraction = false;   /// two body interaction (e.g. Coulomb repulsion)
-    bool ThreeBodyInteraction = false; /// three body interaction
-    bool CreateParticle = false;       /// creates one particle at selected site
-    bool CreatePair = false;           /// creates two particles at selected sites
-    bool CreateTriple = false;         /// creates three particles at selected sites
 
     /**
 	 * @brief when this option is enabled, particle number operators are decresed by 0.5

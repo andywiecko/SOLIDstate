@@ -11,9 +11,7 @@
 #ifndef HAMILTONIAN_HPP
 #define HAMILTONIAN_HPP
 
-#include "Particles.hpp"
 #include "TermsEnabled.hpp"
-
 
 namespace solid
 {

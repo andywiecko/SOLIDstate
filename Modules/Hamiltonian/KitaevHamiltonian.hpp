@@ -51,19 +51,11 @@ public:
 
 	void SelectTerms() override
 	{
-		// Fermions are default, but it is good to stress out
-		termsEnabled.particles = Particles::Fermions;
-		termsEnabled.OneBodyInteraction = true;
-		termsEnabled.TwoBodyInteraction = true;
-		termsEnabled.Hop = true;
-		termsEnabled.CreatePair = true;
-		//termsEnabled.N05option = true;
-
 		termsEnabled.terms = {
-			TermsEnum::Hop,
-			TermsEnum::OneBodyInteraction,
-			TermsEnum::TwoBodyInteraction,
-			TermsEnum::CreatePair
+			TermsEnum::FermionHop,
+			TermsEnum::FermionOneBodyInteraction,
+			TermsEnum::FermionTwoBodyInteraction,
+			TermsEnum::FermionCreatePair
 			};
 	}
 };

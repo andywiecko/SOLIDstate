@@ -55,24 +55,14 @@ private:
     static void WarmUp(QuantumSystem<T1, T2> &qSystem);
 
     /**
-     * @brief initialization of the matrixElements for QuantumSystem, particles: Fermions
+     * @brief initialization of the matrixElements for QuantumSystem
      * 
      * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
      * @tparam T2 data type: double, std::complex<double> are supported
      * @param qSystem QuantumSystem to initilize
      */
     template <template <typename> class T1, typename T2>
-    static void FermionFiller(QuantumSystem<T1, T2> &qSystem);
-
-    /**
-     * @brief initialization of the matrixElements for QuantumSystem, particles: Spins
-     * 
-     * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
-     * @tparam T2 data type: double, std::complex<double> are supported
-     * @param qSystem QuantumSystem to initilize
-     */
-    template <template <typename> class T1, typename T2>
-    static void SpinFiller(QuantumSystem<T1, T2> &qSystem);
+    static void Filler(QuantumSystem<T1, T2> &qSystem);
 };
 
 } // namespace solid

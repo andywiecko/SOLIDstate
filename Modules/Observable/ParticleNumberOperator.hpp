@@ -52,8 +52,7 @@ private:
 
     void SelectTerms()
     {
-        _operator.termsEnabled.particles = Particles::Fermions;
-        _operator.termsEnabled.OneBodyInteraction = true;
+        _operator.termsEnabled.terms = {TermsEnum::FermionOneBodyInteraction};
     }
 
     void FillParameters() override

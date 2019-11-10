@@ -19,16 +19,7 @@ template <template <typename> class T1, typename T2>
 void MatrixElementFiller::Fill(QuantumSystem<T1, T2> &qSystem)
 {
     WarmUp(qSystem);
-    Particles selectedParticles = qSystem.hamiltonian.termsEnabled.particles;
-    switch (selectedParticles)
-    {
-    case Particles::Fermions:
-        FermionFiller(qSystem);
-        break;
-    case Particles::Spins:
-        SpinFiller(qSystem);
-        break;
-    }
+    Filler(qSystem);
 }
 
 template <template <typename> class T1, typename T2>
@@ -41,58 +32,22 @@ void MatrixElementFiller::WarmUp(QuantumSystem<T1, T2> &qSystem)
 }
 
 template <template <typename> class T1, typename T2>
-void MatrixElementFiller::FermionFiller(QuantumSystem<T1, T2> &qSystem)
+void MatrixElementFiller::Filler(QuantumSystem<T1, T2> &qSystem)
 {
     // initialisation of the base state
     qSystem.hilbertSpace.InitialBaseState();
     do
     {
-        // sector terms
-        /*
-        // diagonal
-        if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
-            OneBodyInteractionTermFermions::FillElements(qSystem);
-
-        if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
-            TwoBodyInteractionTermFermions::FillElements(qSystem);
-
-        // non-diagonal
-        if (qSystem.hamiltonian.termsEnabled.Hop)
-            HopTermFermions::FillElements(qSystem);
-
-        // inter-sector terms (non-diagonal)
-        if (qSystem.hamiltonian.termsEnabled.CreatePair)
-            CreatePairTermFermions::FillElements(qSystem);
-    */
-
-        for(auto const& value: qSystem.hamiltonian.termsEnabled.terms)
+        // consider all terms for Hamiltonian/Operator
+        for (auto const &value : qSystem.hamiltonian.termsEnabled.terms)
         {
-            //std::cout << value << std::endl;
-            //TermsEnumConverter::dict[enu](qSystem);
-            if (TermsEnumConverter<T1,T2>::dict[value])
-                TermsEnumConverter<T1,T2>::dict[value](qSystem);
-            //if (value == TermsEnum::Hop) std::cout << "ok" << std::endl;
+            if (TermsEnumConverter<T1, T2>::dict[value])
+                TermsEnumConverter<T1, T2>::dict[value](qSystem);
         }
 
     }
     // do until last base state in the ensemble
     while (qSystem.hilbertSpace++); //.NextBaseState());
-}
-
-template <template <typename> class T1, typename T2>
-void MatrixElementFiller::SpinFiller(QuantumSystem<T1, T2> &qSystem)
-{
-    // initialisation of the base state
-    qSystem.hilbertSpace.InitialBaseState();
-    do
-    {
-        /*
-        if (qSystem.hamiltonian.termsEnabled.OneBodyInteraction)
-            OneBodyInteractionTermSpins::FillElements(qSystem);
-        if (qSystem.hamiltonian.termsEnabled.TwoBodyInteraction)
-            TwoBodyInteractionTermSpins::FillElements(qSystem);
-        */
-    } while (qSystem.hilbertSpace++); //.NextBaseState());
 }
 
 } // namespace solid
