@@ -11,7 +11,6 @@
 #ifndef TERMSENABLED_HPP
 #define TERMSENABLED_HPP
 
-#include "Particles.hpp"
 #include "TermsEnum.hpp"
 
 #include <vector>
@@ -25,15 +24,18 @@ namespace solid
 class TermsEnabled
 {
 public:
-    
-    std::vector<TermsEnum> terms;
 
-    /**
+	/**
+	 * @brief container for terms, which are included in the IHamiltonian implementation or Operator
+	 */
+	std::vector<TermsEnum> terms;
+
+	/**
 	 * @brief when this option is enabled, particle number operators are decresed by 0.5
 	 * 
 	 * it transforms particle number operator in the following way: \f$\hat n_i \to \hat n_i-\frac12\f$
 	 */
-    bool N05option = false;
+	bool N05option = false;
 };
 } // namespace solid
 
