@@ -13,17 +13,16 @@
 namespace solid
 {
 
-template <template <typename> class T1, typename T2>
-T2 Laboratory::Measure(QuantumSystem<T1, T2> &qSystem, QuantumState<T2> &qState)
+template <template <typename> class T1, typename T2,typename T3>
+typename std::conditional<std::is_same<T2, arma::cx_double>::value || std::is_same<T3, arma::cx_double>::value, arma::cx_double, double>::type
+Laboratory::Measure(QuantumSystem<T1, T2> &qSystem, QuantumState<T3> &qState)
 {
     Info::vTime("measuring...");
-    T2 ret = arma::as_scalar(qState.vector.t() * qSystem.hamiltonian.matrixElements * qState.vector);
-    //T2 ret = arma::as_scalar(qState.t() * qSystem.hamiltonian.matrixElements * arma::Col<T2>(qState));
-    //T2 ret = arma::as_scalar(qState.t() * qSystem.hamiltonian.matrixElements * qState);
-    //T2 ret = arma::as_scalar(qState.t() * qSystem * qState);
-    //T2 ret = arma::as_scalar(qState.t() * qSystem.hamiltonian.matrixElements * qState); // TODO remove Col conversion
+    auto ret = arma::as_scalar(qState.vector.t() * qSystem.hamiltonian.matrixElements * qState.vector);
     Info::vMessage("done!");
     return ret;
 }
+
+
 
 } // namespace solid
