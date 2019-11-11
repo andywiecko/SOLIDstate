@@ -84,9 +84,8 @@ int main(int argc, char *argv[])
 	QuantumState<cx_double> cx_qState = qState;
 	cx_qState.vector.print();
 
-	std::cout << Laboratory::Measure(qSystem,qState) << std::endl;
-	std::cout << Laboratory::Measure(qSystem,cx_qState) << std::endl;
-
+	std::cout << Laboratory::Measure(qSystem, qState) << std::endl;
+	std::cout << Laboratory::Measure(qSystem, cx_qState) << std::endl;
 
 	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
 	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
@@ -100,10 +99,9 @@ int main(int argc, char *argv[])
 
 	dynSchedule.dict = dict;
 
-	MeasurementSchedule<Mat, double> meSchedule;
+	MeasurementSchedule<Mat, double, double> meSchedule;
 	meSchedule.timeToMeasure = [](auto time) { return true; };
-	meSchedule.Measure = [L](QuantumSystem<Mat, double> &qSys, QuantumState<double> &qSta) 
-	{
+	meSchedule.Measure = [L](QuantumSystem<Mat, double> &qSys, QuantumState<double> &qSta) {
 		QuantumState<double> ground = Eigensolver::FindGroundState(qSys);
 		auto E = Laboratory::Measure(qSys, ground);
 		qSys.SelectObservable<ParticleNumberOperator>(L);
@@ -113,7 +111,7 @@ int main(int argc, char *argv[])
 	};
 
 	// Quantum dynamics object
-	QuantumDynamics<Mat, double> qDynamics;
+	QuantumDynamics<Mat, double, double> qDynamics;
 	qDynamics.Create(qSystem, qState, dynSchedule, meSchedule);
 	qDynamics.Run();
 

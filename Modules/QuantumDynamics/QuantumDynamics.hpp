@@ -22,16 +22,27 @@
 namespace solid
 {
 
-// TODO make it as interface for different dynamics
-template <template <typename> class T1, typename T2>
+/**
+ * @brief Quantum Dynamics class
+ * 
+ * It uses QuantumSystem QuantumState and DynamicsSchedule MeasurmentSchedule
+ * to study dynamics of initial state by performing evolution on the given path
+ * of selected IHamiltonian/Operator
+ * 
+ * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
+ * @tparam T2 data type of QuantumSystem: double, std::complex<double> are supported
+ * @tparam T3 data type of QuantumState: double, std::complex<double> are supported
+ */
+template <template <typename> class T1, typename T2, typename T3>
 class QuantumDynamics
 {
 
 public:
-    void Create(QuantumSystem<T1, T2> &qSystem,
-                QuantumState<T2> &initQuantumState,
-                DynamicsSchedule<arma::SpMat<T2>> &dynSchedule,
-                MeasurementSchedule<T1, T2> &mesSchedule)
+    void Create(
+        QuantumSystem<T1, T2> &qSystem,
+        QuantumState<T2> &initQuantumState,
+        DynamicsSchedule<arma::SpMat<T2>> &dynSchedule,
+        MeasurementSchedule<T1, T2, T3> &mesSchedule)
     {
         terms = qSystem.hamiltonian.termsEnabled;
         quantumSystem = qSystem;
@@ -41,54 +52,22 @@ public:
         measurementSchedule = mesSchedule;
     }
 
-private:
-    void LoadParameters()
-    {
-        quantumSystem.hamiltonian.termsEnabled = terms;
-        quantumSystem.parameters = param;
-        for (const auto &[label, val] : dynamicsSchedule.dict)
-        {
-            //std::cout << label << std::endl;
-            val(quantumSystem.parameters[label], time);
-            //arma::mat(quantumSystem.parameters[label]).print(label + ":");
-        }
-    }
-    void Propagate()
-    {
-        quantumSystem.Fill();
-        //quantumSystem.hamiltonian.matrixElements.print("H=");
-        // TODO RK4 or chebyshev...
-    }
-    void Measure()
-    {
-        measurementSchedule.Measure(quantumSystem, quantumState);
-    }
-
-public:
-    void Run()
-    {
-        time = dynamicsSchedule.time_init;
-        double dt = dynamicsSchedule.time_step;
-
-        while (time <= dynamicsSchedule.time_final)
-        {
-            std::cout << "time=" << time << "   |   ";// << std::endl;
-            LoadParameters();
-            Propagate();
-            if (measurementSchedule.timeToMeasure(time))
-                Measure();
-            time += dt;
-        }
-    }
+    void Run();
 
 private:
+    void LoadParameters();
+
+    void Propagate();
+
+    void Measure();
+
     double time;
     TermsEnabled terms;
-    QuantumState<T2> quantumState;
+    QuantumState<T3> quantumState;
     QuantumSystem<T1, T2> quantumSystem;
     Parameters<T2> param;
     DynamicsSchedule<arma::SpMat<T2>> dynamicsSchedule;
-    MeasurementSchedule<T1, T2> measurementSchedule;
+    MeasurementSchedule<T1, T2, T3> measurementSchedule;
 };
 
 } // namespace solid
