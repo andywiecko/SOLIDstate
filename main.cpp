@@ -87,15 +87,19 @@ int main(int argc, char *argv[])
 	std::cout << Laboratory::Measure(qSystem, qState) << std::endl;
 	std::cout << Laboratory::Measure(qSystem, cx_qState) << std::endl;
 
-	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
-	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
+	//Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
+	//Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
+
+	//Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
+	//Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
 
 	DynamicsSchedule<sp_mat> dynSchedule;
-	dynSchedule.time_step = 0.1;
+	dynSchedule.time_step = 0.005;
+	dynSchedule.time_final = 1000;
 
 	ScheduleMap<sp_mat> dict;
-	dict["t"] = t_schedule;
-	dict["V"] = V_schedule;
+	//dict["t"] = t_schedule;
+	//dict["V"] = V_schedule;
 
 	dynSchedule.dict = dict;
 
@@ -103,10 +107,11 @@ int main(int argc, char *argv[])
 	meSchedule.timeToMeasure = [](auto time) { return true; };
 	meSchedule.Measure = [L](QuantumSystem<Mat, double> &qSys, QuantumState<cx_double> &qSta) {
 		QuantumState<double> ground = Eigensolver::FindGroundState(qSys);
-		auto E = Laboratory::Measure(qSys, ground);
+		//auto E = Laboratory::Measure(qSys, ground);
+		auto E = Laboratory::Measure(qSys, qSta);
 		qSys.SelectObservable<ParticleNumberOperator>(L);
 		auto N = Laboratory::Measure(qSys, qSta);
-		std::cout << "<E> = " << E << "   |   ";
+		std::cout << "<E> = " << real(E) << "   |   ";
 		std::cout << "<N> = " << N << std::endl;
 	};
 

@@ -82,6 +82,7 @@ private:
      */
     void Measure();
 
+    friend class RK4;
     double time;                                         /*!< current time of the evolution */
     TermsEnabled terms;                                  /*!< copy of active terms in QuantumSystem */
     QuantumState<T3> quantumState;                       /*!< current QuantumState at given time */
