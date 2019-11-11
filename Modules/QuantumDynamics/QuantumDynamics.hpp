@@ -38,6 +38,15 @@ class QuantumDynamics
 {
 
 public:
+
+    /**
+     * @brief QuantumDynamics constructor
+     * 
+     * @param qSystem IHamiltonian/Operator to evolve
+     * @param initQuantumState initial QuantumState
+     * @param dynSchedule DynamicsSchedule (how QuantumSystem Parameters changes during the time)
+     * @param mesSchedule MeasurementSchedule (when and what to measure)
+     */
     void Create(
         QuantumSystem<T1, T2> &qSystem,
         QuantumState<T2> &initQuantumState,
@@ -52,22 +61,34 @@ public:
         measurementSchedule = mesSchedule;
     }
 
+    /**
+     * @brief Run the evolution
+     */
     void Run();
 
 private:
+    /**
+     * @brief Loads the parameters with respect to time
+     */
     void LoadParameters();
 
+    /**
+     * @brief Propagates the state
+     */
     void Propagate();
 
+    /**
+     * @brief performs MeasurmentSchedule
+     */
     void Measure();
 
-    double time;
-    TermsEnabled terms;
-    QuantumState<T3> quantumState;
-    QuantumSystem<T1, T2> quantumSystem;
-    Parameters<T2> param;
-    DynamicsSchedule<arma::SpMat<T2>> dynamicsSchedule;
-    MeasurementSchedule<T1, T2, T3> measurementSchedule;
+    double time;                                         /*!< current time of the evolution */
+    TermsEnabled terms;                                  /*!< copy of active terms in QuantumSystem */
+    QuantumState<T3> quantumState;                       /*!< current QuantumState at given time */
+    QuantumSystem<T1, T2> quantumSystem;                 /*!< current QuantumSystem or Observable at given time */
+    Parameters<T2> param;                                /*!< copy of active parameters in QuantumSystem */
+    DynamicsSchedule<arma::SpMat<T2>> dynamicsSchedule;  /*!< DynamicsSchedule for QuantumSystem parameters */
+    MeasurementSchedule<T1, T2, T3> measurementSchedule; /*!< MeasurmentSchedule: when and what to measure */
 };
 
 } // namespace solid
