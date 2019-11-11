@@ -49,7 +49,7 @@ public:
      */
     void Create(
         QuantumSystem<T1, T2> &qSystem,
-        QuantumState<T2> &initQuantumState,
+        QuantumState<T3> &initQuantumState,
         DynamicsSchedule<arma::SpMat<T2>> &dynSchedule,
         MeasurementSchedule<T1, T2, T3> &mesSchedule)
     {

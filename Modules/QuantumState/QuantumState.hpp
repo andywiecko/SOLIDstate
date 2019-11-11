@@ -80,8 +80,13 @@ public:
      */
     QuantumState<T> t()
     {
-        return this->t();
+        return this->t(); //TODO it doesnt work !!!!
     }
+/*
+    QuantumState<T> operator +=(arma::Col<T> vec)
+    {
+        vector += vec;
+    }*/
 
     /**
      * @brief energy, it is assigned after eigen problem is solved

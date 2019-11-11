@@ -99,9 +99,9 @@ int main(int argc, char *argv[])
 
 	dynSchedule.dict = dict;
 
-	MeasurementSchedule<Mat, double, double> meSchedule;
+	MeasurementSchedule<Mat, double, cx_double> meSchedule;
 	meSchedule.timeToMeasure = [](auto time) { return true; };
-	meSchedule.Measure = [L](QuantumSystem<Mat, double> &qSys, QuantumState<double> &qSta) {
+	meSchedule.Measure = [L](QuantumSystem<Mat, double> &qSys, QuantumState<cx_double> &qSta) {
 		QuantumState<double> ground = Eigensolver::FindGroundState(qSys);
 		auto E = Laboratory::Measure(qSys, ground);
 		qSys.SelectObservable<ParticleNumberOperator>(L);
@@ -111,9 +111,13 @@ int main(int argc, char *argv[])
 	};
 
 	// Quantum dynamics object
-	QuantumDynamics<Mat, double, double> qDynamics;
-	qDynamics.Create(qSystem, qState, dynSchedule, meSchedule);
+	QuantumDynamics<Mat, double, cx_double> qDynamics;
+	qDynamics.Create(qSystem, cx_qState, dynSchedule, meSchedule);
 	qDynamics.Run();
+
+	cx_vec test;
+	test = cx_qState.vector;
+	cx_qState.vector += test;
 
 	//return 0;
 
