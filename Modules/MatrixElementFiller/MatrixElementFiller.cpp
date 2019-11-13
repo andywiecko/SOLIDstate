@@ -26,6 +26,7 @@ template <template <typename> class T1, typename T2>
 void MatrixElementFiller::WarmUp(QuantumSystem<T1, T2> &qSystem)
 {
     int size = qSystem.hilbertSpace.ensemble.size;
+    qSystem.hamiltonian.matrixElements.clear();
     qSystem.hamiltonian.matrixElements.set_size(size, size);
     if constexpr (std::is_same<T1<T2>, arma::Mat<T2>>::value)
         qSystem.hamiltonian.matrixElements.fill(0);
