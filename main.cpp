@@ -67,6 +67,8 @@ int main(int argc, char *argv[])
 	param["delta"] = delta; // TODO diag ignored! //TODO bonds cheking if this is the last sector
 
 	qSystem.parameters = param;
+	Info::ShowParameters(qSystem);
+
 
 	qSystem.SelectHamiltonian<KitaevHamiltonian>();
 	qSystem.Fill();
@@ -145,6 +147,7 @@ int main(int argc, char *argv[])
 	qSystem.Fill();
 	qSystem.hamiltonian.matrixElements.print();
 	*/
+
 
 	Info::Time();
 

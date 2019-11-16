@@ -34,17 +34,16 @@ void StandardMessages::ShowSectors(Ensemble &ensemble)
 	Line();
 }
 
-void StandardMessages::Eigenmessage(std::string name,int number,std::string target,double tol)
+void StandardMessages::Eigenmessage(std::string name, int number, std::string target, double tol)
 {
-	
+
 	std::string message = "";
 	message += "starting " + name;
 	message += " with options:";
-	message += " noe=" + std::to_string(number) + ";"; 
-	message += " tar=" + target + ";"; 
-	message += " tol=" + std::to_string(tol) +";..."; 
+	message += " noe=" + std::to_string(number) + ";";
+	message += " tar=" + target + ";";
+	message += " tol=" + std::to_string(tol) + ";...";
 	Info::vTime(message);
-	
 }
 
 template <template <typename> class T1, typename T2>
@@ -52,6 +51,27 @@ void StandardMessages::ShowSectors(QuantumSystem<T1, T2> &qSystem)
 {
 	ShowSectors(qSystem.hilbertSpace.ensemble);
 }
+
+template <template <typename> class T1, typename T2>
+void StandardMessages::ShowParameters(QuantumSystem<T1, T2> &qSystem)
+{
+	for (auto const &[key, value] : qSystem.parameters)
+	{
+		typename arma::SpMat<T2>::const_iterator it = value.begin();
+		typename arma::SpMat<T2>::const_iterator it_end = value.end();
+		Info::Line();
+		std::cout << "# "+key+": (row) (col) (val)\n";
+		for (; it != it_end; ++it)
+		{
+			std::cout << "# " << it.row() << "\t" << it.col() << "\t" << (*it) << "\n";
+		}
+	}
+	Info::Line();
+}
+template void StandardMessages::ShowParameters(QuantumSystem<arma::Mat, double> &); // TODO!!!
+template void StandardMessages::ShowParameters(QuantumSystem<arma::Mat, arma::cx_double> &); // TODO!!!
+template void StandardMessages::ShowParameters(QuantumSystem<arma::SpMat, double> &); // TODO!!!
+template void StandardMessages::ShowParameters(QuantumSystem<arma::SpMat, arma::cx_double> &); // TODO!!!
 
 void StandardMessages::Message(std::string text)
 {

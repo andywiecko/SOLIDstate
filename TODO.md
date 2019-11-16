@@ -1,4 +1,7 @@
+# TODO list
+
 [!] marks the current priority features
+
 * ~argv class~
 * ~namespace solid~
 * ~class Info should be static~
@@ -8,6 +11,7 @@
 * [!] linker
 * [!] delta (pair creation)
 * [!] more Info::,  very useful for debugging!
+* predefined geometry (chain, ring, t-junction)
 * manual (dev guide LaTeX)
 * basic operators N, ni, P, current, hamiltonian derived ...
 * parameters filler

@@ -14,15 +14,21 @@ int main(int argc, char *argv[])
     // ********************************
     // Setting the matrix type: SpMat,
     // and data type: double
+    // ********************************
+    
     QuantumSystem<SpMat, double> qSystem;
 
     // ********************************
     // Selecting Ensemble
+    // ********************************
+
     qSystem.SelectEnsemble<ParityGrandCanonical>(L, 0);
     Info::ShowSectors(qSystem.hilbertSpace.ensemble); // other implementation
 
     // ********************************
     // Setting the parameters
+    // ********************************
+
     sp_mat mu(L, L); // chemical potential
     mu.set_size(L);
     mu = 0.1 * eye<sp_mat>(L,L);
@@ -52,11 +58,15 @@ int main(int argc, char *argv[])
 
     // ********************************
     // Selecting the model
+    // ********************************
+
     qSystem.SelectHamiltonian<KitaevHamiltonian>();
     qSystem.Fill();
 
     // ********************************
     // Finding the ground state
+    // ********************************
+
     QuantumState<double> qState = Eigensolver::FindGroundState(qSystem);
 
     double E = qState.energy;

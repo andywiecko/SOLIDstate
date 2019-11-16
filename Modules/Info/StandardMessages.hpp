@@ -44,7 +44,12 @@ public:
 	 * @param qSystem sectors from QuantumSystem to display
 	 */
 	template <template <typename> class T1, typename T2>
-	static void ShowSectors(QuantumSystem<T1, T2> &qSystem);
+	static void ShowSectors(QuantumSystem<T1, T2> &qSystem);// TODO templates are not initialized!
+
+	// TODO
+	template <template <typename> class T1, typename T2>
+	static void ShowParameters(QuantumSystem<T1,T2> &qSystem);
+
 
 	/**
 	 * @brief info for eigendecomposition
