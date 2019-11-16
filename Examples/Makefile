@@ -6,7 +6,7 @@ src=$(wildcard *.cpp)
 exe=$(src:.cpp=.exe)
 
 examples: $(src)
-	$(CC) -o $(^:.cpp=.exe) $^ $(LIBS) $(CFLAGS)
+	$(CC) -o $(^:.cpp=.exe) $^ ../SOLIDstate.a $(LIBS) $(CFLAGS) 
 
 .PHONY : clean
 clean:

@@ -17,6 +17,12 @@ obj=$(src:.cpp=.o)
 main.exe: main.cpp $(obj)
 	$(CC) -o main.exe $^ $(LIBS) $(CFLAGS)
 
+solid: $(obj)
+	ar rcs SOLIDstate.a $(obj)
+
+solid.exe: main.cpp SOLIDstate.a 
+	$(CC) -o solid.exe main.cpp SOLIDstate.a $(LIBS) $(CFLAGS)
+
 doxy:
 	doxygen Doxyfile
 	firefox Doxy/html/index.html &
