@@ -14,7 +14,7 @@ obj=$(src:.cpp=.o)
 %-imp.o: %-imp.cpp %.hpp %.cpp
 	$(CC) -o $@ -c $< -std=c++17
 
-main.o: main.cpp $(obj)
+main.exe: main.cpp $(obj)
 	$(CC) -o main.exe $^ $(LIBS) $(CFLAGS)
 
 doxy:

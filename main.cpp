@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	// number of sites
 	int L = 4;
 
-	QuantumSystem<Mat, double> qSystem;
+	QuantumSystem<SpMat, double> qSystem;
 
 	//qSystem.SelectEnsemble<Canonical>(L,L/2);
 	qSystem.SelectEnsemble<ParityGrandCanonical>(L, 0);
@@ -90,22 +90,22 @@ int main(int argc, char *argv[])
 	//Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
 	//Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
 
-	//Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
-	//Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
+	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) { };
+	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) { };
 
 	DynamicsSchedule<sp_mat> dynSchedule;
-	dynSchedule.time_step = 0.005;
-	dynSchedule.time_final = 1000;
+	dynSchedule.time_step = 0.01;
+	dynSchedule.time_final = 1;
 
 	ScheduleMap<sp_mat> dict;
-	//dict["t"] = t_schedule;
-	//dict["V"] = V_schedule;
+	dict["t"] = t_schedule;
+	dict["V"] = V_schedule;
 
 	dynSchedule.dict = dict;
 
-	MeasurementSchedule<Mat, double, cx_double> meSchedule;
+	MeasurementSchedule<SpMat, double, cx_double> meSchedule;
 	meSchedule.timeToMeasure = [](auto time) { return true; };
-	meSchedule.Measure = [L](QuantumSystem<Mat, double> &qSys, QuantumState<cx_double> &qSta) {
+	meSchedule.Measure = [L](QuantumSystem<SpMat, double> &qSys, QuantumState<cx_double> &qSta) {
 		QuantumState<double> ground = Eigensolver::FindGroundState(qSys);
 		//auto E = Laboratory::Measure(qSys, ground);
 		auto E = Laboratory::Measure(qSys, qSta);
@@ -116,13 +116,14 @@ int main(int argc, char *argv[])
 	};
 
 	// Quantum dynamics object
-	QuantumDynamics<Mat, double, cx_double> qDynamics;
+	QuantumDynamics<SpMat, double, cx_double> qDynamics;
 	qDynamics.Create(qSystem, cx_qState, dynSchedule, meSchedule);
 	qDynamics.Run();
 
 	cx_vec test;
 	test = cx_qState.vector;
 	cx_qState.vector += test;
+
 
 	//return 0;
 
