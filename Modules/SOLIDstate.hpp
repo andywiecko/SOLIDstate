@@ -28,6 +28,8 @@
 
 #include "Factory/Factory.hpp"
 
+#include "Geometry/Geometry.hpp"
+
 #include "HilbertSpace/HilbertSpace.hpp"
 
 #include "Info/Info.hpp"

@@ -69,6 +69,14 @@ int main(int argc, char *argv[])
 	qSystem.parameters = param;
 	Info::ShowParameters(qSystem);
 
+	std::map<std::string, double> paramChain = {
+		{"V",2},
+		{"t",4}
+};
+	Geometry<double> geometry = Chain<double>(L,paramChain);
+
+	geometry.parameters["V"].print();
+	geometry.parameters["t"].print();
 
 	qSystem.SelectHamiltonian<KitaevHamiltonian>();
 	qSystem.Fill();
@@ -120,7 +128,7 @@ int main(int argc, char *argv[])
 	// Quantum dynamics object
 	QuantumDynamics<SpMat, double, cx_double> qDynamics;
 	qDynamics.Create(qSystem, cx_qState, dynSchedule, meSchedule);
-	qDynamics.Run();
+	//qDynamics.Run();
 
 	cx_vec test;
 	test = cx_qState.vector;
