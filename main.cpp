@@ -70,9 +70,10 @@ int main(int argc, char *argv[])
 	Info::ShowParameters(qSystem);
 
 	// TODO typedef uniform parameters
-	std::map<std::string, double> paramChain1 = { {"t",4} };
+	double t_integral = 5.0;
+	std::map<std::string, double> paramChain1 = { {"t",t_integral} };
 	std::map<std::string, double> paramChain2 = { {"V",2} };
-	Geometry<double> geometry = Chain<double>(L,{{"t",4}}) + Ring<double>(L,paramChain2);
+	Geometry<double> geometry = Chain<double>(L,{{"t",t_integral}}) + Ring<double>(L,paramChain2);
  	
 	mat(geometry.parameters["V"]).print("GEO V");
 	mat(geometry.parameters["t"]).print("GEO t");
