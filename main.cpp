@@ -69,14 +69,13 @@ int main(int argc, char *argv[])
 	qSystem.parameters = param;
 	Info::ShowParameters(qSystem);
 
-	std::map<std::string, double> paramChain = {
-		{"V",2},
-		{"t",4}
-};
-	Geometry<double> geometry = Chain<double>(L,paramChain);
 
-	geometry.parameters["V"].print();
-	geometry.parameters["t"].print();
+	std::map<std::string, double> paramChain1 = { {"t",4} };
+	std::map<std::string, double> paramChain2 = { {"V",2} };
+	Geometry<double> geometry = Chain<double>(L,paramChain1) + Ring<double>(L,paramChain2);
+ 	
+	mat(geometry.parameters["V"]).print("GEO V");
+	mat(geometry.parameters["t"]).print("GEO t");
 
 	qSystem.SelectHamiltonian<KitaevHamiltonian>();
 	qSystem.Fill();
@@ -89,10 +88,10 @@ int main(int argc, char *argv[])
 	double H = Laboratory::Measure(qSystem, qState);
 	std::cout << "Energy=" << E << "\t <H>=" << H << std::endl;
 
-	qState.vector.print();
+	//qState.vector.print();
 
 	QuantumState<cx_double> cx_qState = qState;
-	cx_qState.vector.print();
+	//cx_qState.vector.print();
 
 	std::cout << Laboratory::Measure(qSystem, qState) << std::endl;
 	std::cout << Laboratory::Measure(qSystem, cx_qState) << std::endl;
