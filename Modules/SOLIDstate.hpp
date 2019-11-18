@@ -29,6 +29,8 @@
 #include "Factory/Factory.hpp"
 
 #include "Geometry/Geometry.hpp"
+#include "Geometry/Chain.hpp"
+#include "Geometry/Ring.hpp"
 
 #include "HilbertSpace/HilbertSpace.hpp"
 

@@ -13,7 +13,7 @@
 namespace solid
 {
 
-template <template <typename> class T1, typename T2,typename T3>
+template <template <typename> class T1, typename T2, typename T3>
 typename std::conditional<std::is_same<T2, arma::cx_double>::value || std::is_same<T3, arma::cx_double>::value, arma::cx_double, double>::type
 Laboratory::Measure(QuantumSystem<T1, T2> &qSystem, QuantumState<T3> &qState)
 {
@@ -22,7 +22,5 @@ Laboratory::Measure(QuantumSystem<T1, T2> &qSystem, QuantumState<T3> &qState)
     Info::vMessage("done!");
     return ret;
 }
-
-
 
 } // namespace solid
