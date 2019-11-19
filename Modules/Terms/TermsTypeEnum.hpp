@@ -1,7 +1,7 @@
 #ifndef TERMSTYPEENUM_HPP
 #define TERMSTYPEENUM_HPP
 
-namespace solid 
+namespace solid
 {
 
 // TODO description
@@ -13,6 +13,6 @@ enum class TermsTypeEnum
     NonlocalNondiagonal
 };
 
-}
+} // namespace solid
 
 #endif
