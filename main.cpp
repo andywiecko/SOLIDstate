@@ -1,5 +1,7 @@
 #include "Modules/SOLIDstate.hpp"
 
+#include "Modules/Parameters/ParametersChecker.hpp"
+
 #include <armadillo>
 using namespace arma;
 using namespace solid;
@@ -68,6 +70,8 @@ int main(int argc, char *argv[])
 
 	qSystem.parameters = param;
 	Info::ShowParameters(qSystem);
+
+	ParametersChecker::Check(param);
 
 	// TODO typedef uniform parameters
 	double t_integral = 5.0;
