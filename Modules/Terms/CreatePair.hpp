@@ -15,6 +15,8 @@
 #include <string>
 #include "../QuantumSystem/QuantumSystem.hpp"
 #include "Terms.hpp"
+#include "TermsTypeEnum.hpp"
+
 namespace solid
 {
 
@@ -33,6 +35,7 @@ public:
 	 * @brief standard label of CreatePairTermFermions is delta 
 	 */
 	inline static const std::string label = "delta";
+	static const TermsTypeEnum type = TermsTypeEnum::NonlocalNondiagonal;
 	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };

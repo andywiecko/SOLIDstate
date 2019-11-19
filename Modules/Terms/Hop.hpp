@@ -14,6 +14,7 @@
 #include <string>
 #include "../QuantumSystem/QuantumSystem.hpp"
 #include "Terms.hpp"
+#include "TermsTypeEnum.hpp"
 namespace solid
 {
 
@@ -32,6 +33,7 @@ public:
 	 * @brief standard label of HopTermFermions is t 
 	 */
 	inline static const std::string label = "t";
+	static const TermsTypeEnum type = TermsTypeEnum::NonlocalNondiagonal;
 	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };

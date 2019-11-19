@@ -13,6 +13,8 @@
 
 #include "../QuantumSystem/QuantumSystem.hpp"
 #include "Terms.hpp"
+#include "TermsTypeEnum.hpp"
+
 namespace solid
 {
 
@@ -31,6 +33,7 @@ public:
 	 * @brief standard label of OneBodyInteractionTermFermions is M
 	 */
 	inline static const std::string label = "M";
+	static const TermsTypeEnum type = TermsTypeEnum::LocalDiagonal;
 	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };
@@ -50,6 +53,7 @@ public:
 	 * @brief standard label of OneBodyInteractionTermSpins is M
 	 */
 	inline static const std::string label = "M";
+	static const TermsTypeEnum type = TermsTypeEnum::LocalDiagonal;
 	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };
