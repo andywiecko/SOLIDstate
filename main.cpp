@@ -1,7 +1,5 @@
 #include "Modules/SOLIDstate.hpp"
 
-#include "Modules/Parameters/ParametersChecker.hpp"
-
 #include <armadillo>
 using namespace arma;
 using namespace solid;

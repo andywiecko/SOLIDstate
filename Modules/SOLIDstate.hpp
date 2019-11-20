@@ -58,6 +58,7 @@
 #include "Observable/ParityOperator.hpp"
 
 #include "Parameters/Parameters.hpp"
+#include "Parameters/ParametersChecker.hpp"
 
 /**
  * @mainpage SOLIDstate: C++ library

@@ -1,3 +1,13 @@
+/**
+ * @file ParametersChecker.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Parameters Checker class header
+ * @version 0.100.0
+ * @date 2019-11-20
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef PARAMETERSCHECKER_HPP
 #define PARAMETERSCHECKER_HPP
 
@@ -10,79 +20,59 @@
 namespace solid
 {
 
+/**
+ * @brief class useful for debugging of the Parameters
+ */
 class ParametersChecker
 {
 public:
+    /**
+     * @brief Check and fix for possible error in Parameters elements
+     * 
+     * @tparam T data type: double, std::complex<double> are supported
+     * @param parameters Parameters< T > to check
+     */
     template <typename T>
-    static int Check(Parameters<T> &parameters)
-    {
-        for (auto &[key, value] : parameters)
-        {
-            switch (TermsTypeConverter::dict[key])
-            {
-            case TermsTypeEnum::LocalDiagonal:
-                CheckLocalDiagonal(value);
-                break;
-            case TermsTypeEnum::LocalNondiagonal:
-                CheckLocalNondiagonal(value);
-                break;
-            case TermsTypeEnum::NonlocalDiagonal:
-                CheckNonlocalDiagonal(value);
-                break;
-            case TermsTypeEnum::NonlocalNondiagonal:
-                CheckNonlocalNondiagonal(value);
-                break;
-            }
-        }
-    }
+    static void Check(Parameters<T> &parameters);
 
 private:
+
+    /**
+     * @brief Checker for LocalDiagonal TermsTypeEnum
+     * 
+     * @tparam T data type: double, std::complex<double> are supported
+     * @param parameter to check
+     */
     template <typename T>
-    static void CheckLocalDiagonal(arma::SpMat<T> &parameter)
-    {
-        if (!parameter.is_diagmat())
-        {
-            // TODO move to Info::
-            std::cout << "# [!] Warning LocalDiagonalTerm should have only diagonal elements!" << std::endl;
-            std::cout << "# [!] all non-diagonal entries are ignored!" << std::endl;
-            parameter = arma::diagmat(parameter);
-        }
-    }
+    static void CheckLocalDiagonal(arma::SpMat<T> &parameter);
 
+    /**
+     * @brief Checker for LocalNondiagonal TermsTypeEnum
+     * 
+     * @tparam T data type: double, std::complex<double> are supported
+     * @param parameter to check
+     */
     template <typename T>
-    static void CheckLocalNondiagonal(arma::SpMat<T> &parameter)
-    {
+    static void CheckLocalNondiagonal(arma::SpMat<T> &parameter);
 
-        // TODO
-        std::cout << "LocalNondiagonal TODO" << std::endl;
-
-    }
-
+    /**
+     * @brief Checker for NonlocalDiagonal TermsTypeEnum
+     * 
+     * @tparam T data type: double, std::complex<double> are supported
+     * @param parameter to check
+     */
     template <typename T>
-    static void CheckNonlocalDiagonal(arma::SpMat<T> &parameter)
-    {
-        // [!] arma is_empty does not work -> TODO report this bug
-        arma::SpMat<T> diagonal = parameter.diag();
-        if (diagonal.n_nonzero > 0)
-        {
-            std::cout << "# [!] Warning LocalNondiagonalTerm shouldn't have diagonal elements!" << std::endl;
-            std::cout << "# [!] all diagonal entries are ignored!" << std::endl;
-            parameter.diag() -= parameter.diag(); // TODO fix this ugly solution!
-                       
-        }
-        // matrix shouldn't be symmetric
-        // TODO...
-    }
+    static void CheckNonlocalDiagonal(arma::SpMat<T> &parameter);
 
+    /**
+     * @brief Checker for NonlocalNondiagonal TermsTypeEnum
+     * 
+     * @tparam T data type: double, std::complex<double> are supported
+     * @param parameter to check
+     */
     template <typename T>
-    static void CheckNonlocalNondiagonal(arma::SpMat<T> &parameter)
-    {
-        //TODO empty diagonal
-        // matrix should be symmetric!
-        
-        std::cout << "LocalNondiagonal TODO" << std::endl;
-
-    }
+    static void CheckNonlocalNondiagonal(arma::SpMat<T> &parameter);
+ 
 };
 
 } // namespace solid
