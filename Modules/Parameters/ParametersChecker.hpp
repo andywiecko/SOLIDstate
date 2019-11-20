@@ -22,17 +22,16 @@ public:
             {
             case TermsTypeEnum::LocalDiagonal:
                 CheckLocalDiagonal(value);
-                break; 
+                break;
             case TermsTypeEnum::LocalNondiagonal:
                 CheckLocalNondiagonal(value);
-                break; 
+                break;
             case TermsTypeEnum::NonlocalDiagonal:
                 CheckNonlocalDiagonal(value);
                 break;
             case TermsTypeEnum::NonlocalNondiagonal:
                 CheckNonlocalNondiagonal(value);
-                break; 
-
+                break;
             }
         }
     }
@@ -43,31 +42,41 @@ private:
     {
         if (!parameter.is_diagmat())
         {
-            // TODO move to info
-            std::cout << "[!] Warning LocalDiagonalTerm should have only diagonal elements!" << std::endl;
-            std::cout << "[!] all non-diagonal entries are ignored!" << std::endl;
-            parameter = parameter.diag();
+            // TODO move to Info::
+            std::cout << "# [!] Warning LocalDiagonalTerm should have only diagonal elements!" << std::endl;
+            std::cout << "# [!] all non-diagonal entries are ignored!" << std::endl;
+            //parameter.diag().print();
+            //parameter = parameter.diag();
         }
     }
 
     template <typename T>
     static void CheckLocalNondiagonal(arma::SpMat<T> &parameter)
     {
-        if (!parameter.diag().is_empty())
-        {
-            // TODO
-        }
+
+        // TODO
+
     }
+
     template <typename T>
     static void CheckNonlocalDiagonal(arma::SpMat<T> &parameter)
     {
-        //TODO
+        // [!] arma is_empty does not work -> TODO report this bug
+        arma::SpMat<T> diagonal = parameter.diag();
+        if (diagonal.n_nonzero > 0)
+        {
+            std::cout << "# [!] Warning LocalNondiagonalTerm shouldn't have diagonal elements!" << std::endl;
+            std::cout << "# [!] all diagonal entries are ignored!" << std::endl;
+            parameter.diag() -= parameter.diag(); // TODO fix this ugly solution!
+                       
+        }
     }
 
     template <typename T>
     static void CheckNonlocalNondiagonal(arma::SpMat<T> &parameter)
     {
-        //TODO
+        //TODO empty diagonal
+        // matrix should be symmetric!
     }
 };
 

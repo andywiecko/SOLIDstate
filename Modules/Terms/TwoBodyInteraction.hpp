@@ -35,7 +35,7 @@ public:
 	 * @brief standard label of TwoBodyInteractionTermFermions is V
 	 */
 	inline static const std::string label = "V";
-	static const TermsTypeEnum type = TermsTypeEnum::LocalNondiagonal;
+	static const TermsTypeEnum type = TermsTypeEnum::NonlocalDiagonal;
 	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };
@@ -55,7 +55,7 @@ public:
 	 * @brief standard label of TwoBodyInteractionTermSpins is M
 	 */
 	inline static const std::string label = "V";
-	static const TermsTypeEnum type = TermsTypeEnum::LocalNondiagonal;
+	static const TermsTypeEnum type = TermsTypeEnum::NonlocalDiagonal;
 	template <template <typename> class T1, typename T2>
 	static void FillElements(QuantumSystem<T1, T2> &system);
 };

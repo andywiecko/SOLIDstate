@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
 	sp_mat V(L, L);
 	//V.set_size(L, L);
 	//for(int i=0;i<L;i++) V(i,(i+1)%L) = 1.0;
+	V(1,1) = 2;
 
 	sp_mat t(L, L);
 	for (int i = 0; i < L - 1; i++)
@@ -72,7 +73,10 @@ int main(int argc, char *argv[])
 	Info::ShowParameters(qSystem);
 
 	ParametersChecker::Check(param);
-	mat(param["M"]).print();
+	(param["M"]).print();
+	mat(param["V"]).print();
+
+	return 0;
 
 	// TODO typedef uniform parameters
 	double t_integral = 5.0;
