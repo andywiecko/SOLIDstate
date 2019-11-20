@@ -40,8 +40,8 @@ int main(int argc, char *argv[])
 	//Info::ShowSectors(qSystem); // other implementation
 
 	sp_mat mu(L, L);
-	//mu.set_size(L);
-	//mu = eye<sp_mat>(L,L);
+	mu = eye<sp_mat>(L,L);
+	mu(1,2) = 1;
 
 	sp_mat V(L, L);
 	//V.set_size(L, L);
@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
 	Info::ShowParameters(qSystem);
 
 	ParametersChecker::Check(param);
+	mat(param["M"]).print();
 
 	// TODO typedef uniform parameters
 	double t_integral = 5.0;
