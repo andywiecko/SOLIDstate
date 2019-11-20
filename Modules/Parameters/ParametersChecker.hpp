@@ -18,14 +18,22 @@ public:
     {
         for (auto &[key, value] : parameters)
         {
-            if (TermsTypeConverter::dict[key] == TermsTypeEnum::LocalDiagonal)
+            switch (TermsTypeConverter::dict[key])
+            {
+            case TermsTypeEnum::LocalDiagonal:
                 CheckLocalDiagonal(value);
-            if (TermsTypeConverter::dict[key] == TermsTypeEnum::LocalNondiagonal)
+                break; 
+            case TermsTypeEnum::LocalNondiagonal:
                 CheckLocalNondiagonal(value);
-            if (TermsTypeConverter::dict[key] == TermsTypeEnum::NonlocalDiagonal)
+                break; 
+            case TermsTypeEnum::NonlocalDiagonal:
                 CheckNonlocalDiagonal(value);
-            if (TermsTypeConverter::dict[key] == TermsTypeEnum::NonlocalNondiagonal)
+                break;
+            case TermsTypeEnum::NonlocalNondiagonal:
                 CheckNonlocalNondiagonal(value);
+                break; 
+
+            }
         }
     }
 
@@ -49,7 +57,6 @@ private:
         {
             // TODO
         }
-
     }
     template <typename T>
     static void CheckNonlocalDiagonal(arma::SpMat<T> &parameter)
