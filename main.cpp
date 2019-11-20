@@ -8,18 +8,6 @@ using namespace solid;
 
 #include <functional>
 
-//template <typename T,template <typename> class T1, typename T2>
-//auto operator*(QuantumState<T> qState,QuantumSystem<T1,T2> qSystem)
-//{
-//	return arma::Col<T>(qState.vector * qSystem.hamiltonian.matrixElements);
-//}
-
-//template <typename T,template <typename> class T1, typename T2>
-//auto operator*(QuantumSystem<T1,T2> qSystem,QuantumState<T> qState)
-//{
-//	return arma::Col<T>(qSystem.hamiltonian.matrixElements * qState.vector);
-//}
-
 int main(int argc, char *argv[])
 {
 
@@ -40,13 +28,13 @@ int main(int argc, char *argv[])
 	//Info::ShowSectors(qSystem); // other implementation
 
 	sp_mat mu(L, L);
-	mu = eye<sp_mat>(L,L);
-	mu(1,2) = 1;
+	mu = eye<sp_mat>(L, L);
+	mu(1, 2) = 1;
 
 	sp_mat V(L, L);
 	//V.set_size(L, L);
 	//for(int i=0;i<L;i++) V(i,(i+1)%L) = 1.0;
-	V(1,1) = 2;
+	V(1, 1) = 2;
 
 	sp_mat t(L, L);
 	for (int i = 0; i < L - 1; i++)
@@ -73,17 +61,17 @@ int main(int argc, char *argv[])
 	Info::ShowParameters(qSystem);
 
 	ParametersChecker::Check(param);
-	(param["M"]).print();
+	mat(param["M"]).print();
 	mat(param["V"]).print();
 
 	return 0;
 
 	// TODO typedef uniform parameters
 	double t_integral = 5.0;
-	uniformParameters<double> paramChain1 = { {"t",t_integral} };
-	uniformParameters<double> paramChain2 = { {"V",2} };
-	Geometry<double> geometry = Chain<double>(L,{{"t",t_integral}}) + Ring<double>(L,paramChain2);
- 	
+	uniformParameters<double> paramChain1 = {{"t", t_integral}};
+	uniformParameters<double> paramChain2 = {{"V", 2}};
+	Geometry<double> geometry = Chain<double>(L, {{"t", t_integral}}) + Ring<double>(L, paramChain2);
+
 	mat(geometry.parameters["V"]).print("GEO V");
 	mat(geometry.parameters["t"]).print("GEO t");
 
@@ -109,8 +97,8 @@ int main(int argc, char *argv[])
 	//Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
 	//Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
 
-	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) { };
-	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) { };
+	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {};
+	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {};
 
 	DynamicsSchedule<sp_mat> dynSchedule;
 	dynSchedule.time_step = 0.01;
@@ -143,7 +131,6 @@ int main(int argc, char *argv[])
 	test = cx_qState.vector;
 	cx_qState.vector += test;
 
-
 	//return 0;
 
 	/*
@@ -164,7 +151,6 @@ int main(int argc, char *argv[])
 	qSystem.Fill();
 	qSystem.hamiltonian.matrixElements.print();
 	*/
-
 
 	Info::Time();
 

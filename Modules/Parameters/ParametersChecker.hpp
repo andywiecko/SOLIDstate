@@ -45,8 +45,7 @@ private:
             // TODO move to Info::
             std::cout << "# [!] Warning LocalDiagonalTerm should have only diagonal elements!" << std::endl;
             std::cout << "# [!] all non-diagonal entries are ignored!" << std::endl;
-            //parameter.diag().print();
-            //parameter = parameter.diag();
+            parameter = arma::diagmat(parameter);
         }
     }
 
@@ -55,6 +54,7 @@ private:
     {
 
         // TODO
+        std::cout << "LocalNondiagonal TODO" << std::endl;
 
     }
 
@@ -70,6 +70,8 @@ private:
             parameter.diag() -= parameter.diag(); // TODO fix this ugly solution!
                        
         }
+        // matrix shouldn't be symmetric
+        // TODO...
     }
 
     template <typename T>
@@ -77,6 +79,9 @@ private:
     {
         //TODO empty diagonal
         // matrix should be symmetric!
+        
+        std::cout << "LocalNondiagonal TODO" << std::endl;
+
     }
 };
 
