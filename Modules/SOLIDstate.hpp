@@ -44,9 +44,6 @@
 #include "QuantumState/QuantumState.hpp"
 
 #include "Terms/Terms.hpp"
-#include "Terms/OneBodyInteraction.hpp"
-#include "Terms/TwoBodyInteraction.hpp"
-#include "Terms/Hop.hpp"
 
 #include "QuantumDynamics/DynamicsSchedule.hpp"
 #include "QuantumDynamics/QuantumDynamics.hpp"
