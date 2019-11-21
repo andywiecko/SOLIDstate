@@ -11,7 +11,7 @@
 #ifndef TERMSENABLED_HPP
 #define TERMSENABLED_HPP
 
-#include "TermsEnum.hpp"
+#include "../Terms/TermsEnum.hpp"
 
 #include <vector>
 

@@ -10,7 +10,7 @@
  */
 #include "MatrixElementFiller.hpp"
 #include "../Terms/TermsEnumConverter.hpp"
-#include "../Hamiltonian/TermsEnum.hpp"
+#include "../Terms/TermsEnum.hpp"
 
 namespace solid
 {

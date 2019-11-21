@@ -14,7 +14,7 @@
 #include <functional>
 
 #include "Hamiltonian.hpp"
-#include "TermsEnum.hpp"
+#include "../Terms/TermsEnum.hpp"
 
 namespace solid
 {

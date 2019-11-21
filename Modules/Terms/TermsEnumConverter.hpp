@@ -12,7 +12,7 @@
 #define TERMSENUMCONVERTER_HPP
 
 #include "../QuantumSystem/QuantumSystem.hpp"
-#include "../Hamiltonian/TermsEnum.hpp"
+#include "../Terms/TermsEnum.hpp"
 #include "../Terms/Hop/Hop.hpp"
 #include "../Terms/OneBodyInteraction/OneBodyInteraction.hpp"
 #include "../Terms/TwoBodyInteraction/TwoBodyInteraction.hpp"
