@@ -760,6 +760,10 @@ INPUT                  = Modules/ \
                          Modules/QuantumState \
                          Modules/QuantumSystem \
                          Modules/Terms \
+                         Modules/Terms/CreatePair \
+                         Modules/Terms/Hop \
+                         Modules/Terms/OneBodyInteraction \
+                         Modules/Terms/TwoBodyInteraction \
                          main.cpp \
                          README.md \
                          LICENSE.md \
