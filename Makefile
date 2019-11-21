@@ -2,7 +2,8 @@ CC=g++
 CFLAGS= -O3 -std=c++17
 LIBS= -larmadillo
 
-src=$(wildcard Modules/*/*.cpp\
+src=$(wildcard Modules/*/*/*.cpp\
+	  wildcard Modules/*/*.cpp\
       wildcard Modules/*.cpp\
 	  )
 obj=$(src:.cpp=.o)

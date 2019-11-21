@@ -11,9 +11,9 @@
 #ifndef ONEBODYINTERACTION_HPP
 #define ONEBODYINTERACTION_HPP
 
-#include "../QuantumSystem/QuantumSystem.hpp"
-#include "Terms.hpp"
-#include "TermsTypeEnum.hpp"
+#include "../../QuantumSystem/QuantumSystem.hpp"
+#include "../Terms.hpp"
+#include "../TermsTypeEnum.hpp"
 
 namespace solid
 {

@@ -4,10 +4,10 @@
 #include <map>
 #include <string>
 
-#include "../Terms/Hop.hpp"
-#include "../Terms/OneBodyInteraction.hpp"
-#include "../Terms/TwoBodyInteraction.hpp"
-#include "../Terms/CreatePair.hpp"
+#include "../Terms/Hop/Hop.hpp"
+#include "../Terms/OneBodyInteraction/OneBodyInteraction.hpp"
+#include "../Terms/TwoBodyInteraction/TwoBodyInteraction.hpp"
+#include "../Terms/CreatePair/CreatePair.hpp"
 
 namespace solid
 {

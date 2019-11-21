@@ -11,10 +11,10 @@
 #ifndef TWOBODYINTERACTION_HPP
 #define TWOBODYINTERACTION_HPP
 
-#include "../QuantumSystem/QuantumSystem.hpp"
-#include "../Combinadics/BaseState.hpp"
-#include "Terms.hpp"
-#include "TermsTypeEnum.hpp"
+#include "../../QuantumSystem/QuantumSystem.hpp"
+#include "../../Combinadics/BaseState.hpp"
+#include "../Terms.hpp"
+#include "../TermsTypeEnum.hpp"
 
 #include <armadillo>
 namespace solid

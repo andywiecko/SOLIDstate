@@ -13,9 +13,9 @@
 #define CREATEPAIR_HPP
 
 #include <string>
-#include "../QuantumSystem/QuantumSystem.hpp"
-#include "Terms.hpp"
-#include "TermsTypeEnum.hpp"
+#include "../../QuantumSystem/QuantumSystem.hpp"
+#include "../Terms.hpp"
+#include "../TermsTypeEnum.hpp"
 
 namespace solid
 {
