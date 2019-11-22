@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
 	mat(param["M"]).print();
 	mat(param["V"]).print();
 
-	return 0;
 
 	// TODO typedef uniform parameters
 	double t_integral = 5.0;
@@ -86,7 +85,10 @@ int main(int argc, char *argv[])
 	double H = Laboratory::Measure(qSystem, qState);
 	std::cout << "Energy=" << E << "\t <H>=" << H << std::endl;
 
-	//qState.vector.print();
+	qState.print();
+
+	return 0;
+
 
 	QuantumState<cx_double> cx_qState = qState;
 	//cx_qState.vector.print();

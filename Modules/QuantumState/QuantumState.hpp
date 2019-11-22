@@ -76,15 +76,6 @@ public:
         vector.print(extra_text);
     }
 
-    /**
-     * @brief \f$|\psi\rangle \to \langle \psi|\f$
-     * 
-     * @return QuantumState<T> hermitian conjugate of the Quantum State
-     */
-    QuantumState<T> t()
-    {
-        return this->t(); //TODO it doesnt work !!!!
-    }
 
     /**
      * @brief energy, it is assigned after eigen problem is solved
