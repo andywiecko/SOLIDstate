@@ -19,13 +19,20 @@ void OneBodyInteractionTermFermions::FillElements(QuantumSystem<T1, T2> &qSystem
 	BaseState baseState = qSystem.hilbertSpace.baseState;
     auto M = qSystem.parameters[label];
 	T2 Hij = 0;
-	for (int i = 0; i < baseState.size(); i++)
+
+	auto start = M.begin();
+	auto end = M.end();
+	for (auto it = start; it != end; ++it)
 	{
-		T2 Mi = M(i,i);
+		int i = it.row();
+		int j = it.col();
+		if (i!=j) continue; // only diagonal!
+		T2 Mii = M(i, j); 
+		
 		if (baseState.OneBodyInteraction(i))
-			Hij += Mi;
+			Hij += Mii;
 		if (N05option)
-			Hij -= 0.5 * Mi;
+			Hij -= 0.5 * Mii;
 	}
 	qSystem.hamiltonian.matrixElements(k, k) += Hij;
 }
@@ -37,13 +44,20 @@ void OneBodyInteractionTermSpins::FillElements(QuantumSystem<T1, T2> &qSystem)
 	BaseState baseState = qSystem.hilbertSpace.baseState;
 	auto M = qSystem.parameters[label];
 	T2 Hij = 0;
-	for (int i = 0; i < baseState.size(); i++)
+
+	auto start = M.begin();
+	auto end = M.end();
+	for (auto it = start; it != end; ++it)
 	{
-		T2 Mi = M(i,i);
+		int i = it.row();
+		int j = it.col();
+		if (i!=j) continue; // only diagonal!
+		T2 Mii = M(i, j); 
+			
 		if (baseState.OneBodyInteraction(i))
-			Hij += Mi;
+			Hij += Mii;
 		else
-			Hij -= Mi;
+			Hij -= Mii;
 	}
 	qSystem.hamiltonian.matrixElements(k, k) += Hij;
 }

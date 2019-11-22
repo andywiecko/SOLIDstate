@@ -8,14 +8,14 @@ int main(int argc, char *argv[])
 {
     ArgvParser::Parse(argc, argv);
     Info::Start();
-    
+
     int L = 4; // number of sites
 
     // ********************************
     // Setting the matrix type: SpMat,
     // and data type: double
     // ********************************
-    
+
     QuantumSystem<SpMat, double> qSystem;
 
     // ********************************
@@ -29,32 +29,16 @@ int main(int argc, char *argv[])
     // Setting the parameters
     // ********************************
 
-    sp_mat mu(L, L); // chemical potential
-    mu.set_size(L);
-    mu = 0.1 * eye<sp_mat>(L,L);
+    double delta_par = 1.0;
+    double t_integral = 1.0;
+    double V_par = 0.0;
+    double M_par = 0.0;
+    Geometry<double> geometry = Chain<double>(L, {{"t", t_integral},
+                                                  {"delta", delta_par},
+                                                  {"V", V_par},
+                                                  {"M", M_par}});
 
-    sp_mat V(L, L); // many-body interaction
-    V.set_size(L, L);
-    for(int i=0;i<L;i++) V(i,(i+1)%L) = 0.5;
-
-    sp_mat t(L, L); // hopping term
-    for (int i = 0; i < L - 1; i++)
-        t(i, (i + 1) % L) = 1.0;
-    for (int i = 0; i < L - 1; i++)
-        t((i + 1) % L, i) = 1.0;
-    
-    sp_mat delta(L, L); // paring term
-    for (int i = 0; i < L - 1; i++)
-        delta(i, i + 1) = 1.0; // a+ a+
-    for (int i = 0; i < L - 1; i++)
-        delta(i + 1, i) = 1.0; // a  a
-    
-    Parameters<double> param;
-    param["M"] = mu;
-    param["V"] = V;
-    param["t"] = t;
-    param["delta"] = delta;
-    qSystem.parameters = param;
+    qSystem.SelectParameters(geometry);
 
     // ********************************
     // Selecting the model
