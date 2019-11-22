@@ -14,6 +14,7 @@
 #include "../HilbertSpace/HilbertSpace.hpp"
 #include "../Hamiltonian/Hamiltonian.hpp"
 #include "../Parameters/Parameters.hpp"
+#include "../Geometry/Geometry.hpp"
 #include "../Observable/Observable.hpp"
 #include "../Factory/Factory.hpp"
 #include "../QuantumState/QuantumState.hpp"
@@ -86,6 +87,12 @@ public:
      */
     template <template <template <typename> class, typename> class Obs, typename... Targs>
     void SelectObservable(Targs... Fargs);
+
+    // TODO description
+    void SelectParameters(Parameters<T2> &parameters);
+
+    // TODO description
+    void SelectParameters(Geometry<T2> &geometry);
 
 };
 

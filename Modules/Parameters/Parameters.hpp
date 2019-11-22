@@ -15,7 +15,7 @@
 #include <map>
 #include <armadillo>
 
-#include "../Geometry/Geometry.hpp"
+//#include "../Geometry/Geometry.hpp"
 
 namespace solid
 {
@@ -28,12 +28,13 @@ namespace solid
 template <typename T>
 class Parameters : public std::map<std::string, arma::SpMat<T>>
 {
-
+public:
+/*
     void operator=(Geometry<T> & geometry)
     {
-        this = geometry.parameters;
+        (*this) = geometry.parameters;
     }
-
+*/
 };
 
 } // namespace solid

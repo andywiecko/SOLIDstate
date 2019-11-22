@@ -49,4 +49,16 @@ void QuantumSystem<T1, T2>::SelectObservable(Targs... Fargs)
     Obs<T1, T2>::Preprocessing(this->hamiltonian.matrixElements);
 }
 
+template <template <typename> class T1, typename T2>
+void QuantumSystem<T1, T2>::SelectParameters(Parameters<T2> &parameters)
+{
+    this->parameters = parameters;
+}
+
+template <template <typename> class T1, typename T2>
+void QuantumSystem<T1, T2>::SelectParameters(Geometry<T2> &geometry)
+{
+    this->parameters = geometry.parameters;
+}
+
 } // namespace solid

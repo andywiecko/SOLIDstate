@@ -61,4 +61,19 @@ template void QuantumSystem<arma::Mat, arma::cx_double>::SelectObservable<Parity
 template void QuantumSystem<arma::SpMat, double>::SelectObservable<ParityOperator>(int);
 template void QuantumSystem<arma::SpMat, arma::cx_double>::SelectObservable<ParityOperator>(int);
 
+// ***************************
+// Parameters
+// ***************************
+// Parameters
+template void QuantumSystem<arma::Mat, double>::SelectParameters(Parameters<double>&);
+template void QuantumSystem<arma::Mat, arma::cx_double>::SelectParameters(Parameters<arma::cx_double>&);
+template void QuantumSystem<arma::SpMat, double>::SelectParameters(Parameters<double>&);
+template void QuantumSystem<arma::SpMat, arma::cx_double>::SelectParameters(Parameters<arma::cx_double>&);
+
+// Geometry
+template void QuantumSystem<arma::Mat, double>::SelectParameters(Geometry<double>&);
+template void QuantumSystem<arma::Mat, arma::cx_double>::SelectParameters(Geometry<arma::cx_double>&);
+template void QuantumSystem<arma::SpMat, double>::SelectParameters(Geometry<double>&);
+template void QuantumSystem<arma::SpMat, arma::cx_double>::SelectParameters(Geometry<arma::cx_double>&);
+
 } // namespace solid

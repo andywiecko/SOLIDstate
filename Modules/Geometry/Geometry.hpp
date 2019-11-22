@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <armadillo>
+#include "../Parameters/Parameters.hpp"
 
 namespace solid
 {
@@ -24,7 +25,8 @@ template <typename T>
 class Geometry
 {
 public:
-    std::map<std::string, arma::SpMat<T>> parameters;
+    //std::map<std::string, arma::SpMat<T>> parameters;
+    Parameters<T> parameters;
 
     friend Geometry<T> operator+(const Geometry<T> geometry1, const Geometry<T> geometry2)
     {

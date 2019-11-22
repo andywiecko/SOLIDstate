@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 	param["t"] = t;			// TODO diag ignored!
 	param["delta"] = delta; // TODO diag ignored! //TODO bonds cheking if this is the last sector
 
-	qSystem.parameters = param;
+	qSystem.SelectParameters(param);
 	Info::ShowParameters(qSystem);
 
 	ParametersChecker::Check(param);
@@ -69,6 +69,8 @@ int main(int argc, char *argv[])
 	uniformParameters<double> paramChain1 = {{"t", t_integral}};
 	uniformParameters<double> paramChain2 = {{"V", 2}};
 	Geometry<double> geometry = Chain<double>(L, {{"t", t_integral}}) + Ring<double>(L, paramChain2);
+
+	qSystem.SelectParameters(geometry);
 
 	mat(geometry.parameters["V"]).print("GEO V");
 	mat(geometry.parameters["t"]).print("GEO t");
