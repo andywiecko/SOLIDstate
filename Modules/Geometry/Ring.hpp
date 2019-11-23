@@ -12,16 +12,45 @@ class Ring : public Geometry<T>, public IGeometry<T>
     using Geometry<T>::parameters;
 
 private:
+    arma::SpMat<T> RingAdjacency(int L, T value)
+    {
+        arma::SpMat<T> ret(L, L);
+        for (int i = 0; i < L; i++)
+            ret(i, (i + 1) % L) = value;
+        return ret;
+    }
+
+    // TODO move to misc function file
+    void Symmatgen(arma::SpMat<T>& mat)
+    {
+        mat += mat.t();
+    }
+
     void Create(int L, std::string key, T value) override
     {
-        // TODO diffrent case for
-        // local diagonal, local non-diagonal, non-local diagonal, non-local non-diagonal
         arma::SpMat<T> tmp(L, L);
-        for (int i = 0; i < L; i++)
-            tmp(i, (i + 1) % L) = value;
-        for (int i = 0; i < L; i++)
-            tmp((i + 1) % L, i) = value; // TODO complex conj
-        parameters[key] = tmp;
+        switch (TermsTypeConverter::dict[key])
+        {
+        case TermsTypeEnum::LocalDiagonal:
+            for (int i = 0; i < L; i++)
+                tmp(i, i) = value;
+            parameters[key] = tmp;
+            break;
+        case TermsTypeEnum::LocalNondiagonal:
+            tmp = RingAdjacency(L, value);
+            Symmatgen(tmp);
+            parameters[key] = tmp;
+            break;
+        case TermsTypeEnum::NonlocalDiagonal:
+            tmp = RingAdjacency(L, value);
+            parameters[key] = tmp;
+            break;
+        case TermsTypeEnum::NonlocalNondiagonal:
+            tmp = RingAdjacency(L, value);
+            Symmatgen(tmp);
+            parameters[key] = tmp;
+            break;
+        }
     }
 
 public:

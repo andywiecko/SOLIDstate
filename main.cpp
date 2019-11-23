@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	double t_integral = 5.0;
 	uniformParameters<double> paramChain1 = {{"t", t_integral}};
 	uniformParameters<double> paramChain2 = {{"V", 2}};
-	Geometry<double> geometry = Chain<double>(L, {{"t", t_integral},{"V",0.5},{"M",1.0},{"delta",.01}}) ;//+ Ring<double>(L, paramChain2);
+	Geometry<double> geometry = Ring<double>(L, {{"t", t_integral},{"V",0.5},{"M",1.0},{"delta",.01}}) ;//+ Ring<double>(L, paramChain2);
 
 	geometry.parameters["t"].print("T");
 	geometry.parameters["delta"].print("D");

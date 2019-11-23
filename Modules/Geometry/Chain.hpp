@@ -15,6 +15,14 @@ class Chain : public Geometry<T>, public IGeometry<T>
     using Geometry<T>::parameters;
 
 private:
+    arma::SpMat<T> ChainAdjacency(int L,T value)
+    {
+        arma::SpMat<T> ret(L, L);
+        for (int i = 0; i < L - 1; i++)
+            ret(i, i + 1) = value;
+        return ret;
+    }
+
     void Create(int L, std::string key, T value) override
     {
         arma::SpMat<T> tmp(L, L);
@@ -26,19 +34,16 @@ private:
             parameters[key] = tmp;
             break;
         case TermsTypeEnum::LocalNondiagonal:
-            for (int i = 0; i < L - 1; i++)
-                tmp(i, i + 1) = value;
+            tmp = ChainAdjacency(L,value);
             tmp = symmatu(tmp);
             parameters[key] = tmp;
             break;
         case TermsTypeEnum::NonlocalDiagonal:
-            for (int i = 0; i < L - 1; i++)
-                tmp(i, i + 1) = value;
+            tmp = ChainAdjacency(L,value);
             parameters[key] = tmp;
             break;
         case TermsTypeEnum::NonlocalNondiagonal:
-            for (int i = 0; i < L - 1; i++)
-                tmp(i, i + 1) = value;
+            tmp = ChainAdjacency(L,value);
             tmp = symmatu(tmp);
             parameters[key] = tmp;
             break;
