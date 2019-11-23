@@ -6,6 +6,11 @@ using namespace solid;
 
 #include <functional>
 
+template <typename T>
+using dataContainer = arma::SpMat<T>;
+
+typedef arma::cx_double dataType;
+
 int main(int argc, char *argv[])
 {
 
@@ -16,7 +21,7 @@ int main(int argc, char *argv[])
 	// number of sites
 	int L = 4;
 
-	QuantumSystem<SpMat, double> qSystem;
+	QuantumSystem<dataContainer, dataType> qSystem;
 
 	//qSystem.SelectEnsemble<Canonical>(L,L/2);
 	qSystem.SelectEnsemble<ParityGrandCanonical>(L, 0);
@@ -25,30 +30,30 @@ int main(int argc, char *argv[])
 	Info::ShowSectors(qSystem.hilbertSpace.ensemble);
 	//Info::ShowSectors(qSystem); // other implementation
 
-	sp_mat mu(L, L);
-	mu = eye<sp_mat>(L, L);
+	arma::SpMat<dataType> mu(L, L);
+	mu = eye<arma::SpMat<dataType>>(L, L);
 	mu(1, 2) = 1;
 
-	sp_mat V(L, L);
+	arma::SpMat<dataType> V(L, L);
 	//V.set_size(L, L);
 	//for(int i=0;i<L;i++) V(i,(i+1)%L) = 1.0;
 	V(1, 1) = 2;
 
-	sp_mat t(L, L);
+	arma::SpMat<dataType> t(L, L);
 	for (int i = 0; i < L - 1; i++)
 		t(i, (i + 1) % L) = 1.0;
 	for (int i = 0; i < L - 1; i++)
 		t((i + 1) % L, i) = 1.0;
 	//mat(t).print();
 
-	sp_mat delta(L, L);
+	arma::SpMat<dataType> delta(L, L);
 	for (int i = 0; i < L - 1; i++)
 		delta(i, i + 1) = 1.0; // a+ a+
 	for (int i = 0; i < L - 1; i++)
 		delta(i + 1, i) = 1.0; // a  a
 	//mat(delta).print();
 
-	Parameters<double> param;
+	Parameters<dataType> param;
 
 	param["M"] = mu;		// TODO non-diag ignored!
 	param["V"] = V;			// TODO diag ignored!
@@ -59,15 +64,14 @@ int main(int argc, char *argv[])
 	Info::ShowParameters(qSystem);
 
 	ParametersChecker::Check(param);
-	mat(param["M"]).print();
-	mat(param["V"]).print();
-
+	(param["M"]).print();
+	(param["V"]).print();
 
 	// TODO typedef uniform parameters
-	double t_integral = 5.0;
-	uniformParameters<double> paramChain1 = {{"t", t_integral}};
-	uniformParameters<double> paramChain2 = {{"V", 2}};
-	Geometry<double> geometry = Ring<double>(L, {{"t", t_integral},{"V",0.5},{"M",1.0},{"delta",.01}}) ;//+ Ring<double>(L, paramChain2);
+	dataType t_integral = 5.0;
+	uniformParameters<dataType> paramChain1 = {{"t", t_integral}};
+	uniformParameters<dataType> paramChain2 = {{"V", 2}};
+	Geometry<dataType> geometry = Chain<dataType>(L, {{"t", t_integral}, {"V", 0.5}, {"M", 1.0}, {"delta", arma:cx_double(0,1)}}); //+ Ring<double>(L, paramChain2);
 
 	geometry.parameters["t"].print("T");
 	geometry.parameters["delta"].print("D");
@@ -83,16 +87,15 @@ int main(int argc, char *argv[])
 
 	qSystem.hamiltonian.matrixElements.print();
 
-	QuantumState<double> qState = Eigensolver::FindGroundState(qSystem);
+	QuantumState<dataType> qState = Eigensolver::FindGroundState(qSystem);
 
-	double E = qState.energy;
-	double H = Laboratory::Measure(qSystem, qState);
+	dataType E = qState.energy;
+	dataType H = Laboratory::Measure(qSystem, qState);
 	std::cout << "Energy=" << E << "\t <H>=" << H << std::endl;
 
 	qState.print();
 
 	return 0;
-
 
 	QuantumState<cx_double> cx_qState = qState;
 	//cx_qState.vector.print();
@@ -103,23 +106,23 @@ int main(int argc, char *argv[])
 	//Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += 0.1 * t; A = symmatu(A); };
 	//Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {for(int i=0;i<L-1;i++) A(i,i+1) += -0.1 * t; A = symmatu(A); };
 
-	Schedule<sp_mat> t_schedule = [L](auto &A, auto t) {};
-	Schedule<sp_mat> V_schedule = [L](auto &A, auto t) {};
+	Schedule<arma::SpMat<dataType>> t_schedule = [L](auto &A, auto t) {};
+	Schedule<arma::SpMat<dataType>> V_schedule = [L](auto &A, auto t) {};
 
-	DynamicsSchedule<sp_mat> dynSchedule;
+	DynamicsSchedule<arma::SpMat<dataType>> dynSchedule;
 	dynSchedule.time_step = 0.01;
 	dynSchedule.time_final = 1;
 
-	ScheduleMap<sp_mat> dict;
+	ScheduleMap<arma::SpMat<dataType>> dict;
 	dict["t"] = t_schedule;
 	dict["V"] = V_schedule;
 
 	dynSchedule.dict = dict;
 
-	MeasurementSchedule<SpMat, double, cx_double> meSchedule;
+	MeasurementSchedule<dataContainer, dataType, cx_double> meSchedule;
 	meSchedule.timeToMeasure = [](auto time) { return true; };
-	meSchedule.Measure = [L](QuantumSystem<SpMat, double> &qSys, QuantumState<cx_double> &qSta) {
-		QuantumState<double> ground = Eigensolver::FindGroundState(qSys);
+	meSchedule.Measure = [L](QuantumSystem<dataContainer, dataType> &qSys, QuantumState<cx_double> &qSta) {
+		QuantumState<dataType> ground = Eigensolver::FindGroundState(qSys);
 		//auto E = Laboratory::Measure(qSys, ground);
 		auto E = Laboratory::Measure(qSys, qSta);
 		qSys.SelectObservable<ParticleNumberOperator>(L);
@@ -129,7 +132,7 @@ int main(int argc, char *argv[])
 	};
 
 	// Quantum dynamics object
-	QuantumDynamics<SpMat, double, cx_double> qDynamics;
+	QuantumDynamics<dataContainer, dataType, cx_double> qDynamics;
 	qDynamics.Create(qSystem, cx_qState, dynSchedule, meSchedule);
 	//qDynamics.Run();
 
