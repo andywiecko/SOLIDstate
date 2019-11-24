@@ -16,14 +16,14 @@ int main(int argc, char *argv[])
     // and data type: double
     // ********************************
 
-    QuantumSystem<SpMat, double> qSystem;
+    QuantumSystem<arma::SpMat, double> qSystem;
 
     // ********************************
     // Selecting Ensemble
     // ********************************
 
     qSystem.SelectEnsemble<ParityGrandCanonical>(L, 0);
-    Info::ShowSectors(qSystem.hilbertSpace.ensemble); // other implementation
+    Info::ShowSectors(qSystem.hilbertSpace.ensemble); 
 
     // ********************************
     // Setting the parameters
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     Geometry<double> geometry = Chain<double>(L, {{"t", t_integral},
                                                   {"delta", delta_par},
                                                   {"V", V_par},
-                                                  {"M", M_par}});
+                                                  {"mu", M_par}});
 
     qSystem.SelectParameters(geometry);
 

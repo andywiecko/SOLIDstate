@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 
 	Parameters<dataType> param;
 
-	param["M"] = mu;		// TODO non-diag ignored!
+	param["mu"] = mu;		// TODO non-diag ignored!
 	param["V"] = V;			// TODO diag ignored!
 	param["t"] = t;			// TODO diag ignored!
 	param["delta"] = delta; // TODO diag ignored! //TODO bonds cheking if this is the last sector
@@ -64,19 +64,19 @@ int main(int argc, char *argv[])
 	Info::ShowParameters(qSystem);
 
 	ParametersChecker::Check(param);
-	(param["M"]).print();
+	(param["mu"]).print();
 	(param["V"]).print();
 
 	// TODO typedef uniform parameters
 	dataType t_integral = 5.0;
 	uniformParameters<dataType> paramChain1 = {{"t", t_integral}};
 	uniformParameters<dataType> paramChain2 = {{"V", 2}};
-	Geometry<dataType> geometry = Chain<dataType>(L, {{"t", t_integral}, {"V", 0.5}, {"M", 1.0}, {"delta", arma:cx_double(0,1)}}); //+ Ring<double>(L, paramChain2);
+	Geometry<dataType> geometry = Chain<dataType>(L, {{"t", t_integral}, {"V", 0.5}, {"mu", 1.0}, {"delta", arma:cx_double(0,1)}}); //+ Ring<double>(L, paramChain2);
 
 	geometry.parameters["t"].print("T");
 	geometry.parameters["delta"].print("D");
 	geometry.parameters["V"].print("V");
-	geometry.parameters["M"].print("M");
+	geometry.parameters["mu"].print("M");
 
 	return 0;
 

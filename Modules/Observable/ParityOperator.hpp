@@ -58,7 +58,7 @@ private:
     void FillParameters() override
     {
         arma::SpMat<T2> mu = arma::eye<arma::SpMat<T2>>(L, L);
-        parameters["M"] = mu;
+        parameters["mu"] = mu;
     }
 
 public:
