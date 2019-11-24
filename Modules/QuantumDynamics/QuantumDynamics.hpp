@@ -18,6 +18,8 @@
 #include "../Parameters/Parameters.hpp"
 #include "../Hamiltonian/TermsEnabled.hpp"
 #include "DynamicsSchedule.hpp"
+#include "Solvers/QuantumDynamicSolver.hpp"
+#include "Solvers/RungeKutta4.hpp"
 
 namespace solid
 {
@@ -59,6 +61,7 @@ public:
         param = qSystem.parameters;
         dynamicsSchedule = dynSchedule;
         measurementSchedule = mesSchedule;
+        solver = new RK4<T1,T2,T3>();
     }
 
     /**
@@ -85,6 +88,8 @@ private:
     template <template <typename> class G1, typename G2, typename G3>
     friend class RK4;
 
+    template <template <typename> class G1, typename G2, typename G3>
+    friend class IQuantumDynamicSolver;
 
 
     double time;                                         /*!< current time of the evolution */
@@ -94,6 +99,7 @@ private:
     Parameters<T2> param;                                /*!< copy of active parameters in QuantumSystem */
     DynamicsSchedule<arma::SpMat<T2>> dynamicsSchedule;  /*!< DynamicsSchedule for QuantumSystem parameters */
     MeasurementSchedule<T1, T2, T3> measurementSchedule; /*!< MeasurmentSchedule: when and what to measure */
+    IQuantumDynamicSolver<T1,T2,T3>* solver;
 };
 
 } // namespace solid

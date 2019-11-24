@@ -757,6 +757,7 @@ INPUT                  = Modules/ \
                          Modules/Observable \
                          Modules/Parameters \
                          Modules/QuantumDynamics \
+                         Modules/QuantumDynamics/Solvers \
                          Modules/QuantumState \
                          Modules/QuantumSystem \
                          Modules/Terms \

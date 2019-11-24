@@ -39,9 +39,9 @@ public:
     std::string getLabel() override
     { return label;}
 
-    void PropagateVirtual(double time, double dtime, QuantumDynamics<T1, T2, T3> &qDynamics) override { Propagate(time, dtime, qDynamics); }
+    //void PropagateVirtual(double time, double dtime, QuantumDynamics<T1, T2, T3> &qDynamics) override { Propagate(time, dtime, qDynamics); }
 
-    static void Propagate(double time, double dtime, QuantumDynamics<T1, T2, T3> &qDynamics)
+    void Propagate(double time, double dtime, QuantumDynamics<T1, T2, T3> &qDynamics)
     {
 
         arma::cx_double I(0, 1);

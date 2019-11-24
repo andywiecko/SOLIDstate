@@ -1,6 +1,4 @@
 #include "Modules/SOLIDstate.hpp"
-#include "Modules/QuantumDynamics/Solvers/QuantumDynamicSolver.hpp"
-#include "Modules/QuantumDynamics/Solvers/RungeKutta4.hpp"
 
 #include <armadillo>
 using namespace arma;
@@ -71,10 +69,10 @@ int main(int argc, char *argv[])
 	(param["V"]).print();
 
 	// TODO typedef uniform parameters
-	dataType t_integral = 5.0;
+	dataType t_integral = 1.0;
 	uniformParameters<dataType> paramChain1 = {{"t", t_integral}};
 	uniformParameters<dataType> paramChain2 = {{"V", 2}};
-	Geometry<dataType> geometry = Chain<dataType>(L, {{"t", t_integral}, {"V", 0.5}, {"mu", 1.0}, {"delta", 1}}); //+ Ring<double>(L, paramChain2);
+	Geometry<dataType> geometry = Chain<dataType>(L, {{"t", t_integral}, {"V", 0.0}, {"mu", 0.0}, {"delta", 1}}); //+ Ring<double>(L, paramChain2);
 
 	geometry.parameters["t"].print("T");
 	geometry.parameters["delta"].print("D");
@@ -144,10 +142,10 @@ int main(int argc, char *argv[])
 	cx_qState.vector += test;
 
 
-	IQuantumDynamicSolver<dataContainer,dataType,arma::cx_double>* solver;
-	solver = new RK4<dataContainer,dataType,arma::cx_double>();
-	solver->Propagate(0, 0.1, qDynamics);
-	std::cout << solver->getLabel() << std::endl;
+	//IQuantumDynamicSolver<dataContainer,dataType,arma::cx_double>* solver;
+	//solver = new RK4<dataContainer,dataType,arma::cx_double>();
+	//solver->Propagate(0, 0.1, qDynamics);
+	//std::cout << solver->getLabel() << std::endl;
 	
 
 	//return 0;

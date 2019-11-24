@@ -2,12 +2,9 @@
 
 #include <type_traits>
 
-#include "Solvers/RungeKutta4.hpp"
-
-
 namespace solid
 {
-    
+
 template <template <typename> class T1, typename T2, typename T3>
 void QuantumDynamics<T1, T2, T3>::LoadParameters()
 {
@@ -41,8 +38,15 @@ template <template <typename> class T1, typename T2, typename T3>
 void QuantumDynamics<T1, T2, T3>::Propagate()
 {
     if constexpr (std::is_same<T3, arma::cx_double>::value)
-        RK4<T1,T2,T3>::Propagate(time,dynamicsSchedule.time_step,*this);
-
+    {
+        solver->Propagate(time, dynamicsSchedule.time_step, *this);
+    }
+    if constexpr (std::is_same<T3, arma::cx_double>::value)
+    {
+        //quantumState.print();
+        //RK4<T1, T2, T3>::Propagate(time, dynamicsSchedule.time_step, *this);
+        //quantumState.print();
+    }
 }
 
 template <template <typename> class T1, typename T2, typename T3>
