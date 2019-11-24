@@ -37,16 +37,7 @@ void QuantumDynamics<T1, T2, T3>::Run()
 template <template <typename> class T1, typename T2, typename T3>
 void QuantumDynamics<T1, T2, T3>::Propagate()
 {
-    if constexpr (std::is_same<T3, arma::cx_double>::value)
-    {
-        solver->Propagate(time, dynamicsSchedule.time_step, *this);
-    }
-    if constexpr (std::is_same<T3, arma::cx_double>::value)
-    {
-        //quantumState.print();
-        //RK4<T1, T2, T3>::Propagate(time, dynamicsSchedule.time_step, *this);
-        //quantumState.print();
-    }
+    solver->Propagate(time, dynamicsSchedule.time_step, *this);
 }
 
 template <template <typename> class T1, typename T2, typename T3>
