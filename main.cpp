@@ -1,4 +1,6 @@
 #include "Modules/SOLIDstate.hpp"
+#include "Modules/QuantumDynamics/Solvers/QuantumDynamicSolver.hpp"
+#include "Modules/QuantumDynamics/Solvers/RungeKutta4.hpp"
 
 #include <armadillo>
 using namespace arma;
@@ -9,7 +11,8 @@ using namespace solid;
 template <typename T>
 using dataContainer = arma::SpMat<T>;
 
-typedef arma::cx_double dataType;
+//typedef arma::cx_double dataType;
+typedef double dataType;
 
 int main(int argc, char *argv[])
 {
@@ -71,14 +74,14 @@ int main(int argc, char *argv[])
 	dataType t_integral = 5.0;
 	uniformParameters<dataType> paramChain1 = {{"t", t_integral}};
 	uniformParameters<dataType> paramChain2 = {{"V", 2}};
-	Geometry<dataType> geometry = Chain<dataType>(L, {{"t", t_integral}, {"V", 0.5}, {"mu", 1.0}, {"delta", arma:cx_double(0,1)}}); //+ Ring<double>(L, paramChain2);
+	Geometry<dataType> geometry = Chain<dataType>(L, {{"t", t_integral}, {"V", 0.5}, {"mu", 1.0}, {"delta", 1}}); //+ Ring<double>(L, paramChain2);
 
 	geometry.parameters["t"].print("T");
 	geometry.parameters["delta"].print("D");
 	geometry.parameters["V"].print("V");
 	geometry.parameters["mu"].print("M");
 
-	return 0;
+	//return 0;
 
 	qSystem.SelectParameters(geometry);
 
@@ -95,7 +98,7 @@ int main(int argc, char *argv[])
 
 	qState.print();
 
-	return 0;
+	//return 0;
 
 	QuantumState<cx_double> cx_qState = qState;
 	//cx_qState.vector.print();
@@ -134,11 +137,18 @@ int main(int argc, char *argv[])
 	// Quantum dynamics object
 	QuantumDynamics<dataContainer, dataType, cx_double> qDynamics;
 	qDynamics.Create(qSystem, cx_qState, dynSchedule, meSchedule);
-	//qDynamics.Run();
+	qDynamics.Run();
 
 	cx_vec test;
 	test = cx_qState.vector;
 	cx_qState.vector += test;
+
+
+	IQuantumDynamicSolver<dataContainer,dataType,arma::cx_double>* solver;
+	solver = new RK4<dataContainer,dataType,arma::cx_double>();
+	solver->Propagate(0, 0.1, qDynamics);
+
+	
 
 	//return 0;
 

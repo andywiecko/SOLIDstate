@@ -82,7 +82,11 @@ private:
      */
     void Measure();
 
+    template <template <typename> class G1, typename G2, typename G3>
     friend class RK4;
+
+
+
     double time;                                         /*!< current time of the evolution */
     TermsEnabled terms;                                  /*!< copy of active terms in QuantumSystem */
     QuantumState<T3> quantumState;                       /*!< current QuantumState at given time */

@@ -10,7 +10,9 @@
  */
 #include <armadillo>
 
-#include "QuantumDynamics.hpp"
+#include "../QuantumDynamics.hpp"
+#include "QuantumDynamicSolver.hpp"
+
 namespace solid
 {
 
@@ -27,10 +29,15 @@ namespace solid
  *  * \f$|k_3\rangle =-i\Delta t \hat H(t+\Delta t/2) (|\psi(t)\rangle +\frac12|k_2\rangle)\f$
  *  * \f$|k_4\rangle =-i\Delta t \hat H(t+\Delta t) (|\psi(t)\rangle +|k_3\rangle)\f$
  */
-class RK4
+template <template <typename> class T1, typename T2, typename T3>
+class RK4 : public IQuantumDynamicSolver<T1, T2, T3>
 {
 public:
-    template <template <typename> class T1, typename T2, typename T3>
+
+	inline static const std::string label = "rk4";
+
+    void PropagateVirtual(double time, double dtime, QuantumDynamics<T1, T2, T3> &qDynamics) override { Propagate(time, dtime, qDynamics); }
+
     static void Propagate(double time, double dtime, QuantumDynamics<T1, T2, T3> &qDynamics)
     {
 
