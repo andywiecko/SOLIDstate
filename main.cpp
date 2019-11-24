@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
 	IQuantumDynamicSolver<dataContainer,dataType,arma::cx_double>* solver;
 	solver = new RK4<dataContainer,dataType,arma::cx_double>();
 	solver->Propagate(0, 0.1, qDynamics);
-
+	std::cout << solver->getLabel() << std::endl;
 	
 
 	//return 0;
