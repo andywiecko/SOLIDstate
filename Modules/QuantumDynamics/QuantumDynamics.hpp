@@ -63,6 +63,7 @@ public:
         dynamicsSchedule = dynSchedule;
         measurementSchedule = mesSchedule;
         solver = SolverSwitcher<T1, T2, T3>::Switch(label);
+        
     }
 
     /**

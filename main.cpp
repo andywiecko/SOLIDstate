@@ -134,7 +134,7 @@ int main(int argc, char *argv[])
 
 	// Quantum dynamics object
 	QuantumDynamics<dataContainer, dataType, cx_double> qDynamics;
-	qDynamics.Create(qSystem, cx_qState, dynSchedule, meSchedule);
+	qDynamics.Create(qSystem, cx_qState, dynSchedule, meSchedule,"xyz");
 	qDynamics.Run();
 
 	cx_vec test;
