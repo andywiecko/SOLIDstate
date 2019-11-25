@@ -34,7 +34,7 @@ class RK4 : public IQuantumDynamicSolver<T1, T2, T3>
 {
 public:
 
-	inline static const std::string label = "rk4";
+	inline static constexpr auto label = "rk4";
 
     std::string getLabel() override
     { return label;}

@@ -9,6 +9,11 @@
 namespace solid
 {
 
+constexpr unsigned int str2int(const char *str, int h = 0)
+{
+    return !str[h] ? 5381 : (str2int(str, h + 1) * 33) ^ str[h];
+}
+
 template <template <typename> class T1, typename T2, typename T3>
 class SolverSwitcher
 {
@@ -17,17 +22,19 @@ public:
     {
         const std::string defaultSolver = RK4<T1, T2, T3>::label;
 
-        if (label == RK4<T1, T2, T3>::label)
+        switch (str2int(label.c_str()))
         {
+        case str2int(RK4<T1, T2, T3>::label):
             if constexpr (std::is_same<T3, arma::cx_double>::value)
                 return new RK4<T1, T2, T3>();
             else
-                assert(!"rk4 requires complex type! (T3=arma::cx_double)");
-        }
-        else
-        {
-            std::cout << "Unknown solver name! Running with default solver " << defaultSolver << std::endl;
+                assert(!"selected solver requires complex type! (T3 = arma::cx_double)");
+            break;
+
+        default:
+            std::cout << "Unknown solver: " << label << ". Running with default solver " << defaultSolver << std::endl;
             return Switch(defaultSolver);
+            break;
         }
     }
 };
