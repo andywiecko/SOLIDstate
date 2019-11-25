@@ -3,6 +3,8 @@
 
 #include "QuantumDynamicSolver.hpp"
 #include "RungeKutta4.hpp"
+#include "AdiabaticSolver.hpp"
+
 #include <string>
 #include <cassert>
 
@@ -24,6 +26,8 @@ public:
 
         switch (str2int(label.c_str()))
         {
+
+        // Runge Kutta 4 order Solver
         case str2int(RK4<T1, T2, T3>::label):
             if constexpr (std::is_same<T3, arma::cx_double>::value)
                 return new RK4<T1, T2, T3>();
@@ -31,6 +35,11 @@ public:
                 assert(!"selected solver requires complex type! (T3 = arma::cx_double)");
             break;
 
+        // Adiabatic Solver
+        case str2int(AdiabaticSolver<T1, T2, T3>::label):
+            return new AdiabaticSolver<T1, T2, T3>();
+
+        // default Solver
         default:
             std::cout << "Unknown solver: " << label << ". Running with default solver " << defaultSolver << std::endl;
             return Switch(defaultSolver);

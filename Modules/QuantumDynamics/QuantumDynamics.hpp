@@ -87,8 +87,14 @@ private:
      */
     void Measure();
 
+
+    // TODO reorganize friend class, add getter setter methods
+    
     template <template <typename> class G1, typename G2, typename G3>
     friend class RK4;
+
+    template <template <typename> class G1, typename G2, typename G3>
+    friend class AdiabaticSolver;
 
     template <template <typename> class G1, typename G2, typename G3>
     friend class IQuantumDynamicSolver;
