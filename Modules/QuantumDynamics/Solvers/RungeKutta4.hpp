@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef RUNGEKUTTA4_HPP
-#define RUNGEKUTTA4_HPP
+#ifndef QUANTUMDYNAMICS_SOLVERS_RUNGEKUTTA4_HPP
+#define QUANTUMDYNAMICS_SOLVERS_RUNGEKUTTA4_HPP
 #include <armadillo>
 
 #include "../QuantumDynamics.hpp"

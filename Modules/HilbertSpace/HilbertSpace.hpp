@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef HILBERTSPACE_HPP
-#define HILBERTSPACE_HPP
+#ifndef HILBERTSPACE_HILBERTSPACE_HPP
+#define HILBERTSPACE_HILBERTSPACE_HPP
 
 #include "../Ensemble/Ensemble.hpp"
 #include "../Combinadics/Combinadics.hpp"

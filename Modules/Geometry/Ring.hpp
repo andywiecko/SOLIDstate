@@ -1,5 +1,5 @@
-#ifndef RING_HPP
-#define RING_HPP
+#ifndef GEOMETRY_RING_HPP
+#define GEOMETRY_RING_HPP
 
 #include "Geometry.hpp"
 

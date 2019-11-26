@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef TWOBODYINTERACTION_HPP
-#define TWOBODYINTERACTION_HPP
+#ifndef TERMS_TWOBODYINTERACTION_HPP
+#define TERMS_TWOBODYINTERACTION_HPP
 
 #include "../../QuantumSystem/QuantumSystem.hpp"
 #include "../../Combinadics/BaseState.hpp"

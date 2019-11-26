@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef BASESTATE_HPP
-#define BASESTATE_HPP
+#ifndef COMBINADICS_BASESTATE_HPP
+#define COMBINADICS_BASESTATE_HPP
 
 #include <armadillo>
 

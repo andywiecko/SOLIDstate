@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef QUANTUMDYNAMICS_HPP
-#define QUANTUMDYNAMICS_HPP
+#ifndef QUANTUMDYNAMICS_QUANTUMDYNAMICS_HPP
+#define QUANTUMDYNAMICS_QUANTUMDYNAMICS_HPP
 
 #include <armadillo>
 #include <string>

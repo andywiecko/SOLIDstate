@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef BINOMIALS_HPP
-#define BINOMIALS_HPP
+#ifndef COMBINADICS_BINOMIALS_HPP
+#define COMBINADICS_BINOMIALS_HPP
 
 #include <armadillo>
 #include <vector>

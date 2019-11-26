@@ -1,5 +1,5 @@
-#ifndef CHAIN_HPP
-#define CHAIN_HPP
+#ifndef GEOMETRY_CHAIN_HPP
+#define GEOMETRY_CHAIN_HPP
 
 #include "Geometry.hpp"
 #include "../Terms/TermsTypeConverter.hpp"

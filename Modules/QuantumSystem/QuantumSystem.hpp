@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef QUANTUMSYSTEM_HPP
-#define QUANTUMSYSTEM_HPP
+#ifndef QUANTUMSYSTEM_QUANTUMSYSTEM_HPP
+#define QUANTUMSYSTEM_QUANTUMSYSTEM_HPP
 
 #include "../HilbertSpace/HilbertSpace.hpp"
 #include "../Hamiltonian/Hamiltonian.hpp"

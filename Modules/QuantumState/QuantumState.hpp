@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef QUANTUMSTATE_HPP
-#define QUANTUMSTATE_HPP
+#ifndef QUANTUMSTATE_QUANTUMSTATE_HPP
+#define QUANTUMSTATE_QUANTUMSTATE_HPP
 
 #include <armadillo>
 #include <string>

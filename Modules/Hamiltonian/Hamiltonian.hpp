@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef HAMILTONIAN_HPP
-#define HAMILTONIAN_HPP
+#ifndef HAMILTONIAN_HAMILTONIAN_HPP
+#define HAMILTONIAN_HAMILTONIAN_HPP
 
 #include "TermsEnabled.hpp"
 

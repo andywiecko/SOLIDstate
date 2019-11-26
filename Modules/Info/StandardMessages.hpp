@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef STANDARDMESSAGES_HPP
-#define STANDARDMESSAGES_HPP
+#ifndef INFO_STANDARDMESSAGES_HPP
+#define INFO_STANDARDMESSAGES_HPP
 
 #include <string>
 #include "../Ensemble/Ensemble.hpp"

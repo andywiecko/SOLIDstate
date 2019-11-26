@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef COMBINADICS_HPP
-#define COMBINADICS_HPP
+#ifndef COMBINADICS_COMBINADICS_HPP
+#define COMBINADICS_COMBINADICS_HPP
 
 #include <vector>
 #include <armadillo>

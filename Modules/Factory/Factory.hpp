@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef FACTORY_HPP
-#define FACTORY_HPP
+#ifndef FACTORY_FACTORY_HPP
+#define FACTORY_FACTORY_HPP
 
 #include "../Ensemble/Ensemble.hpp"
 #include "../Ensemble/Canonical.hpp"

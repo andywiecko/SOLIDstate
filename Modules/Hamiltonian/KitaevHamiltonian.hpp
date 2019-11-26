@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef KITAEVHAMILTONIAN_HPP
-#define KITAEVHAMILTONIAN_HPP
+#ifndef HAMILTONIAN_KITAEVHAMILTONIAN_HPP
+#define HAMILTONIAN_KITAEVHAMILTONIAN_HPP
 
 #include <functional>
 

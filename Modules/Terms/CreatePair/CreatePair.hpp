@@ -9,8 +9,8 @@
  * 
  */
 
-#ifndef CREATEPAIR_HPP
-#define CREATEPAIR_HPP
+#ifndef TERMS_CREATEPAIR_HPP
+#define TERMS_CREATEPAIR_HPP
 
 #include <string>
 #include "../../QuantumSystem/QuantumSystem.hpp"

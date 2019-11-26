@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef INFO_HPP
-#define INFO_HPP
+#ifndef INFO_INFO_HPP
+#define INFO_INFO_HPP
 
 #include <iostream>
 #include <vector>

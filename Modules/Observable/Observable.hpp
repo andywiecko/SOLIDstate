@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef OBSERVABLE_HPP
-#define OBSERVABLE_HPP
+#ifndef OBSERVABLE_OBSERVABLE_HPP
+#define OBSERVABLE_OBSERVABLE_HPP
 
 #include "../Hamiltonian/Hamiltonian.hpp"
 #include "../Parameters/Parameters.hpp"

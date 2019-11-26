@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef EIGENSOLVER_HPP
-#define EIGENSOLVER_HPP
+#ifndef EIGENSOLVER_EIGENSOLVER_HPP
+#define EIGENSOLVER_EIGENSOLVER_HPP
 
 #include <string>
 

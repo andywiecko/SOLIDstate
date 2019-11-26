@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef ARGV_HPP
-#define ARGV_HPP
+#ifndef INFO_ARGV_HPP
+#define INFO_ARGV_HPP
 
 #include <unistd.h>
 #include <iostream>

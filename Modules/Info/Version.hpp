@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef VERSION_HPP
-#define VERSION_HPP
+#ifndef INFO_VERSION_HPP
+#define INFO_VERSION_HPP
 
 #include <string>
 #include <armadillo>

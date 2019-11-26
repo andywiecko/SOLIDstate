@@ -1,5 +1,5 @@
-#ifndef GEOMETRY_HPP
-#define GEOMETRY_HPP
+#ifndef GEOMETRY_GEOMETRY_HPP
+#define GEOMETRY_GEOMETRY_HPP
 
 #include <string>
 #include <map>

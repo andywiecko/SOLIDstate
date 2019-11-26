@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef TERMSENUM_HPP
-#define TERMSENUM_HPP
+#ifndef TERMS_TERMSENUM_HPP
+#define TERMS_TERMSENUM_HPP
 
 namespace solid
 {

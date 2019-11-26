@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef TERM_HPP
-#define TERM_HPP
+#ifndef TERMS_TERM_HPP
+#define TERMS_TERM_HPP
 
 #include "../QuantumSystem/QuantumSystem.hpp"
 namespace solid

@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef ENSEMBLE_HPP
-#define ENSEMBLE_HPP
+#ifndef ENSEMBLE_ENSEMBLE_HPP
+#define ENSEMBLE_ENSEMBLE_HPP
 
 #include <vector>
 #include "Sector.hpp"

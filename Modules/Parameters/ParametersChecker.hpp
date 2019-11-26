@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef PARAMETERSCHECKER_HPP
-#define PARAMETERSCHECKER_HPP
+#ifndef PARAMETERS_PARAMETERSCHECKER_HPP
+#define PARAMETERS_PARAMETERSCHECKER_HPP
 
 #include <armadillo>
 

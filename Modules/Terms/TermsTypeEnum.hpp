@@ -1,5 +1,5 @@
-#ifndef TERMSTYPEENUM_HPP
-#define TERMSTYPEENUM_HPP
+#ifndef TERMS_TERMSTYPEENUM_HPP
+#define TERMS_TERMSTYPEENUM_HPP
 
 namespace solid
 {

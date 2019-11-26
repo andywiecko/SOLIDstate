@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef TERMSENUMCONVERTER_HPP
-#define TERMSENUMCONVERTER_HPP
+#ifndef TERMS_TERMSENUMCONVERTER_HPP
+#define TERMS_TERMSENUMCONVERTER_HPP
 
 #include "../QuantumSystem/QuantumSystem.hpp"
 #include "../Terms/TermsEnum.hpp"

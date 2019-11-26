@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef MATRIXELEMENTFILLER_HPP
-#define MATRIXELEMENTFILLER_HPP
+#ifndef MATRIXELEMENTFILLER_MATRIXELEMENTFILLER_HPP
+#define MATRIXELEMENTFILLER_MATRIXELEMENTFILLER_HPP
 
 #include "../QuantumSystem/QuantumSystem.hpp"
 

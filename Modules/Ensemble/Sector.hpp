@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef SECTOR_HPP
-#define SECTOR_HPP
+#ifndef ENSEMBLE_SECTOR_HPP
+#define ENSEMBLE_SECTOR_HPP
 
 #include "../Combinadics/Binomials.hpp"
 

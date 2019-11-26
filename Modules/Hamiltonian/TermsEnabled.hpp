@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef TERMSENABLED_HPP
-#define TERMSENABLED_HPP
+#ifndef HAMILTONIAN_TERMSENABLED_HPP
+#define HAMILTONIAN_TERMSENABLED_HPP
 
 #include "../Terms/TermsEnum.hpp"
 

@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef PARITYOPERATOR_HPP
-#define PARITYOPERATOR_HPP
+#ifndef OBSERVABLE_PARITYOPERATOR_HPP
+#define OBSERVABLE_PARITYOPERATOR_HPP
 
 #include "Observable.hpp"
 

@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef PARAMETERS_HPP
-#define PARAMETERS_HPP
+#ifndef PARAMETERS_PARAMETERS_HPP
+#define PARAMETERS_PARAMETERS_HPP
 
 #include <string>
 #include <map>

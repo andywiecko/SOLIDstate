@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef TERMSTYPECONVERTER_HPP
-#define TERMSTYPECONVERTER_HPP
+#ifndef TERMS_TERMSTYPECONVERTER_HPP
+#define TERMS_TERMSTYPECONVERTER_HPP
 
 #include <map>
 #include <string>

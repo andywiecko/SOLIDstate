@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef LABORATORY_HPP
-#define LABORATORY_HPP
+#ifndef LABORATORY_LABORATORY_HPP
+#define LABORATORY_LABORATORY_HPP
 
 #include "../QuantumState/QuantumState.hpp"
 #include "../QuantumSystem/QuantumSystem.hpp"

@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef TIMER_HPP
-#define TIMER_HPP
+#ifndef INFO_TIMER_HPP
+#define INFO_TIMER_HPP
 
 #include <armadillo>
 #include <string>

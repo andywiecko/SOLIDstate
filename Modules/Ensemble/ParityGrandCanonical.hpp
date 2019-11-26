@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef PARITYGRANDCANONICAL_HPP
-#define PARITYGRANDCANONICAL_HPP
+#ifndef ENSEMBLE_PARITYGRANDCANONICAL_HPP
+#define ENSEMBLE_PARITYGRANDCANONICAL_HPP
 
 #include "Ensemble.hpp"
 #include "Sector.hpp"

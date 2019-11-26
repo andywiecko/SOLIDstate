@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef DYNAMICSSCHEDULE_HPP
-#define DYNAMICSSCHEDULE_HPP
+#ifndef QUANTUMDYNAMICS_DYNAMICSSCHEDULE_HPP
+#define QUANTUMDYNAMICS_DYNAMICSSCHEDULE_HPP
 
 
 #include <functional>

@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef HOP_HPP
-#define HOP_HPP
+#ifndef TERMS_HOP_HPP
+#define TERMS_HOP_HPP
 
 #include <string>
 #include "../../QuantumSystem/QuantumSystem.hpp"

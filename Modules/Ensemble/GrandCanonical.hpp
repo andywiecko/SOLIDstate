@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef GRANDCANONICAL_HPP
-#define GRANDCANONICAL_HPP
+#ifndef ENSEMBLE_GRANDCANONICAL_HPP
+#define ENSEMBLE_GRANDCANONICAL_HPP
 
 #include "Ensemble.hpp"
 #include "Sector.hpp"

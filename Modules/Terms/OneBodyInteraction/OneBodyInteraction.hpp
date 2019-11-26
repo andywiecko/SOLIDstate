@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef ONEBODYINTERACTION_HPP
-#define ONEBODYINTERACTION_HPP
+#ifndef TERMS_ONEBODYINTERACTION_HPP
+#define TERMS_ONEBODYINTERACTION_HPP
 
 #include "../../QuantumSystem/QuantumSystem.hpp"
 #include "../Terms.hpp"

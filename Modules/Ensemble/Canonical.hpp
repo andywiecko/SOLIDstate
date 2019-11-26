@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2019
  * 
  */
-#ifndef CANONICAL_HPP
-#define CANONICAL_HPP
+#ifndef ENSEMBLE_CANONICAL_HPP
+#define ENSEMBLE_CANONICAL_HPP
 
 #include "Ensemble.hpp"
 #include "Sector.hpp"
