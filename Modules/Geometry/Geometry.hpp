@@ -1,3 +1,13 @@
+/**
+ * @file Geometry.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief Geometry class header
+ * @version 0.100.0
+ * @date 2019-11-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef GEOMETRY_GEOMETRY_HPP
 #define GEOMETRY_GEOMETRY_HPP
 
@@ -9,18 +19,38 @@
 namespace solid
 {
 
+/**
+ * @brief typedef for initializer_list
+ * 
+ * @tparam T data type: double, std::complex<double> are supported
+ */
 template <typename T>
 using initList = std::initializer_list<std::pair<const std::string, T>>;
 
+/**
+ * @brief typedef for map<std::string, T>
+ * 
+ * @tparam T data type: double, std::complex<double> are supported
+ */
 template <typename T>
 using uniformParameters = std::map<std::string, T>;
 
+/**
+ * @brief Interface for Geometry class
+ * 
+ * @tparam T data type: double, std::complex<double> are supported
+ */
 template <typename T>
 class IGeometry
 {
     virtual void Create(int L, std::string key, T value) = 0;
 };
 
+/**
+ * @brief Geometry parrent class
+ * 
+ * @tparam T data type: double, std::complex<double> are supported
+ */
 template <typename T>
 class Geometry
 {
