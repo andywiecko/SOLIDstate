@@ -1,3 +1,13 @@
+/**
+ * @file SolverSwitcher.hpp
+ * @author Andrzej Więckowski (andrzej.wieckowski@pwr.edu.pl)
+ * @brief SolverSwitcher header
+ * @version 0.100.0
+ * @date 2019-11-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef QUANTUMDYNAMICS_SOLVERS_SOLVERSWITCHER_HPP
 #define QUANTUMDYNAMICS_SOLVERS_SOLVERSWITCHER_HPP
 
@@ -11,17 +21,32 @@
 namespace solid
 {
 
+// TODO move to misc
 constexpr unsigned int str2int(const char *str, int h = 0)
 {
     return !str[h] ? 5381 : (str2int(str, h + 1) * 33) ^ str[h];
 }
 
+/**
+ * @brief Switcher for QuantumDynamicSolver
+ * 
+ * @tparam T1 matrix type: arma::Mat and arma:SpMat are supported
+ * @tparam T2 data type of QuantumSystem: double, std::complex<double> are supported
+ * @tparam T3 data type of QuantumState: double, std::complex<double> are supported
+ */
 template <template <typename> class T1, typename T2, typename T3>
 class SolverSwitcher
 {
 public:
+    /**
+     * @brief Switch between IQuantumDynamicSolvers
+     * 
+     * @param label label of selected IQuantumDynamicSolver implementation
+     * @return IQuantumDynamicSolver<T1, T2, T3>* pointer to selected IQuantumDynamicSolver implementation
+     */
     static IQuantumDynamicSolver<T1, T2, T3> *Switch(const std::string label)
     {
+        // default solver label
         const std::string defaultSolver = RK4<T1, T2, T3>::label;
 
         switch (str2int(label.c_str()))
@@ -41,6 +66,7 @@ public:
 
         // default Solver
         default:
+            // TODO move to info
             std::cout << "Unknown solver: " << label << ". Running with default solver " << defaultSolver << std::endl;
             return Switch(defaultSolver);
             break;

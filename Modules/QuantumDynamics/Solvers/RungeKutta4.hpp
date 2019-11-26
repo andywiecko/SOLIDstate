@@ -36,13 +36,28 @@ class RK4 : public IQuantumDynamicSolver<T1, T2, T3>
 {
 public:
 
-	inline static constexpr auto label = "rk4";
+    /**
+     * @brief label, default = "rk4"
+     */
+    inline static constexpr auto label = "rk4";
 
+    /**
+     * @brief Get the Label object (IQuantumDynamicSolver override)
+     * 
+     * @return std::string label
+     */
     std::string getLabel() override
-    { return label;}
+    {
+        return label;
+    }
 
-    //void PropagateVirtual(double time, double dtime, QuantumDynamics<T1, T2, T3> &qDynamics) override { Propagate(time, dtime, qDynamics); }
-
+    /**
+     * @brief Propagate the state \f$|\psi\rangle\f$ (IQuantumDynamicSolver override)
+     * 
+     * @param time current time
+     * @param dtime time step
+     * @param qDynamics QuantumDynamics<T1,T2,T3> object
+     */
     void Propagate(double time, double dtime, QuantumDynamics<T1, T2, T3> &qDynamics)
     {
 

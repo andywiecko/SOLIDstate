@@ -63,7 +63,6 @@ public:
         dynamicsSchedule = dynSchedule;
         measurementSchedule = mesSchedule;
         solver = SolverSwitcher<T1, T2, T3>::Switch(label);
-        
     }
 
     /**
@@ -87,9 +86,8 @@ private:
      */
     void Measure();
 
-
     // TODO reorganize friend class, add getter setter methods
-    
+
     template <template <typename> class G1, typename G2, typename G3>
     friend class RK4;
 
