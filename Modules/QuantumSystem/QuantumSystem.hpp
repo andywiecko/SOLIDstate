@@ -52,7 +52,7 @@ public:
     /**
      * @brief Parameters for hamiltonian
      */
-    Parameters<T2> parameters;
+    Parameters<T2> parameters; // TODO make it private?
 
     /**
      * @brief fills matrixElements for selected Hamiltonian, 
@@ -88,10 +88,18 @@ public:
     template <template <template <typename> class, typename> class Obs, typename... Targs>
     void SelectObservable(Targs... Fargs);
 
-    // TODO description
+    /**
+     * @brief Select Parameters of the QuantumSystem
+     * 
+     * @param parameters Parameters
+     */
     void SelectParameters(Parameters<T2> &parameters);
 
-    // TODO description
+    /**
+     * @brief Select Geometry (predefined Parameters)
+     * 
+     * @param geometry Geometry
+     */
     void SelectParameters(Geometry<T2> &geometry);
 
 };
