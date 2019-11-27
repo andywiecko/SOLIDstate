@@ -16,7 +16,7 @@ namespace solid
 ParityGrandCanonical::ParityGrandCanonical(int _L, int _parity)
 {
     L = _L;
-    parity = _parity; // TODO modulo
+    parity = _parity % 2;
 }
 
 void ParityGrandCanonical::SetSize()
