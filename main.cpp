@@ -56,10 +56,10 @@ int main(int argc, char *argv[])
 
 	Parameters<dataType> param;
 
-	param["mu"] = mu;		// TODO non-diag ignored!
-	param["V"] = V;			// TODO diag ignored!
-	param["t"] = t;			// TODO diag ignored!
-	param["delta"] = delta; // TODO diag ignored! //TODO bonds cheking if this is the last sector
+	param["mu"] = mu;		
+	param["V"] = V;			
+	param["t"] = t;			
+	param["delta"] = delta; 
 
 	qSystem.SelectParameters(param);
 	Info::ShowParameters(qSystem);
@@ -68,7 +68,6 @@ int main(int argc, char *argv[])
 	(param["mu"]).print();
 	(param["V"]).print();
 
-	// TODO typedef uniform parameters
 	dataType t_integral = 1.0;
 	uniformParameters<dataType> paramChain1 = {{"t", t_integral}};
 	uniformParameters<dataType> paramChain2 = {{"V", 2}};

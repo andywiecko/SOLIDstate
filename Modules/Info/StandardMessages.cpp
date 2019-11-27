@@ -60,7 +60,7 @@ void StandardMessages::ShowParameters(QuantumSystem<T1, T2> &qSystem)
 		typename arma::SpMat<T2>::const_iterator it = value.begin();
 		typename arma::SpMat<T2>::const_iterator it_end = value.end();
 		Info::Line();
-		std::cout << "# "+key+": (row) (col) (val)\n";
+		std::cout << "# " + key + ": (row) (col) (val)\n";
 		for (; it != it_end; ++it)
 		{
 			std::cout << "# " << it.row() << "\t" << it.col() << "\t" << (*it) << "\n";
@@ -68,10 +68,6 @@ void StandardMessages::ShowParameters(QuantumSystem<T1, T2> &qSystem)
 	}
 	Info::Line();
 }
-template void StandardMessages::ShowParameters(QuantumSystem<arma::Mat, double> &); // TODO!!!
-template void StandardMessages::ShowParameters(QuantumSystem<arma::Mat, arma::cx_double> &); // TODO!!!
-template void StandardMessages::ShowParameters(QuantumSystem<arma::SpMat, double> &); // TODO!!!
-template void StandardMessages::ShowParameters(QuantumSystem<arma::SpMat, arma::cx_double> &); // TODO!!!
 
 void StandardMessages::Message(std::string text)
 {
@@ -83,5 +79,15 @@ void StandardMessages::vMessage(std::string text)
 	if (Info::isVerbose)
 		Message(text);
 }
+
+template void StandardMessages::ShowSectors(QuantumSystem<arma::Mat, double> &);
+template void StandardMessages::ShowSectors(QuantumSystem<arma::Mat, arma::cx_double> &);
+template void StandardMessages::ShowSectors(QuantumSystem<arma::SpMat, double> &);
+template void StandardMessages::ShowSectors(QuantumSystem<arma::SpMat, arma::cx_double> &);
+
+template void StandardMessages::ShowParameters(QuantumSystem<arma::Mat, double> &);
+template void StandardMessages::ShowParameters(QuantumSystem<arma::Mat, arma::cx_double> &);
+template void StandardMessages::ShowParameters(QuantumSystem<arma::SpMat, double> &);
+template void StandardMessages::ShowParameters(QuantumSystem<arma::SpMat, arma::cx_double> &);
 
 } // namespace solid

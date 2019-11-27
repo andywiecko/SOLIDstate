@@ -67,9 +67,6 @@ QuantumState<double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, dou
     return qState;
 }
 
-
-//TODO
-
 /// SpMat<arma::cx_double> overload
 template <>
 QuantumState<arma::cx_double> Eigensolver::FindGroundState(QuantumSystem<arma::SpMat, arma::cx_double> &qSystem)

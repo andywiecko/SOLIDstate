@@ -12,6 +12,7 @@
 #define GEOMETRY_RING_HPP
 
 #include "Geometry.hpp"
+#include "../Misc/Symmatgen.hpp"
 
 namespace solid
 {
@@ -38,7 +39,6 @@ class Ring : public Geometry<T>, public IGeometry<T>
     using Geometry<T>::parameters;
 
 private:
-
     /**
      * @brief Ring Adjacency function for Nonlocal Terms
      * 
@@ -52,12 +52,6 @@ private:
         for (int i = 0; i < L; i++)
             ret(i, (i + 1) % L) = value;
         return ret;
-    }
-
-    // TODO move to misc function file
-    void Symmatgen(arma::SpMat<T>& mat)
-    {
-        mat += mat.t();
     }
 
     /**

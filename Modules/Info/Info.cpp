@@ -33,7 +33,7 @@ void Info::PrintSoftwareVersion()
 }
 
 // TODO remove this global temp clockss
-// do no use this
+// do not use this
 arma::wall_clock clockss;
 arma::wall_clock Timer::timer = clockss;
 bool Info::isVerbose = false;

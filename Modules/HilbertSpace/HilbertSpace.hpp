@@ -86,7 +86,12 @@ public:
      */
     statenumber GetStateIndexInCurrentSector(BaseState state);
 
-    //TODO
+    /**
+     * @brief Get the State Index In Next Parity Sector object
+     * 
+     * @param state BaseState to convert
+     * @return statenumber returns (next parity) sector index
+     */
     statenumber GetStateIndexInNextParitySector(BaseState state);
 
 
