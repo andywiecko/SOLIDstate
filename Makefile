@@ -9,11 +9,11 @@ src=$(wildcard Modules/*/*/*.cpp\
 obj=$(src:.cpp=.o)
 
 %.o: %.cpp %.hpp
-	$(CC) -o $@ -c $< -std=c++17
+	$(CC) -o $@ -c $< -std=c++17 -fPIC
 
 # template initialization files pattern
 %-imp.o: %-imp.cpp %.hpp %.cpp
-	$(CC) -o $@ -c $< -std=c++17
+	$(CC) -o $@ -c $< -std=c++17 -fPIC
 
 main.exe: main.cpp $(obj)
 	$(CC) -o main.exe $^ $(LIBS) $(CFLAGS)
@@ -23,6 +23,15 @@ solid: $(obj)
 
 solid.exe: main.cpp SOLIDstate.a 
 	$(CC) -o solid.exe main.cpp SOLIDstate.a $(LIBS) $(CFLAGS)
+
+####### Shared... #######
+shared: $(obj)
+	$(CC) -shared  -Wl,-soname,libsolid.so -o libsolid.so $(obj)
+
+main-with-shared: libsolid.so
+	$(CC) main.cpp -o main.exe -L. -lsolid $(LIBS) $(CFLAGS)
+
+#########################
 
 doxy:
 	doxygen Doxyfile
