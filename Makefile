@@ -25,6 +25,7 @@ solid.exe: main.cpp SOLIDstate.a
 	$(CC) -o solid.exe main.cpp SOLIDstate.a $(LIBS) $(CFLAGS)
 
 ####### Shared... #######
+# export LD_LIBRARY_PATH=.
 shared: $(obj)
 	$(CC) -shared  -Wl,-soname,libsolid.so -o libsolid.so $(obj)
 

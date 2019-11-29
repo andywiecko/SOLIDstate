@@ -5,7 +5,7 @@ using namespace arma;
 using namespace solid;
 
 #include <functional>
-
+#include "Modules/Misc/DirectSum.hpp"
 template <typename T>
 using dataContainer = arma::SpMat<T>;
 
@@ -167,6 +167,12 @@ int main(int argc, char *argv[])
 	qSystem.Fill();
 	qSystem.hamiltonian.matrixElements.print();
 	*/
+
+	arma::Mat<double> A(4,4);
+	A.fill(4);
+	arma::Mat<double> B(3,3);
+	B.fill(3);
+	DirectSum(A,B).print();
 
 	Info::Time();
 
