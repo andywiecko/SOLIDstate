@@ -754,6 +754,7 @@ INPUT                  = Modules/ \
                          Modules/Info \
                          Modules/Laboratory \
                          Modules/MatrixElementFiller \
+                         Modules/Misc \
                          Modules/Observable \
                          Modules/Parameters \
                          Modules/QuantumDynamics \
