@@ -3,6 +3,8 @@ CC=g++
 CFLAGS= -O3 -std=c++17
 LIBS= -larmadillo
 
+INCLUDE_PATH=/usr/include
+
 src=$(wildcard Modules/*/*/*/*.cpp\
 	  wildcard Modules/*/*/*.cpp\
 	  wildcard Modules/*/*.cpp\
@@ -46,8 +48,9 @@ doxy:
 	@echo "########################################"
 
 install:
-	@echo "Copying into /usr/include
-
+	@echo "Copying into ${INCLUDE_PATH}"
+	cp Modules/SOLIDstate.hpp ${INCLUDE_PATH}/.
+	rsync -rav --exclude="*.cpp" --exclude="*.o"  Modules/SOLIDstate ${INCLUDE_PATH}/.
 
 .PHONY : clean
 clean:

@@ -1,5 +1,5 @@
-#include "Modules/SOLIDstate.hpp"
- 
+//#include "Modules/SOLIDstate.hpp"
+#include <SOLIDstate.hpp> 
 #include <armadillo>
 using namespace arma;
 using namespace solid;
