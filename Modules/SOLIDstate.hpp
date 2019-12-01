@@ -11,51 +11,51 @@
 #ifndef SOLIDSTATE_HPP
 #define SOLIDSTATE_HPP
 
-#include "Combinadics/BaseState.hpp"
-#include "Combinadics/Binomials.hpp"
-#include "Combinadics/Combinadics.hpp"
+#include "SOLIDstate/Combinadics/BaseState.hpp"
+#include "SOLIDstate/Combinadics/Binomials.hpp"
+#include "SOLIDstate/Combinadics/Combinadics.hpp"
 
-#include "Ensemble/Ensemble.hpp"
-#include "Ensemble/Sector.hpp"
-#include "Ensemble/Canonical.hpp"
-#include "Ensemble/GrandCanonical.hpp"
-#include "Ensemble/ParityGrandCanonical.hpp"
+#include "SOLIDstate/Ensemble/Ensemble.hpp"
+#include "SOLIDstate/Ensemble/Sector.hpp"
+#include "SOLIDstate/Ensemble/Canonical.hpp"
+#include "SOLIDstate/Ensemble/GrandCanonical.hpp"
+#include "SOLIDstate/Ensemble/ParityGrandCanonical.hpp"
 
-#include "Eigensolver/Eigensolver.hpp"
+#include "SOLIDstate/Eigensolver/Eigensolver.hpp"
 
-#include "Hamiltonian/Hamiltonian.hpp"
-#include "Hamiltonian/KitaevHamiltonian.hpp"
+#include "SOLIDstate/Hamiltonian/Hamiltonian.hpp"
+#include "SOLIDstate/Hamiltonian/KitaevHamiltonian.hpp"
 
-#include "Factory/Factory.hpp"
+#include "SOLIDstate/Factory/Factory.hpp"
 
-#include "Geometry/Geometry.hpp"
-#include "Geometry/Chain.hpp"
-#include "Geometry/Ring.hpp"
+#include "SOLIDstate/Geometry/Geometry.hpp"
+#include "SOLIDstate/Geometry/Chain.hpp"
+#include "SOLIDstate/Geometry/Ring.hpp"
 
-#include "HilbertSpace/HilbertSpace.hpp"
+#include "SOLIDstate/HilbertSpace/HilbertSpace.hpp"
 
-#include "Info/Info.hpp"
-#include "Info/Argv.hpp"
+#include "SOLIDstate/Info/Info.hpp"
+#include "SOLIDstate/Info/Argv.hpp"
 //#include "Info/Version.hpp"
 
-#include "Laboratory/Laboratory.hpp"
+#include "SOLIDstate/Laboratory/Laboratory.hpp"
 
-#include "QuantumSystem/QuantumSystem.hpp"
-#include "QuantumState/QuantumState.hpp"
+#include "SOLIDstate/QuantumSystem/QuantumSystem.hpp"
+#include "SOLIDstate/QuantumState/QuantumState.hpp"
 
-#include "Terms/Terms.hpp"
+#include "SOLIDstate/Terms/Terms.hpp"
 
-#include "QuantumDynamics/DynamicsSchedule.hpp"
-#include "QuantumDynamics/QuantumDynamics.hpp"
+#include "SOLIDstate/QuantumDynamics/DynamicsSchedule.hpp"
+#include "SOLIDstate/QuantumDynamics/QuantumDynamics.hpp"
 
-#include "MatrixElementFiller/MatrixElementFiller.hpp"
+#include "SOLIDstate/MatrixElementFiller/MatrixElementFiller.hpp"
 
-#include "Observable/Observable.hpp"
-#include "Observable/ParticleNumberOperator.hpp"
-#include "Observable/ParityOperator.hpp"
+#include "SOLIDstate/Observable/Observable.hpp"
+#include "SOLIDstate/Observable/ParticleNumberOperator.hpp"
+#include "SOLIDstate/Observable/ParityOperator.hpp"
 
-#include "Parameters/Parameters.hpp"
-#include "Parameters/ParametersChecker.hpp"
+#include "SOLIDstate/Parameters/Parameters.hpp"
+#include "SOLIDstate/Parameters/ParametersChecker.hpp"
 
 /**
  * @mainpage SOLIDstate: C++ library

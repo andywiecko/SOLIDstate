@@ -1,8 +1,10 @@
+
 CC=g++
 CFLAGS= -O3 -std=c++17
 LIBS= -larmadillo
 
-src=$(wildcard Modules/*/*/*.cpp\
+src=$(wildcard Modules/*/*/*/*.cpp\
+	  wildcard Modules/*/*/*.cpp\
 	  wildcard Modules/*/*.cpp\
       wildcard Modules/*.cpp\
 	  )
@@ -43,6 +45,17 @@ doxy:
 	@echo "[!] REMEMBER modify INPUT in Doxyfile"
 	@echo "########################################"
 
+install:
+	@echo "Copying into /usr/include
+
+
 .PHONY : clean
 clean:
+	@echo "cleaning..."
 	rm -f $(obj) main.exe
+
+
+help:
+	@echo "These make targets are avaliable:"
+	@echo "― all (default)"
+	@echo "― doxy (it creates doxygen documentation)"

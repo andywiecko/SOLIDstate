@@ -744,28 +744,28 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = Modules/ \
-                         Modules/Combinadics \
-                         Modules/Eigensolver \
-                         Modules/Ensemble \
-                         Modules/Factory \
-                         Modules/Geometry \
-                         Modules/Hamiltonian \
-                         Modules/HilbertSpace \
-                         Modules/Info \
-                         Modules/Laboratory \
-                         Modules/MatrixElementFiller \
-                         Modules/Misc \
-                         Modules/Observable \
-                         Modules/Parameters \
-                         Modules/QuantumDynamics \
-                         Modules/QuantumDynamics/Solvers \
-                         Modules/QuantumState \
-                         Modules/QuantumSystem \
-                         Modules/Terms \
-                         Modules/Terms/CreatePair \
-                         Modules/Terms/Hop \
-                         Modules/Terms/OneBodyInteraction \
-                         Modules/Terms/TwoBodyInteraction \
+                         Modules/SOLIDstate/Combinadics \
+                         Modules/SOLIDstate/Eigensolver \
+                         Modules/SOLIDstate/Ensemble \
+                         Modules/SOLIDstate/Factory \
+                         Modules/SOLIDstate/Geometry \
+                         Modules/SOLIDstate/Hamiltonian \
+                         Modules/SOLIDstate/HilbertSpace \
+                         Modules/SOLIDstate/Info \
+                         Modules/SOLIDstate/Laboratory \
+                         Modules/SOLIDstate/MatrixElementFiller \
+                         Modules/SOLIDstate/Misc \
+                         Modules/SOLIDstate/Observable \
+                         Modules/SOLIDstate/Parameters \
+                         Modules/SOLIDstate/QuantumDynamics \
+                         Modules/SOLIDstate/QuantumDynamics/Solvers \
+                         Modules/SOLIDstate/QuantumState \
+                         Modules/SOLIDstate/QuantumSystem \
+                         Modules/SOLIDstate/Terms \
+                         Modules/SOLIDstate/Terms/CreatePair \
+                         Modules/SOLIDstate/Terms/Hop \
+                         Modules/SOLIDstate/Terms/OneBodyInteraction \
+                         Modules/SOLIDstate/Terms/TwoBodyInteraction \
                          main.cpp \
                          README.md \
                          LICENSE.md \
