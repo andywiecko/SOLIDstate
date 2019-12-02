@@ -178,13 +178,13 @@ class Index extends React.Component {
             title: 'Switch between matrix types',
           },
           {
-            content: 'Easly switch between different statistical ensembles: `Canonical`, `Grand canonical`, `Parity Conserved Grand Canonical`',
+            content: 'Easly switch between different statistical ensembles: `Canonical`, `Grand canonical`, `Parity Conserved Grand Canonical` and more',
             image: `${baseUrl}img/undraw_operating_system.svg`,
             imageAlign: 'top',
             title: 'Switch between ensembles',
           },
           {
-            content: 'Easly switch between different data types: `float`, `double`, `complex<double>`, `complex<float>`',
+            content: 'Easly switch between different data types: `double`, `complex<double>`',
             image: `${baseUrl}img/undraw_operating_system.svg`,
             imageAlign: 'top',
             title: 'Switch between data types',
