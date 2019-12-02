@@ -744,28 +744,28 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = Modules/ \
-                         Modules/SOLIDstate/Combinadics \
-                         Modules/SOLIDstate/Eigensolver \
-                         Modules/SOLIDstate/Ensemble \
-                         Modules/SOLIDstate/Factory \
-                         Modules/SOLIDstate/Geometry \
-                         Modules/SOLIDstate/Hamiltonian \
-                         Modules/SOLIDstate/HilbertSpace \
-                         Modules/SOLIDstate/Info \
-                         Modules/SOLIDstate/Laboratory \
-                         Modules/SOLIDstate/MatrixElementFiller \
-                         Modules/SOLIDstate/Misc \
-                         Modules/SOLIDstate/Observable \
-                         Modules/SOLIDstate/Parameters \
-                         Modules/SOLIDstate/QuantumDynamics \
-                         Modules/SOLIDstate/QuantumDynamics/Solvers \
-                         Modules/SOLIDstate/QuantumState \
-                         Modules/SOLIDstate/QuantumSystem \
-                         Modules/SOLIDstate/Terms \
-                         Modules/SOLIDstate/Terms/CreatePair \
-                         Modules/SOLIDstate/Terms/Hop \
-                         Modules/SOLIDstate/Terms/OneBodyInteraction \
-                         Modules/SOLIDstate/Terms/TwoBodyInteraction \
+                         Modules/SOLIDstate_bits/Combinadics \
+                         Modules/SOLIDstate_bits/Eigensolver \
+                         Modules/SOLIDstate_bits/Ensemble \
+                         Modules/SOLIDstate_bits/Factory \
+                         Modules/SOLIDstate_bits/Geometry \
+                         Modules/SOLIDstate_bits/Hamiltonian \
+                         Modules/SOLIDstate_bits/HilbertSpace \
+                         Modules/SOLIDstate_bits/Info \
+                         Modules/SOLIDstate_bits/Laboratory \
+                         Modules/SOLIDstate_bits/MatrixElementFiller \
+                         Modules/SOLIDstate_bits/Misc \
+                         Modules/SOLIDstate_bits/Observable \
+                         Modules/SOLIDstate_bits/Parameters \
+                         Modules/SOLIDstate_bits/QuantumDynamics \
+                         Modules/SOLIDstate_bits/QuantumDynamics/Solvers \
+                         Modules/SOLIDstate_bits/QuantumState \
+                         Modules/SOLIDstate_bits/QuantumSystem \
+                         Modules/SOLIDstate_bits/Terms \
+                         Modules/SOLIDstate_bits/Terms/CreatePair \
+                         Modules/SOLIDstate_bits/Terms/Hop \
+                         Modules/SOLIDstate_bits/Terms/OneBodyInteraction \
+                         Modules/SOLIDstate_bits/Terms/TwoBodyInteraction \
                          main.cpp \
                          README.md \
                          LICENSE.md \

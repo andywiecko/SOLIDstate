@@ -1,11 +1,11 @@
-//#include "Modules/SOLIDstate.hpp"
-#include <SOLIDstate.hpp> 
+#include "Modules/SOLIDstate.hpp"
+//#include <SOLIDstate> 
 #include <armadillo>
 using namespace arma;
 using namespace solid;
 
 #include <functional>
-#include "Modules/SOLIDstate/Misc/DirectSum.hpp"
+#include "Modules/SOLIDstate_bits/Misc/DirectSum.hpp"
 template <typename T>
 using dataContainer = arma::SpMat<T>;
 

@@ -46,7 +46,8 @@ main-with-so: lib$(SONAME).so.$(VERSION_FULL)
 install:
 	@echo "Copying Includes into ${INCLUDE_PATH}"
 	cp Modules/SOLIDstate.hpp ${INCLUDE_PATH}/.
-	rsync -rav --exclude="*.cpp" --exclude="*.o"  Modules/SOLIDstate ${INCLUDE_PATH}/.
+	cp Modules/SOLIDstate ${INCLUDE_PATH}/.
+	rsync -rav --exclude="*.cpp" --exclude="*.o"  Modules/SOLIDstate_bits ${INCLUDE_PATH}/.
 	
 	@echo "Setting Links in $(LINKS_PATH)"
 	cp lib$(SONAME).so.$(VERSION_FULL) $(LINKS_PATH)
@@ -75,3 +76,7 @@ help:
 	@echo "― doxy (it creates doxygen documentation)"
 	@echo "― install (installing the lib)"
 	@echo "― clean (cleaning *.o, *.so, *.a, *.exe files)"
+	@echo
+	@echo "To install SOLIDstate:"
+	@echo " * first: 'make'"
+	@echo " * second: 'sudo make install'"
