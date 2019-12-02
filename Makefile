@@ -41,7 +41,7 @@ main.exe: main.cpp $(obj)
 	$(CC) -o main.exe $^ $(LIBS) $(CFLAGS)
 
 main-with-so: lib$(SONAME).so.$(VERSION_FULL)
-	$(CC) main.cpp -o main.exe -L. -l$(SONAME) $(LIBS) $(CFLAGS)
+	$(CC) main.cpp -o main.exe -l$(SONAME) $(LIBS) $(CFLAGS)
 
 install:
 	@echo "Copying Includes into ${INCLUDE_PATH}"
