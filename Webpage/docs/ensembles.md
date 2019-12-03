@@ -6,3 +6,6 @@ sidebar_label: Ensembles
 
 
 lalalalal
+\\[
+\hat H
+\\]

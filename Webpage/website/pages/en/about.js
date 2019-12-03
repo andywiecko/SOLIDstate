@@ -48,7 +48,7 @@ function About(props) {
           </header>
           <MarkdownBlock>
         SOLIDstate is a C++ library, which main purpose is to study 
-        (relatively small systems up to $ L\sim30 \$) strongly correlated systems.
+        (relatively small systems up to \\( L\sim30 \\) strongly correlated systems.
         SOLIDstate depends on powerful C++ template library [Armadillo](http://arma.sourceforge.net/).
         Main feature is that user can easly specify 
         type of the solving predefined Hamiltonians (sparse/dense),
