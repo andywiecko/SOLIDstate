@@ -109,12 +109,16 @@ class Index extends React.Component {
       </Container>
     );
 
+    const featureContent = "These are features of this project:\n * a \n * b\n * c alal";
+
     const FeatureCallout = () => (
       <div
         className="productShowcaseSection paddingBottom"
         style={{ textAlign: 'center' }}>
         <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        <MarkdownBlock>
+          {featureContent}
+        </MarkdownBlock>
       </div>
     );
 
@@ -139,7 +143,8 @@ class Index extends React.Component {
         {[
           {
             content:
-              'SOLIDstate is a dynamic shared C++ library designed for small quantum system studies with many-body interactions.',
+              'SOLIDstate is a dynamic shared C++ library designed for small quantum system studies with many-body interactions.\
+              Library includes few models, pre-defined geometries, solving eigenequation, measuring observables or studing quantum dynamics.',
             image: `${baseUrl}img/undraw_science_fqhl.svg`,
             imageAlign: 'right',
             title: 'Description',
