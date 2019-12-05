@@ -1,12 +1,12 @@
 CC=g++
 CFLAGS= -O3 -std=c++17
-LIBS= -larmadillo
+LIBS= -lsolid -larmadillo
 
 src=$(wildcard *.cpp)
 exe=$(src:.cpp=.exe)
 
 examples: $(src)
-	$(CC) -o $(^:.cpp=.exe) $^ ../SOLIDstate.a $(LIBS) $(CFLAGS) 
+	$(CC) -o $(^:.cpp=.exe) $^ $(LIBS) $(CFLAGS) 
 
 .PHONY : clean
 clean:
