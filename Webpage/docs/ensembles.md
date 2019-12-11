@@ -31,8 +31,40 @@ Below there are examples of usage of the ensemles with explanatory of ensemble o
 
 ## Canonical
 
+Canonical ensmeble
+\\[
+\mathcal H = \mathcal H_N
+\\]
 
 
-## GrandCanonical
+## Grand Canonical
+Grand Canonical ensemble assumes that system can be in Hilbert Space \\(\mathcal H_N \\) with any number of particles \\(N\\).
+Total Hilbert space is equal to direct sum of all \\(\mathcal H_N\\)
+\\[
+\mathcal H = \bigoplus_{N=0}^{L} \mathcal H_N = \mathcal H_0 \oplus \mathcal H_1 \dots \oplus \dots \mathcal H_L
+\\]
 
-## ParityGrandCanonical
+`GrandCanonical` does not have any additional options
+```c++
+qSystem.SelectEnsemble<GrandCanonical>(L);
+```
+
+## Parity Grand Canonical
+
+Parity Grand Canonical is similar to Grand Canonical Ensemble, but parity symmetry is implied.
+
+One has to options for selecting system parity
+* Even parity:
+\\[
+\mathcal H = \bigoplus_{N=0}^{L/2} \mathcal H_{2N} 
+\\]
+
+* Odd parity:
+\\[
+\mathcal H = \bigoplus_{N=1}^{L/2} \mathcal H_{2N+1} 
+\\]
+
+`ParityGrandCanonical` does have additional option ― `parity` 
+```c++
+qSystem.SelectEnsemble<GrandCanonical>(L,parity);
+```
