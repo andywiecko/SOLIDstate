@@ -45,7 +45,7 @@ qSystem.SelectEnsemble<Canonical>(L,N);
 Grand Canonical ensemble assumes that system can be in Hilbert Space \\(\mathcal H_N \\) with any number of particles \\(N\\).
 Total Hilbert space is equal to direct sum of all \\(\mathcal H_N\\)
 \\[
-\mathcal H_{\textrm{grand canonical}} = \bigoplus_{N=0}^{L} \mathcal H_N = \mathcal H_0 \oplus \mathcal H_1 \dots \oplus \dots \mathcal H_L
+\mathcal H_{\textrm{grand canonical}} = \bigoplus_{N=0}^{L} \mathcal H_N = \mathcal H_0 \oplus \mathcal H_1 \oplus \cdots \oplus \mathcal H_L
 \\]
 
 `GrandCanonical` does not have any additional options
@@ -57,7 +57,7 @@ qSystem.SelectEnsemble<GrandCanonical>(L);
 
 Parity Grand Canonical is similar to Grand Canonical Ensemble, but parity symmetry is implied.
 
-One has to options for selecting system parity
+One has two options for selecting system parity
 * Even (default) parity:
 \\[
 \mathcal H_{\textrm{parity grand canonical}} = \bigoplus_{N=0}^{L/2} \mathcal H_{2N} 
@@ -73,3 +73,7 @@ If parity is even/odd number (e.g. `0,2,4,...`/`1,3,5,...`) then selected parity
 ```c++
 qSystem.SelectEnsemble<ParityGrandCanonical>(L,parity);
 ```
+
+## Custom Ensemble
+
+TODO
