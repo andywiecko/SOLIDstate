@@ -25,7 +25,7 @@ function About(props) {
       content: `Learn more using the [documentation on this site](${docUrl(
         'getting-started.html',
       )}) or browse the [API](${docUrl(
-        'api.html',
+        '../api/index.html',
       )}).`,
       title: 'Browse Docs',
     },
