@@ -31,8 +31,8 @@ class Footer extends React.Component {
               <img
                 src={this.props.config.baseUrl + this.props.config.footerIcon}
                 alt={this.props.config.title}
-                width="66"
-                height="58"
+                //width="166"
+                //height="58"
               />
             )}
           </a>
@@ -45,7 +45,7 @@ class Footer extends React.Component {
               Guides (or other categories)
             </a>
             <a href={this.docUrl('../api/index.html', this.props.language)}>
-              API Reference (or other categories)
+              API Reference
             </a>
           </div>
          

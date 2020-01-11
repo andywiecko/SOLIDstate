@@ -27,15 +27,15 @@ function About(props) {
       )}) or browse the [API](${docUrl(
         '../api/index.html',
       )}).`,
-      title: 'Browse Docs',
+      title: '**Browse Docs**',
     },
     {
       content: 'Ask questions about the documentation, project or join the project and make pull requests.',
-      title: 'Join the project',
+      title: '**Join the project**',
     },
     {
       content: "Find out what's new with this project via [Blog](blog) or [GitHub](https://github.com/andywiecko/SOLIDstate).",
-      title: 'Stay up to date',
+      title: '**Stay up to date**',
     },
   ];
 

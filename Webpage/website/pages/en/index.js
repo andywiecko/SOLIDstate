@@ -73,15 +73,14 @@ class HomeSplash extends React.Component {
 
       <SplashContainer>
         <div >
-          <TitleLogo img_src={`${baseUrl}img/logo-wide.png`} />
+          <TitleLogo img_src={`${baseUrl}img/logo-wideTransparent.png`} />
         </div>
         <div className="inner">
 
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
             <Button href="https://github.com/andywiecko/SOLIDstate">GitHub</Button>
-            <Button href={docUrl('getting-started.html')}>Example Link</Button>
+            <Button href={docUrl('example-program.html')}>Examples</Button>
             <Button href={docUrl('doc2.html')}>Download .zip v1.0.0</Button>
           </PromoSection>
         </div>
@@ -174,25 +173,25 @@ class Index extends React.Component {
             content: 'SOLIDstate depends on powerfull C++ library: [Armadillo](http://arma.sourceforge.net/)',
             image: `${baseUrl}img/armadillo_logo.png`,
             imageAlign: 'top',
-            title: '[Armadillo](http://arma.sourceforge.net/)',
+            title: '[**Armadillo**](http://arma.sourceforge.net/)',
           },
           {
             content: 'Easly switch between sparse and dense matrix types for storing Hamiltonian: `arma::Mat`, `arma::SpMat`',
             image: `${baseUrl}img/undraw_selection_92i4.svg`,
             imageAlign: 'top',
-            title: 'Switch between matrix types',
+            title: '**Switch between matrix types**',
           },
           {
             content: 'Easly switch between different statistical ensembles: `Canonical`, `Grand canonical`, `Parity Conserved Grand Canonical` and more',
             image: `${baseUrl}img/undraw_options_2fvi.svg`,
             imageAlign: 'top',
-            title: 'Switch between ensembles',
+            title: '**Switch between ensembles**',
           },
           {
             content: 'Easly switch between different data types: `double`, `complex<double>`',
             image: `${baseUrl}img/undraw_Choose_bwbs.svg`,
             imageAlign: 'top',
-            title: 'Switch between data types',
+            title: '**Switch between data types**',
           },
         ]}
       </Block>
@@ -208,6 +207,7 @@ class Index extends React.Component {
         .map(user => (
           <a href={user.infoLink} key={user.infoLink}>
             <img src={user.image} alt={user.caption} title={user.caption} />
+          <p> {user.title} </p>
           </a>
         ));
 
@@ -216,7 +216,7 @@ class Index extends React.Component {
       return (
         <div className="productShowcaseSection paddingBottom">
           <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
+          <p>This project is used by:</p>
           <div className="logos">{showcase}</div>
           <div className="more-users">
             <a className="button" href={pageUrl('users.html')}>

@@ -22,6 +22,7 @@ class Users extends React.Component {
     const showcase = siteConfig.users.map(user => (
       <a href={user.infoLink} key={user.infoLink}>
         <img src={user.image} alt={user.caption} title={user.caption} />
+        <p>{user.title}</p>
       </a>
     ));
 
@@ -31,12 +32,12 @@ class Users extends React.Component {
           <div className="showcaseSection">
             <div className="prose">
               <h1>Who is Using This?</h1>
-              <p>This project is used by many folks</p>
+              <p>This project is used by:</p>
             </div>
             <div className="logos">{showcase}</div>
             <p>Are you using this project?</p>
             <a href={editUrl} className="button">
-              Add your company
+              Add yourself
             </a>
           </div>
         </Container>
