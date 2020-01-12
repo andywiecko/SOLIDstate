@@ -7,7 +7,7 @@ sidebar_label: Example program
 Below there is attached an example program, presenting some library features.
 The file can also be found at `Examples/` directory, which is included in SOLIDstate dir.
 
-More detailed explanatory, step by step, is done in the next section [Tutorial](matrix-and-data-types.md)
+More detailed explanatory, step by step, is done in the next section [Tutorial](tutorial/matrix-and-data-types.md)
 
 `GroundStateStudies.cpp`:
 
