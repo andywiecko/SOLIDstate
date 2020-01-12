@@ -47,13 +47,13 @@ function About(props) {
           <h1>About</h1>
           </header>
           <MarkdownBlock>
-        SOLIDstate is a C++ library, which main purpose is to study 
+        SOLIDstate is a C++ library, whose main purpose is to study 
         (relatively small systems up to \\( L\sim30 \\) strongly correlated systems.
-        SOLIDstate depends on powerful C++ template library [Armadillo](http://arma.sourceforge.net/).
-        Main feature is that user can easly specify 
+        SOLIDstate depends on the powerful C++ template library [Armadillo](http://arma.sourceforge.net/).
+        The main feature is that user can easily specify the
         type of the solving predefined Hamiltonians (sparse/dense),
         type of the data (double/complex),
-        type of the considering statistical ensemble,
+        type of the considering statistical ensemble, and more...
         </MarkdownBlock>
         
         <h2>Help</h2> 

@@ -7,8 +7,6 @@
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
-  },
-  "api": {
-    "Kat 1.": ["api"]
   }
+  
 }

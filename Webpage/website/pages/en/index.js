@@ -73,7 +73,7 @@ class HomeSplash extends React.Component {
 
       <SplashContainer>
         <div >
-          <TitleLogo img_src={`${baseUrl}img/logo-wideTransparent.png`} />
+          <TitleLogo img_src={`${baseUrl}img/logoWide.png`} />
         </div>
         <div className="inner">
 

@@ -22,7 +22,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: '',//'SOLIDstate', // Title for your website.
+  title: 'SOLIDstate', // Title for your website.
   tagline: 'A C++ library for solid state physics (Work In Progress)',
   url: 'https://andywiecko.github.io', // Your website URL
   baseUrl: '/solid/', // Base URL for your project */
@@ -40,7 +40,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'getting-started', label: 'Documentation'},
-    {href: 'api/index.html', label: 'API'},
+    {href: '/solid/api/index.html', label: 'API'},
     {doc: 'doc4', label: 'Example codes'},
     {page: 'about', label: 'About'},
     {blog: true, label: 'Blog'},
@@ -50,9 +50,11 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/logo-wideTransparentWhite.png',
-  footerIcon: 'img/logoTransparentWhite.png',
+  headerIcon: 'img/logoWideWhite.png',
+  footerIcon: 'img/logoWhite.png',
   favicon: 'img/favicon.png',
+
+  disableHeaderTitle: true,
 
   /* Colors for website */
   colors: {
@@ -73,6 +75,11 @@ const siteConfig = {
     ]
   },
   */
+ 
+  stylesheets: [
+  'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700',
+  ],
+
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Andrzej Więckowski`,
@@ -107,6 +114,10 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/andywiecko/SOLIDstate',
+
+
+  scrollToTop: true,
+
 };
 
 module.exports = siteConfig;
