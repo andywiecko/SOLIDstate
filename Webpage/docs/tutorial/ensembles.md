@@ -7,6 +7,7 @@ sidebar_label: Ensembles
 ## Ensambles overview
 
 Current version of the `SOLIDstate` supports the following statistical ensembles:
+
 * `Canonical` ― enesemble with fixed number of particles,
 * `GrandCanonical` ― ensemble with all possible configuration with any number of particles in the system,
 * `ParityGrandCanonical` ― similar to `GrandCanonical`, but with fixed parity of the particle number.

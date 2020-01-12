@@ -1,12 +1,21 @@
 {
   "docs": {
-    "Getting started": ["getting-started","example-program"],
-    "Tutorial": ["matrix-and-data-types","ensembles","terms","parameters-and-geometry","hamiltonians"],
-    "Bleble ble": ["doc2"],
-    "Hamiltonians": ["doc3"]
+    "Getting started": [
+      "getting-started",
+      "example-program"],
+    "Tutorial": [
+      "tutorial/matrix-and-data-types",
+      "tutorial/ensembles",
+      "tutorial/terms",
+      "tutorial/parameters-and-geometry",
+      "tutorial/hamiltonians"],
+    "Hamiltonians": ["hamiltonians/tV"]
+
   },
   "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "Examples": [
+      "examples/example1",
+       "examples/example2"]
   }
   
 }

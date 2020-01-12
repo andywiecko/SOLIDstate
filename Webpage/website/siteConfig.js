@@ -41,7 +41,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'getting-started', label: 'Documentation'},
     {href: '/solid/api/index.html', label: 'API'},
-    {doc: 'doc4', label: 'Example codes'},
+    {doc: 'examples/example1', label: 'Example codes'},
     {page: 'about', label: 'About'},
     {blog: true, label: 'Blog'},
   ],

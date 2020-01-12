@@ -1,5 +1,5 @@
 ---
-id: doc5
+id: example2
 title: Fifth Document
 ---
 

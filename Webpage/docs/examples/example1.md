@@ -1,5 +1,5 @@
 ---
-id: doc4
+id: example1
 title: Other Document
 ---
 
