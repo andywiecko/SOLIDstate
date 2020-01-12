@@ -1,6 +1,6 @@
 ---
 id: example2
-title: Fifth Document
+title: Example 2
 ---
 
-Another one
+TODO

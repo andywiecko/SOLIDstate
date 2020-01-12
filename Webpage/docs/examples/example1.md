@@ -1,6 +1,6 @@
 ---
 id: example1
-title: Other Document
+title: Example 1
 ---
 
-this is another document
+TODO
