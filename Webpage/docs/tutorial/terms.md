@@ -6,9 +6,9 @@ sidebar_label: Terms
 
 ## Terms preliminaries
 
-Before we describe Hamiltonians, which are avaliable, let's briefly describe terms, which are current implemented in SOLIDstate.
+Before we describe Hamiltonians, which are available, let's briefly describe terms, which are currently implemented in SOLIDstate.
 
-Current version of the SOLIDstate has support only for  terms which can be described up to second rank tensor (matrix), which corresponds up to two-body terms.
+The current version of the SOLIDstate has support only for  terms that can be described up to second rank tensor (matrix), which corresponds up to two-body terms.
 
 ## Hop
 

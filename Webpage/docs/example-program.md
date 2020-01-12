@@ -5,12 +5,12 @@ sidebar_label: Example program
 ---
 
 Below there is attached an example program, presenting some library features.
-File can also be found at `Examples/` directory, which is included in SOLIDstate dir.
+The file can also be found at `Examples/` directory, which is included in SOLIDstate dir.
 
 More detailed explanatory, step by step, is done in the next section [Tutorial](matrix-and-data-types.md)
 
-
 `GroundStateStudies.cpp`:
+
 ```c++
 #include <armadillo>
 #include <SOLIDstate.hpp>
@@ -82,6 +82,7 @@ Compile with the following:
 ```bash
 g++ GroundStateStudies.cpp -o GroundStateStudies.exe -O3 -larmadillo -lsolid
 ```
+
 **Caveat:** make sure that you have installed g++ in version at least 7.4.0
 
-Remember to always add a proper optimalisation option during runing the make file: option `-O3` is recommended. 
+Remember to always add a proper optimization option during running the make file: option `-O3` is recommended.
