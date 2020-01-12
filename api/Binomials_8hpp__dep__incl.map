@@ -1,0 +1,51 @@
+<map id="Modules/SOLIDstate_bits/Combinadics/Binomials.hpp" name="Modules/SOLIDstate_bits/Combinadics/Binomials.hpp">
+<area shape="rect" id="node2" href="$SOLIDstate_8hpp.html" title="Modules/SOLIDstate.hpp" alt="" coords="2138,916,2307,943"/>
+<area shape="rect" id="node4" href="$Sector_8hpp.html" title="Sector header. " alt="" coords="3844,97,4023,138"/>
+<area shape="rect" id="node40" href="$Combinadics_8cpp.html" title="Combinadics implementation. " alt="" coords="4227,389,4460,430"/>
+<area shape="rect" id="node42" href="$Canonical_8hpp.html" title="Canonical Ensemble header. " alt="" coords="1997,285,2195,326"/>
+<area shape="rect" id="node50" href="$Binomials_8cpp.html" title="Binomials implementation. " alt="" coords="4536,97,4752,138"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="main.cpp" alt="" coords="2185,1020,2259,1047"/>
+<area shape="rect" id="node5" href="$Combinadics_8hpp.html" title="Combinadics header. " alt="" coords="4072,285,4305,326"/>
+<area shape="rect" id="node41" href="$Ensemble_8hpp.html" title="Ensemble interface and parent class header. " alt="" coords="2279,187,2477,229"/>
+<area shape="rect" id="node45" href="$GrandCanonical_8hpp.html" title="Grand Canonical header. " alt="" coords="3712,285,3945,326"/>
+<area shape="rect" id="node47" href="$ParityGrandCanonical_8hpp.html" title="Parity Grand Canonical header. " alt="" coords="2895,277,3080,333"/>
+<area shape="rect" id="node49" href="$Sector_8cpp.html" title="Modules/SOLIDstate\l_bits/Ensemble/Sector.cpp" alt="" coords="4023,187,4201,229"/>
+<area shape="rect" id="node6" href="$HilbertSpace_8hpp.html" title="Hilbert Space header. " alt="" coords="3621,381,3792,437"/>
+<area shape="rect" id="node7" href="$QuantumSystem_8hpp.html" title="Quantum System class header. " alt="" coords="2424,485,2576,541"/>
+<area shape="rect" id="node37" href="$QuantumSystem_8cpp.html" title="Quantum System class implementation. " alt="" coords="3773,693,3925,749"/>
+<area shape="rect" id="node39" href="$HilbertSpace_8cpp.html" title="Hilber Space implementation. " alt="" coords="3880,485,4051,541"/>
+<area shape="rect" id="node8" href="$StandardMessages_8hpp.html" title="Standard Messages header. " alt="" coords="1703,597,1920,638"/>
+<area shape="rect" id="node10" href="$Eigensolver_8hpp.html" title="Eigensolver class header. " alt="" coords="368,805,587,846"/>
+<area shape="rect" id="node12" href="$Eigensolver_8cpp.html" title="Modules/SOLIDstate\l_bits/Eigensolver/Eigensolver.cpp" alt="" coords="843,909,1061,950"/>
+<area shape="rect" id="node14" href="$Laboratory_8hpp.html" title="Laboratory class header. " alt="" coords="1072,805,1277,846"/>
+<area shape="rect" id="node21" href="$QuantumState_8hpp.html" title="Quantum State class header. " alt="" coords="1813,693,2008,749"/>
+<area shape="rect" id="node22" href="$QuantumDynamics_8hpp.html" title="Quantum Dynamics class header. " alt="" coords="1403,797,1569,853"/>
+<area shape="rect" id="node25" href="$Hop_8hpp.html" title="Hop term class header. " alt="" coords="2631,701,2803,742"/>
+<area shape="rect" id="node27" href="$TermsEnumConverter_8hpp.html" title="Terms Enum Converter class header. " alt="" coords="3269,805,3516,846"/>
+<area shape="rect" id="node29" href="$Terms_8hpp.html" title="Terms interface header. " alt="" coords="2632,597,2789,638"/>
+<area shape="rect" id="node30" href="$OneBodyInteraction_8hpp.html" title="One Body Interaction header. " alt="" coords="2396,693,2605,749"/>
+<area shape="rect" id="node32" href="$TwoBodyInteraction_8hpp.html" title="Two Body Interaction class header. " alt="" coords="2828,693,3037,749"/>
+<area shape="rect" id="node34" href="$CreatePair_8hpp.html" title="Create Pair term header. " alt="" coords="3063,693,3220,749"/>
+<area shape="rect" id="node36" href="$MatrixElementFiller_8hpp.html" title="Matrix Element Filler header. " alt="" coords="3486,589,3652,645"/>
+<area shape="rect" id="node9" href="$Info_8hpp.html" title="Info class header. " alt="" coords="999,701,1143,742"/>
+<area shape="rect" id="node19" href="$StandardMessages_8cpp.html" title="Standard Messages implementation. " alt="" coords="779,805,996,846"/>
+<area shape="rect" id="node13" href="$Argv_8hpp.html" title="Argv Parser class header. " alt="" coords="1595,805,1739,846"/>
+<area shape="rect" id="node16" href="$Factory_8cpp.html" title="Factory implementation. " alt="" coords="173,805,344,846"/>
+<area shape="rect" id="node18" href="$Info_8cpp.html" title="Info class implementation. " alt="" coords="5,805,149,846"/>
+<area shape="rect" id="node20" href="$Timer_8cpp.html" title="Timer class implementation. " alt="" coords="611,805,755,846"/>
+<area shape="rect" id="node11" href="$AdiabaticSolver_8hpp.html" title="Adiabatic Solver (IQuantumDynamicSolver implementation) header. " alt="" coords="1337,1005,1527,1061"/>
+<area shape="rect" id="node15" href="$Laboratory_8cpp.html" title="Laboratory class implementation. " alt="" coords="1085,909,1291,950"/>
+<area shape="rect" id="node17" href="$Factory-imp_8cpp.html" title="Factory templates initialization. " alt="" coords="185,901,332,957"/>
+<area shape="rect" id="node24" href="$QuantumState_8cpp.html" title="Modules/SOLIDstate\l_bits/QuantumState/Quantum\lState.cpp" alt="" coords="1813,797,2008,853"/>
+<area shape="rect" id="node23" href="$QuantumDynamicSolver_8hpp.html" title="QuantumDynamicSolver interface header. " alt="" coords="1391,901,1632,957"/>
+<area shape="rect" id="node26" href="$TermsTypeConverter_8hpp.html" title="Terms Type Converter class header. " alt="" coords="2768,805,3011,846"/>
+<area shape="rect" id="node28" href="$Hop_8cpp.html" title="Hop term implementation. " alt="" coords="2571,805,2743,846"/>
+<area shape="rect" id="node31" href="$OneBodyInteraction_8cpp.html" title="One Body Interaction implementation. " alt="" coords="2336,797,2545,853"/>
+<area shape="rect" id="node33" href="$TwoBodyInteraction_8cpp.html" title="Two Body Interaction class implementation. " alt="" coords="3035,797,3244,853"/>
+<area shape="rect" id="node35" href="$CreatePair_8cpp.html" title="Create Pair term implementation. " alt="" coords="3541,797,3699,853"/>
+<area shape="rect" id="node38" href="$QuantumSystem-imp_8cpp.html" title="Quantum System template initialization. " alt="" coords="3774,797,3948,853"/>
+<area shape="rect" id="node43" href="$Factory_8hpp.html" title="Factory header. " alt="" coords="2184,389,2355,430"/>
+<area shape="rect" id="node44" href="$Canonical_8cpp.html" title="Canonical Ensemble implementation. " alt="" coords="1861,389,2059,430"/>
+<area shape="rect" id="node46" href="$GrandCanonical_8cpp.html" title="Grand Canonical Ensemble implementation. " alt="" coords="3867,389,4100,430"/>
+<area shape="rect" id="node48" href="$ParityGrandCanonical_8cpp.html" title="Parity Grand Canonical implementation. " alt="" coords="2895,381,3080,437"/>
+</map>

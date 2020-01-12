@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['quantumstate',['QuantumState',['../classsolid_1_1QuantumState.html#ab9365a752a3d53c9dce5d513f1df5d36',1,'solid::QuantumState::QuantumState()'],['../classsolid_1_1QuantumState.html#a62d2cb14b70895197ddb9feed7ec5ed3',1,'solid::QuantumState::QuantumState(arma::Col&lt; T &gt; vec)'],['../classsolid_1_1QuantumState.html#a6f8cc6dc4856dfb646c449e28e24c5c7',1,'solid::QuantumState::QuantumState(arma::subview_col&lt; T &gt; vec)'],['../classsolid_1_1QuantumState.html#ab59a225999f963ed136a65748a2b75f2',1,'solid::QuantumState::QuantumState(QuantumState&lt; T2 &gt; &amp;qState)'],['../classsolid_1_1QuantumState.html#ae78b4c060253e96f5ab3111621341159',1,'solid::QuantumState::QuantumState(QuantumState&lt; double &gt; &amp;qState)'],['../classsolid_1_1QuantumState.html#a61260fa4f6e31af3424b3e3314444208',1,'solid::QuantumState::QuantumState(QuantumState&lt; arma::cx_double &gt; &amp;qState)']]]
+];

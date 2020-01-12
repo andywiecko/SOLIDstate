@@ -1,0 +1,7 @@
+<map id="Modules/SOLIDstate_bits/Observable/ParticleNumberOperator.hpp" name="Modules/SOLIDstate_bits/Observable/ParticleNumberOperator.hpp">
+<area shape="rect" id="node2" href="$Observable_8hpp.html" title="Interface and class parent for Observables. " alt="" coords="215,109,328,136"/>
+<area shape="rect" id="node3" href="$Hamiltonian_8hpp.html" title="Hamiltonian interface and parrent class header. " alt="" coords="59,184,260,211"/>
+<area shape="rect" id="node7" href="$Parameters_8hpp.html" title="Parameters class header. " alt="" coords="285,184,483,211"/>
+<area shape="rect" id="node4" href="$TermsEnabled_8hpp.html" title="TermsEnabled header. " alt="" coords="95,259,224,285"/>
+<area shape="rect" id="node5" href="$TermsEnum_8hpp.html" title="Terms enum class. " alt="" coords="5,333,176,360"/>
+</map>

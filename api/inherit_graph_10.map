@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classsolid_1_1Ensemble.html" title="Ensemble parent class. " alt="" coords="8,31,123,57"/>
+<area shape="rect" id="node2" href="$classsolid_1_1Canonical.html" title="Ensemble: Canonical (int L, int N) with: L – sites N – particles. " alt="" coords="208,5,323,32"/>
+<area shape="rect" id="node3" href="$classsolid_1_1GrandCanonical.html" title="Ensemble: GrandCanonical (int L) with: L – sites. " alt="" coords="190,56,341,83"/>
+<area shape="rect" id="node4" href="$classsolid_1_1ParityGrandCanonical.html" title="Ensemble: ParityGrandCanonical (int L, int parity) with: L – sites parity – parity Sector (even or od..." alt="" coords="173,107,357,133"/>
+<area shape="rect" id="node5" href="$classsolid_1_1IEnsemble.html" title="interface for Ensemble class " alt="" coords="6,81,125,108"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classsolid_1_1IOperatorParameters.html" title="interface for Observable class " alt="" coords="5,5,184,46"/>
+<area shape="rect" id="node2" href="$classsolid_1_1ParityOperator.html" title="implementation of the ParityOperator " alt="" coords="260,5,401,46"/>
+<area shape="rect" id="node3" href="$classsolid_1_1ParticleNumberOperator.html" title="implementation of the Total ParticleNumberOperator " alt="" coords="232,70,429,111"/>
+<area shape="rect" id="node4" href="$classsolid_1_1Observable.html" title="Observable parent class. " alt="" coords="29,70,160,111"/>
+</map>

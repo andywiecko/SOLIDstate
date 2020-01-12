@@ -1,0 +1,34 @@
+<map id="Modules/SOLIDstate_bits/QuantumDynamics/Solvers/SolverSwitcher.hpp" name="Modules/SOLIDstate_bits/QuantumDynamics/Solvers/SolverSwitcher.hpp">
+<area shape="rect" id="node2" href="$QuantumDynamicSolver_8hpp.html" title="QuantumDynamicSolver interface header. " alt="" coords="2601,184,2791,211"/>
+<area shape="rect" id="node33" href="$RungeKutta4_8hpp.html" title="Runge Kutta 4 method class header. " alt="" coords="2663,109,2785,136"/>
+<area shape="rect" id="node34" href="$AdiabaticSolver_8hpp.html" title="Adiabatic Solver (IQuantumDynamicSolver implementation) header. " alt="" coords="2500,109,2639,136"/>
+<area shape="rect" id="node41" href="$StrToInt_8hpp.html" title="../../Misc/StrToInt.hpp" alt="" coords="2810,109,2960,136"/>
+<area shape="rect" id="node3" href="$QuantumDynamics_8hpp.html" title="Quantum Dynamics class header. " alt="" coords="2464,259,2635,285"/>
+<area shape="rect" id="node6" href="$QuantumSystem_8hpp.html" title="Quantum System class header. " alt="" coords="1727,409,1916,450"/>
+<area shape="rect" id="node15" href="$TermsEnabled_8hpp.html" title="TermsEnabled header. " alt="" coords="512,813,641,840"/>
+<area shape="rect" id="node17" href="$Parameters_8hpp.html" title="Parameters class header. " alt="" coords="1767,739,1964,765"/>
+<area shape="rect" id="node30" href="$QuantumState_8hpp.html" title="Quantum State class header. " alt="" coords="1523,333,1753,360"/>
+<area shape="rect" id="node32" href="$DynamicsSchedule_8hpp.html" title="Dynamics Schedule header. " alt="" coords="1956,664,2115,691"/>
+<area shape="rect" id="node7" href="$HilbertSpace_8hpp.html" title="Hilbert Space header. " alt="" coords="1011,581,1224,608"/>
+<area shape="rect" id="node14" href="$Hamiltonian_8hpp.html" title="Hamiltonian interface and parrent class header. " alt="" coords="999,739,1200,765"/>
+<area shape="rect" id="node19" href="$Geometry_8hpp.html" title="Geometry class header. " alt="" coords="1653,664,1829,691"/>
+<area shape="rect" id="node20" href="$Observable_8hpp.html" title="Interface and class parent for Observables. " alt="" coords="1383,664,1577,691"/>
+<area shape="rect" id="node21" href="$Factory_8hpp.html" title="Factory header. " alt="" coords="1186,499,1336,525"/>
+<area shape="rect" id="node8" href="$Ensemble_8hpp.html" title="Ensemble interface and parent class header. " alt="" coords="385,664,564,691"/>
+<area shape="rect" id="node12" href="$Combinadics_8hpp.html" title="Combinadics header. " alt="" coords="854,664,1068,691"/>
+<area shape="rect" id="node10" href="$Sector_8hpp.html" title="Sector header. " alt="" coords="656,739,741,765"/>
+<area shape="rect" id="node11" href="$Binomials_8hpp.html" title="Binomials header. " alt="" coords="667,813,863,840"/>
+<area shape="rect" id="node13" href="$BaseState_8hpp.html" title="BaseState header. " alt="" coords="1290,813,1397,840"/>
+<area shape="rect" id="node16" href="$TermsEnum_8hpp.html" title="Terms enum class. " alt="" coords="892,888,1063,915"/>
+<area shape="rect" id="node22" href="$Canonical_8hpp.html" title="Canonical Ensemble header. " alt="" coords="144,581,323,608"/>
+<area shape="rect" id="node23" href="$GrandCanonical_8hpp.html" title="Grand Canonical header. " alt="" coords="499,581,713,608"/>
+<area shape="rect" id="node25" href="$ParityGrandCanonical_8hpp.html" title="Parity Grand Canonical header. " alt="" coords="739,581,985,608"/>
+<area shape="rect" id="node26" href="$KitaevHamiltonian_8hpp.html" title="Kitaev Hamiltonian header. " alt="" coords="1119,664,1357,691"/>
+<area shape="rect" id="node28" href="$ParticleNumberOperator_8hpp.html" title="Particle Number Operator header. " alt="" coords="1349,574,1544,615"/>
+<area shape="rect" id="node29" href="$ParityOperator_8hpp.html" title="Parity operator header. " alt="" coords="1568,581,1781,608"/>
+<area shape="rect" id="node35" href="$Eigensolver_8hpp.html" title="Eigensolver class header. " alt="" coords="1980,184,2189,211"/>
+<area shape="rect" id="node36" href="$Info_8hpp.html" title="Info class header. " alt="" coords="2032,259,2139,285"/>
+<area shape="rect" id="node38" href="$Version_8hpp.html" title="Version class header. " alt="" coords="2649,739,2740,765"/>
+<area shape="rect" id="node39" href="$Timer_8hpp.html" title="Timer class header. " alt="" coords="2545,739,2624,765"/>
+<area shape="rect" id="node40" href="$StandardMessages_8hpp.html" title="Standard Messages header. " alt="" coords="1830,333,1988,360"/>
+</map>

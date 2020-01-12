@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classsolid_1_1Geometry.html" title="Geometry parrent class. " alt="" coords="8,5,155,32"/>
+<area shape="rect" id="node2" href="$classsolid_1_1Chain.html" title="Chain (IGeometry implementation) class. " alt="" coords="205,5,328,32"/>
+<area shape="rect" id="node3" href="$classsolid_1_1Ring.html" title="Ring (IGeometry implementation) class. " alt="" coords="209,56,325,83"/>
+<area shape="rect" id="node4" href="$classsolid_1_1IGeometry.html" title="Interface for Geometry class. " alt="" coords="6,56,157,83"/>
+</map>

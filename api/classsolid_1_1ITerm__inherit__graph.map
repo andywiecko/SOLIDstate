@@ -1,0 +1,8 @@
+<map id="solid::ITerm" name="solid::ITerm">
+<area shape="rect" id="node2" href="$classsolid_1_1CreatePairTermFermions.html" title="class describes pairing term for Fermions particles " alt="" coords="144,5,347,32"/>
+<area shape="rect" id="node3" href="$classsolid_1_1HopTermFermions.html" title="class describes hopping term for Fermions particles " alt="" coords="163,56,328,83"/>
+<area shape="rect" id="node4" href="$classsolid_1_1OneBodyInteractionTermFermions.html" title="class describes one body interaction term for Fermions particles " alt="" coords="159,107,331,149"/>
+<area shape="rect" id="node5" href="$classsolid_1_1OneBodyInteractionTermSpins.html" title="class describes one body interaction term for Spins particles " alt="" coords="159,173,331,214"/>
+<area shape="rect" id="node6" href="$classsolid_1_1TwoBodyInteractionTermFermions.html" title="class describes two body interaction term for Fermions particles " alt="" coords="159,238,332,279"/>
+<area shape="rect" id="node7" href="$classsolid_1_1TwoBodyInteractionTermSpins.html" title="class describes two body interaction term for Spins particles " alt="" coords="159,303,332,345"/>
+</map>

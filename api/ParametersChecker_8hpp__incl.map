@@ -1,0 +1,30 @@
+<map id="Modules/SOLIDstate_bits/Parameters/ParametersChecker.hpp" name="Modules/SOLIDstate_bits/Parameters/ParametersChecker.hpp">
+<area shape="rect" id="node3" href="$Parameters_8hpp.html" title="Parameters class header. " alt="" coords="1852,680,1967,707"/>
+<area shape="rect" id="node6" href="$TermsTypeConverter_8hpp.html" title="Terms Type Converter class header. " alt="" coords="1825,109,2047,136"/>
+<area shape="rect" id="node33" href="$TermsTypeEnum_8hpp.html" title="../TermsTypeEnum.hpp" alt="" coords="1643,275,1801,301"/>
+<area shape="rect" id="node7" href="$Hop_8hpp.html" title="Hop term class header. " alt="" coords="2029,192,2181,219"/>
+<area shape="rect" id="node34" href="$OneBodyInteraction_8hpp.html" title="One Body Interaction header. " alt="" coords="1653,185,1843,226"/>
+<area shape="rect" id="node35" href="$TwoBodyInteraction_8hpp.html" title="Two Body Interaction class header. " alt="" coords="1386,185,1576,226"/>
+<area shape="rect" id="node36" href="$CreatePair_8hpp.html" title="Create Pair term header. " alt="" coords="1867,185,2004,226"/>
+<area shape="rect" id="node8" href="$QuantumSystem_8hpp.html" title="Quantum System class header. " alt="" coords="1732,350,1880,391"/>
+<area shape="rect" id="node32" href="$Terms_8hpp.html" title="Terms interface header. " alt="" coords="1827,275,1923,301"/>
+<area shape="rect" id="node9" href="$HilbertSpace_8hpp.html" title="Hilbert Space header. " alt="" coords="195,523,408,549"/>
+<area shape="rect" id="node16" href="$Hamiltonian_8hpp.html" title="Hamiltonian interface and parrent class header. " alt="" coords="1330,680,1531,707"/>
+<area shape="rect" id="node19" href="$Geometry_8hpp.html" title="Geometry class header. " alt="" coords="1897,605,2073,632"/>
+<area shape="rect" id="node20" href="$Observable_8hpp.html" title="Interface and class parent for Observables. " alt="" coords="1441,605,1636,632"/>
+<area shape="rect" id="node21" href="$Factory_8hpp.html" title="Factory header. " alt="" coords="1135,440,1285,467"/>
+<area shape="rect" id="node30" href="$QuantumState_8hpp.html" title="Quantum State class header. " alt="" coords="1691,440,1921,467"/>
+<area shape="rect" id="node10" href="$Ensemble_8hpp.html" title="Ensemble interface and parent class header. " alt="" coords="559,605,737,632"/>
+<area shape="rect" id="node14" href="$Combinadics_8hpp.html" title="Combinadics header. " alt="" coords="195,605,409,632"/>
+<area shape="rect" id="node12" href="$Sector_8hpp.html" title="Sector header. " alt="" coords="513,680,599,707"/>
+<area shape="rect" id="node13" href="$Binomials_8hpp.html" title="Binomials header. " alt="" coords="397,755,592,781"/>
+<area shape="rect" id="node15" href="$BaseState_8hpp.html" title="BaseState header. " alt="" coords="94,680,201,707"/>
+<area shape="rect" id="node17" href="$TermsEnabled_8hpp.html" title="TermsEnabled header. " alt="" coords="1380,755,1509,781"/>
+<area shape="rect" id="node18" href="$TermsEnum_8hpp.html" title="Terms enum class. " alt="" coords="1283,829,1453,856"/>
+<area shape="rect" id="node22" href="$Canonical_8hpp.html" title="Canonical Ensemble header. " alt="" coords="432,523,611,549"/>
+<area shape="rect" id="node23" href="$GrandCanonical_8hpp.html" title="Grand Canonical header. " alt="" coords="686,523,900,549"/>
+<area shape="rect" id="node25" href="$ParityGrandCanonical_8hpp.html" title="Parity Grand Canonical header. " alt="" coords="925,523,1172,549"/>
+<area shape="rect" id="node26" href="$KitaevHamiltonian_8hpp.html" title="Kitaev Hamiltonian header. " alt="" coords="1134,605,1372,632"/>
+<area shape="rect" id="node28" href="$ParticleNumberOperator_8hpp.html" title="Particle Number Operator header. " alt="" coords="1299,515,1493,557"/>
+<area shape="rect" id="node29" href="$ParityOperator_8hpp.html" title="Parity operator header. " alt="" coords="1517,523,1731,549"/>
+</map>

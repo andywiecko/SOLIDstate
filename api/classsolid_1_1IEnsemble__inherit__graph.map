@@ -1,0 +1,5 @@
+<map id="solid::IEnsemble" name="solid::IEnsemble">
+<area shape="rect" id="node2" href="$classsolid_1_1Canonical.html" title="Ensemble: Canonical (int L, int N) with: L – sites N – particles. " alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$classsolid_1_1GrandCanonical.html" title="Ensemble: GrandCanonical (int L) with: L – sites. " alt="" coords="145,80,295,107"/>
+<area shape="rect" id="node4" href="$classsolid_1_1ParityGrandCanonical.html" title="Ensemble: ParityGrandCanonical (int L, int parity) with: L – sites parity – parity Sector (even or od..." alt="" coords="320,80,504,107"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classsolid_1_1IHamiltonian.html" title="interface for Hamiltonian " alt="" coords="9,5,140,32"/>
+<area shape="rect" id="node2" href="$classsolid_1_1KitaevHamiltonian.html" title="Kitaev Hamiltonian implementation " alt="" coords="192,27,355,69"/>
+<area shape="rect" id="node3" href="$classsolid_1_1Operator.html" title="parent class for Quantum Mechanical Operators " alt="" coords="5,57,144,98"/>
+</map>

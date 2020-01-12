@@ -1,0 +1,5 @@
+<map id="solid::Info" name="solid::Info">
+<area shape="rect" id="node2" href="$classsolid_1_1StandardMessages.html" title="class for showing miscellaneous information " alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node3" href="$classsolid_1_1Timer.html" title="static clock class " alt="" coords="199,5,289,32"/>
+<area shape="rect" id="node4" href="$classsolid_1_1Version.html" title="constant char* about solid version " alt="" coords="313,5,415,32"/>
+</map>
