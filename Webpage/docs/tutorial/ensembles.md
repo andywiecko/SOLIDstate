@@ -12,7 +12,7 @@ The current version of the `SOLIDstate` supports the following statistical ensem
 * `GrandCanonical` ― ensemble with all possible configuration with any number of particles in the system,
 * `ParityGrandCanonical` ― similar to `GrandCanonical`, but with fixed parity of the particle number.
 
-One of the `SOLIDstate` features is an easy switch between ensembles, without any pain.
+One of the `SOLIDstate` features is an easy switch between ensembles.
 Moreover, one needs to design Hamiltonians only once.
 The selection between the ensembles is done automatically.
 

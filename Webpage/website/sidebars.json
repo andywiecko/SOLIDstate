@@ -8,14 +8,25 @@
       "tutorial/ensembles",
       "tutorial/terms",
       "tutorial/parameters-and-geometry",
-      "tutorial/hamiltonians"],
-    "Hamiltonians": ["hamiltonians/tV"]
-
+      "tutorial/hamiltonians",
+      "tutorial/observables",
+      "tutorial/measurement",
+      "tutorial/dynamics"
+      ],
+    "Hamiltonians": [
+      "hamiltonians/tV",
+      "hamiltonians/Kitaev"
+      ],
+    "Observables": [
+      "observables/parity",
+      "observables/particleNumber"
+      ]
   },
   "docs-other": {
     "Examples": [
       "examples/example1",
-       "examples/example2"]
+      "examples/example2"
+      ]
   }
   
 }
