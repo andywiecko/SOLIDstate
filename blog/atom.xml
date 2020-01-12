@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://andywiecko.github.io/solid/blog</id>
+    <id>https://andywiecko.github.io/SOLIDstate/blog</id>
     <title>SOLIDstate Blog</title>
     <updated>2020-01-12T06:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://andywiecko.github.io/solid/blog"/>
+    <link rel="alternate" href="https://andywiecko.github.io/SOLIDstate/blog"/>
     <subtitle>The best place to stay up-to-date with the latest SOLIDstate news and events.</subtitle>
-    <logo>https://andywiecko.github.io/solid/img/logoWideWhite.png</logo>
+    <logo>https://andywiecko.github.io/SOLIDstate/img/logoWideWhite.png</logo>
     <rights>Copyright © 2020 Andrzej Więckowski</rights>
     <entry>
         <title type="html"><![CDATA[SOLIDstate (work in progress)]]></title>
-        <id>https://andywiecko.github.io/solid/blog/2020/01/12/blog-post.html</id>
-        <link href="https://andywiecko.github.io/solid/blog/2020/01/12/blog-post.html"/>
+        <id>https://andywiecko.github.io/SOLIDstate/blog/2020/01/12/blog-post.html</id>
+        <link href="https://andywiecko.github.io/SOLIDstate/blog/2020/01/12/blog-post.html"/>
         <updated>2020-01-12T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>SOLIDstate project has been anounced!</p>
 <!---
