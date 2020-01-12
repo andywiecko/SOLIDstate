@@ -81,7 +81,7 @@ class HomeSplash extends React.Component {
           <PromoSection>
             <Button href="https://github.com/andywiecko/SOLIDstate">GitHub</Button>
             <Button href={docUrl('example-program.html')}>Examples</Button>
-            <Button href={docUrl('doc2.html')}>Download .zip v1.0.0</Button>
+            <Button href={'#download'}>Download .zip v1.0.0</Button>
           </PromoSection>
         </div>
 
@@ -102,6 +102,19 @@ class Index extends React.Component {
         background={props.background}>
         <GridBlock
           align="center"
+          contents={props.children}
+          layout={props.layout}
+        />
+      </Container>
+    );
+
+    const LeftBlock = props => (
+      <Container
+        padding={['bottom', 'top']}
+        id={props.id}
+        background={props.background}>
+        <GridBlock
+          align="left"
           contents={props.children}
           layout={props.layout}
         />
@@ -138,7 +151,7 @@ class Index extends React.Component {
     );
 
     const Description = () => (
-      <Block background="dark">
+      <LeftBlock background="dark">
         {[
           {
             content:
@@ -146,10 +159,10 @@ class Index extends React.Component {
               Library includes few models, pre-defined geometries, solving eigenequation, measuring observables or studing quantum dynamics.',
             image: `${baseUrl}img/undraw_science_fqhl.svg`,
             imageAlign: 'right',
-            title: 'Description',
+            title: '**Description**',
           },
         ]}
-      </Block>
+      </LeftBlock>
     );
 
     const LearnHow = () => (
@@ -170,25 +183,25 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'SOLIDstate depends on powerfull C++ library: [Armadillo](http://arma.sourceforge.net/)',
+            content: 'SOLIDstate depends on the powerfull C++ library: [Armadillo](http://arma.sourceforge.net/)',
             image: `${baseUrl}img/armadillo_logo.png`,
             imageAlign: 'top',
             title: '[**Armadillo**](http://arma.sourceforge.net/)',
           },
           {
-            content: 'Easly switch between sparse and dense matrix types for storing Hamiltonian: `arma::Mat`, `arma::SpMat`',
+            content: 'Easily switch between sparse and dense matrix types for storing Hamiltonian: `arma::Mat`, `arma::SpMat`',
             image: `${baseUrl}img/undraw_selection_92i4.svg`,
             imageAlign: 'top',
             title: '**Switch between matrix types**',
           },
           {
-            content: 'Easly switch between different statistical ensembles: `Canonical`, `Grand canonical`, `Parity Conserved Grand Canonical` and more',
+            content: 'Easily switch between different statistical ensembles: `Canonical`, `Grand canonical`, `Parity Conserved Grand Canonical` and more',
             image: `${baseUrl}img/undraw_options_2fvi.svg`,
             imageAlign: 'top',
             title: '**Switch between ensembles**',
           },
           {
-            content: 'Easly switch between different data types: `double`, `complex<double>`',
+            content: 'Easily switch between different data types: `double`, `complex<double>`',
             image: `${baseUrl}img/undraw_Choose_bwbs.svg`,
             imageAlign: 'top',
             title: '**Switch between data types**',
@@ -232,11 +245,11 @@ class Index extends React.Component {
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
           <Features />
-          <FeatureCallout />
           <Description />
           <Showcase />
         </div>
       </div>
+      //<FeatureCallout />
       //<TryOut />
       //<LearnHow />
     );
