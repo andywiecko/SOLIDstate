@@ -6,4 +6,4 @@
 
 SOLIDstate is a dynamic shared C++ library designed for small quantum system studies with many-body interactions. Library includes few models, pre-defined geometries, solving eigenequation, measuring observables or studing quantum dynamics.
 
-For more details, please visit the [SOLIDstate project website](https://andywiecko.github.io/solid)
+For more details, please visit the [SOLIDstate project website](https://andywiecko.github.io/SOLIDstate)

@@ -62,7 +62,7 @@
  * This is the SOLIDstate API. 
  * 
  * - SOLIDstate is still Work in progress.
- * - Visit [<b>SOLIDstate project website</b>](https://andywiecko.github.io/solid) to check for updates, tutorials and more.
+ * - Visit [<b>SOLIDstate project website</b>](https://andywiecko.github.io/SOLIDstate) to check for updates, tutorials and more.
  * - @subpage projectContributors "Project contributors."
  *
  */ 

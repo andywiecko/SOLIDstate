@@ -25,7 +25,7 @@ const siteConfig = {
   title: 'SOLIDstate', // Title for your website.
   tagline: 'A C++ library for solid state physics (Work In Progress)',
   url: 'https://andywiecko.github.io', // Your website URL
-  baseUrl: '/solid/', // Base URL for your project */
+  baseUrl: '/SOLIDstate/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
@@ -40,7 +40,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'getting-started', label: 'Documentation'},
-    {href: '/solid/api/index.html', label: 'API'},
+    {href: '/SOLIDstate/api/index.html', label: 'API'},
     {doc: 'examples/example1', label: 'Example codes'},
     {page: 'about', label: 'About'},
     {blog: true, label: 'Blog'},
