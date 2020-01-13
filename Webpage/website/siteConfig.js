@@ -13,9 +13,7 @@ const users = [
   {
     title: 'Andrzej Więckowski',
     caption: 'Andrzej Więckowski',
-    // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/image.jpg'.
-    image: '/solid/img/avatar.jpeg',
+    image: '/SOLIDstate/img/avatar.jpeg',
     infoLink: 'https://andywiecko.github.io/',
     pinned: true,
   },
